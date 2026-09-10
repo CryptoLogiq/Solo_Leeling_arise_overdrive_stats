@@ -16,6 +16,7 @@ FULL_CSV = WORK / "analysis" / "csv" / "sjw_talent_tree.csv"
 DETAILED_CSV = WORK / "analysis" / "csv" / "sjw_talent_tree_detailed.csv"
 HUMAN = WORK / "analysis" / "reports" / "SJW_TALENT_TREE_HUMAN.md"
 TECH = WORK / "analysis" / "reports" / "SJW_TALENT_TREE_TECHNICAL.md"
+RANK_PARENT_AUDIT = WORK / "analysis" / "reports" / "SJW_TALENT_TREE_RANK_PARENT_AUDIT.md"
 
 
 CLASS_ORDER = ["Assassin", "Duelliste", "Magicien élémentaire", "Souverain"]
@@ -418,9 +419,9 @@ def aggregate_nodes(rows):
                     unlock_refs.add((child_logical, rank_row["rank"]))
         talent["parents_human"] = [
             talent_by_logical[logical_id]["talent"]
-            for logical_id, _ in sorted(
-                [item for item in parent_refs if item[0] in talent_by_logical],
-                key=lambda item: talent_by_logical[item[0]]["node_id"],
+            for logical_id in sorted(
+                {item[0] for item in parent_refs if item[0] in talent_by_logical},
+                key=lambda item: talent_by_logical[item]["node_id"],
             )
         ]
         scoped_human_cleanup = (
@@ -443,17 +444,13 @@ def aggregate_nodes(rows):
             ]
         else:
             talent["unlocks_human"] = [
-                (
-                    talent_by_logical[logical_id]["talent"]
-                    + (f" (depuis rang {rank_label(rank)})" if talent["ranks"] > 1 else "")
-                )
-                for logical_id, rank in sorted(
-                    [item for item in unlock_refs if item[0] in talent_by_logical],
+                talent_by_logical[logical_id]["talent"]
+                for logical_id in sorted(
+                    {item[0] for item in unlock_refs if item[0] in talent_by_logical},
                     key=lambda item: (
-                        talent_by_logical[item[0]]["visual_row"],
-                        talent_by_logical[item[0]]["x"],
-                        talent_by_logical[item[0]]["talent"],
-                        item[1],
+                        talent_by_logical[item]["visual_row"],
+                        talent_by_logical[item]["x"],
+                        talent_by_logical[item]["talent"],
                     ),
                 )
             ]
@@ -767,6 +764,70 @@ def write_technical(talents):
     TECH.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def write_rank_parent_audit(talents):
+    by_node = {node_id: talent for talent in talents for node_id in talent["node_ids"]}
+
+    def row_for(node_id):
+        talent = by_node[str(node_id)]
+        rank_count = len(talent["rank_rows"])
+        parents = ", ".join(talent["parents_human"]) if talent["parents_human"] else "RACINE"
+        unlocks = ", ".join(talent["unlocks_human"]) if talent["unlocks_human"] else "aucun"
+        rank_rows = sorted(talent["rank_rows"], key=lambda row: row["rank"])
+        visual = " / ".join(
+            f"{rank_label(row['rank'])}: Node {row['node_id']}, UI {row['visual_row']} X{row['x']}"
+            for row in rank_rows
+        )
+        return (
+            f"| {talent['section']} / {talent['branch']} | {talent['talent']} | "
+            f"{', '.join(talent['node_ids'])} | {rank_count} | {parents} | {unlocks} | {visual} |"
+        )
+
+    lines = [
+        "# Audit rangs internes et parents",
+        "",
+        "Audit ciblé généré depuis les GameData normalisées avant tout rendu web.",
+        "",
+        "## Conclusion",
+        "",
+        "- Un suffixe romain/numérique dans le nom localisé ne prouve pas un rang interne.",
+        "- Le rang interne provient du même `NodeID` quand `NodeMaxLevel > 1`.",
+        "- `SlotLinkNodeID` référence un `NodeID`, pas un rang interne précis; HUMAN affiche donc une seule relation tant qu'aucun champ GameData ne prouve une condition par rang.",
+        "- Une famille/série sémantique peut aider la lecture, mais elle ne remplace jamais la topologie du graphe.",
+        "",
+        "## Échantillons validés",
+        "",
+        "| Zone | Talent / nœud | NodeID | Rangs internes | Prérequis HUMAN | Débloque HUMAN | Détail rang / position |",
+        "|---|---|---:|---:|---|---|---|",
+    ]
+    for node_id in [
+        "111201",
+        "111202",
+        "111402",
+        "111602",
+        "2150102",
+        "2150202",
+        "2150401",
+        "2150403",
+        "2150502",
+        "1110501",
+        "1110601",
+        "119501",
+        "119601",
+    ]:
+        if node_id in by_node:
+            lines.append(row_for(node_id))
+    lines.extend(
+        [
+            "",
+            "## Points non généralisés",
+            "",
+            "- Les familles visibles comme `Embuscade I..IV`, `Taux de coup critique 1..6` ou `Attaque augmentée 1..6` restent des chaînes de nœuds distincts tant qu'aucune preuve de fusion n'existe.",
+            "- Les cumuls des structures non rattachées restent marqués par leur confiance existante; cette passe valide le modèle nœud/rang/parent, pas les formules runtime.",
+        ]
+    )
+    RANK_PARENT_AUDIT.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def main():
     rows = read_full_rows()
     talents = aggregate_nodes(rows)
@@ -774,9 +835,11 @@ def main():
     write_detailed(talents)
     write_human(talents)
     write_technical(talents)
+    write_rank_parent_audit(talents)
     print(f"wrote {HUMAN}")
     print(f"wrote {DETAILED_CSV}")
     print(f"wrote {TECH}")
+    print(f"wrote {RANK_PARENT_AUDIT}")
 
 
 if __name__ == "__main__":

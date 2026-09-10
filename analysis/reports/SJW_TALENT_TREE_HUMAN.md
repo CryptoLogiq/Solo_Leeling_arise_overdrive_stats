@@ -917,7 +917,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
 **Prérequis :** RACINE
-**Débloque :** Charge frontale (depuis rang I), Charge frontale (depuis rang II), Charge frontale (depuis rang III)
+**Débloque :** Charge frontale
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -949,7 +949,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 2
 **Prérequis :** Protection de l'épée
-**Débloque :** Cœur d'acier (depuis rang I), Cœur d'acier (depuis rang II), Cœur d'acier (depuis rang III)
+**Débloque :** Cœur d'acier
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -961,7 +961,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 4
 **Prérequis :** Protection de l'épée
-**Débloque :** Cœur d'acier (depuis rang I), Cœur d'acier (depuis rang II), Cœur d'acier (depuis rang III)
+**Débloque :** Cœur d'acier
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -995,7 +995,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
 **Prérequis :** RACINE
-**Débloque :** Épée gardienne (depuis rang I), Épée gardienne (depuis rang II), Épée gardienne (depuis rang III), Attaquer et bloquer (depuis rang I), Attaquer et bloquer (depuis rang II), Attaquer et bloquer (depuis rang III)
+**Débloque :** Épée gardienne, Attaquer et bloquer
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1027,7 +1027,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
 **Prérequis :** Épée gardienne, Attaquer et bloquer
-**Débloque :** Pénétration de défense augmentée (depuis rang I), Pénétration de défense augmentée (depuis rang II), Pénétration de défense augmentée (depuis rang III)
+**Débloque :** Pénétration de défense augmentée
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1039,7 +1039,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 3
 **Prérequis :** Précision augmentée
-**Débloque :** Lancement de contre-attaque (depuis rang I), Lancement de contre-attaque (depuis rang II), Lancement de contre-attaque (depuis rang III)
+**Débloque :** Lancement de contre-attaque
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1075,7 +1075,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 2
 **Prérequis :** RACINE
-**Débloque :** Plaie mortelle (depuis rang I), Plaie mortelle (depuis rang II), Plaie mortelle (depuis rang III)
+**Débloque :** Plaie mortelle
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1087,7 +1087,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 4
 **Prérequis :** RACINE
-**Débloque :** Plaie mortelle (depuis rang I), Plaie mortelle (depuis rang II), Plaie mortelle (depuis rang III)
+**Débloque :** Plaie mortelle
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1109,7 +1109,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 2
 **Prérequis :** Plaie mortelle
-**Débloque :** Amplification de la douleur (depuis rang I), Amplification de la douleur (depuis rang II), Amplification de la douleur (depuis rang III)
+**Débloque :** Amplification de la douleur
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1121,7 +1121,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 4
 **Prérequis :** Plaie mortelle
-**Débloque :** Approche violente (depuis rang I), Approche violente (depuis rang II), Approche violente (depuis rang III)
+**Débloque :** Approche violente
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1165,7 +1165,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 2
 **Prérequis :** RACINE
-**Débloque :** Attaque en embuscade (depuis rang I), Attaque en embuscade (depuis rang II), Attaque en embuscade (depuis rang III)
+**Débloque :** Attaque en embuscade
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1177,7 +1177,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 4
 **Prérequis :** RACINE
-**Débloque :** Attaque en embuscade (depuis rang I), Attaque en embuscade (depuis rang II), Attaque en embuscade (depuis rang III)
+**Débloque :** Attaque en embuscade
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1243,7 +1243,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 2
 **Prérequis :** RACINE
-**Débloque :** Précision augmentée (depuis rang I), Précision augmentée (depuis rang II), Précision augmentée (depuis rang III), Tir d'esquive (depuis rang I), Tir d'esquive (depuis rang II), Tir d'esquive (depuis rang III)
+**Débloque :** Précision augmentée, Tir d'esquive
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1255,7 +1255,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
 **Prérequis :** Dégâts de compétence à l'arc augmentés
-**Débloque :** Tir en pleine tête (depuis rang I), Tir en pleine tête (depuis rang II), Tir en pleine tête (depuis rang III)
+**Débloque :** Tir en pleine tête
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1287,7 +1287,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 3
 **Prérequis :** Tir en pleine tête
-**Débloque :** Visée sécurisée (depuis rang I), Visée sécurisée (depuis rang II), Visée sécurisée (depuis rang III)
+**Débloque :** Visée sécurisée
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1321,7 +1321,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 4
 **Prérequis :** RACINE
-**Débloque :** Taux de coup critique augmenté (depuis rang I), Taux de coup critique augmenté (depuis rang II), Taux de coup critique augmenté (depuis rang III), Tir en reculant (depuis rang I), Tir en reculant (depuis rang II), Tir en reculant (depuis rang III)
+**Débloque :** Taux de coup critique augmenté, Tir en reculant
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1333,7 +1333,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
 **Prérequis :** Dégâts de compétence à l'arc augmentés
-**Débloque :** Frappe calculée (depuis rang I), Frappe calculée (depuis rang II), Frappe calculée (depuis rang III)
+**Débloque :** Frappe calculée
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1365,7 +1365,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 3
 **Prérequis :** Frappe calculée
-**Débloque :** Frappe véloce (depuis rang I), Frappe véloce (depuis rang II), Frappe véloce (depuis rang III)
+**Débloque :** Frappe véloce
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1411,7 +1411,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 2
 **Prérequis :** RACINE
-**Débloque :** Pénétration de défense augmentée (depuis rang I), Pénétration de défense augmentée (depuis rang II), Pénétration de défense augmentée (depuis rang III)
+**Débloque :** Pénétration de défense augmentée
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1423,7 +1423,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
 **Prérequis :** Dégâts de compétence à l'arme à feu augmentés
-**Débloque :** Munitions concentrées (depuis rang I), Munitions concentrées (depuis rang II), Munitions concentrées (depuis rang III)
+**Débloque :** Munitions concentrées
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1445,7 +1445,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 3
 **Prérequis :** Munitions concentrées
-**Débloque :** Flux balistique (depuis rang I), Flux balistique (depuis rang II), Flux balistique (depuis rang III)
+**Débloque :** Flux balistique
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1479,7 +1479,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 2
 **Prérequis :** RACINE
-**Débloque :** Massacre (depuis rang I), Massacre (depuis rang II), Massacre (depuis rang III)
+**Débloque :** Massacre
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1555,7 +1555,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 2
 **Prérequis :** RACINE
-**Débloque :** Amélioration de mana (depuis rang I), Amélioration de mana (depuis rang II), Amélioration de mana (depuis rang III)
+**Débloque :** Amélioration de mana
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1567,7 +1567,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 4
 **Prérequis :** RACINE
-**Débloque :** Amélioration de mana (depuis rang I), Amélioration de mana (depuis rang II), Amélioration de mana (depuis rang III)
+**Débloque :** Amélioration de mana
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1589,7 +1589,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
 **Prérequis :** Amélioration de mana
-**Débloque :** Combo de mana (depuis rang I), Combo de mana (depuis rang II), Combo de mana (depuis rang III), Carnage de mana (depuis rang I), Carnage de mana (depuis rang II), Carnage de mana (depuis rang III)
+**Débloque :** Combo de mana, Carnage de mana
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1633,7 +1633,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
 **Prérequis :** RACINE
-**Débloque :** Détection de faiblesse (depuis rang I), Détection de faiblesse (depuis rang II), Détection de faiblesse (depuis rang III)
+**Débloque :** Détection de faiblesse
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1655,7 +1655,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 2
 **Prérequis :** Détection de faiblesse
-**Débloque :** Recherche d'élément (depuis rang I), Recherche d'élément (depuis rang II), Recherche d'élément (depuis rang III)
+**Débloque :** Recherche d'élément
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1667,7 +1667,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 4
 **Prérequis :** Détection de faiblesse
-**Débloque :** Onde de mana (depuis rang I), Onde de mana (depuis rang II), Onde de mana (depuis rang III)
+**Débloque :** Onde de mana
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1713,7 +1713,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
 **Prérequis :** RACINE
-**Débloque :** Smash (depuis rang I), Smash (depuis rang II), Smash (depuis rang III)
+**Débloque :** Smash
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1725,7 +1725,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
 **Prérequis :** Dégâts de compétence à l'arme d'hast augmentés
-**Débloque :** Parade d'arme (depuis rang I), Parade d'arme (depuis rang II), Parade d'arme (depuis rang III)
+**Débloque :** Parade d'arme
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1789,7 +1789,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
 **Prérequis :** RACINE
-**Débloque :** Chair forgée (depuis rang I), Chair forgée (depuis rang II), Chair forgée (depuis rang III)
+**Débloque :** Chair forgée
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1811,7 +1811,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 2
 **Prérequis :** Chair forgée
-**Débloque :** Dégâts déviés (depuis rang I), Dégâts déviés (depuis rang II), Dégâts déviés (depuis rang III)
+**Débloque :** Dégâts déviés
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1823,7 +1823,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 4
 **Prérequis :** Chair forgée
-**Débloque :** Dégâts déviés (depuis rang I), Dégâts déviés (depuis rang II), Dégâts déviés (depuis rang III)
+**Débloque :** Dégâts déviés
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1869,7 +1869,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
 **Prérequis :** RACINE
-**Débloque :** Dégâts de coup critique augmentés (depuis rang I), Dégâts de coup critique augmentés (depuis rang II), Dégâts de coup critique augmentés (depuis rang III)
+**Débloque :** Dégâts de coup critique augmentés
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1881,7 +1881,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
 **Prérequis :** Dégâts de compétence d'arme à deux mains augmentés
-**Débloque :** Berserker (depuis rang I), Berserker (depuis rang II), Berserker (depuis rang III), Porte de la mort (depuis rang I), Porte de la mort (depuis rang II), Porte de la mort (depuis rang III)
+**Débloque :** Berserker, Porte de la mort
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1945,7 +1945,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
 **Prérequis :** RACINE
-**Débloque :** Précision augmentée (depuis rang I), Précision augmentée (depuis rang II), Précision augmentée (depuis rang III)
+**Débloque :** Précision augmentée
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1957,7 +1957,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
 **Prérequis :** Dégâts de compétence d'arme à deux mains augmentés
-**Débloque :** Attaque augmentée (depuis rang I), Attaque augmentée (depuis rang II), Attaque augmentée (depuis rang III), Blessure régénérante (depuis rang I), Blessure régénérante (depuis rang II), Blessure régénérante (depuis rang III)
+**Débloque :** Attaque augmentée, Blessure régénérante
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -1969,7 +1969,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
 **Prérequis :** Précision augmentée
-**Débloque :** Récupération de force (depuis rang I), Récupération de force (depuis rang II), Récupération de force (depuis rang III)
+**Débloque :** Récupération de force
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2027,7 +2027,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
 **Prérequis :** RACINE
-**Débloque :** Défense augmentée (depuis rang I), Défense augmentée (depuis rang II), Défense augmentée (depuis rang III), PV augmentés (depuis rang I), PV augmentés (depuis rang II), PV augmentés (depuis rang III)
+**Débloque :** Défense augmentée, PV augmentés
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2039,7 +2039,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 2
 **Prérequis :** Attaque augmentée
-**Débloque :** Attaque augmentée (depuis rang I), Attaque augmentée (depuis rang II), Attaque augmentée (depuis rang III)
+**Débloque :** Attaque augmentée
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2051,7 +2051,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 4
 **Prérequis :** Attaque augmentée
-**Débloque :** Attaque augmentée (depuis rang I), Attaque augmentée (depuis rang II), Attaque augmentée (depuis rang III)
+**Débloque :** Attaque augmentée
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2063,7 +2063,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
 **Prérequis :** Défense augmentée, PV augmentés
-**Débloque :** Défense augmentée (depuis rang I), Défense augmentée (depuis rang II), Défense augmentée (depuis rang III), PV augmentés (depuis rang I), PV augmentés (depuis rang II), PV augmentés (depuis rang III)
+**Débloque :** Défense augmentée, PV augmentés
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2075,7 +2075,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 2
 **Prérequis :** Attaque augmentée
-**Débloque :** Attaque augmentée (depuis rang I), Attaque augmentée (depuis rang II), Attaque augmentée (depuis rang III)
+**Débloque :** Attaque augmentée
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2087,7 +2087,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 4
 **Prérequis :** Attaque augmentée
-**Débloque :** Attaque augmentée (depuis rang I), Attaque augmentée (depuis rang II), Attaque augmentée (depuis rang III)
+**Débloque :** Attaque augmentée
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2099,7 +2099,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 3
 **Prérequis :** Défense augmentée, PV augmentés
-**Débloque :** Défense augmentée (depuis rang I), Défense augmentée (depuis rang II), Défense augmentée (depuis rang III), PV augmentés (depuis rang I), PV augmentés (depuis rang II), PV augmentés (depuis rang III)
+**Débloque :** Défense augmentée, PV augmentés
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2137,7 +2137,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
 **Prérequis :** RACINE
-**Débloque :** Pénétration de défense augmentée (depuis rang I), Pénétration de défense augmentée (depuis rang II), Pénétration de défense augmentée (depuis rang III)
+**Débloque :** Pénétration de défense augmentée
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2149,7 +2149,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 2
 **Prérequis :** Taux de coup critique augmenté
-**Débloque :** Taux de coup critique augmenté (depuis rang I), Taux de coup critique augmenté (depuis rang II), Taux de coup critique augmenté (depuis rang III)
+**Débloque :** Taux de coup critique augmenté
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2161,7 +2161,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 4
 **Prérequis :** Taux de coup critique augmenté
-**Débloque :** Taux de coup critique augmenté (depuis rang I), Taux de coup critique augmenté (depuis rang II), Taux de coup critique augmenté (depuis rang III)
+**Débloque :** Taux de coup critique augmenté
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2173,7 +2173,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
 **Prérequis :** Pénétration de défense augmentée
-**Débloque :** Pénétration de défense augmentée (depuis rang I), Pénétration de défense augmentée (depuis rang II), Pénétration de défense augmentée (depuis rang III)
+**Débloque :** Pénétration de défense augmentée
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2185,7 +2185,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 2
 **Prérequis :** Taux de coup critique augmenté
-**Débloque :** Dégâts subis réduits (depuis rang I), Dégâts subis réduits (depuis rang II), Dégâts subis réduits (depuis rang III)
+**Débloque :** Dégâts subis réduits
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2197,7 +2197,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 4
 **Prérequis :** Taux de coup critique augmenté
-**Débloque :** Dégâts subis réduits (depuis rang I), Dégâts subis réduits (depuis rang II), Dégâts subis réduits (depuis rang III)
+**Débloque :** Dégâts subis réduits
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2209,7 +2209,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 2
 **Prérequis :** Pénétration de défense augmentée
-**Débloque :** Taux de coup critique augmenté (depuis rang I), Taux de coup critique augmenté (depuis rang II), Taux de coup critique augmenté (depuis rang III)
+**Débloque :** Taux de coup critique augmenté
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2221,7 +2221,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 4
 **Prérequis :** Pénétration de défense augmentée
-**Débloque :** Taux de coup critique augmenté (depuis rang I), Taux de coup critique augmenté (depuis rang II), Taux de coup critique augmenté (depuis rang III)
+**Débloque :** Taux de coup critique augmenté
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2459,7 +2459,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 2
 **Prérequis :** RACINE
-**Débloque :** Taux de coup critique 2 (depuis rang I), Taux de coup critique 2 (depuis rang II), Taux de coup critique 2 (depuis rang III)
+**Débloque :** Taux de coup critique 2
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2471,7 +2471,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
 **Prérequis :** RACINE
-**Débloque :** Dégâts de coup critique 2 (depuis rang I), Dégâts de coup critique 2 (depuis rang II), Dégâts de coup critique 2 (depuis rang III)
+**Débloque :** Dégâts de coup critique 2
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2483,7 +2483,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 4
 **Prérequis :** RACINE
-**Débloque :** Pénétration de défense 2 (depuis rang I), Pénétration de défense 2 (depuis rang II), Pénétration de défense 2 (depuis rang III)
+**Débloque :** Pénétration de défense 2
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2495,7 +2495,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 2
 **Prérequis :** Taux de coup critique 1
-**Débloque :** Taux de coup critique 3 (depuis rang I), Taux de coup critique 3 (depuis rang II), Taux de coup critique 3 (depuis rang III)
+**Débloque :** Taux de coup critique 3
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2507,7 +2507,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
 **Prérequis :** Dégâts de coup critique 1
-**Débloque :** Dégâts de coup critique 3 (depuis rang I), Dégâts de coup critique 3 (depuis rang II), Dégâts de coup critique 3 (depuis rang III)
+**Débloque :** Dégâts de coup critique 3
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2519,7 +2519,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 4
 **Prérequis :** Pénétration de défense 1
-**Débloque :** Pénétration de défense 3 (depuis rang I), Pénétration de défense 3 (depuis rang II), Pénétration de défense 3 (depuis rang III)
+**Débloque :** Pénétration de défense 3
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2531,7 +2531,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 2
 **Prérequis :** Taux de coup critique 2
-**Débloque :** Taux de coup critique 4 (depuis rang I), Taux de coup critique 4 (depuis rang II), Taux de coup critique 4 (depuis rang III)
+**Débloque :** Taux de coup critique 4
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2543,7 +2543,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
 **Prérequis :** Dégâts de coup critique 2
-**Débloque :** Dégâts de coup critique 4 (depuis rang I), Dégâts de coup critique 4 (depuis rang II), Dégâts de coup critique 4 (depuis rang III)
+**Débloque :** Dégâts de coup critique 4
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2555,7 +2555,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 4
 **Prérequis :** Pénétration de défense 2
-**Débloque :** Pénétration de défense 4 (depuis rang I), Pénétration de défense 4 (depuis rang II), Pénétration de défense 4 (depuis rang III)
+**Débloque :** Pénétration de défense 4
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2567,7 +2567,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 2
 **Prérequis :** Taux de coup critique 3
-**Débloque :** Taux de coup critique 5 (depuis rang I), Taux de coup critique 5 (depuis rang II), Taux de coup critique 5 (depuis rang III)
+**Débloque :** Taux de coup critique 5
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2579,7 +2579,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 3
 **Prérequis :** Dégâts de coup critique 3
-**Débloque :** Dégâts de coup critique 5 (depuis rang I), Dégâts de coup critique 5 (depuis rang II), Dégâts de coup critique 5 (depuis rang III)
+**Débloque :** Dégâts de coup critique 5
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2591,7 +2591,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 4
 **Prérequis :** Pénétration de défense 3
-**Débloque :** Pénétration de défense 5 (depuis rang I), Pénétration de défense 5 (depuis rang II), Pénétration de défense 5 (depuis rang III)
+**Débloque :** Pénétration de défense 5
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2603,7 +2603,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 2
 **Prérequis :** Taux de coup critique 4
-**Débloque :** Taux de coup critique 6 (depuis rang I), Taux de coup critique 6 (depuis rang II), Taux de coup critique 6 (depuis rang III)
+**Débloque :** Taux de coup critique 6
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2615,7 +2615,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 3
 **Prérequis :** Dégâts de coup critique 4
-**Débloque :** Dégâts de coup critique 6 (depuis rang I), Dégâts de coup critique 6 (depuis rang II), Dégâts de coup critique 6 (depuis rang III)
+**Débloque :** Dégâts de coup critique 6
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2627,7 +2627,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 4
 **Prérequis :** Pénétration de défense 4
-**Débloque :** Pénétration de défense 6 (depuis rang I), Pénétration de défense 6 (depuis rang II), Pénétration de défense 6 (depuis rang III)
+**Débloque :** Pénétration de défense 6
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2679,7 +2679,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 2
 **Prérequis :** RACINE
-**Débloque :** Attaque augmentée 2 (depuis rang I), Attaque augmentée 2 (depuis rang II), Attaque augmentée 2 (depuis rang III)
+**Débloque :** Attaque augmentée 2
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2691,7 +2691,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
 **Prérequis :** RACINE
-**Débloque :** Défense augmentée 2 (depuis rang I), Défense augmentée 2 (depuis rang II), Défense augmentée 2 (depuis rang III)
+**Débloque :** Défense augmentée 2
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2703,7 +2703,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 4
 **Prérequis :** RACINE
-**Débloque :** PV augmentés 2 (depuis rang I), PV augmentés 2 (depuis rang II), PV augmentés 2 (depuis rang III)
+**Débloque :** PV augmentés 2
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2715,7 +2715,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 2
 **Prérequis :** Attaque augmentée 1
-**Débloque :** Attaque augmentée 3 (depuis rang I), Attaque augmentée 3 (depuis rang II), Attaque augmentée 3 (depuis rang III)
+**Débloque :** Attaque augmentée 3
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2727,7 +2727,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
 **Prérequis :** Défense augmentée 1
-**Débloque :** Défense augmentée 3 (depuis rang I), Défense augmentée 3 (depuis rang II), Défense augmentée 3 (depuis rang III)
+**Débloque :** Défense augmentée 3
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2739,7 +2739,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 4
 **Prérequis :** PV augmentés 1
-**Débloque :** PV augmentés 3 (depuis rang I), PV augmentés 3 (depuis rang II), PV augmentés 3 (depuis rang III)
+**Débloque :** PV augmentés 3
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2751,7 +2751,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 2
 **Prérequis :** Attaque augmentée 2
-**Débloque :** Attaque augmentée 4 (depuis rang I), Attaque augmentée 4 (depuis rang II), Attaque augmentée 4 (depuis rang III)
+**Débloque :** Attaque augmentée 4
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2763,7 +2763,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
 **Prérequis :** Défense augmentée 2
-**Débloque :** Défense augmentée 4 (depuis rang I), Défense augmentée 4 (depuis rang II), Défense augmentée 4 (depuis rang III)
+**Débloque :** Défense augmentée 4
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2775,7 +2775,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 4
 **Prérequis :** PV augmentés 2
-**Débloque :** PV augmentés 4 (depuis rang I), PV augmentés 4 (depuis rang II), PV augmentés 4 (depuis rang III)
+**Débloque :** PV augmentés 4
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2787,7 +2787,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 2
 **Prérequis :** Attaque augmentée 3
-**Débloque :** Attaque augmentée 5 (depuis rang I), Attaque augmentée 5 (depuis rang II), Attaque augmentée 5 (depuis rang III)
+**Débloque :** Attaque augmentée 5
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2799,7 +2799,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 3
 **Prérequis :** Défense augmentée 3
-**Débloque :** Défense augmentée 5 (depuis rang I), Défense augmentée 5 (depuis rang II), Défense augmentée 5 (depuis rang III)
+**Débloque :** Défense augmentée 5
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2811,7 +2811,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 4
 **Prérequis :** PV augmentés 3
-**Débloque :** PV augmentés 5 (depuis rang I), PV augmentés 5 (depuis rang II), PV augmentés 5 (depuis rang III)
+**Débloque :** PV augmentés 5
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2823,7 +2823,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 2
 **Prérequis :** Attaque augmentée 4
-**Débloque :** Attaque augmentée 6 (depuis rang I), Attaque augmentée 6 (depuis rang II), Attaque augmentée 6 (depuis rang III)
+**Débloque :** Attaque augmentée 6
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2835,7 +2835,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 3
 **Prérequis :** Défense augmentée 4
-**Débloque :** Défense augmentée 6 (depuis rang I), Défense augmentée 6 (depuis rang II), Défense augmentée 6 (depuis rang III)
+**Débloque :** Défense augmentée 6
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
@@ -2847,7 +2847,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 **Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 4
 **Prérequis :** PV augmentés 4
-**Débloque :** PV augmentés 6 (depuis rang I), PV augmentés 6 (depuis rang II), PV augmentés 6 (depuis rang III)
+**Débloque :** PV augmentés 6
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
