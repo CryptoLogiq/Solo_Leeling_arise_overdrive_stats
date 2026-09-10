@@ -33,13 +33,13 @@ Règles :
 
 ### Format recommandé d'une fiche talent
 
-**Niveau de progression :** 4 · **Position :** gauche  
-**Parent :** Arts verticaux  
+**Position dans l'arbre :** profondeur technique 4 · rangée UI 4 · gauche
+**Parent :** Arts verticaux
 **Débloque :** Taux critique augmenté II
 
-| Rang | Coût | Effet | Valeur | Gain marginal | Cumul |
-|---:|---:|---|---:|---:|---:|
-| 1 | ... | ... | ... | ... | ... |
+| Rang | Coût | Effet | Gain | Cumul | Accès |
+|---:|---|---|---:|---:|---|
+| I | ... | ... | ... | ... | ... |
 
 Ajouter ensuite uniquement les informations utiles : condition, durée,
 compétence concernée, confiance, incertitude restante.

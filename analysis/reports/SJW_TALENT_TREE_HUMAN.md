@@ -39,154 +39,883 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 ### Branche 1 — Attaque sournoise
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Ruée acérée | profondeur 1, UI 1, X 3 | Compétence active | 1 | 2 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 0 pts requis |
-| Embuscade I | profondeur 2, UI 2, X 2 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 2 pts requis |
-| Embuscade II | profondeur 2, UI 2, X 4 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 2 pts requis |
-| Arts verticaux | profondeur 3, UI 3, X 3 | Compétence active | 1 | 2 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 12 pts requis |
-| Taux de coup critique augmenté | profondeur 4, UI 4, X 2 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 14 pts requis |
-| Embuscade III - [Effet passif spécial] | profondeur 3, UI 4, X 4 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 6 pts requis |
-| Taux de coup critique augmenté - [Effet passif spécial] | profondeur 5, UI 5, X 3 | Effet déclenché | 1 | 5 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 18 pts requis |
-| Attaque augmentée | profondeur 6, UI 6, X 2 | Attaque: 0,8 % | 1 | 3 SkillPoint | +0,8 % | +0,8 % | 0,27 %/SkillPoint | 23 pts requis |
-| Embuscade IV | profondeur 4, UI 6, X 4 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 10 pts requis |
-| Marque de l'assassin | profondeur 6, UI 7, X 3 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 23 pts requis |
+#### Ruée acérée
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
+**Prérequis :** RACINE
+**Débloque :** Embuscade I, Embuscade II
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Embuscade I
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 2
+**Prérequis :** Ruée acérée
+**Débloque :** Arts verticaux
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 2 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Embuscade II
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 4
+**Prérequis :** Ruée acérée
+**Débloque :** Arts verticaux, Embuscade III - [Effet passif spécial]
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 2 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Arts verticaux
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
+**Prérequis :** Embuscade I, Embuscade II
+**Débloque :** Taux de coup critique augmenté
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Taux de coup critique augmenté
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 2
+**Prérequis :** Arts verticaux
+**Débloque :** Taux de coup critique augmenté - [Effet passif spécial]
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 14 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Embuscade III - [Effet passif spécial]
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 4, X 4
+**Prérequis :** Embuscade II
+**Débloque :** Embuscade IV
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Taux de coup critique augmenté - [Effet passif spécial]
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 3
+**Prérequis :** Taux de coup critique augmenté
+**Débloque :** Attaque augmentée, Marque de l'assassin
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 5 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 18 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Attaque augmentée
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 2
+**Prérequis :** Taux de coup critique augmenté - [Effet passif spécial]
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | Attaque: 0,8 % | +0,8 % | 0,8 % | 23 pts requis | FORTEMENT PROBABLE |
+
+#### Embuscade IV
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 6, X 4
+**Prérequis :** Embuscade III - [Effet passif spécial]
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 10 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Marque de l'assassin
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 7, X 3
+**Prérequis :** Taux de coup critique augmenté - [Effet passif spécial]
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 23 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Frappe vitale
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Lésion interne | profondeur 1, UI 1, X 3 | Compétence active | 1 | 2 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 0 pts requis |
-| Dévastation I | profondeur 2, UI 2, X 3 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 2 pts requis |
-| Dévastation II | profondeur 3, UI 3, X 2 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 6 pts requis |
-| À point | profondeur 3, UI 3, X 3 | Compétence active | 1 | 2 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 6 pts requis |
-| Attaque dans le dos I | profondeur 3, UI 3, X 4 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 6 pts requis |
-| Position d'embuscade | profondeur 4, UI 4, X 3 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 8 pts requis |
-| Ruée de l'ombre | profondeur 4, UI 5, X 2 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 10 pts requis |
-| Attaque dans le dos II | profondeur 5, UI 5, X 4 | Dégâts dans le dos: 320 | 1 | 5 SkillPoint | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 20 pts requis |
-| Entailles croissantes | profondeur 5, UI 6, X 3 | Compétence active | 1 | 2 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 12 pts requis |
-| Intention du prédateur | profondeur 5, UI 7, X 2 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 14 pts requis |
+#### Lésion interne
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
+**Prérequis :** RACINE
+**Débloque :** Dévastation I
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Dévastation I
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
+**Prérequis :** Lésion interne
+**Débloque :** Dévastation II, À point, Attaque dans le dos I
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 2 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Dévastation II
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 2
+**Prérequis :** Dévastation I
+**Débloque :** Ruée de l'ombre
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### À point
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
+**Prérequis :** Dévastation I
+**Débloque :** Position d'embuscade
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Attaque dans le dos I
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 4
+**Prérequis :** Dévastation I
+**Débloque :** Attaque dans le dos II
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Position d'embuscade
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 3
+**Prérequis :** À point
+**Débloque :** Attaque dans le dos II, Entailles croissantes
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 8 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Ruée de l'ombre
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 5, X 2
+**Prérequis :** Dévastation II
+**Débloque :** Intention du prédateur
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 10 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Attaque dans le dos II
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 4
+**Prérequis :** Attaque dans le dos I, Position d'embuscade
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 5 SkillPoint | Dégâts dans le dos: 320 | NON DÉTERMINÉ | NON DÉTERMINÉ | 20 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Entailles croissantes
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 6, X 3
+**Prérequis :** Position d'embuscade
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Intention du prédateur
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 7, X 2
+**Prérequis :** Ruée de l'ombre
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 14 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Nœud de classe / Overdrive
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Overdrive | profondeur 1, UI 1, X 4 | Passif / Overdrive | 1 | 1 IdentityPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | Chapitre principal 10301 |
+#### Overdrive
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 4
+**Prérequis :** RACINE
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 1 IdentityPoint | Passif / Overdrive | Non chiffré | Non chiffré | Chapitre principal 10301 | NON DÉTERMINÉ |
 
 ## DUELLISTE
 
 ### Branche 1 — Frappe enragée
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Accablement | profondeur 1, UI 1, X 3 | Compétence active | 1 | 2 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 0 pts requis |
-| Contre-offensive I | profondeur 2, UI 2, X 2 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 2 pts requis |
-| Ombre vive : Contre-attaque | profondeur 2, UI 2, X 4 | Modification de compétence | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 2 pts requis |
-| Contre-offensive II | profondeur 3, UI 3, X 2 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 6 pts requis |
-| Percussion | profondeur 3, UI 3, X 3 | Compétence active | 1 | 2 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 12 pts requis |
-| Déséquilibre augmenté | profondeur 3, UI 3, X 4 | Déséquilibre / Break: 320 | 1 | 4 SkillPoint | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis |
-| Défense augmentée | profondeur 4, UI 4, X 3 | Défense: 6,4 % | 1 | 3 SkillPoint | +6,4 % | +6,4 % | 2,13 %/SkillPoint | 14 pts requis |
-| Amélioration de contre-attaque | profondeur 4, UI 4, X 4 | Effet déclenché | 1 | 5 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 22 pts requis |
-| Contre-offensive III | profondeur 5, UI 5, X 2 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 25 pts requis |
-| Déchaînement | profondeur 6, UI 6, X 3 | Compétence active | 1 | 2 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 32 pts requis |
-| Champion de la contre-offensive | profondeur 6, UI 7, X 2 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 29 pts requis |
+#### Accablement
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
+**Prérequis :** RACINE
+**Débloque :** Contre-offensive I, Ombre vive : Contre-attaque
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Contre-offensive I
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 2
+**Prérequis :** Accablement
+**Débloque :** Contre-offensive II, Percussion
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 2 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Ombre vive : Contre-attaque
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 4
+**Prérequis :** Accablement
+**Débloque :** Percussion, Déséquilibre augmenté
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Modification de compétence | Non chiffré | Non chiffré | 2 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Contre-offensive II
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 2
+**Prérequis :** Contre-offensive I
+**Débloque :** Contre-offensive III
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Percussion
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
+**Prérequis :** Contre-offensive I, Ombre vive : Contre-attaque
+**Débloque :** Défense augmentée, Amélioration de contre-attaque
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Déséquilibre augmenté
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 4
+**Prérequis :** Ombre vive : Contre-attaque
+**Débloque :** Amélioration de contre-attaque
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Déséquilibre / Break: 320 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Défense augmentée
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 3
+**Prérequis :** Percussion
+**Débloque :** Contre-offensive III, Déchaînement
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | Défense: 6,4 % | +6,4 % | 6,4 % | 14 pts requis | FORTEMENT PROBABLE |
+
+#### Amélioration de contre-attaque
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 4
+**Prérequis :** Percussion, Déséquilibre augmenté
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 5 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 22 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Contre-offensive III
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 2
+**Prérequis :** Contre-offensive II, Défense augmentée
+**Débloque :** Déchaînement, Champion de la contre-offensive
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 25 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Déchaînement
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 3
+**Prérequis :** Défense augmentée, Contre-offensive III
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 32 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Champion de la contre-offensive
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 7, X 2
+**Prérequis :** Contre-offensive III
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 29 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Coup unique
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Bris d'armure | profondeur 1, UI 1, X 3 | Compétence active | 1 | 2 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 0 pts requis |
-| Combo I | profondeur 2, UI 2, X 2 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 2 pts requis |
-| Smash I | profondeur 2, UI 2, X 4 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 2 pts requis |
-| Annihilation | profondeur 3, UI 3, X 3 | Compétence active | 1 | 2 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 12 pts requis |
-| Déséquilibre augmenté - [Effet passif spécial] | profondeur 4, UI 4, X 3 | Déséquilibre / Break: 160 | 1 | 5 SkillPoint | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 14 pts requis |
-| Augmentation des PV | profondeur 5, UI 5, X 2 | PV: 6,4 % | 1 | 3 SkillPoint | +6,4 % | +6,4 % | 2,13 %/SkillPoint | 19 pts requis |
-| Fougue | profondeur 5, UI 5, X 4 | Effet déclenché | 1 | 3 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 19 pts requis |
-| Combo II | profondeur 6, UI 6, X 2 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 22 pts requis |
-| Smash II | profondeur 6, UI 6, X 4 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 22 pts requis |
-| Force amplifiée | profondeur 7, UI 7, X 3 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 38 pts requis |
+#### Bris d'armure
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
+**Prérequis :** RACINE
+**Débloque :** Combo I, Smash I
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Combo I
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 2
+**Prérequis :** Bris d'armure
+**Débloque :** Annihilation
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 2 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Smash I
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 4
+**Prérequis :** Bris d'armure
+**Débloque :** Annihilation
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 2 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Annihilation
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
+**Prérequis :** Combo I, Smash I
+**Débloque :** Déséquilibre augmenté - [Effet passif spécial]
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Déséquilibre augmenté - [Effet passif spécial]
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 3
+**Prérequis :** Annihilation
+**Débloque :** Augmentation des PV, Fougue
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 5 SkillPoint | Déséquilibre / Break: 160 | NON DÉTERMINÉ | NON DÉTERMINÉ | 14 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Augmentation des PV
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 2
+**Prérequis :** Déséquilibre augmenté - [Effet passif spécial]
+**Débloque :** Combo II
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | PV: 6,4 % | +6,4 % | 6,4 % | 19 pts requis | FORTEMENT PROBABLE |
+
+#### Fougue
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 4
+**Prérequis :** Déséquilibre augmenté - [Effet passif spécial]
+**Débloque :** Smash II
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 19 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Combo II
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 2
+**Prérequis :** Augmentation des PV
+**Débloque :** Force amplifiée
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 22 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Smash II
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 4
+**Prérequis :** Fougue
+**Débloque :** Force amplifiée
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 22 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Force amplifiée
+
+**Position dans l'arbre :** profondeur technique 7, rangée UI 7, X 3
+**Prérequis :** Combo II, Smash II
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 38 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Nœud de classe / Overdrive
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Overdrive | profondeur 1, UI 1, X 4 | Dégâts de compétence: 20000; Buff périodique | 1 | 1 IdentityPoint | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | Chapitre principal 10301 |
+#### Overdrive
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 4
+**Prérequis :** RACINE
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 1 IdentityPoint | Dégâts de compétence: 20000; Buff périodique | NON DÉTERMINÉ | NON DÉTERMINÉ | Chapitre principal 10301 | CONFIRMÉ PAR LES GAMEDATA |
 
 ## MAGICIEN ÉLÉMENTAIRE
 
 ### Branche 1 — Glace
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Tempête glacée | profondeur 1, UI 1, X 3 | Compétence active | 1 | 2 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 0 pts requis |
-| Augmentation des dégâts de chaîne | profondeur 2, UI 2, X 3 | Accumulation élémentaire: 1 | 1 | 4 SkillPoint | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 2 pts requis |
-| Iceberg | profondeur 3, UI 3, X 3 | Compétence active | 1 | 2 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 6 pts requis |
-| Amélioration de Magicien élémentaire : Gel I | profondeur 4, UI 4, X 2 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 8 pts requis |
-| Augmentation de la Pénétration de défense | profondeur 4, UI 4, X 4 | Pénétration: 80 | 1 | 3 SkillPoint | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 8 pts requis |
-| Lame de glace | profondeur 4, UI 5, X 3 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 8 pts requis |
-| Amélioration de Magicien élémentaire : Gel II | profondeur 5, UI 6, X 2 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 12 pts requis |
-| Infusion élémentaire | profondeur 5, UI 6, X 4 | Effet déclenché | 1 | 3 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 17 pts requis |
-| Anneau gelé | profondeur 5, UI 7, X 3 | Effet déclenché | 1 | 5 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 12 pts requis |
-| Harmonie de givrefeu | profondeur 6, UI 8, X 4 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 20 pts requis |
+#### Tempête glacée
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
+**Prérequis :** RACINE
+**Débloque :** Augmentation des dégâts de chaîne
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Augmentation des dégâts de chaîne
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
+**Prérequis :** Tempête glacée
+**Débloque :** Iceberg
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Accumulation élémentaire: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 2 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Iceberg
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
+**Prérequis :** Augmentation des dégâts de chaîne
+**Débloque :** Amélioration de Magicien élémentaire : Gel I, Augmentation de la Pénétration de défense, Lame de glace
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Amélioration de Magicien élémentaire : Gel I
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 2
+**Prérequis :** Iceberg
+**Débloque :** Amélioration de Magicien élémentaire : Gel II
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 8 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Augmentation de la Pénétration de défense
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 4
+**Prérequis :** Iceberg
+**Débloque :** Infusion élémentaire
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | Pénétration: 80 | NON DÉTERMINÉ | NON DÉTERMINÉ | 8 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Lame de glace
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 5, X 3
+**Prérequis :** Iceberg
+**Débloque :** Infusion élémentaire, Anneau gelé
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 8 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Amélioration de Magicien élémentaire : Gel II
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 6, X 2
+**Prérequis :** Amélioration de Magicien élémentaire : Gel I
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Infusion élémentaire
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 6, X 4
+**Prérequis :** Augmentation de la Pénétration de défense, Lame de glace
+**Débloque :** Harmonie de givrefeu
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 17 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Anneau gelé
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 7, X 3
+**Prérequis :** Lame de glace
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 5 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Harmonie de givrefeu
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 8, X 4
+**Prérequis :** Infusion élémentaire
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 20 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Feu
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Dague de tempête de feu | profondeur 1, UI 1, X 3 | Compétence active | 1 | 2 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 0 pts requis |
-| Coup bonus | profondeur 2, UI 2, X 3 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 2 pts requis |
-| Feu sauvage | profondeur 3, UI 3, X 3 | Compétence active | 1 | 2 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 6 pts requis |
-| Pénétration de défense augmentée | profondeur 4, UI 4, X 2 | Pénétration: 80 | 1 | 3 SkillPoint | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 8 pts requis |
-| Amélioration de Magicien élémentaire : Feu I | profondeur 4, UI 4, X 4 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 8 pts requis |
-| Armure en fusion | profondeur 4, UI 5, X 3 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 8 pts requis |
-| Boost élémentaire | profondeur 5, UI 6, X 2 | Effet déclenché | 1 | 5 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 17 pts requis |
-| Amélioration de Magicien élémentaire : Feu II | profondeur 5, UI 6, X 4 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 12 pts requis |
-| Annihilation | profondeur 5, UI 7, X 3 | Compétence active | 1 | 3 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 12 pts requis |
-| Paume embrasée | profondeur 6, UI 8, X 2 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 22 pts requis |
+#### Dague de tempête de feu
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
+**Prérequis :** RACINE
+**Débloque :** Coup bonus
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Coup bonus
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
+**Prérequis :** Dague de tempête de feu
+**Débloque :** Feu sauvage
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 2 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Feu sauvage
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
+**Prérequis :** Coup bonus
+**Débloque :** Pénétration de défense augmentée, Amélioration de Magicien élémentaire : Feu I, Armure en fusion
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Pénétration de défense augmentée
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 2
+**Prérequis :** Feu sauvage
+**Débloque :** Boost élémentaire
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | Pénétration: 80 | NON DÉTERMINÉ | NON DÉTERMINÉ | 8 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Amélioration de Magicien élémentaire : Feu I
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 4
+**Prérequis :** Feu sauvage
+**Débloque :** Amélioration de Magicien élémentaire : Feu II
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 8 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Armure en fusion
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 5, X 3
+**Prérequis :** Feu sauvage
+**Débloque :** Boost élémentaire, Annihilation
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 8 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Boost élémentaire
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 6, X 2
+**Prérequis :** Pénétration de défense augmentée, Armure en fusion
+**Débloque :** Paume embrasée
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 5 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 17 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Amélioration de Magicien élémentaire : Feu II
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 6, X 4
+**Prérequis :** Amélioration de Magicien élémentaire : Feu I
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Annihilation
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 7, X 3
+**Prérequis :** Armure en fusion
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | Compétence active | Non chiffré | Non chiffré | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Paume embrasée
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 8, X 2
+**Prérequis :** Boost élémentaire
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 22 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Nœud de classe / Overdrive
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Overdrive | profondeur 1, UI 1, X 4 | Passif / Overdrive | 1 | 1 IdentityPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | Chapitre principal 10301 |
+#### Overdrive
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 4
+**Prérequis :** RACINE
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 1 IdentityPoint | Passif / Overdrive | Non chiffré | Non chiffré | Chapitre principal 10301 | NON DÉTERMINÉ |
 
 ## SOUVERAIN
 
 ### Branche 1 — Toucher
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Toucher du maître | profondeur 1, UI 1, X 3 | Compétence active | 1 | 2 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 0 pts requis |
-| Efficacité de la subsistance | profondeur 2, UI 2, X 3 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 2 pts requis |
-| Suppression I | profondeur 3, UI 3, X 2 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 6 pts requis |
-| Roue de pleine lune | profondeur 3, UI 3, X 4 | Compétence active | 1 | 2 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 6 pts requis |
-| Mépris | profondeur 4, UI 4, X 3 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 8 pts requis |
-| Festin des faibles | profondeur 5, UI 5, X 3 | Effet déclenché | 1 | 5 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 12 pts requis |
-| Suppression II | profondeur 6, UI 6, X 2 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 25 pts requis |
-| Trou noir | profondeur 6, UI 6, X 4 | Compétence active | 1 | 2 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 17 pts requis |
-| Champ de bataille de la domination | profondeur 7, UI 7, X 3 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 36 pts requis |
-| Main de célérité | profondeur 8, UI 8, X 3 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 40 pts requis |
+#### Toucher du maître
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
+**Prérequis :** RACINE
+**Débloque :** Efficacité de la subsistance
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Efficacité de la subsistance
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
+**Prérequis :** Toucher du maître
+**Débloque :** Suppression I, Roue de pleine lune
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 2 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Suppression I
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 2
+**Prérequis :** Efficacité de la subsistance
+**Débloque :** Suppression II
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Roue de pleine lune
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 4
+**Prérequis :** Efficacité de la subsistance
+**Débloque :** Mépris
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Mépris
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 3
+**Prérequis :** Roue de pleine lune
+**Débloque :** Festin des faibles
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 8 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Festin des faibles
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 3
+**Prérequis :** Mépris
+**Débloque :** Suppression II, Trou noir
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 5 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Suppression II
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 2
+**Prérequis :** Suppression I, Festin des faibles
+**Débloque :** Champ de bataille de la domination
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 25 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Trou noir
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 4
+**Prérequis :** Festin des faibles
+**Débloque :** Champ de bataille de la domination
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 17 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Champ de bataille de la domination
+
+**Position dans l'arbre :** profondeur technique 7, rangée UI 7, X 3
+**Prérequis :** Suppression II, Trou noir
+**Débloque :** Main de célérité
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 36 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Main de célérité
+
+**Position dans l'arbre :** profondeur technique 8, rangée UI 8, X 3
+**Prérequis :** Champ de bataille de la domination
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 40 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Changement gravitationnel
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Dispersion | profondeur 1, UI 1, X 3 | Compétence active | 1 | 2 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 0 pts requis |
-| Dégâts augmentés contre les cibles à terre | profondeur 2, UI 2, X 3 | Dégâts contre réaction: 480 | 1 | 4 SkillPoint | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 2 pts requis |
-| Libération | profondeur 3, UI 3, X 3 | Compétence active | 1 | 2 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 6 pts requis |
-| Désintégration | profondeur 4, UI 4, X 2 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 8 pts requis |
-| Aspiration gravitationnelle | profondeur 4, UI 4, X 4 | Effet déclenché | 1 | 5 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 8 pts requis |
-| Attaque finale | profondeur 5, UI 5, X 3 | Compétence active | 1 | 2 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 13 pts requis |
-| Changement gravitationnel | profondeur 6, UI 6, X 3 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 15 pts requis |
-| Désintégration multipliée | profondeur 7, UI 7, X 2 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 25 pts requis |
-| Posture parfaite | profondeur 7, UI 7, X 4 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 19 pts requis |
-| Armée de conquête | profondeur 8, UI 8, X 4 | Effet déclenché | 1 | 4 SkillPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 23 pts requis |
+#### Dispersion
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
+**Prérequis :** RACINE
+**Débloque :** Dégâts augmentés contre les cibles à terre
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Dégâts augmentés contre les cibles à terre
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
+**Prérequis :** Dispersion
+**Débloque :** Libération
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Dégâts contre réaction: 480 | NON DÉTERMINÉ | NON DÉTERMINÉ | 2 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Libération
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
+**Prérequis :** Dégâts augmentés contre les cibles à terre
+**Débloque :** Désintégration, Aspiration gravitationnelle
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Désintégration
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 2
+**Prérequis :** Libération
+**Débloque :** Désintégration multipliée
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 8 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Aspiration gravitationnelle
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 4
+**Prérequis :** Libération
+**Débloque :** Attaque finale
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 5 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 8 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Attaque finale
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 3
+**Prérequis :** Aspiration gravitationnelle
+**Débloque :** Changement gravitationnel
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 13 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Changement gravitationnel
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 3
+**Prérequis :** Attaque finale
+**Débloque :** Désintégration multipliée, Posture parfaite
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 15 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Désintégration multipliée
+
+**Position dans l'arbre :** profondeur technique 7, rangée UI 7, X 2
+**Prérequis :** Désintégration, Changement gravitationnel
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 25 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Posture parfaite
+
+**Position dans l'arbre :** profondeur technique 7, rangée UI 7, X 4
+**Prérequis :** Changement gravitationnel
+**Débloque :** Armée de conquête
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 19 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Armée de conquête
+
+**Position dans l'arbre :** profondeur technique 8, rangée UI 8, X 4
+**Prérequis :** Posture parfaite
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 23 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Nœud de classe / Overdrive
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Overdrive | profondeur 1, UI 1, X 4 | Passif / Overdrive | 1 | 1 IdentityPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | Chapitre principal 10501 |
+#### Overdrive
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 4
+**Prérequis :** RACINE
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 1 IdentityPoint | Passif / Overdrive | Non chiffré | Non chiffré | Chapitre principal 10501 | NON DÉTERMINÉ |
 
 # ARBRES D'ARMES
 
@@ -194,184 +923,1109 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 ### Branche 1 — Cœur d'acier
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Hausse des dégâts de compétence à l'épée | profondeur 1, UI 1, X 3 | Dégâts de compétence d'arme: 2 | 3 | 3 WeaponPoint/rang - par rang probable | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis |
-| Charge frontale | profondeur 2, UI 2, X 3 | Dégâts dans le dos: -750; Dégâts de compétence: 450 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 3 pts requis |
-| Protection de l'épée | profondeur 3, UI 3, X 3 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 6 pts requis |
-| Attaque augmentée | profondeur 4, UI 4, X 2 | Attaque: 0,5 % | 3 | 2 WeaponPoint/rang - par rang probable | +0,5 % | +1,5 % | NON DÉTERMINÉ | 9 pts requis |
-| Défense augmentée | profondeur 4, UI 4, X 4 | Défense: 1 % | 3 | 2 WeaponPoint/rang - par rang probable | +1 % | +3 % | NON DÉTERMINÉ | 9 pts requis |
-| Cœur d'acier | profondeur 5, UI 5, X 3 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 16 pts requis |
-| Affrontement frontal | profondeur 6, UI 6, X 3 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 19 pts requis |
+#### Hausse des dégâts de compétence à l'épée
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
+**Prérequis :** RACINE
+**Débloque :** Charge frontale (depuis rang I), Charge frontale (depuis rang II), Charge frontale (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint - par rang probable | Dégâts de compétence d'arme: 2 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| II | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 2 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| III | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 2 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+
+#### Charge frontale
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
+**Prérequis :** Hausse des dégâts de compétence à l'épée
+**Débloque :** Protection de l'épée
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Dégâts dans le dos: -750; Dégâts de compétence: 450 | NON DÉTERMINÉ | NON DÉTERMINÉ | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Protection de l'épée
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
+**Prérequis :** Charge frontale
+**Débloque :** Attaque augmentée, Défense augmentée
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Attaque augmentée
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 2
+**Prérequis :** Protection de l'épée
+**Débloque :** Cœur d'acier (depuis rang I), Cœur d'acier (depuis rang II), Cœur d'acier (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 WeaponPoint - par rang probable | Attaque: 0,5 % | +0,5 % | 0,5 % | 9 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | Attaque: 0,5 % | +0,5 % | 1 % | 9 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | Attaque: 0,5 % | +0,5 % | 1,5 % | 9 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Défense augmentée
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 4
+**Prérequis :** Protection de l'épée
+**Débloque :** Cœur d'acier (depuis rang I), Cœur d'acier (depuis rang II), Cœur d'acier (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 WeaponPoint - par rang probable | Défense: 1 % | +1 % | 1 % | 9 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | Défense: 1 % | +1 % | 2 % | 9 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | Défense: 1 % | +1 % | 3 % | 9 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Cœur d'acier
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 3
+**Prérequis :** Attaque augmentée, Défense augmentée
+**Débloque :** Affrontement frontal
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 16 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Affrontement frontal
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 3
+**Prérequis :** Cœur d'acier
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 19 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Résistance à la lame
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Hausse des dégâts de compétence à l'épée | profondeur 1, UI 1, X 3 | Dégâts de compétence d'arme: 2 | 3 | 3 WeaponPoint/rang - par rang probable | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis |
-| Épée gardienne | profondeur 2, UI 2, X 2 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 3 pts requis |
-| Attaquer et bloquer | profondeur 2, UI 2, X 4 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 3 pts requis |
-| Précision augmentée | profondeur 3, UI 3, X 3 | Précision: 0,5 % | 3 | 2 WeaponPoint/rang - par rang probable | +0,5 % | +1,5 % | NON DÉTERMINÉ | 12 pts requis |
-| Pénétration de défense augmentée | profondeur 4, UI 4, X 3 | Pénétration: 0,25 % | 3 | 2 WeaponPoint/rang - par rang probable | +0,25 % | +0,75 % | NON DÉTERMINÉ | 14 pts requis |
-| Lancement de contre-attaque | profondeur 5, UI 5, X 3 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 16 pts requis |
-| Frappe maîtrisée | profondeur 6, UI 6, X 3 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 19 pts requis |
+#### Hausse des dégâts de compétence à l'épée
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
+**Prérequis :** RACINE
+**Débloque :** Épée gardienne (depuis rang II), Épée gardienne (depuis rang I), Épée gardienne (depuis rang III), Attaquer et bloquer (depuis rang III), Attaquer et bloquer (depuis rang II), Attaquer et bloquer (depuis rang I)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint - par rang probable | Dégâts de compétence d'arme: 2 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| II | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 2 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| III | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 2 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+
+#### Épée gardienne
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 2
+**Prérequis :** Hausse des dégâts de compétence à l'épée
+**Débloque :** Précision augmentée
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Attaquer et bloquer
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 4
+**Prérequis :** Hausse des dégâts de compétence à l'épée
+**Débloque :** Précision augmentée
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Précision augmentée
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
+**Prérequis :** Épée gardienne, Attaquer et bloquer
+**Débloque :** Pénétration de défense augmentée (depuis rang I), Pénétration de défense augmentée (depuis rang II), Pénétration de défense augmentée (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 WeaponPoint - par rang probable | Précision: 0,5 % | +0,5 % | 0,5 % | 12 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | Précision: 0,5 % | +0,5 % | 1 % | 12 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | Précision: 0,5 % | +0,5 % | 1,5 % | 12 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Pénétration de défense augmentée
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 3
+**Prérequis :** Précision augmentée
+**Débloque :** Lancement de contre-attaque (depuis rang II), Lancement de contre-attaque (depuis rang III), Lancement de contre-attaque (depuis rang I)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 WeaponPoint - par rang probable | Pénétration: 0,25 % | +0,25 % | 0,25 % | 14 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | Pénétration: 0,25 % | +0,25 % | 0,5 % | 14 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | Pénétration: 0,25 % | +0,25 % | 0,75 % | 14 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Lancement de contre-attaque
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 3
+**Prérequis :** Pénétration de défense augmentée
+**Débloque :** Frappe maîtrisée
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 16 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Frappe maîtrisée
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 3
+**Prérequis :** Lancement de contre-attaque
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 19 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ## DAGUE
 
 ### Branche 1 — Plaie mortelle
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Taux de coup critique augmenté | profondeur 1, UI 1, X 2 | Taux critique: 0,25 % | 3 | 2 WeaponPoint/rang - par rang probable | +0,25 % | +0,75 % | NON DÉTERMINÉ | 0 pts requis |
-| Dégâts de coup critique augmentés | profondeur 1, UI 1, X 4 | Dégâts critiques: 0,25 % | 3 | 2 WeaponPoint/rang - par rang probable | +0,25 % | +0,75 % | NON DÉTERMINÉ | 0 pts requis |
-| Plaie mortelle | profondeur 2, UI 2, X 3 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 4 pts requis |
-| Taux de coup critique augmenté | profondeur 3, UI 3, X 2 | Taux critique: 0,25 % | 3 | 2 WeaponPoint/rang - par rang probable | +0,25 % | +0,75 % | NON DÉTERMINÉ | 7 pts requis |
-| Dégâts de coup critique augmentés | profondeur 3, UI 3, X 4 | Dégâts critiques: 0,25 % | 3 | 2 WeaponPoint/rang - par rang probable | +0,25 % | +0,75 % | NON DÉTERMINÉ | 7 pts requis |
-| Amplification de la douleur | profondeur 4, UI 4, X 2 | Dégâts contre cible affectée: 3 % | 1 | 3 WeaponPoint | +3 % | +3 % | 1 %/WeaponPoint | 9 pts requis |
-| Approche violente | profondeur 4, UI 4, X 4 | Dégâts de compétence: 1500 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 9 pts requis |
-| Frappe préparée | profondeur 5, UI 5, X 3 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 20 pts requis |
+#### Taux de coup critique augmenté
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 2
+**Prérequis :** RACINE
+**Débloque :** Plaie mortelle (depuis rang II), Plaie mortelle (depuis rang III), Plaie mortelle (depuis rang I)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 WeaponPoint - par rang probable | Taux critique: 0,25 % | +0,25 % | 0,25 % | 0 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | Taux critique: 0,25 % | +0,25 % | 0,5 % | 0 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | Taux critique: 0,25 % | +0,25 % | 0,75 % | 0 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Dégâts de coup critique augmentés
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 4
+**Prérequis :** RACINE
+**Débloque :** Plaie mortelle (depuis rang II), Plaie mortelle (depuis rang III), Plaie mortelle (depuis rang I)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 WeaponPoint - par rang probable | Dégâts critiques: 0,25 % | +0,25 % | 0,25 % | 0 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | Dégâts critiques: 0,25 % | +0,25 % | 0,5 % | 0 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | Dégâts critiques: 0,25 % | +0,25 % | 0,75 % | 0 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Plaie mortelle
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
+**Prérequis :** Taux de coup critique augmenté, Dégâts de coup critique augmentés
+**Débloque :** Taux de coup critique augmenté, Dégâts de coup critique augmentés
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 4 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Taux de coup critique augmenté
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 2
+**Prérequis :** Plaie mortelle
+**Débloque :** Amplification de la douleur (depuis rang I), Amplification de la douleur (depuis rang II), Amplification de la douleur (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 WeaponPoint - par rang probable | Taux critique: 0,25 % | +0,25 % | 0,25 % | 7 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | Taux critique: 0,25 % | +0,25 % | 0,5 % | 7 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | Taux critique: 0,25 % | +0,25 % | 0,75 % | 7 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Dégâts de coup critique augmentés
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 4
+**Prérequis :** Plaie mortelle
+**Débloque :** Approche violente (depuis rang I), Approche violente (depuis rang II), Approche violente (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 WeaponPoint - par rang probable | Dégâts critiques: 0,25 % | +0,25 % | 0,25 % | 7 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | Dégâts critiques: 0,25 % | +0,25 % | 0,5 % | 7 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | Dégâts critiques: 0,25 % | +0,25 % | 0,75 % | 7 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Amplification de la douleur
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 2
+**Prérequis :** Taux de coup critique augmenté
+**Débloque :** Frappe préparée
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Dégâts contre cible affectée: 3 % | +3 % | 3 % | 9 pts requis | FORTEMENT PROBABLE |
+
+#### Approche violente
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 4
+**Prérequis :** Dégâts de coup critique augmentés
+**Débloque :** Frappe préparée
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Dégâts de compétence: 1500 | NON DÉTERMINÉ | NON DÉTERMINÉ | 9 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Frappe préparée
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 3
+**Prérequis :** Amplification de la douleur, Approche violente
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 20 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Éviction
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Dégâts de compétence à la dague augmentés | profondeur 1, UI 1, X 2 | Dégâts de compétence d'arme: 1 | 3 | 3 WeaponPoint/rang - par rang probable | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis |
-| Dégâts des attaques dans le dos augmentés | profondeur 1, UI 1, X 4 | Dégâts dans le dos: 150 | 3 | 3 WeaponPoint/rang - par rang probable | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis |
-| Attaque en embuscade | profondeur 2, UI 2, X 3 | Dégâts dans le dos: 750; Dégâts de compétence: -300 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis |
-| Dégâts de Foulée de l'ombre augmentés | profondeur 3, UI 3, X 3 | Dégâts de compétence: 1500 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 9 pts requis |
-| Frappe de l'ombre | profondeur 4, UI 4, X 2 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 12 pts requis |
-| Faille de l'ombre | profondeur 4, UI 4, X 4 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 12 pts requis |
-| Coup dans le dos | profondeur 5, UI 5, X 3 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 21 pts requis |
+#### Dégâts de compétence à la dague augmentés
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 2
+**Prérequis :** RACINE
+**Débloque :** Attaque en embuscade (depuis rang II), Attaque en embuscade (depuis rang III), Attaque en embuscade (depuis rang I)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint - par rang probable | Dégâts de compétence d'arme: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| II | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| III | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+
+#### Dégâts des attaques dans le dos augmentés
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 4
+**Prérequis :** RACINE
+**Débloque :** Attaque en embuscade (depuis rang II), Attaque en embuscade (depuis rang III), Attaque en embuscade (depuis rang I)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint - par rang probable | Dégâts dans le dos: 150 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| II | 3 WeaponPoint/rang - par rang probable | Dégâts dans le dos: 150 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| III | 3 WeaponPoint/rang - par rang probable | Dégâts dans le dos: 150 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+
+#### Attaque en embuscade
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
+**Prérequis :** Dégâts de compétence à la dague augmentés, Dégâts des attaques dans le dos augmentés
+**Débloque :** Dégâts de Foulée de l'ombre augmentés
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Dégâts dans le dos: 750; Dégâts de compétence: -300 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Dégâts de Foulée de l'ombre augmentés
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
+**Prérequis :** Attaque en embuscade
+**Débloque :** Frappe de l'ombre, Faille de l'ombre
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Dégâts de compétence: 1500 | NON DÉTERMINÉ | NON DÉTERMINÉ | 9 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Frappe de l'ombre
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 2
+**Prérequis :** Dégâts de Foulée de l'ombre augmentés
+**Débloque :** Coup dans le dos
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Faille de l'ombre
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 4
+**Prérequis :** Dégâts de Foulée de l'ombre augmentés
+**Débloque :** Coup dans le dos
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Coup dans le dos
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 3
+**Prérequis :** Frappe de l'ombre, Faille de l'ombre
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 21 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ## ARC
 
 ### Branche 1 — Visée sécurisée
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Dégâts de compétence à l'arc augmentés | profondeur 1, UI 1, X 2 | Dégâts de compétence d'arme: 3 | 3 | 3 WeaponPoint/rang - par rang probable | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis |
-| Précision augmentée | profondeur 2, UI 2, X 3 | Précision: 0,5 % | 3 | 2 WeaponPoint/rang - par rang probable | +0,5 % | +1,5 % | NON DÉTERMINÉ | 3 pts requis |
-| Tir d'esquive | profondeur 2, UI 3, X 2 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 3 pts requis |
-| Tir en pleine tête | profondeur 3, UI 3, X 4 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 5 pts requis |
-| Pénétration de défense augmentée | profondeur 4, UI 4, X 3 | Pénétration: 0,25 % | 3 | 2 WeaponPoint/rang - par rang probable | +0,25 % | +0,75 % | NON DÉTERMINÉ | 8 pts requis |
-| Visée sécurisée | profondeur 5, UI 5, X 2 | Dégâts infligés: 5,5 %; Dégâts selon distance: -1550 | 1 | 3 WeaponPoint | +5,5 % | +5,5 % | 1,83 %/WeaponPoint | 16 pts requis |
-| Distance parfaite | profondeur 6, UI 6, X 3 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 19 pts requis |
+#### Dégâts de compétence à l'arc augmentés
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 2
+**Prérequis :** RACINE
+**Débloque :** Précision augmentée (depuis rang III), Précision augmentée (depuis rang II), Précision augmentée (depuis rang I), Tir d'esquive (depuis rang I), Tir d'esquive (depuis rang III), Tir d'esquive (depuis rang II)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint - par rang probable | Dégâts de compétence d'arme: 3 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| II | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 3 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| III | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 3 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+
+#### Précision augmentée
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
+**Prérequis :** Dégâts de compétence à l'arc augmentés
+**Débloque :** Tir en pleine tête (depuis rang I), Tir en pleine tête (depuis rang II), Tir en pleine tête (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 WeaponPoint - par rang probable | Précision: 0,5 % | +0,5 % | 0,5 % | 3 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | Précision: 0,5 % | +0,5 % | 1 % | 3 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | Précision: 0,5 % | +0,5 % | 1,5 % | 3 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Tir d'esquive
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 3, X 2
+**Prérequis :** Dégâts de compétence à l'arc augmentés
+**Débloque :** Visée sécurisée
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Tir en pleine tête
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 4
+**Prérequis :** Précision augmentée
+**Débloque :** Pénétration de défense augmentée
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 5 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Pénétration de défense augmentée
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 3
+**Prérequis :** Tir en pleine tête
+**Débloque :** Visée sécurisée (depuis rang I), Visée sécurisée (depuis rang II), Visée sécurisée (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 WeaponPoint - par rang probable | Pénétration: 0,25 % | +0,25 % | 0,25 % | 8 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | Pénétration: 0,25 % | +0,25 % | 0,5 % | 8 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | Pénétration: 0,25 % | +0,25 % | 0,75 % | 8 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Visée sécurisée
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 2
+**Prérequis :** Tir d'esquive, Pénétration de défense augmentée
+**Débloque :** Distance parfaite
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Dégâts infligés: 5,5 %; Dégâts selon distance: -1550 | +5,5 % | 5,5 % | 16 pts requis | CONFIRMÉ PAR LES GAMEDATA; FORTEMENT PROBABLE |
+
+#### Distance parfaite
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 3
+**Prérequis :** Visée sécurisée
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 19 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Visée concentrée
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Dégâts de compétence à l'arc augmentés | profondeur 1, UI 1, X 4 | Dégâts de compétence d'arme: 3 | 3 | 3 WeaponPoint/rang - par rang probable | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis |
-| Taux de coup critique augmenté | profondeur 2, UI 2, X 3 | Taux critique: 0,25 % | 3 | 2 WeaponPoint/rang - par rang probable | +0,25 % | +0,75 % | NON DÉTERMINÉ | 3 pts requis |
-| Frappe calculée | profondeur 3, UI 3, X 2 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 5 pts requis |
-| Tir en reculant | profondeur 2, UI 3, X 4 | Dégâts de compétence: 1500 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 3 pts requis |
-| Dégâts de coup critique augmentés | profondeur 4, UI 4, X 3 | Dégâts critiques: 0,25 % | 3 | 2 WeaponPoint/rang - par rang probable | +0,25 % | +0,75 % | NON DÉTERMINÉ | 8 pts requis |
-| Frappe véloce | profondeur 5, UI 5, X 4 | Conversion stat -> dégâts: 2 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 16 pts requis |
-| Veille funeste | profondeur 6, UI 6, X 3 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 19 pts requis |
+#### Dégâts de compétence à l'arc augmentés
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 4
+**Prérequis :** RACINE
+**Débloque :** Taux de coup critique augmenté (depuis rang III), Taux de coup critique augmenté (depuis rang II), Taux de coup critique augmenté (depuis rang I), Tir en reculant (depuis rang III), Tir en reculant (depuis rang II), Tir en reculant (depuis rang I)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint - par rang probable | Dégâts de compétence d'arme: 3 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| II | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 3 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| III | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 3 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+
+#### Taux de coup critique augmenté
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
+**Prérequis :** Dégâts de compétence à l'arc augmentés
+**Débloque :** Frappe calculée (depuis rang III), Frappe calculée (depuis rang I), Frappe calculée (depuis rang II)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 WeaponPoint - par rang probable | Taux critique: 0,25 % | +0,25 % | 0,25 % | 3 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | Taux critique: 0,25 % | +0,25 % | 0,5 % | 3 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | Taux critique: 0,25 % | +0,25 % | 0,75 % | 3 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Frappe calculée
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 2
+**Prérequis :** Taux de coup critique augmenté
+**Débloque :** Dégâts de coup critique augmentés
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 5 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Tir en reculant
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 3, X 4
+**Prérequis :** Dégâts de compétence à l'arc augmentés
+**Débloque :** Frappe véloce
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Dégâts de compétence: 1500 | NON DÉTERMINÉ | NON DÉTERMINÉ | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Dégâts de coup critique augmentés
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 3
+**Prérequis :** Frappe calculée
+**Débloque :** Frappe véloce (depuis rang I), Frappe véloce (depuis rang II), Frappe véloce (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 WeaponPoint - par rang probable | Dégâts critiques: 0,25 % | +0,25 % | 0,25 % | 8 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | Dégâts critiques: 0,25 % | +0,25 % | 0,5 % | 8 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | Dégâts critiques: 0,25 % | +0,25 % | 0,75 % | 8 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Frappe véloce
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 4
+**Prérequis :** Tir en reculant, Dégâts de coup critique augmentés
+**Débloque :** Veille funeste
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Conversion stat -> dégâts: 2 | NON DÉTERMINÉ | NON DÉTERMINÉ | 16 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Veille funeste
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 3
+**Prérequis :** Frappe véloce
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 19 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ## ARME À FEU
 
 ### Branche 1 — Visée patiente
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Rechargement | profondeur 1, UI 1, X 1 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 0 pts requis |
-| Dégâts de compétence à l'arme à feu augmentés | profondeur 1, UI 1, X 2 | Dégâts de compétence d'arme: 4 | 3 | 3 WeaponPoint/rang - par rang probable | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis |
-| Pénétration de défense augmentée | profondeur 2, UI 2, X 3 | Pénétration: 0,25 % | 3 | 2 WeaponPoint/rang - par rang probable | +0,25 % | +0,75 % | NON DÉTERMINÉ | 3 pts requis |
-| Munitions concentrées | profondeur 3, UI 3, X 2 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 5 pts requis |
-| Pénétration de défense augmentée | profondeur 4, UI 4, X 3 | Pénétration: 0,25 % | 3 | 2 WeaponPoint/rang - par rang probable | +0,25 % | +0,75 % | NON DÉTERMINÉ | 8 pts requis |
-| Flux balistique | profondeur 5, UI 5, X 2 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 10 pts requis |
-| Tir relais | profondeur 6, UI 6, X 1 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 13 pts requis |
+#### Rechargement
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 1
+**Prérequis :** RACINE
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Dégâts de compétence à l'arme à feu augmentés
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 2
+**Prérequis :** RACINE
+**Débloque :** Pénétration de défense augmentée (depuis rang II), Pénétration de défense augmentée (depuis rang III), Pénétration de défense augmentée (depuis rang I)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint - par rang probable | Dégâts de compétence d'arme: 4 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| II | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 4 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| III | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 4 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+
+#### Pénétration de défense augmentée
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
+**Prérequis :** Dégâts de compétence à l'arme à feu augmentés
+**Débloque :** Munitions concentrées (depuis rang I), Munitions concentrées (depuis rang II), Munitions concentrées (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 WeaponPoint - par rang probable | Pénétration: 0,25 % | +0,25 % | 0,25 % | 3 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | Pénétration: 0,25 % | +0,25 % | 0,5 % | 3 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | Pénétration: 0,25 % | +0,25 % | 0,75 % | 3 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Munitions concentrées
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 2
+**Prérequis :** Pénétration de défense augmentée
+**Débloque :** Pénétration de défense augmentée
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 5 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Pénétration de défense augmentée
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 3
+**Prérequis :** Munitions concentrées
+**Débloque :** Flux balistique (depuis rang II), Flux balistique (depuis rang III), Flux balistique (depuis rang I)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 WeaponPoint - par rang probable | Pénétration: 0,25 % | +0,25 % | 0,25 % | 8 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | Pénétration: 0,25 % | +0,25 % | 0,5 % | 8 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | Pénétration: 0,25 % | +0,25 % | 0,75 % | 8 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Flux balistique
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 2
+**Prérequis :** Pénétration de défense augmentée
+**Débloque :** Tir relais
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 10 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Tir relais
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 1
+**Prérequis :** Flux balistique
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 13 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Arme à feu - Kata
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Dégâts de compétence à l'arme à feu augmentés | profondeur 1, UI 1, X 2 | Dégâts de compétence d'arme: 4 | 3 | 3 WeaponPoint/rang - par rang probable | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis |
-| Attaque rapide | profondeur 1, UI 1, X 3 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 0 pts requis |
-| Massacre | profondeur 2, UI 2, X 1 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 3 pts requis |
-| Tir à bout portant | profondeur 3, UI 3, X 2 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 6 pts requis |
-| Massacre II | profondeur 4, UI 4, X 1 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 9 pts requis |
-| Coup d'esquive | profondeur 5, UI 5, X 2 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 12 pts requis |
-| Tir critique | profondeur 6, UI 6, X 3 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 15 pts requis |
+#### Dégâts de compétence à l'arme à feu augmentés
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 2
+**Prérequis :** RACINE
+**Débloque :** Massacre (depuis rang I), Massacre (depuis rang II), Massacre (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint - par rang probable | Dégâts de compétence d'arme: 4 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| II | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 4 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| III | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 4 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+
+#### Attaque rapide
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
+**Prérequis :** RACINE
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Massacre
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 1
+**Prérequis :** Dégâts de compétence à l'arme à feu augmentés
+**Débloque :** Tir à bout portant
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Tir à bout portant
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 2
+**Prérequis :** Massacre
+**Débloque :** Massacre II
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Massacre II
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 1
+**Prérequis :** Tir à bout portant
+**Débloque :** Coup d'esquive
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 9 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Coup d'esquive
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 2
+**Prérequis :** Massacre II
+**Débloque :** Tir critique
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Tir critique
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 3
+**Prérequis :** Coup d'esquive
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 15 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ## FOCALISATEUR
 
 ### Branche 1 — Énergie de mana fluide
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Dégâts de compétence de Concentration augmentés | profondeur 1, UI 1, X 2 | Dégâts de compétence d'arme: 7 | 3 | 3 WeaponPoint/rang - par rang probable | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis |
-| Dégâts de compétence de Concentration augmentés | profondeur 1, UI 1, X 4 | Dégâts de compétence d'arme: 7 | 3 | 3 WeaponPoint/rang - par rang probable | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis |
-| Amélioration de mana | profondeur 2, UI 2, X 3 | Dégâts de compétence d'arme: 7; Réduction coût MP: -2000 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis |
-| Augmente les PM max | profondeur 3, UI 3, X 3 | PM max: 66 | 3 | 2 WeaponPoint/rang - par rang probable | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 9 pts requis |
-| Combo de mana | profondeur 4, UI 4, X 2 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 11 pts requis |
-| Carnage de mana | profondeur 4, UI 4, X 4 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 11 pts requis |
-| Afflux d'énergie de mana | profondeur 5, UI 5, X 3 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 19 pts requis |
+#### Dégâts de compétence de Concentration augmentés
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 2
+**Prérequis :** RACINE
+**Débloque :** Amélioration de mana (depuis rang I), Amélioration de mana (depuis rang II), Amélioration de mana (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint - par rang probable | Dégâts de compétence d'arme: 7 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| II | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 7 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| III | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 7 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+
+#### Dégâts de compétence de Concentration augmentés
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 4
+**Prérequis :** RACINE
+**Débloque :** Amélioration de mana (depuis rang I), Amélioration de mana (depuis rang II), Amélioration de mana (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint - par rang probable | Dégâts de compétence d'arme: 7 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| II | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 7 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| III | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 7 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+
+#### Amélioration de mana
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
+**Prérequis :** Dégâts de compétence de Concentration augmentés
+**Débloque :** Augmente les PM max
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Dégâts de compétence d'arme: 7; Réduction coût MP: -2000 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Augmente les PM max
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
+**Prérequis :** Amélioration de mana
+**Débloque :** Combo de mana (depuis rang II), Combo de mana (depuis rang I), Combo de mana (depuis rang III), Carnage de mana (depuis rang I), Carnage de mana (depuis rang III), Carnage de mana (depuis rang II)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 WeaponPoint - par rang probable | PM max: 66 | NON DÉTERMINÉ | NON DÉTERMINÉ | 9 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | PM max: 66 | NON DÉTERMINÉ | NON DÉTERMINÉ | 9 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | PM max: 66 | NON DÉTERMINÉ | NON DÉTERMINÉ | 9 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+
+#### Combo de mana
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 2
+**Prérequis :** Augmente les PM max
+**Débloque :** Afflux d'énergie de mana
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 11 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Carnage de mana
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 4
+**Prérequis :** Augmente les PM max
+**Débloque :** Afflux d'énergie de mana
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 11 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Afflux d'énergie de mana
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 3
+**Prérequis :** Combo de mana, Carnage de mana
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 19 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Recherche de PM
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Dégâts de compétence de Concentration augmentés | profondeur 1, UI 1, X 3 | Dégâts de compétence d'arme: 7 | 3 | 3 WeaponPoint/rang - par rang probable | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis |
-| Détection de faiblesse | profondeur 2, UI 2, X 3 | Dégâts de faiblesse élémentaire: 150 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 3 pts requis |
-| Amélioration d'accablement | profondeur 3, UI 3, X 2 | Accumulation élémentaire: 1 | 3 | 3 WeaponPoint/rang - par rang probable | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis |
-| Amélioration de chaos | profondeur 3, UI 3, X 4 | Accumulation élémentaire: 1 | 3 | 3 WeaponPoint/rang - par rang probable | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis |
-| Recherche d'élément | profondeur 4, UI 4, X 2 | Valeur élémentaire: 150 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 9 pts requis |
-| Onde de mana | profondeur 4, UI 4, X 4 | Conversion stat -> dégâts: 2 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 9 pts requis |
-| Énergie de mana dissimulée | profondeur 5, UI 5, X 3 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 21 pts requis |
+#### Dégâts de compétence de Concentration augmentés
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
+**Prérequis :** RACINE
+**Débloque :** Détection de faiblesse (depuis rang III), Détection de faiblesse (depuis rang I), Détection de faiblesse (depuis rang II)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint - par rang probable | Dégâts de compétence d'arme: 7 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| II | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 7 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| III | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 7 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+
+#### Détection de faiblesse
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
+**Prérequis :** Dégâts de compétence de Concentration augmentés
+**Débloque :** Amélioration d'accablement, Amélioration de chaos
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Dégâts de faiblesse élémentaire: 150 | NON DÉTERMINÉ | NON DÉTERMINÉ | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Amélioration d'accablement
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 2
+**Prérequis :** Détection de faiblesse
+**Débloque :** Recherche d'élément (depuis rang III), Recherche d'élément (depuis rang I), Recherche d'élément (depuis rang II)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint - par rang probable | Accumulation élémentaire: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| II | 3 WeaponPoint/rang - par rang probable | Accumulation élémentaire: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| III | 3 WeaponPoint/rang - par rang probable | Accumulation élémentaire: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+
+#### Amélioration de chaos
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 4
+**Prérequis :** Détection de faiblesse
+**Débloque :** Onde de mana (depuis rang I), Onde de mana (depuis rang II), Onde de mana (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint - par rang probable | Accumulation élémentaire: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| II | 3 WeaponPoint/rang - par rang probable | Accumulation élémentaire: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| III | 3 WeaponPoint/rang - par rang probable | Accumulation élémentaire: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+
+#### Recherche d'élément
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 2
+**Prérequis :** Amélioration d'accablement
+**Débloque :** Énergie de mana dissimulée
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Valeur élémentaire: 150 | NON DÉTERMINÉ | NON DÉTERMINÉ | 9 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Onde de mana
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 4
+**Prérequis :** Amélioration de chaos
+**Débloque :** Énergie de mana dissimulée
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Conversion stat -> dégâts: 2 | NON DÉTERMINÉ | NON DÉTERMINÉ | 9 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Énergie de mana dissimulée
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 3
+**Prérequis :** Recherche d'élément, Onde de mana
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 21 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ## ARME D'HAST
 
 ### Branche 1 — Fer-de-lance dévié
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Dégâts de compétence à l'arme d'hast augmentés | profondeur 1, UI 1, X 3 | Dégâts de compétence d'arme: 5 | 3 | 3 WeaponPoint/rang - par rang probable | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis |
-| Smash | profondeur 2, UI 2, X 3 | Déséquilibre / Break: 200 | 3 | 2 WeaponPoint/rang - par rang probable | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 3 pts requis |
-| Parade d'arme | profondeur 3, UI 3, X 3 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 5 pts requis |
-| Attaque pulvérisante | profondeur 4, UI 4, X 3 | Dégâts contre état spécial: 3 % | 1 | 3 WeaponPoint | +3 % | +3 % | 1 %/WeaponPoint | 8 pts requis |
-| Fer-de-lance dévié | profondeur 5, UI 5, X 2 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 11 pts requis |
-| Frappe initiale | profondeur 5, UI 5, X 4 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 11 pts requis |
-| Brèche exploitée | profondeur 6, UI 6, X 3 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 20 pts requis |
+#### Dégâts de compétence à l'arme d'hast augmentés
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
+**Prérequis :** RACINE
+**Débloque :** Smash (depuis rang I), Smash (depuis rang II), Smash (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint - par rang probable | Dégâts de compétence d'arme: 5 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| II | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 5 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| III | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 5 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+
+#### Smash
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
+**Prérequis :** Dégâts de compétence à l'arme d'hast augmentés
+**Débloque :** Parade d'arme (depuis rang I), Parade d'arme (depuis rang II), Parade d'arme (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 WeaponPoint - par rang probable | Déséquilibre / Break: 200 | NON DÉTERMINÉ | NON DÉTERMINÉ | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | Déséquilibre / Break: 200 | NON DÉTERMINÉ | NON DÉTERMINÉ | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | Déséquilibre / Break: 200 | NON DÉTERMINÉ | NON DÉTERMINÉ | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+
+#### Parade d'arme
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
+**Prérequis :** Smash
+**Débloque :** Attaque pulvérisante
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 5 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Attaque pulvérisante
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 3
+**Prérequis :** Parade d'arme
+**Débloque :** Fer-de-lance dévié, Frappe initiale
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Dégâts contre état spécial: 3 % | +3 % | 3 % | 8 pts requis | FORTEMENT PROBABLE |
+
+#### Fer-de-lance dévié
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 2
+**Prérequis :** Attaque pulvérisante
+**Débloque :** Brèche exploitée
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 11 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Frappe initiale
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 4
+**Prérequis :** Attaque pulvérisante
+**Débloque :** Brèche exploitée
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 11 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Brèche exploitée
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 3
+**Prérequis :** Fer-de-lance dévié, Frappe initiale
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 20 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Frappe brutale
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Dégâts de compétence à l'arme d'hast augmentés | profondeur 1, UI 1, X 3 | Dégâts de compétence d'arme: 5 | 3 | 3 WeaponPoint/rang - par rang probable | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis |
-| Chair forgée | profondeur 2, UI 2, X 3 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 3 pts requis |
-| Physique endurant | profondeur 3, UI 3, X 2 | Réduction des dégâts subis: 0,5 % | 3 | 3 WeaponPoint/rang - par rang probable | +0,5 % | +1,5 % | NON DÉTERMINÉ | 6 pts requis |
-| Amélioration des PV | profondeur 3, UI 3, X 4 | PV: 1 % | 3 | 2 WeaponPoint/rang - par rang probable | +1 % | +3 % | NON DÉTERMINÉ | 6 pts requis |
-| Dégâts déviés | profondeur 4, UI 4, X 3 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 14 pts requis |
-| Contre-offensive | profondeur 5, UI 5, X 3 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 17 pts requis |
-| Frappe de riposte | profondeur 6, UI 6, X 3 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 20 pts requis |
+#### Dégâts de compétence à l'arme d'hast augmentés
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
+**Prérequis :** RACINE
+**Débloque :** Chair forgée (depuis rang III), Chair forgée (depuis rang I), Chair forgée (depuis rang II)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint - par rang probable | Dégâts de compétence d'arme: 5 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| II | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 5 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| III | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 5 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+
+#### Chair forgée
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
+**Prérequis :** Dégâts de compétence à l'arme d'hast augmentés
+**Débloque :** Physique endurant, Amélioration des PV
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Physique endurant
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 2
+**Prérequis :** Chair forgée
+**Débloque :** Dégâts déviés (depuis rang III), Dégâts déviés (depuis rang I), Dégâts déviés (depuis rang II)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint - par rang probable | Réduction des dégâts subis: 0,5 % | +0,5 % | 0,5 % | 6 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 3 WeaponPoint/rang - par rang probable | Réduction des dégâts subis: 0,5 % | +0,5 % | 1 % | 6 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 3 WeaponPoint/rang - par rang probable | Réduction des dégâts subis: 0,5 % | +0,5 % | 1,5 % | 6 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Amélioration des PV
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 4
+**Prérequis :** Chair forgée
+**Débloque :** Dégâts déviés (depuis rang III), Dégâts déviés (depuis rang I), Dégâts déviés (depuis rang II)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 WeaponPoint - par rang probable | PV: 1 % | +1 % | 1 % | 6 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | PV: 1 % | +1 % | 2 % | 6 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | PV: 1 % | +1 % | 3 % | 6 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Dégâts déviés
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 3
+**Prérequis :** Physique endurant, Amélioration des PV
+**Débloque :** Contre-offensive
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 14 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Contre-offensive
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 3
+**Prérequis :** Dégâts déviés
+**Débloque :** Frappe de riposte
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 17 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Frappe de riposte
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 3
+**Prérequis :** Contre-offensive
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 20 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ## ARME À DEUX MAINS
 
 ### Branche 1 — Ruée de berserker
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Dégâts de compétence d'arme à deux mains augmentés | profondeur 1, UI 1, X 3 | Dégâts de compétence d'arme: 8 | 3 | 3 WeaponPoint/rang - par rang probable | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis |
-| Dégâts de coup critique augmentés | profondeur 2, UI 2, X 3 | Dégâts critiques: 0,25 % | 3 | 2 WeaponPoint/rang - par rang probable | +0,25 % | +0,75 % | NON DÉTERMINÉ | 3 pts requis |
-| Berserker | profondeur 3, UI 3, X 2 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 5 pts requis |
-| Porte de la mort | profondeur 3, UI 4, X 4 | Dégâts de compétence d'arme: 8; ShieldModifier | 1 | 3 WeaponPoint | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 5 pts requis |
-| Posture offensive | profondeur 4, UI 5, X 2 | Dégâts infligés: 4 %; Réduction des dégâts subis: -2,5 % | 1 | 3 WeaponPoint | +4 % / -2,5 % | +4 % / -2,5 % | NON DÉTERMINÉ | 8 pts requis |
-| Frappe sanglante | profondeur 4, UI 5, X 4 | Dégâts de compétence d'arme: 8 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 8 pts requis |
-| Échange équivalent | profondeur 5, UI 6, X 3 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 19 pts requis |
+#### Dégâts de compétence d'arme à deux mains augmentés
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
+**Prérequis :** RACINE
+**Débloque :** Dégâts de coup critique augmentés (depuis rang I), Dégâts de coup critique augmentés (depuis rang II), Dégâts de coup critique augmentés (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint - par rang probable | Dégâts de compétence d'arme: 8 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| II | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 8 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| III | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 8 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+
+#### Dégâts de coup critique augmentés
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
+**Prérequis :** Dégâts de compétence d'arme à deux mains augmentés
+**Débloque :** Berserker (depuis rang III), Berserker (depuis rang II), Berserker (depuis rang I), Porte de la mort (depuis rang II), Porte de la mort (depuis rang I), Porte de la mort (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 WeaponPoint - par rang probable | Dégâts critiques: 0,25 % | +0,25 % | 0,25 % | 3 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | Dégâts critiques: 0,25 % | +0,25 % | 0,5 % | 3 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | Dégâts critiques: 0,25 % | +0,25 % | 0,75 % | 3 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Berserker
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 2
+**Prérequis :** Dégâts de coup critique augmentés
+**Débloque :** Posture offensive
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 5 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Porte de la mort
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 4, X 4
+**Prérequis :** Dégâts de coup critique augmentés
+**Débloque :** Frappe sanglante
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Dégâts de compétence d'arme: 8; ShieldModifier | NON DÉTERMINÉ | NON DÉTERMINÉ | 5 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Posture offensive
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 5, X 2
+**Prérequis :** Berserker
+**Débloque :** Échange équivalent
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Dégâts infligés: 4 %; Réduction des dégâts subis: -2,5 % | +4 % / -2,5 % | -2,5 % / 4 % | 8 pts requis | FORTEMENT PROBABLE |
+
+#### Frappe sanglante
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 5, X 4
+**Prérequis :** Porte de la mort
+**Débloque :** Échange équivalent
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Dégâts de compétence d'arme: 8 | NON DÉTERMINÉ | NON DÉTERMINÉ | 8 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Échange équivalent
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 6, X 3
+**Prérequis :** Posture offensive, Frappe sanglante
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 19 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Contre-offensive et restauration
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Dégâts de compétence d'arme à deux mains augmentés | profondeur 1, UI 1, X 3 | Dégâts de compétence d'arme: 8 | 3 | 3 WeaponPoint/rang - par rang probable | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis |
-| Précision augmentée | profondeur 2, UI 2, X 3 | Précision: 0,5 % | 3 | 2 WeaponPoint/rang - par rang probable | +0,5 % | +1,5 % | NON DÉTERMINÉ | 3 pts requis |
-| Attaque augmentée | profondeur 3, UI 3, X 3 | Attaque: 0,5 % | 3 | 2 WeaponPoint/rang - par rang probable | +0,5 % | +1,5 % | NON DÉTERMINÉ | 5 pts requis |
-| Blessure régénérante | profondeur 3, UI 3, X 4 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 5 pts requis |
-| Récupération de force | profondeur 4, UI 4, X 2 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 7 pts requis |
-| Frappe de rage | profondeur 4, UI 5, X 4 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 8 pts requis |
-| Seconde chance | profondeur 5, UI 6, X 3 | Effet déclenché | 1 | 3 WeaponPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 18 pts requis |
+#### Dégâts de compétence d'arme à deux mains augmentés
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
+**Prérequis :** RACINE
+**Débloque :** Précision augmentée (depuis rang I), Précision augmentée (depuis rang II), Précision augmentée (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint - par rang probable | Dégâts de compétence d'arme: 8 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| II | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 8 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| III | 3 WeaponPoint/rang - par rang probable | Dégâts de compétence d'arme: 8 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+
+#### Précision augmentée
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
+**Prérequis :** Dégâts de compétence d'arme à deux mains augmentés
+**Débloque :** Attaque augmentée (depuis rang III), Attaque augmentée (depuis rang II), Attaque augmentée (depuis rang I), Blessure régénérante (depuis rang II), Blessure régénérante (depuis rang I), Blessure régénérante (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 WeaponPoint - par rang probable | Précision: 0,5 % | +0,5 % | 0,5 % | 3 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | Précision: 0,5 % | +0,5 % | 1 % | 3 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | Précision: 0,5 % | +0,5 % | 1,5 % | 3 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Attaque augmentée
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
+**Prérequis :** Précision augmentée
+**Débloque :** Récupération de force (depuis rang I), Récupération de force (depuis rang II), Récupération de force (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 WeaponPoint - par rang probable | Attaque: 0,5 % | +0,5 % | 0,5 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | Attaque: 0,5 % | +0,5 % | 1 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | Attaque: 0,5 % | +0,5 % | 1,5 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Blessure régénérante
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 4
+**Prérequis :** Précision augmentée
+**Débloque :** Frappe de rage
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 5 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Récupération de force
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 2
+**Prérequis :** Attaque augmentée
+**Débloque :** Seconde chance
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 7 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Frappe de rage
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 5, X 4
+**Prérequis :** Blessure régénérante
+**Débloque :** Seconde chance
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 8 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Seconde chance
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 6, X 3
+**Prérequis :** Récupération de force, Frappe de rage
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 18 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 # AMÉLIORATIONS DE JINWOO
 
@@ -379,63 +2033,431 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 ### Branche 1 — Amélioration corporelle I
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Attaque augmentée | profondeur 1, UI 1, X 3 | Attaque: 1 % | 3 | 1 SpecialPoint/rang - par rang probable | +1 % | +3 % | NON DÉTERMINÉ | 0 pts requis |
-| Défense augmentée | profondeur 2, UI 2, X 2 | Défense: 1 % | 3 | 1 SpecialPoint/rang - par rang probable | +1 % | +3 % | NON DÉTERMINÉ | 1 pts requis |
-| PV augmentés | profondeur 2, UI 2, X 4 | PV: 1 % | 3 | 1 SpecialPoint/rang - par rang probable | +1 % | +3 % | NON DÉTERMINÉ | 1 pts requis |
-| Attaque augmentée | profondeur 3, UI 3, X 3 | Attaque: 1 % | 3 | 1 SpecialPoint/rang - par rang probable | +1 % | +3 % | NON DÉTERMINÉ | 4 pts requis |
-| Défense augmentée | profondeur 4, UI 4, X 2 | Défense: 1 % | 3 | 1 SpecialPoint/rang - par rang probable | +1 % | +3 % | NON DÉTERMINÉ | 5 pts requis |
-| PV augmentés | profondeur 4, UI 4, X 4 | PV: 1 % | 3 | 1 SpecialPoint/rang - par rang probable | +1 % | +3 % | NON DÉTERMINÉ | 5 pts requis |
-| Attaque augmentée | profondeur 5, UI 5, X 3 | Attaque: 1 % | 3 | 1 SpecialPoint/rang - par rang probable | +1 % | +3 % | NON DÉTERMINÉ | 8 pts requis |
-| Défense augmentée | profondeur 6, UI 6, X 2 | Défense: 1 % | 3 | 1 SpecialPoint/rang - par rang probable | +1 % | +3 % | NON DÉTERMINÉ | 9 pts requis |
-| PV augmentés | profondeur 6, UI 6, X 4 | PV: 1 % | 3 | 1 SpecialPoint/rang - par rang probable | +1 % | +3 % | NON DÉTERMINÉ | 9 pts requis |
+#### Attaque augmentée
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
+**Prérequis :** RACINE
+**Débloque :** Défense augmentée (depuis rang II), Défense augmentée (depuis rang I), Défense augmentée (depuis rang III), PV augmentés (depuis rang II), PV augmentés (depuis rang I), PV augmentés (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 1 SpecialPoint - par rang probable | Attaque: 1 % | +1 % | 1 % | 0 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Attaque: 1 % | +1 % | 2 % | 0 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Attaque: 1 % | +1 % | 3 % | 0 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Défense augmentée
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 2
+**Prérequis :** Attaque augmentée
+**Débloque :** Attaque augmentée (depuis rang I), Attaque augmentée (depuis rang II), Attaque augmentée (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 1 SpecialPoint - par rang probable | Défense: 1 % | +1 % | 1 % | 1 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Défense: 1 % | +1 % | 2 % | 1 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Défense: 1 % | +1 % | 3 % | 1 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### PV augmentés
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 4
+**Prérequis :** Attaque augmentée
+**Débloque :** Attaque augmentée (depuis rang I), Attaque augmentée (depuis rang II), Attaque augmentée (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 1 SpecialPoint - par rang probable | PV: 1 % | +1 % | 1 % | 1 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | PV: 1 % | +1 % | 2 % | 1 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | PV: 1 % | +1 % | 3 % | 1 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Attaque augmentée
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
+**Prérequis :** Défense augmentée, PV augmentés
+**Débloque :** Défense augmentée (depuis rang II), Défense augmentée (depuis rang I), Défense augmentée (depuis rang III), PV augmentés (depuis rang III), PV augmentés (depuis rang II), PV augmentés (depuis rang I)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 1 SpecialPoint - par rang probable | Attaque: 1 % | +1 % | 1 % | 4 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Attaque: 1 % | +1 % | 2 % | 4 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Attaque: 1 % | +1 % | 3 % | 4 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Défense augmentée
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 2
+**Prérequis :** Attaque augmentée
+**Débloque :** Attaque augmentée (depuis rang I), Attaque augmentée (depuis rang II), Attaque augmentée (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 1 SpecialPoint - par rang probable | Défense: 1 % | +1 % | 1 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Défense: 1 % | +1 % | 2 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Défense: 1 % | +1 % | 3 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### PV augmentés
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 4
+**Prérequis :** Attaque augmentée
+**Débloque :** Attaque augmentée (depuis rang I), Attaque augmentée (depuis rang II), Attaque augmentée (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 1 SpecialPoint - par rang probable | PV: 1 % | +1 % | 1 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | PV: 1 % | +1 % | 2 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | PV: 1 % | +1 % | 3 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Attaque augmentée
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 3
+**Prérequis :** Défense augmentée, PV augmentés
+**Débloque :** Défense augmentée (depuis rang I), Défense augmentée (depuis rang III), Défense augmentée (depuis rang II), PV augmentés (depuis rang I), PV augmentés (depuis rang III), PV augmentés (depuis rang II)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 1 SpecialPoint - par rang probable | Attaque: 1 % | +1 % | 1 % | 8 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Attaque: 1 % | +1 % | 2 % | 8 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Attaque: 1 % | +1 % | 3 % | 8 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Défense augmentée
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 2
+**Prérequis :** Attaque augmentée
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 1 SpecialPoint - par rang probable | Défense: 1 % | +1 % | 1 % | 9 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Défense: 1 % | +1 % | 2 % | 9 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Défense: 1 % | +1 % | 3 % | 9 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### PV augmentés
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 4
+**Prérequis :** Attaque augmentée
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 1 SpecialPoint - par rang probable | PV: 1 % | +1 % | 1 % | 9 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | PV: 1 % | +1 % | 2 % | 9 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | PV: 1 % | +1 % | 3 % | 9 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
 
 ### Branche 2 — Amélioration corporelle II
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Taux de coup critique augmenté | profondeur 1, UI 1, X 3 | Taux critique: 0,33 % | 3 | 1 SpecialPoint/rang - par rang probable | +0,33 % | +0,99 % | NON DÉTERMINÉ | 0 pts requis |
-| Pénétration de défense augmentée | profondeur 2, UI 2, X 2 | Pénétration: 0,33 % | 3 | 1 SpecialPoint/rang - par rang probable | +0,33 % | +0,99 % | NON DÉTERMINÉ | 1 pts requis |
-| Pénétration de défense augmentée | profondeur 2, UI 2, X 4 | Pénétration: 0,33 % | 3 | 1 SpecialPoint/rang - par rang probable | +0,33 % | +0,99 % | NON DÉTERMINÉ | 1 pts requis |
-| Taux de coup critique augmenté | profondeur 3, UI 3, X 3 | Taux critique: 0,33 % | 3 | 1 SpecialPoint/rang - par rang probable | +0,33 % | +0,99 % | NON DÉTERMINÉ | 4 pts requis |
-| Pénétration de défense augmentée | profondeur 4, UI 4, X 2 | Pénétration: 0,33 % | 3 | 1 SpecialPoint/rang - par rang probable | +0,33 % | +0,99 % | NON DÉTERMINÉ | 5 pts requis |
-| Pénétration de défense augmentée | profondeur 4, UI 4, X 4 | Pénétration: 0,33 % | 3 | 1 SpecialPoint/rang - par rang probable | +0,33 % | +0,99 % | NON DÉTERMINÉ | 5 pts requis |
-| Dégâts subis réduits | profondeur 5, UI 5, X 2 | Réduction des dégâts subis: 0,33 % | 3 | 1 SpecialPoint/rang - par rang probable | +0,33 % | +0,99 % | NON DÉTERMINÉ | 6 pts requis |
-| Dégâts subis réduits | profondeur 5, UI 5, X 4 | Réduction des dégâts subis: 0,33 % | 3 | 1 SpecialPoint/rang - par rang probable | +0,33 % | +0,99 % | NON DÉTERMINÉ | 6 pts requis |
-| Taux de coup critique augmenté | profondeur 6, UI 6, X 2 | Taux critique: 0,33 % | 3 | 1 SpecialPoint/rang - par rang probable | +0,33 % | +0,99 % | NON DÉTERMINÉ | 7 pts requis |
-| Taux de coup critique augmenté | profondeur 6, UI 6, X 4 | Taux critique: 0,33 % | 3 | 1 SpecialPoint/rang - par rang probable | +0,33 % | +0,99 % | NON DÉTERMINÉ | 7 pts requis |
+#### Taux de coup critique augmenté
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
+**Prérequis :** RACINE
+**Débloque :** Pénétration de défense augmentée (depuis rang III), Pénétration de défense augmentée (depuis rang II), Pénétration de défense augmentée (depuis rang I)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 1 SpecialPoint - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,33 % | 0 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,66 % | 0 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,99 % | 0 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Pénétration de défense augmentée
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 2
+**Prérequis :** Taux de coup critique augmenté
+**Débloque :** Taux de coup critique augmenté (depuis rang II), Taux de coup critique augmenté (depuis rang III), Taux de coup critique augmenté (depuis rang I)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 1 SpecialPoint - par rang probable | Pénétration: 0,33 % | +0,33 % | 0,33 % | 1 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Pénétration: 0,33 % | +0,33 % | 0,66 % | 1 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Pénétration: 0,33 % | +0,33 % | 0,99 % | 1 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Pénétration de défense augmentée
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 4
+**Prérequis :** Taux de coup critique augmenté
+**Débloque :** Taux de coup critique augmenté (depuis rang II), Taux de coup critique augmenté (depuis rang III), Taux de coup critique augmenté (depuis rang I)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 1 SpecialPoint - par rang probable | Pénétration: 0,33 % | +0,33 % | 0,33 % | 1 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Pénétration: 0,33 % | +0,33 % | 0,66 % | 1 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Pénétration: 0,33 % | +0,33 % | 0,99 % | 1 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Taux de coup critique augmenté
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
+**Prérequis :** Pénétration de défense augmentée
+**Débloque :** Pénétration de défense augmentée (depuis rang II), Pénétration de défense augmentée (depuis rang I), Pénétration de défense augmentée (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 1 SpecialPoint - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,33 % | 4 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,66 % | 4 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,99 % | 4 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Pénétration de défense augmentée
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 2
+**Prérequis :** Taux de coup critique augmenté
+**Débloque :** Dégâts subis réduits (depuis rang II), Dégâts subis réduits (depuis rang III), Dégâts subis réduits (depuis rang I)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 1 SpecialPoint - par rang probable | Pénétration: 0,33 % | +0,33 % | 0,33 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Pénétration: 0,33 % | +0,33 % | 0,66 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Pénétration: 0,33 % | +0,33 % | 0,99 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Pénétration de défense augmentée
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 4
+**Prérequis :** Taux de coup critique augmenté
+**Débloque :** Dégâts subis réduits (depuis rang I), Dégâts subis réduits (depuis rang II), Dégâts subis réduits (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 1 SpecialPoint - par rang probable | Pénétration: 0,33 % | +0,33 % | 0,33 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Pénétration: 0,33 % | +0,33 % | 0,66 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Pénétration: 0,33 % | +0,33 % | 0,99 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Dégâts subis réduits
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 2
+**Prérequis :** Pénétration de défense augmentée
+**Débloque :** Taux de coup critique augmenté (depuis rang III), Taux de coup critique augmenté (depuis rang I), Taux de coup critique augmenté (depuis rang II)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 1 SpecialPoint - par rang probable | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,33 % | 6 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,66 % | 6 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,99 % | 6 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Dégâts subis réduits
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 4
+**Prérequis :** Pénétration de défense augmentée
+**Débloque :** Taux de coup critique augmenté (depuis rang II), Taux de coup critique augmenté (depuis rang III), Taux de coup critique augmenté (depuis rang I)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 1 SpecialPoint - par rang probable | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,33 % | 6 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,66 % | 6 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,99 % | 6 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Taux de coup critique augmenté
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 2
+**Prérequis :** Dégâts subis réduits
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 1 SpecialPoint - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,33 % | 7 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,66 % | 7 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,99 % | 7 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+
+#### Taux de coup critique augmenté
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 4
+**Prérequis :** Dégâts subis réduits
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 1 SpecialPoint - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,33 % | 7 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,66 % | 7 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,99 % | 7 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
 
 ## ÉVEIL DU MONARQUE
 
 ### Branche 1 — Vision ombrale
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| L'Aube du règne I | profondeur 1, UI 1, X 3 | EXRecovery | 1 | 3 SpecialPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 0 pts requis |
-| L'Aube du règne II | profondeur 2, UI 2, X 2 | Gain de jauge: 2000 | 1 | 3 SpecialPoint | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 3 pts requis |
-| L'Aube du règne III | profondeur 2, UI 2, X 4 | Gain de jauge: 2000 | 1 | 3 SpecialPoint | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 3 pts requis |
-| L'Aube du règne IV | profondeur 3, UI 3, X 3 | Gain de jauge: 2000 | 1 | 3 SpecialPoint | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 12 pts requis |
-| Lame vampirique | profondeur 4, UI 4, X 2 | Effet déclenché | 1 | 3 SpecialPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 15 pts requis |
-| Tranchant des ombres I | profondeur 4, UI 4, X 3 | Effet déclenché | 1 | 3 SpecialPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 15 pts requis |
-| Tempête d'ombre I | profondeur 4, UI 4, X 4 | Effet déclenché | 1 | 3 SpecialPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 15 pts requis |
-| Ruée de l'ombre | profondeur 5, UI 5, X 2 | Effet déclenché | 1 | 3 SpecialPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 18 pts requis |
-| Tranchant des ombres II | profondeur 5, UI 5, X 3 | Modification de compétence | 1 | 3 SpecialPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 18 pts requis |
-| Tempête d'ombre II | profondeur 5, UI 5, X 4 | Effet déclenché | 1 | 3 SpecialPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 18 pts requis |
+#### L'Aube du règne I
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
+**Prérequis :** RACINE
+**Débloque :** L'Aube du règne II, L'Aube du règne III
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SpecialPoint | EXRecovery | Non chiffré | Non chiffré | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### L'Aube du règne II
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 2
+**Prérequis :** L'Aube du règne I
+**Débloque :** L'Aube du règne IV
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SpecialPoint | Gain de jauge: 2000 | NON DÉTERMINÉ | NON DÉTERMINÉ | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### L'Aube du règne III
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 4
+**Prérequis :** L'Aube du règne I
+**Débloque :** L'Aube du règne IV
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SpecialPoint | Gain de jauge: 2000 | NON DÉTERMINÉ | NON DÉTERMINÉ | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### L'Aube du règne IV
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
+**Prérequis :** L'Aube du règne II, L'Aube du règne III
+**Débloque :** Lame vampirique, Tranchant des ombres I, Tempête d'ombre I
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SpecialPoint | Gain de jauge: 2000 | NON DÉTERMINÉ | NON DÉTERMINÉ | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Lame vampirique
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 2
+**Prérequis :** L'Aube du règne IV
+**Débloque :** Ruée de l'ombre
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | 15 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Tranchant des ombres I
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 3
+**Prérequis :** L'Aube du règne IV
+**Débloque :** Tranchant des ombres II
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | 15 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Tempête d'ombre I
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 4
+**Prérequis :** L'Aube du règne IV
+**Débloque :** Tempête d'ombre II
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | 15 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Ruée de l'ombre
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 2
+**Prérequis :** Lame vampirique
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | 18 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Tranchant des ombres II
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 3
+**Prérequis :** Tranchant des ombres I
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SpecialPoint | Modification de compétence | Non chiffré | Non chiffré | 18 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Tempête d'ombre II
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 4
+**Prérequis :** Tempête d'ombre I
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | 18 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Libération d'âme
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Cape du monarque | profondeur 1, UI 1, X 3 | Effet déclenché | 1 | 3 SpecialPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 0 pts requis |
-| Acte des ombres I | profondeur 2, UI 2, X 2 | Effet déclenché | 1 | 3 SpecialPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 3 pts requis |
-| Acte des ombres II | profondeur 2, UI 2, X 4 | Effet déclenché | 1 | 3 SpecialPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 3 pts requis |
-| Âme du clair de lune I | profondeur 3, UI 3, X 2 | Modification de compétence | 1 | 3 SpecialPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 6 pts requis |
-| Enchaînement d'ombre I | profondeur 3, UI 3, X 4 | Effet déclenché | 1 | 3 SpecialPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 6 pts requis |
-| Âme du clair de lune II | profondeur 4, UI 4, X 2 | Effet déclenché | 1 | 3 SpecialPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 9 pts requis |
-| Enchaînement d'ombre II | profondeur 4, UI 4, X 4 | Effet déclenché | 1 | 3 SpecialPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 9 pts requis |
-| Présage de destruction I | profondeur 5, UI 5, X 2 | Effet déclenché | 1 | 3 SpecialPoint | Non chiffré | Non chiffré | NON DÉTERMINÉ | 12 pts requis |
-| Présage de destruction II | profondeur 5, UI 5, X 4 | Dégâts de compétence: 1000 | 1 | 3 SpecialPoint | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 12 pts requis |
+#### Cape du monarque
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
+**Prérequis :** RACINE
+**Débloque :** Acte des ombres I, Acte des ombres II
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Acte des ombres I
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 2
+**Prérequis :** Cape du monarque
+**Débloque :** Âme du clair de lune I
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Acte des ombres II
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 4
+**Prérequis :** Cape du monarque
+**Débloque :** Enchaînement d'ombre I
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Âme du clair de lune I
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 2
+**Prérequis :** Acte des ombres I
+**Débloque :** Âme du clair de lune II
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SpecialPoint | Modification de compétence | Non chiffré | Non chiffré | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Enchaînement d'ombre I
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 4
+**Prérequis :** Acte des ombres II
+**Débloque :** Enchaînement d'ombre II
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Âme du clair de lune II
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 2
+**Prérequis :** Âme du clair de lune I
+**Débloque :** Présage de destruction I
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | 9 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Enchaînement d'ombre II
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 4
+**Prérequis :** Enchaînement d'ombre I
+**Débloque :** Présage de destruction II
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | 9 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Présage de destruction I
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 2
+**Prérequis :** Âme du clair de lune II
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Présage de destruction II
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 4
+**Prérequis :** Enchaînement d'ombre II
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SpecialPoint | Dégâts de compétence: 1000 | NON DÉTERMINÉ | NON DÉTERMINÉ | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 # STRUCTURES NON RATTACHÉES
 
@@ -443,51 +2465,441 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 ### Branche 1 — Critique et pénétration - nom déduit
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Taux de coup critique 1 | profondeur 1, UI 1, X 2 | Taux critique: 1 % | 3 | 2 / 3 / 4 SkillPoint - interprétation NON DÉTERMINÉE | +1 % | +3 % | NON DÉTERMINÉ | 0 pts requis |
-| Dégâts de coup critique 1 | profondeur 1, UI 1, X 3 | Dégâts critiques: 1 % | 3 | 2 / 3 / 4 SkillPoint - interprétation NON DÉTERMINÉE | +1 % | +3 % | NON DÉTERMINÉ | 0 pts requis |
-| Pénétration de défense 1 | profondeur 1, UI 1, X 4 | Pénétration: 100 | 3 | 2 / 3 / 4 SkillPoint - interprétation NON DÉTERMINÉE | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis |
-| Taux de coup critique 2 | profondeur 2, UI 2, X 2 | Taux critique: 2 % | 3 | 2 / 3 / 4 SkillPoint - interprétation NON DÉTERMINÉE | +2 % | +6 % | NON DÉTERMINÉ | 2 pts requis |
-| Dégâts de coup critique 2 | profondeur 2, UI 2, X 3 | Dégâts critiques: 2 % | 3 | 2 / 3 / 4 SkillPoint - interprétation NON DÉTERMINÉE | +2 % | +6 % | NON DÉTERMINÉ | 2 pts requis |
-| Pénétration de défense 2 | profondeur 2, UI 2, X 4 | Pénétration: 200 | 3 | 2 / 3 / 4 SkillPoint - interprétation NON DÉTERMINÉE | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 2 pts requis |
-| Taux de coup critique 3 | profondeur 3, UI 3, X 2 | Taux critique: 3 % | 3 | 2 / 3 / 4 SkillPoint - interprétation NON DÉTERMINÉE | +3 % | +9 % | NON DÉTERMINÉ | 4 pts requis |
-| Dégâts de coup critique 3 | profondeur 3, UI 3, X 3 | Dégâts critiques: 3 % | 3 | 2 / 3 / 4 SkillPoint - interprétation NON DÉTERMINÉE | +3 % | +9 % | NON DÉTERMINÉ | 4 pts requis |
-| Pénétration de défense 3 | profondeur 3, UI 3, X 4 | Pénétration: 300 | 3 | 2 / 3 / 4 SkillPoint - interprétation NON DÉTERMINÉE | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 4 pts requis |
-| Taux de coup critique 4 | profondeur 4, UI 4, X 2 | Taux critique: 4 % | 3 | 3 / 4 / 5 SkillPoint - interprétation NON DÉTERMINÉE | +4 % | +12 % | NON DÉTERMINÉ | 6 pts requis |
-| Dégâts de coup critique 4 | profondeur 4, UI 4, X 3 | Dégâts critiques: 4 % | 3 | 3 / 4 / 5 SkillPoint - interprétation NON DÉTERMINÉE | +4 % | +12 % | NON DÉTERMINÉ | 6 pts requis |
-| Pénétration de défense 4 | profondeur 4, UI 4, X 4 | Pénétration: 400 | 3 | 3 / 4 / 5 SkillPoint - interprétation NON DÉTERMINÉE | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis |
-| Taux de coup critique 5 | profondeur 5, UI 5, X 2 | Taux critique: 5 % | 3 | 3 / 4 / 5 SkillPoint - interprétation NON DÉTERMINÉE | +5 % | +15 % | NON DÉTERMINÉ | 9 pts requis |
-| Dégâts de coup critique 5 | profondeur 5, UI 5, X 3 | Dégâts critiques: 5 % | 3 | 3 / 4 / 5 SkillPoint - interprétation NON DÉTERMINÉE | +5 % | +15 % | NON DÉTERMINÉ | 9 pts requis |
-| Pénétration de défense 5 | profondeur 5, UI 5, X 4 | Pénétration: 500 | 3 | 3 / 4 / 5 SkillPoint - interprétation NON DÉTERMINÉE | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 9 pts requis |
-| Taux de coup critique 6 | profondeur 6, UI 6, X 2 | Taux critique: 6 % | 3 | 3 / 4 / 5 SkillPoint - interprétation NON DÉTERMINÉE | +6 % | +18 % | NON DÉTERMINÉ | 12 pts requis |
-| Dégâts de coup critique 6 | profondeur 6, UI 6, X 3 | Dégâts critiques: 6 % | 3 | 3 / 4 / 5 SkillPoint - interprétation NON DÉTERMINÉE | +6 % | +18 % | NON DÉTERMINÉ | 12 pts requis |
-| Pénétration de défense 6 | profondeur 6, UI 6, X 4 | Pénétration: 600 | 3 | 3 / 4 / 5 SkillPoint - interprétation NON DÉTERMINÉE | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ | 12 pts requis |
+#### Taux de coup critique 1
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 2
+**Prérequis :** RACINE
+**Débloque :** Taux de coup critique 2 (depuis rang I), Taux de coup critique 2 (depuis rang II), Taux de coup critique 2 (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Taux critique: 1 % | +1 % | 1 % | 0 pts requis | FORTEMENT PROBABLE |
+| II | 3 SkillPoint/rang | Taux critique: 1 % | +1 % | 2 % | 0 pts requis | FORTEMENT PROBABLE |
+| III | 4 SkillPoint/rang | Taux critique: 1 % | +1 % | 3 % | 0 pts requis | FORTEMENT PROBABLE |
+
+#### Dégâts de coup critique 1
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
+**Prérequis :** RACINE
+**Débloque :** Dégâts de coup critique 2 (depuis rang I), Dégâts de coup critique 2 (depuis rang II), Dégâts de coup critique 2 (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Dégâts critiques: 1 % | +1 % | 1 % | 0 pts requis | FORTEMENT PROBABLE |
+| II | 3 SkillPoint/rang | Dégâts critiques: 1 % | +1 % | 2 % | 0 pts requis | FORTEMENT PROBABLE |
+| III | 4 SkillPoint/rang | Dégâts critiques: 1 % | +1 % | 3 % | 0 pts requis | FORTEMENT PROBABLE |
+
+#### Pénétration de défense 1
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 4
+**Prérequis :** RACINE
+**Débloque :** Pénétration de défense 2 (depuis rang I), Pénétration de défense 2 (depuis rang II), Pénétration de défense 2 (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Pénétration: 100 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| II | 3 SkillPoint/rang | Pénétration: 100 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| III | 4 SkillPoint/rang | Pénétration: 100 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Taux de coup critique 2
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 2
+**Prérequis :** Taux de coup critique 1
+**Débloque :** Taux de coup critique 3 (depuis rang I), Taux de coup critique 3 (depuis rang II), Taux de coup critique 3 (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Taux critique: 2 % | +2 % | 2 % | 2 pts requis | FORTEMENT PROBABLE |
+| II | 3 SkillPoint/rang | Taux critique: 2 % | +2 % | 4 % | 2 pts requis | FORTEMENT PROBABLE |
+| III | 4 SkillPoint/rang | Taux critique: 2 % | +2 % | 6 % | 2 pts requis | FORTEMENT PROBABLE |
+
+#### Dégâts de coup critique 2
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
+**Prérequis :** Dégâts de coup critique 1
+**Débloque :** Dégâts de coup critique 3 (depuis rang III), Dégâts de coup critique 3 (depuis rang I), Dégâts de coup critique 3 (depuis rang II)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Dégâts critiques: 2 % | +2 % | 2 % | 2 pts requis | FORTEMENT PROBABLE |
+| II | 3 SkillPoint/rang | Dégâts critiques: 2 % | +2 % | 4 % | 2 pts requis | FORTEMENT PROBABLE |
+| III | 4 SkillPoint/rang | Dégâts critiques: 2 % | +2 % | 6 % | 2 pts requis | FORTEMENT PROBABLE |
+
+#### Pénétration de défense 2
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 4
+**Prérequis :** Pénétration de défense 1
+**Débloque :** Pénétration de défense 3 (depuis rang I), Pénétration de défense 3 (depuis rang II), Pénétration de défense 3 (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Pénétration: 200 | NON DÉTERMINÉ | NON DÉTERMINÉ | 2 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| II | 3 SkillPoint/rang | Pénétration: 200 | NON DÉTERMINÉ | NON DÉTERMINÉ | 2 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| III | 4 SkillPoint/rang | Pénétration: 200 | NON DÉTERMINÉ | NON DÉTERMINÉ | 2 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Taux de coup critique 3
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 2
+**Prérequis :** Taux de coup critique 2
+**Débloque :** Taux de coup critique 4 (depuis rang I), Taux de coup critique 4 (depuis rang II), Taux de coup critique 4 (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Taux critique: 3 % | +3 % | 3 % | 4 pts requis | FORTEMENT PROBABLE |
+| II | 3 SkillPoint/rang | Taux critique: 3 % | +3 % | 6 % | 4 pts requis | FORTEMENT PROBABLE |
+| III | 4 SkillPoint/rang | Taux critique: 3 % | +3 % | 9 % | 4 pts requis | FORTEMENT PROBABLE |
+
+#### Dégâts de coup critique 3
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
+**Prérequis :** Dégâts de coup critique 2
+**Débloque :** Dégâts de coup critique 4 (depuis rang I), Dégâts de coup critique 4 (depuis rang II), Dégâts de coup critique 4 (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Dégâts critiques: 3 % | +3 % | 3 % | 4 pts requis | FORTEMENT PROBABLE |
+| II | 3 SkillPoint/rang | Dégâts critiques: 3 % | +3 % | 6 % | 4 pts requis | FORTEMENT PROBABLE |
+| III | 4 SkillPoint/rang | Dégâts critiques: 3 % | +3 % | 9 % | 4 pts requis | FORTEMENT PROBABLE |
+
+#### Pénétration de défense 3
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 4
+**Prérequis :** Pénétration de défense 2
+**Débloque :** Pénétration de défense 4 (depuis rang I), Pénétration de défense 4 (depuis rang II), Pénétration de défense 4 (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Pénétration: 300 | NON DÉTERMINÉ | NON DÉTERMINÉ | 4 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| II | 3 SkillPoint/rang | Pénétration: 300 | NON DÉTERMINÉ | NON DÉTERMINÉ | 4 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| III | 4 SkillPoint/rang | Pénétration: 300 | NON DÉTERMINÉ | NON DÉTERMINÉ | 4 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Taux de coup critique 4
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 2
+**Prérequis :** Taux de coup critique 3
+**Débloque :** Taux de coup critique 5 (depuis rang III), Taux de coup critique 5 (depuis rang I), Taux de coup critique 5 (depuis rang II)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | Taux critique: 4 % | +4 % | 4 % | 6 pts requis | FORTEMENT PROBABLE |
+| II | 4 SkillPoint/rang | Taux critique: 4 % | +4 % | 8 % | 6 pts requis | FORTEMENT PROBABLE |
+| III | 5 SkillPoint/rang | Taux critique: 4 % | +4 % | 12 % | 6 pts requis | FORTEMENT PROBABLE |
+
+#### Dégâts de coup critique 4
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 3
+**Prérequis :** Dégâts de coup critique 3
+**Débloque :** Dégâts de coup critique 5 (depuis rang I), Dégâts de coup critique 5 (depuis rang II), Dégâts de coup critique 5 (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | Dégâts critiques: 4 % | +4 % | 4 % | 6 pts requis | FORTEMENT PROBABLE |
+| II | 4 SkillPoint/rang | Dégâts critiques: 4 % | +4 % | 8 % | 6 pts requis | FORTEMENT PROBABLE |
+| III | 5 SkillPoint/rang | Dégâts critiques: 4 % | +4 % | 12 % | 6 pts requis | FORTEMENT PROBABLE |
+
+#### Pénétration de défense 4
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 4
+**Prérequis :** Pénétration de défense 3
+**Débloque :** Pénétration de défense 5 (depuis rang III), Pénétration de défense 5 (depuis rang I), Pénétration de défense 5 (depuis rang II)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | Pénétration: 400 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| II | 4 SkillPoint/rang | Pénétration: 400 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| III | 5 SkillPoint/rang | Pénétration: 400 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Taux de coup critique 5
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 2
+**Prérequis :** Taux de coup critique 4
+**Débloque :** Taux de coup critique 6 (depuis rang I), Taux de coup critique 6 (depuis rang II), Taux de coup critique 6 (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | Taux critique: 5 % | +5 % | 5 % | 9 pts requis | FORTEMENT PROBABLE |
+| II | 4 SkillPoint/rang | Taux critique: 5 % | +5 % | 10 % | 9 pts requis | FORTEMENT PROBABLE |
+| III | 5 SkillPoint/rang | Taux critique: 5 % | +5 % | 15 % | 9 pts requis | FORTEMENT PROBABLE |
+
+#### Dégâts de coup critique 5
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 3
+**Prérequis :** Dégâts de coup critique 4
+**Débloque :** Dégâts de coup critique 6 (depuis rang III), Dégâts de coup critique 6 (depuis rang I), Dégâts de coup critique 6 (depuis rang II)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | Dégâts critiques: 5 % | +5 % | 5 % | 9 pts requis | FORTEMENT PROBABLE |
+| II | 4 SkillPoint/rang | Dégâts critiques: 5 % | +5 % | 10 % | 9 pts requis | FORTEMENT PROBABLE |
+| III | 5 SkillPoint/rang | Dégâts critiques: 5 % | +5 % | 15 % | 9 pts requis | FORTEMENT PROBABLE |
+
+#### Pénétration de défense 5
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 4
+**Prérequis :** Pénétration de défense 4
+**Débloque :** Pénétration de défense 6 (depuis rang III), Pénétration de défense 6 (depuis rang I), Pénétration de défense 6 (depuis rang II)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | Pénétration: 500 | NON DÉTERMINÉ | NON DÉTERMINÉ | 9 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| II | 4 SkillPoint/rang | Pénétration: 500 | NON DÉTERMINÉ | NON DÉTERMINÉ | 9 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| III | 5 SkillPoint/rang | Pénétration: 500 | NON DÉTERMINÉ | NON DÉTERMINÉ | 9 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+
+#### Taux de coup critique 6
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 2
+**Prérequis :** Taux de coup critique 5
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | Taux critique: 6 % | +6 % | 6 % | 12 pts requis | FORTEMENT PROBABLE |
+| II | 4 SkillPoint/rang | Taux critique: 6 % | +6 % | 12 % | 12 pts requis | FORTEMENT PROBABLE |
+| III | 5 SkillPoint/rang | Taux critique: 6 % | +6 % | 18 % | 12 pts requis | FORTEMENT PROBABLE |
+
+#### Dégâts de coup critique 6
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 3
+**Prérequis :** Dégâts de coup critique 5
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | Dégâts critiques: 6 % | +6 % | 6 % | 12 pts requis | FORTEMENT PROBABLE |
+| II | 4 SkillPoint/rang | Dégâts critiques: 6 % | +6 % | 12 % | 12 pts requis | FORTEMENT PROBABLE |
+| III | 5 SkillPoint/rang | Dégâts critiques: 6 % | +6 % | 18 % | 12 pts requis | FORTEMENT PROBABLE |
+
+#### Pénétration de défense 6
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 4
+**Prérequis :** Pénétration de défense 5
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | Pénétration: 600 | NON DÉTERMINÉ | NON DÉTERMINÉ | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| II | 4 SkillPoint/rang | Pénétration: 600 | NON DÉTERMINÉ | NON DÉTERMINÉ | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| III | 5 SkillPoint/rang | Pénétration: 600 | NON DÉTERMINÉ | NON DÉTERMINÉ | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ## STATS PRINCIPALES
 
 ### Branche 1 — Stats principales - nom déduit
 
-| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |
-|---|---|---|---:|---|---|---|---|---|
-| Attaque augmentée 1 | profondeur 1, UI 1, X 2 | Attaque: 1 % | 3 | 2 / 3 / 4 SkillPoint - interprétation NON DÉTERMINÉE | +1 % | +3 % | NON DÉTERMINÉ | 0 pts requis |
-| Défense augmentée 1 | profondeur 1, UI 1, X 3 | Défense: 1 % | 3 | 2 / 3 / 4 SkillPoint - interprétation NON DÉTERMINÉE | +1 % | +3 % | NON DÉTERMINÉ | 0 pts requis |
-| PV augmentés 1 | profondeur 1, UI 1, X 4 | PV: 1 % | 3 | 2 / 3 / 4 SkillPoint - interprétation NON DÉTERMINÉE | +1 % | +3 % | NON DÉTERMINÉ | 0 pts requis |
-| Attaque augmentée 2 | profondeur 2, UI 2, X 2 | Attaque: 2 % | 3 | 2 / 3 / 4 SkillPoint - interprétation NON DÉTERMINÉE | +2 % | +6 % | NON DÉTERMINÉ | 2 pts requis |
-| Défense augmentée 2 | profondeur 2, UI 2, X 3 | Défense: 2 % | 3 | 2 / 3 / 4 SkillPoint - interprétation NON DÉTERMINÉE | +2 % | +6 % | NON DÉTERMINÉ | 2 pts requis |
-| PV augmentés 2 | profondeur 2, UI 2, X 4 | PV: 2 % | 3 | 2 / 3 / 4 SkillPoint - interprétation NON DÉTERMINÉE | +2 % | +6 % | NON DÉTERMINÉ | 2 pts requis |
-| Attaque augmentée 3 | profondeur 3, UI 3, X 2 | Attaque: 3 % | 3 | 2 / 3 / 4 SkillPoint - interprétation NON DÉTERMINÉE | +3 % | +9 % | NON DÉTERMINÉ | 4 pts requis |
-| Défense augmentée 3 | profondeur 3, UI 3, X 3 | Défense: 3 % | 3 | 2 / 3 / 4 SkillPoint - interprétation NON DÉTERMINÉE | +3 % | +9 % | NON DÉTERMINÉ | 4 pts requis |
-| PV augmentés 3 | profondeur 3, UI 3, X 4 | PV: 3 % | 3 | 2 / 3 / 4 SkillPoint - interprétation NON DÉTERMINÉE | +3 % | +9 % | NON DÉTERMINÉ | 4 pts requis |
-| Attaque augmentée 4 | profondeur 4, UI 4, X 2 | Attaque: 4 % | 3 | 3 / 4 / 5 SkillPoint - interprétation NON DÉTERMINÉE | +4 % | +12 % | NON DÉTERMINÉ | 6 pts requis |
-| Défense augmentée 4 | profondeur 4, UI 4, X 3 | Défense: 4 % | 3 | 3 / 4 / 5 SkillPoint - interprétation NON DÉTERMINÉE | +4 % | +12 % | NON DÉTERMINÉ | 6 pts requis |
-| PV augmentés 4 | profondeur 4, UI 4, X 4 | PV: 4 % | 3 | 3 / 4 / 5 SkillPoint - interprétation NON DÉTERMINÉE | +4 % | +12 % | NON DÉTERMINÉ | 6 pts requis |
-| Attaque augmentée 5 | profondeur 5, UI 5, X 2 | Attaque: 5 % | 3 | 3 / 4 / 5 SkillPoint - interprétation NON DÉTERMINÉE | +5 % | +15 % | NON DÉTERMINÉ | 9 pts requis |
-| Défense augmentée 5 | profondeur 5, UI 5, X 3 | Défense: 5 % | 3 | 3 / 4 / 5 SkillPoint - interprétation NON DÉTERMINÉE | +5 % | +15 % | NON DÉTERMINÉ | 9 pts requis |
-| PV augmentés 5 | profondeur 5, UI 5, X 4 | PV: 5 % | 3 | 3 / 4 / 5 SkillPoint - interprétation NON DÉTERMINÉE | +5 % | +15 % | NON DÉTERMINÉ | 9 pts requis |
-| Attaque augmentée 6 | profondeur 6, UI 6, X 2 | Attaque: 6 % | 3 | 3 / 4 / 5 SkillPoint - interprétation NON DÉTERMINÉE | +6 % | +18 % | NON DÉTERMINÉ | 12 pts requis |
-| Défense augmentée 6 | profondeur 6, UI 6, X 3 | Défense: 6 % | 3 | 3 / 4 / 5 SkillPoint - interprétation NON DÉTERMINÉE | +6 % | +18 % | NON DÉTERMINÉ | 12 pts requis |
-| PV augmentés 6 | profondeur 6, UI 6, X 4 | PV: 6 % | 3 | 3 / 4 / 5 SkillPoint - interprétation NON DÉTERMINÉE | +6 % | +18 % | NON DÉTERMINÉ | 12 pts requis |
+#### Attaque augmentée 1
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 2
+**Prérequis :** RACINE
+**Débloque :** Attaque augmentée 2 (depuis rang I), Attaque augmentée 2 (depuis rang II), Attaque augmentée 2 (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Attaque: 1 % | +1 % | 1 % | 0 pts requis | FORTEMENT PROBABLE |
+| II | 3 SkillPoint/rang | Attaque: 1 % | +1 % | 2 % | 0 pts requis | FORTEMENT PROBABLE |
+| III | 4 SkillPoint/rang | Attaque: 1 % | +1 % | 3 % | 0 pts requis | FORTEMENT PROBABLE |
+
+#### Défense augmentée 1
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
+**Prérequis :** RACINE
+**Débloque :** Défense augmentée 2 (depuis rang II), Défense augmentée 2 (depuis rang III), Défense augmentée 2 (depuis rang I)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Défense: 1 % | +1 % | 1 % | 0 pts requis | FORTEMENT PROBABLE |
+| II | 3 SkillPoint/rang | Défense: 1 % | +1 % | 2 % | 0 pts requis | FORTEMENT PROBABLE |
+| III | 4 SkillPoint/rang | Défense: 1 % | +1 % | 3 % | 0 pts requis | FORTEMENT PROBABLE |
+
+#### PV augmentés 1
+
+**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 4
+**Prérequis :** RACINE
+**Débloque :** PV augmentés 2 (depuis rang II), PV augmentés 2 (depuis rang III), PV augmentés 2 (depuis rang I)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | PV: 1 % | +1 % | 1 % | 0 pts requis | FORTEMENT PROBABLE |
+| II | 3 SkillPoint/rang | PV: 1 % | +1 % | 2 % | 0 pts requis | FORTEMENT PROBABLE |
+| III | 4 SkillPoint/rang | PV: 1 % | +1 % | 3 % | 0 pts requis | FORTEMENT PROBABLE |
+
+#### Attaque augmentée 2
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 2
+**Prérequis :** Attaque augmentée 1
+**Débloque :** Attaque augmentée 3 (depuis rang I), Attaque augmentée 3 (depuis rang II), Attaque augmentée 3 (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Attaque: 2 % | +2 % | 2 % | 2 pts requis | FORTEMENT PROBABLE |
+| II | 3 SkillPoint/rang | Attaque: 2 % | +2 % | 4 % | 2 pts requis | FORTEMENT PROBABLE |
+| III | 4 SkillPoint/rang | Attaque: 2 % | +2 % | 6 % | 2 pts requis | FORTEMENT PROBABLE |
+
+#### Défense augmentée 2
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
+**Prérequis :** Défense augmentée 1
+**Débloque :** Défense augmentée 3 (depuis rang III), Défense augmentée 3 (depuis rang I), Défense augmentée 3 (depuis rang II)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Défense: 2 % | +2 % | 2 % | 2 pts requis | FORTEMENT PROBABLE |
+| II | 3 SkillPoint/rang | Défense: 2 % | +2 % | 4 % | 2 pts requis | FORTEMENT PROBABLE |
+| III | 4 SkillPoint/rang | Défense: 2 % | +2 % | 6 % | 2 pts requis | FORTEMENT PROBABLE |
+
+#### PV augmentés 2
+
+**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 4
+**Prérequis :** PV augmentés 1
+**Débloque :** PV augmentés 3 (depuis rang II), PV augmentés 3 (depuis rang III), PV augmentés 3 (depuis rang I)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | PV: 2 % | +2 % | 2 % | 2 pts requis | FORTEMENT PROBABLE |
+| II | 3 SkillPoint/rang | PV: 2 % | +2 % | 4 % | 2 pts requis | FORTEMENT PROBABLE |
+| III | 4 SkillPoint/rang | PV: 2 % | +2 % | 6 % | 2 pts requis | FORTEMENT PROBABLE |
+
+#### Attaque augmentée 3
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 2
+**Prérequis :** Attaque augmentée 2
+**Débloque :** Attaque augmentée 4 (depuis rang I), Attaque augmentée 4 (depuis rang II), Attaque augmentée 4 (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Attaque: 3 % | +3 % | 3 % | 4 pts requis | FORTEMENT PROBABLE |
+| II | 3 SkillPoint/rang | Attaque: 3 % | +3 % | 6 % | 4 pts requis | FORTEMENT PROBABLE |
+| III | 4 SkillPoint/rang | Attaque: 3 % | +3 % | 9 % | 4 pts requis | FORTEMENT PROBABLE |
+
+#### Défense augmentée 3
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
+**Prérequis :** Défense augmentée 2
+**Débloque :** Défense augmentée 4 (depuis rang II), Défense augmentée 4 (depuis rang III), Défense augmentée 4 (depuis rang I)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | Défense: 3 % | +3 % | 3 % | 4 pts requis | FORTEMENT PROBABLE |
+| II | 3 SkillPoint/rang | Défense: 3 % | +3 % | 6 % | 4 pts requis | FORTEMENT PROBABLE |
+| III | 4 SkillPoint/rang | Défense: 3 % | +3 % | 9 % | 4 pts requis | FORTEMENT PROBABLE |
+
+#### PV augmentés 3
+
+**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 4
+**Prérequis :** PV augmentés 2
+**Débloque :** PV augmentés 4 (depuis rang III), PV augmentés 4 (depuis rang I), PV augmentés 4 (depuis rang II)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 2 SkillPoint | PV: 3 % | +3 % | 3 % | 4 pts requis | FORTEMENT PROBABLE |
+| II | 3 SkillPoint/rang | PV: 3 % | +3 % | 6 % | 4 pts requis | FORTEMENT PROBABLE |
+| III | 4 SkillPoint/rang | PV: 3 % | +3 % | 9 % | 4 pts requis | FORTEMENT PROBABLE |
+
+#### Attaque augmentée 4
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 2
+**Prérequis :** Attaque augmentée 3
+**Débloque :** Attaque augmentée 5 (depuis rang I), Attaque augmentée 5 (depuis rang II), Attaque augmentée 5 (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | Attaque: 4 % | +4 % | 4 % | 6 pts requis | FORTEMENT PROBABLE |
+| II | 4 SkillPoint/rang | Attaque: 4 % | +4 % | 8 % | 6 pts requis | FORTEMENT PROBABLE |
+| III | 5 SkillPoint/rang | Attaque: 4 % | +4 % | 12 % | 6 pts requis | FORTEMENT PROBABLE |
+
+#### Défense augmentée 4
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 3
+**Prérequis :** Défense augmentée 3
+**Débloque :** Défense augmentée 5 (depuis rang II), Défense augmentée 5 (depuis rang III), Défense augmentée 5 (depuis rang I)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | Défense: 4 % | +4 % | 4 % | 6 pts requis | FORTEMENT PROBABLE |
+| II | 4 SkillPoint/rang | Défense: 4 % | +4 % | 8 % | 6 pts requis | FORTEMENT PROBABLE |
+| III | 5 SkillPoint/rang | Défense: 4 % | +4 % | 12 % | 6 pts requis | FORTEMENT PROBABLE |
+
+#### PV augmentés 4
+
+**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 4
+**Prérequis :** PV augmentés 3
+**Débloque :** PV augmentés 5 (depuis rang III), PV augmentés 5 (depuis rang I), PV augmentés 5 (depuis rang II)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | PV: 4 % | +4 % | 4 % | 6 pts requis | FORTEMENT PROBABLE |
+| II | 4 SkillPoint/rang | PV: 4 % | +4 % | 8 % | 6 pts requis | FORTEMENT PROBABLE |
+| III | 5 SkillPoint/rang | PV: 4 % | +4 % | 12 % | 6 pts requis | FORTEMENT PROBABLE |
+
+#### Attaque augmentée 5
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 2
+**Prérequis :** Attaque augmentée 4
+**Débloque :** Attaque augmentée 6 (depuis rang I), Attaque augmentée 6 (depuis rang II), Attaque augmentée 6 (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | Attaque: 5 % | +5 % | 5 % | 9 pts requis | FORTEMENT PROBABLE |
+| II | 4 SkillPoint/rang | Attaque: 5 % | +5 % | 10 % | 9 pts requis | FORTEMENT PROBABLE |
+| III | 5 SkillPoint/rang | Attaque: 5 % | +5 % | 15 % | 9 pts requis | FORTEMENT PROBABLE |
+
+#### Défense augmentée 5
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 3
+**Prérequis :** Défense augmentée 4
+**Débloque :** Défense augmentée 6 (depuis rang II), Défense augmentée 6 (depuis rang III), Défense augmentée 6 (depuis rang I)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | Défense: 5 % | +5 % | 5 % | 9 pts requis | FORTEMENT PROBABLE |
+| II | 4 SkillPoint/rang | Défense: 5 % | +5 % | 10 % | 9 pts requis | FORTEMENT PROBABLE |
+| III | 5 SkillPoint/rang | Défense: 5 % | +5 % | 15 % | 9 pts requis | FORTEMENT PROBABLE |
+
+#### PV augmentés 5
+
+**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 4
+**Prérequis :** PV augmentés 4
+**Débloque :** PV augmentés 6 (depuis rang I), PV augmentés 6 (depuis rang II), PV augmentés 6 (depuis rang III)
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | PV: 5 % | +5 % | 5 % | 9 pts requis | FORTEMENT PROBABLE |
+| II | 4 SkillPoint/rang | PV: 5 % | +5 % | 10 % | 9 pts requis | FORTEMENT PROBABLE |
+| III | 5 SkillPoint/rang | PV: 5 % | +5 % | 15 % | 9 pts requis | FORTEMENT PROBABLE |
+
+#### Attaque augmentée 6
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 2
+**Prérequis :** Attaque augmentée 5
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | Attaque: 6 % | +6 % | 6 % | 12 pts requis | FORTEMENT PROBABLE |
+| II | 4 SkillPoint/rang | Attaque: 6 % | +6 % | 12 % | 12 pts requis | FORTEMENT PROBABLE |
+| III | 5 SkillPoint/rang | Attaque: 6 % | +6 % | 18 % | 12 pts requis | FORTEMENT PROBABLE |
+
+#### Défense augmentée 6
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 3
+**Prérequis :** Défense augmentée 5
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | Défense: 6 % | +6 % | 6 % | 12 pts requis | FORTEMENT PROBABLE |
+| II | 4 SkillPoint/rang | Défense: 6 % | +6 % | 12 % | 12 pts requis | FORTEMENT PROBABLE |
+| III | 5 SkillPoint/rang | Défense: 6 % | +6 % | 18 % | 12 pts requis | FORTEMENT PROBABLE |
+
+#### PV augmentés 6
+
+**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 4
+**Prérequis :** PV augmentés 5
+**Débloque :** aucun
+
+| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
+|---:|---|---|---|---|---|---|
+| I | 3 SkillPoint | PV: 6 % | +6 % | 6 % | 12 pts requis | FORTEMENT PROBABLE |
+| II | 4 SkillPoint/rang | PV: 6 % | +6 % | 12 % | 12 pts requis | FORTEMENT PROBABLE |
+| III | 5 SkillPoint/rang | PV: 6 % | +6 % | 18 % | 12 pts requis | FORTEMENT PROBABLE |
 
 # Annexe - Index par statistique
 

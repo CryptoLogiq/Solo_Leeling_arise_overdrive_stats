@@ -158,6 +158,26 @@ def clean_name(name: str):
     return name
 
 
+def md_escape(value):
+    return str(value).replace("|", "\\|").replace("\n", "<br>")
+
+
+def rank_label(rank: int):
+    labels = {
+        1: "I",
+        2: "II",
+        3: "III",
+        4: "IV",
+        5: "V",
+        6: "VI",
+        7: "VII",
+        8: "VIII",
+        9: "IX",
+        10: "X",
+    }
+    return labels.get(rank, str(rank))
+
+
 def ensure_source_csv():
     if not FULL_CSV.exists():
         subprocess.run(["python", "tools/analyze_sjw_talent_tree.py"], cwd=WORK, check=True)
@@ -263,6 +283,15 @@ def aggregate_nodes(rows):
     by_logical = defaultdict(list)
     for row in rows:
         by_logical[row.get("LogicalTalentID") or f"node:{row['NodeID']}"].append(row)
+    node_to_logical = {
+        str(row["NodeID"]): row.get("LogicalTalentID") or f"node:{row['NodeID']}"
+        for row in rows
+    }
+    raw_children = defaultdict(list)
+    for node in nodes.values():
+        node_id = str(node["ID"])
+        for parent in maybe_list(node.get("SlotLinkNodeID")):
+            raw_children[str(parent)].append(node_id)
 
     talents = []
     for logical_id, entries in by_logical.items():
@@ -298,6 +327,43 @@ def aggregate_nodes(rows):
         else:
             total_gain = gain or ("NON DÉTERMINÉ" if unresolved_numeric else "Non chiffré")
             gain_per_point = "NON DÉTERMINÉ"
+        rank_rows = []
+        by_rank_node = defaultdict(list)
+        for row in entries:
+            by_rank_node[(int(row.get("LogicalRank") or row["Rank"]), str(row["NodeID"]))].append(row)
+        for (logical_rank, rank_node_id), rank_entries in sorted(by_rank_node.items()):
+            rank_node = nodes.get(rank_node_id, {})
+            rank_effect, rank_gain_values, rank_unresolved = effect_summary(rank_entries)
+            rank_gain = " / ".join(rank_gain_values) if rank_gain_values else ""
+            if rank_gain and not rank_gain.startswith(("+", "-")):
+                rank_gain = "+" + rank_gain
+            cumulative_values = sorted(
+                {
+                    row["CumulativeGain"]
+                    for row in rank_entries
+                    if row["CumulativeGain"] and row["CumulativeGain"] != "NON DÉTERMINÉ"
+                }
+            )
+            rank_rows.append(
+                {
+                    "rank": logical_rank,
+                    "node_id": rank_node_id,
+                    "parents": [str(v) for v in maybe_list(rank_node.get("SlotLinkNodeID"))],
+                    "visual_row": int(rank_entries[0].get("VisualRow") or rank_node.get("NodeTierY") or 0),
+                    "x": int(rank_node.get("NodeTierX") or 0),
+                    "progression_depth": int(rank_entries[0].get("ProgressionDepth") or 0),
+                    "cost": cost_summary(rank_entries)[0],
+                    "effect": rank_effect,
+                    "gain": rank_gain or ("NON DÉTERMINÉ" if rank_unresolved else "Non chiffré"),
+                    "cumulative": " / ".join(cumulative_values)
+                    if cumulative_values
+                    else ("NON DÉTERMINÉ" if rank_unresolved else "Non chiffré"),
+                    "access": human_access(rank_entries[0].get("RequiredLevel"))
+                    or f"{required_path_cost(rank_node_id, nodes)} pts requis",
+                    "confidence": "; ".join(sorted({row["Confidence"] for row in rank_entries if row["Confidence"]})),
+                    "buff_ids": ",".join(sorted({row["BuffID"] for row in rank_entries if row["BuffID"]})),
+                }
+            )
         talents.append(
             {
                 "system": system,
@@ -324,8 +390,41 @@ def aggregate_nodes(rows):
                 "buff_ids": ",".join(sorted({row["BuffID"] for row in entries if row["BuffID"]})),
                 "effect_types": ",".join(sorted({row["EffectType"] for row in entries})),
                 "confidence": "; ".join(sorted({row["Confidence"] for row in entries if row["Confidence"]})),
+                "rank_rows": rank_rows,
+                "parents_human": [],
+                "unlocks_human": [],
             }
         )
+    talent_by_logical = {talent["logical_id"]: talent for talent in talents}
+    for talent in talents:
+        parent_refs = set()
+        unlock_refs = set()
+        for rank_row in talent["rank_rows"]:
+            for parent in rank_row["parents"]:
+                parent_logical = node_to_logical.get(parent)
+                if parent_logical and parent_logical != talent["logical_id"]:
+                    parent_refs.add((parent_logical, rank_row["rank"]))
+            for child in raw_children.get(rank_row["node_id"], []):
+                child_logical = node_to_logical.get(child)
+                if child_logical and child_logical != talent["logical_id"]:
+                    unlock_refs.add((child_logical, rank_row["rank"]))
+        talent["parents_human"] = [
+            talent_by_logical[logical_id]["talent"]
+            for logical_id, _ in sorted(
+                [item for item in parent_refs if item[0] in talent_by_logical],
+                key=lambda item: talent_by_logical[item[0]]["node_id"],
+            )
+        ]
+        talent["unlocks_human"] = [
+            (
+                talent_by_logical[logical_id]["talent"]
+                + (f" (depuis rang {rank_label(rank)})" if talent["ranks"] > 1 else "")
+            )
+            for logical_id, rank in sorted(
+                [item for item in unlock_refs if item[0] in talent_by_logical],
+                key=lambda item: (talent_by_logical[item[0]]["visual_row"], talent_by_logical[item[0]]["x"]),
+            )
+        ]
     return talents
 
 
@@ -403,19 +502,45 @@ def write_detailed(talents):
     shutil.copyfile(FULL_CSV, DETAILED_CSV)
 
 
-def table(lines, talents):
+def render_talent(lines, talent):
+    parents = ", ".join(dict.fromkeys(talent["parents_human"])) if talent["parents_human"] else "RACINE"
+    unlocks = ", ".join(dict.fromkeys(talent["unlocks_human"])) if talent["unlocks_human"] else "aucun"
+    position = f"profondeur technique {talent['progression_depth'] + 1}, rangée UI {talent['visual_row']}, X {talent['x']}"
     lines.extend(
         [
-            "| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |",
-            "|---|---|---|---:|---|---|---|---|---|",
+            f"#### {talent['talent']}",
+            "",
+            f"**Position dans l'arbre :** {position}",
+            f"**Prérequis :** {parents}",
+            f"**Débloque :** {unlocks}",
+            "",
+            "| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |",
+            "|---:|---|---|---|---|---|---|",
         ]
     )
-    for talent in sorted(talents, key=lambda t: (t["visual_row"], t["x"], t["node_id"])):
-        position = f"profondeur {talent['progression_depth'] + 1}, UI {talent['visual_row']}, X {talent['x']}"
+    for rank_row in sorted(talent["rank_rows"], key=lambda row: (row["rank"], row["node_id"])):
         lines.append(
-            f"| {talent['talent']} | {position} | {fr_text(talent['effect'])} | {talent['ranks']} | {talent['cost']} | "
-            f"{fr_text(talent['gain'])} | {fr_text(talent['bonus_max'])} | {fr_text(talent['yield'])} | {talent['access']} |"
+            f"| {rank_label(rank_row['rank'])} | {rank_row['cost']} | {fr_text(md_escape(rank_row['effect']))} | "
+            f"{fr_text(rank_row['gain'])} | {fr_text(rank_row['cumulative'])} | {rank_row['access']} | {rank_row['confidence']} |"
         )
+    if len(talent["node_ids"]) > 1 or talent["logical_evidence"] != "RAW_NODE_ONLY":
+        lines.extend(
+            [
+                "",
+                "<details>",
+                "<summary>Données techniques</summary>",
+                "",
+                "| Rang | NodeID | Parent(s) | VisualRow | Position X | BuffID | Preuve de regroupement |",
+                "|---:|---:|---|---:|---:|---|---|",
+            ]
+        )
+        for rank_row in sorted(talent["rank_rows"], key=lambda row: (row["rank"], row["node_id"])):
+            parents_raw = ", ".join(rank_row["parents"]) if rank_row["parents"] else "RACINE"
+            lines.append(
+                f"| {rank_label(rank_row['rank'])} | {rank_row['node_id']} | {parents_raw} | "
+                f"{rank_row['visual_row']} | {rank_row['x']} | {rank_row['buff_ids']} | {talent['logical_evidence']} |"
+            )
+        lines.extend(["", "</details>"])
     lines.append("")
 
 
@@ -429,7 +554,8 @@ def branch_section(lines, branch_name, talents, number=None, deduced=False):
     if not talents:
         lines.extend(["Aucun nœud identifié.", ""])
         return
-    table(lines, talents)
+    for talent in sorted(talents, key=lambda t: (t["visual_row"], t["x"], t["node_id"])):
+        render_talent(lines, talent)
 
 
 def render_system(lines, title, talents, order):
