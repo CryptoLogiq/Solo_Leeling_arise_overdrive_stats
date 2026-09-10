@@ -7,7 +7,7 @@ Ces règles spécialisent le `AGENTS.md` racine pour les rapports Markdown de
 
 Ordre principal :
 
-`Système -> Arbre -> Section / NodeGroup -> Talent logique -> Rang(s)`
+`Système -> Arbre -> Section / NodeGroup -> Nœud visuel / Talent -> Rang(s) internes`
 
 Règles :
 
@@ -19,10 +19,13 @@ Règles :
   découper les rangs d'un même talent entre plusieurs sections HUMAN.
 - La rangée visuelle `NodeTierY` ne doit pas être présentée comme un mécanisme
   de progression.
-- Un `NodeID` est un nœud GameData technique. HUMAN doit présenter un talent
-  logique une seule fois quand plusieurs NodeID sont démontrés comme ses rangs
-  ou upgrades.
+- Un `NodeID` est un nœud GameData technique et un nœud visuel potentiel.
+  HUMAN ne doit regrouper plusieurs NodeID dans une seule fiche que si un champ
+  GameData de rang/niveau ou une preuve validée démontre qu'ils sont les rangs
+  internes d'un même talent.
 - Ne jamais fusionner plusieurs NodeID en talent logique sur le seul nom.
+- Ne jamais déduire un rang interne depuis un suffixe romain dans le nom
+  localisé. Une famille/série de talents ne remplace jamais les nœuds du graphe.
 - Les détails techniques lourds (`NodeID`, `BuffID`, offsets, raw complexes)
   peuvent rester dans TECHNICAL / GRAPH_DATA.
 - Les tableaux de gains / progression doivent rester dans HUMAN.
@@ -67,7 +70,7 @@ Pour les documents longs, utiliser une hiérarchie cohérente :
 # Titre
 ## Arbre / système
 ### Section / NodeGroup
-#### Talent logique
+#### Nœud visuel / Talent
 ##### Détails techniques optionnels
 ```
 

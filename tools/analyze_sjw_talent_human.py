@@ -449,7 +449,12 @@ def aggregate_nodes(rows):
                 )
                 for logical_id, rank in sorted(
                     [item for item in unlock_refs if item[0] in talent_by_logical],
-                    key=lambda item: (talent_by_logical[item[0]]["visual_row"], talent_by_logical[item[0]]["x"]),
+                    key=lambda item: (
+                        talent_by_logical[item[0]]["visual_row"],
+                        talent_by_logical[item[0]]["x"],
+                        talent_by_logical[item[0]]["talent"],
+                        item[1],
+                    ),
                 )
             ]
     return talents

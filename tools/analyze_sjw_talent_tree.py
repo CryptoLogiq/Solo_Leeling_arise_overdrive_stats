@@ -83,34 +83,6 @@ PERCENT_STATS = {
 }
 RAW_STATS = {"ArmPen"}
 
-VALIDATED_LOGICAL_TALENTS = {
-    "111201": {
-        "id": "assassin:attaque_sournoise:embuscade",
-        "name": "Embuscade",
-        "rank": 1,
-        "evidence": "VALIDÉ ASSASSIN: NodeID explicites, même branche GameData, suite UI st_ambushed_1..4, libellés localisés I..IV et contrôle utilisateur",
-    },
-    "111202": {
-        "id": "assassin:attaque_sournoise:embuscade",
-        "name": "Embuscade",
-        "rank": 2,
-        "evidence": "VALIDÉ ASSASSIN: NodeID explicites, même branche GameData, suite UI st_ambushed_1..4, libellés localisés I..IV et contrôle utilisateur",
-    },
-    "111402": {
-        "id": "assassin:attaque_sournoise:embuscade",
-        "name": "Embuscade",
-        "rank": 3,
-        "evidence": "VALIDÉ ASSASSIN: NodeID explicites, même branche GameData, suite UI st_ambushed_1..4, libellés localisés I..IV et contrôle utilisateur",
-    },
-    "111602": {
-        "id": "assassin:attaque_sournoise:embuscade",
-        "name": "Embuscade",
-        "rank": 4,
-        "evidence": "VALIDÉ ASSASSIN: NodeID explicites, même branche GameData, suite UI st_ambushed_1..4, libellés localisés I..IV et contrôle utilisateur",
-    },
-}
-
-
 def load_json(name: str):
     payload = json.loads((TABLES / f"{name}.json").read_text(encoding="utf-8"))
     return payload.get("records", payload)
@@ -314,14 +286,6 @@ def label_for(effect_type):
 
 def logical_talent_for_node(node, base_name: str, rank: int):
     node_id = str(node["ID"])
-    if node_id in VALIDATED_LOGICAL_TALENTS:
-        logical = VALIDATED_LOGICAL_TALENTS[node_id]
-        return {
-            "LogicalTalentID": logical["id"],
-            "LogicalTalentName": logical["name"],
-            "LogicalRank": logical["rank"],
-            "LogicalGroupingEvidence": logical["evidence"],
-        }
     return {
         "LogicalTalentID": f"node:{node_id}",
         "LogicalTalentName": base_name,

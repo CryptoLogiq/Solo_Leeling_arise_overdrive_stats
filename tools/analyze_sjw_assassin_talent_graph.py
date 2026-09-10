@@ -314,7 +314,7 @@ def render_ambush_logical_check(lines, items, children):
         [
             "### Contrôle talent logique / rang - Embuscade",
             "",
-            "Décision HUMAN: **FUSIONNÉ** en un talent logique `Embuscade` à 4 rangs. Les NodeID restent distincts dans ce graphe technique.",
+            "Décision HUMAN: **NON FUSIONNÉ**. `Embuscade I`, `Embuscade II`, `Embuscade III` et `Embuscade IV` restent quatre nœuds/talents visuels distincts.",
             "",
             "Preuves contrôlées:",
             "",
@@ -322,8 +322,8 @@ def render_ambush_logical_check(lines, items, children):
             "- `BuffLevel=1` pour chaque BuffID direct.",
             "- `BuffGroupID` diffère entre les BuffID directs.",
             "- `NodeValue`, `TriggeredBuffID`, descriptions et effets déclenchés diffèrent.",
-            "- La fusion ne repose pas sur un regex de nom: elle est limitée aux NodeID explicites `111201`, `111202`, `111402`, `111602`, validés pour Assassin / Attaque sournoise.",
-            "- Les signaux retenus ensemble sont la même branche GameData, la suite UI `st_ambushed_1..4`, les libellés localisés I..IV et le contrôle utilisateur.",
+            "- Les positions UI diffèrent: `111201` rangée 2 / X2, `111202` rangée 2 / X4, `111402` rangée 4 / X4, `111602` rangée 6 / X4.",
+            "- Le suffixe romain appartient ici au nom localisé et ne démontre pas un rang interne.",
             "",
             "| Libellé | NodeID | NodeValue / BuffID | NodeMaxLevel | BuffGroupID | BuffLevel | Parent(s) | Enfant(s) |",
             "|---|---:|---:|---:|---:|---:|---|---|",
@@ -343,7 +343,7 @@ def render_ambush_logical_check(lines, items, children):
     lines.extend(
         [
             "",
-            "Conséquence HUMAN: `Embuscade` apparaît une seule fois avec les rangs I à IV; les parents, enfants, VisualRow et positions restent dans les données techniques.",
+            "Conséquence HUMAN: les quatre talents Embuscade restent visibles séparément dans le graphe et dans les fiches. Une éventuelle famille/série `Embuscade` peut être notée plus tard, mais elle ne remplace pas la topologie.",
             "",
         ]
     )

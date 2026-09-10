@@ -113,6 +113,13 @@ doivent jamais être fusionnés dans les données brutes. En revanche, plusieurs
 `NodeID` peuvent appartenir à un même talent logique seulement s'il est démontré
 qu'ils représentent ses rangs ou upgrades successifs.
 
+Ne jamais déduire un rang interne depuis un suffixe romain dans le nom localisé
+du talent. Des libellés comme `Talent I`, `Talent II`, `Talent III` peuvent être
+des nœuds visuels distincts, une série/famille de talents, ou de vrais rangs
+internes seulement si un champ GameData de rang/niveau du même nœud le démontre.
+Une famille/série sémantique ne doit jamais remplacer la topologie `NodeID` /
+Parent du graphe.
+
 `progression_depth` est calculé depuis les relations Parent/Enfant.
 `visual_row` conserve la rangée verticale GameData/UI (`NodeTierY`). Ne jamais
 utiliser `NodeTierY` comme chemin de progression.
