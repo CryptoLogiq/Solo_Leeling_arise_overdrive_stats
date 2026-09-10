@@ -1,0 +1,254 @@
+{
+  "table": "ItemCoreLevel",
+  "row_count": 30,
+  "columns": [
+    "ID",
+    "ItemRarity",
+    "Level",
+    "TotalExp",
+    "GoldValue",
+    "MaterialReturnExp"
+  ],
+  "records": [
+    {
+      "ID": 1,
+      "ItemRarity": "Rare",
+      "Level": 1,
+      "TotalExp": 0,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 20
+    },
+    {
+      "ID": 2,
+      "ItemRarity": "Rare",
+      "Level": 2,
+      "TotalExp": 80,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 76
+    },
+    {
+      "ID": 3,
+      "ItemRarity": "Rare",
+      "Level": 3,
+      "TotalExp": 170,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 139
+    },
+    {
+      "ID": 4,
+      "ItemRarity": "Rare",
+      "Level": 4,
+      "TotalExp": 270,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 209
+    },
+    {
+      "ID": 5,
+      "ItemRarity": "Rare",
+      "Level": 5,
+      "TotalExp": 380,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 286
+    },
+    {
+      "ID": 6,
+      "ItemRarity": "Rare",
+      "Level": 6,
+      "TotalExp": 500,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 370
+    },
+    {
+      "ID": 7,
+      "ItemRarity": "Rare",
+      "Level": 7,
+      "TotalExp": 630,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 461
+    },
+    {
+      "ID": 8,
+      "ItemRarity": "Rare",
+      "Level": 8,
+      "TotalExp": 780,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 566
+    },
+    {
+      "ID": 9,
+      "ItemRarity": "Rare",
+      "Level": 9,
+      "TotalExp": 950,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 685
+    },
+    {
+      "ID": 10,
+      "ItemRarity": "Rare",
+      "Level": 10,
+      "TotalExp": 1140,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 818
+    },
+    {
+      "ID": 11,
+      "ItemRarity": "Epic",
+      "Level": 1,
+      "TotalExp": 0,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 40
+    },
+    {
+      "ID": 12,
+      "ItemRarity": "Epic",
+      "Level": 2,
+      "TotalExp": 80,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 96
+    },
+    {
+      "ID": 13,
+      "ItemRarity": "Epic",
+      "Level": 3,
+      "TotalExp": 170,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 159
+    },
+    {
+      "ID": 14,
+      "ItemRarity": "Epic",
+      "Level": 4,
+      "TotalExp": 270,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 229
+    },
+    {
+      "ID": 15,
+      "ItemRarity": "Epic",
+      "Level": 5,
+      "TotalExp": 380,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 306
+    },
+    {
+      "ID": 16,
+      "ItemRarity": "Epic",
+      "Level": 6,
+      "TotalExp": 500,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 390
+    },
+    {
+      "ID": 17,
+      "ItemRarity": "Epic",
+      "Level": 7,
+      "TotalExp": 630,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 481
+    },
+    {
+      "ID": 18,
+      "ItemRarity": "Epic",
+      "Level": 8,
+      "TotalExp": 780,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 586
+    },
+    {
+      "ID": 19,
+      "ItemRarity": "Epic",
+      "Level": 9,
+      "TotalExp": 950,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 705
+    },
+    {
+      "ID": 20,
+      "ItemRarity": "Epic",
+      "Level": 10,
+      "TotalExp": 1140,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 838
+    },
+    {
+      "ID": 21,
+      "ItemRarity": "Legendary",
+      "Level": 1,
+      "TotalExp": 0,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 80
+    },
+    {
+      "ID": 22,
+      "ItemRarity": "Legendary",
+      "Level": 2,
+      "TotalExp": 80,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 136
+    },
+    {
+      "ID": 23,
+      "ItemRarity": "Legendary",
+      "Level": 3,
+      "TotalExp": 170,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 199
+    },
+    {
+      "ID": 24,
+      "ItemRarity": "Legendary",
+      "Level": 4,
+      "TotalExp": 270,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 269
+    },
+    {
+      "ID": 25,
+      "ItemRarity": "Legendary",
+      "Level": 5,
+      "TotalExp": 380,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 346
+    },
+    {
+      "ID": 26,
+      "ItemRarity": "Legendary",
+      "Level": 6,
+      "TotalExp": 500,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 430
+    },
+    {
+      "ID": 27,
+      "ItemRarity": "Legendary",
+      "Level": 7,
+      "TotalExp": 630,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 521
+    },
+    {
+      "ID": 28,
+      "ItemRarity": "Legendary",
+      "Level": 8,
+      "TotalExp": 780,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 626
+    },
+    {
+      "ID": 29,
+      "ItemRarity": "Legendary",
+      "Level": 9,
+      "TotalExp": 950,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 745
+    },
+    {
+      "ID": 30,
+      "ItemRarity": "Legendary",
+      "Level": 10,
+      "TotalExp": 1140,
+      "GoldValue": 1000,
+      "MaterialReturnExp": 878
+    }
+  ]
+}

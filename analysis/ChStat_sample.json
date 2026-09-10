@@ -1,0 +1,239 @@
+{
+  "source": "/media/SSD_Evogames/SteamLibrary/steamapps/common/Solo Leveling/GameData/ChStat.byte",
+  "table_name": "ChStat",
+  "row_count": 517,
+  "emitted_rows": 20,
+  "column_types": {
+    "ID": 1,
+    "StandardGroup": 1,
+    "AttackRatio": 1,
+    "ArmorRatio": 1,
+    "MHPRatio": 1,
+    "MMP": 1,
+    "MPReg": 1,
+    "HpBarSplit": 1,
+    "CalibratedID": 1
+  },
+  "records": [
+    {
+      "ID": 1,
+      "StandardGroup": 105,
+      "AttackRatio": 11941,
+      "ArmorRatio": 9010,
+      "MHPRatio": 9049,
+      "MMP": 1000,
+      "MPReg": 0,
+      "HpBarSplit": 1,
+      "CalibratedID": 1
+    },
+    {
+      "ID": 2,
+      "StandardGroup": 106,
+      "AttackRatio": 13252,
+      "ArmorRatio": 8076,
+      "MHPRatio": 8672,
+      "MMP": 1000,
+      "MPReg": 0,
+      "HpBarSplit": 1,
+      "CalibratedID": 1
+    },
+    {
+      "ID": 3,
+      "StandardGroup": 106,
+      "AttackRatio": 12141,
+      "ArmorRatio": 9627,
+      "MHPRatio": 8232,
+      "MMP": 1000,
+      "MPReg": 0,
+      "HpBarSplit": 1,
+      "CalibratedID": 1
+    },
+    {
+      "ID": 4,
+      "StandardGroup": 105,
+      "AttackRatio": 13566,
+      "ArmorRatio": 8727,
+      "MHPRatio": 7707,
+      "MMP": 1000,
+      "MPReg": 0,
+      "HpBarSplit": 1,
+      "CalibratedID": 1
+    },
+    {
+      "ID": 11,
+      "StandardGroup": 103,
+      "AttackRatio": 12745,
+      "ArmorRatio": 7794,
+      "MHPRatio": 9461,
+      "MMP": 1000,
+      "MPReg": 1,
+      "HpBarSplit": 1,
+      "CalibratedID": 101
+    },
+    {
+      "ID": 21,
+      "StandardGroup": 102,
+      "AttackRatio": 6486,
+      "ArmorRatio": 13867,
+      "MHPRatio": 9648,
+      "MMP": 1000,
+      "MPReg": 1,
+      "HpBarSplit": 1,
+      "CalibratedID": 202
+    },
+    {
+      "ID": 31,
+      "StandardGroup": 102,
+      "AttackRatio": 13505,
+      "ArmorRatio": 8201,
+      "MHPRatio": 8294,
+      "MMP": 1000,
+      "MPReg": 1,
+      "HpBarSplit": 1,
+      "CalibratedID": 102
+    },
+    {
+      "ID": 41,
+      "StandardGroup": 102,
+      "AttackRatio": 13907,
+      "ArmorRatio": 8197,
+      "MHPRatio": 7897,
+      "MMP": 1000,
+      "MPReg": 1,
+      "HpBarSplit": 1,
+      "CalibratedID": 102
+    },
+    {
+      "ID": 91,
+      "StandardGroup": 102,
+      "AttackRatio": 13510,
+      "ArmorRatio": 8823,
+      "MHPRatio": 7667,
+      "MMP": 1000,
+      "MPReg": 1,
+      "HpBarSplit": 1,
+      "CalibratedID": 102
+    },
+    {
+      "ID": 51,
+      "StandardGroup": 102,
+      "AttackRatio": 6320,
+      "ArmorRatio": 13775,
+      "MHPRatio": 9905,
+      "MMP": 1000,
+      "MPReg": 1,
+      "HpBarSplit": 1,
+      "CalibratedID": 202
+    },
+    {
+      "ID": 61,
+      "StandardGroup": 103,
+      "AttackRatio": 12935,
+      "ArmorRatio": 9174,
+      "MHPRatio": 7891,
+      "MMP": 1000,
+      "MPReg": 1,
+      "HpBarSplit": 1,
+      "CalibratedID": 101
+    },
+    {
+      "ID": 62,
+      "StandardGroup": 103,
+      "AttackRatio": 12935,
+      "ArmorRatio": 9174,
+      "MHPRatio": 7891,
+      "MMP": 1000,
+      "MPReg": 1,
+      "HpBarSplit": 1,
+      "CalibratedID": 201
+    },
+    {
+      "ID": 71,
+      "StandardGroup": 103,
+      "AttackRatio": 13658,
+      "ArmorRatio": 8586,
+      "MHPRatio": 7756,
+      "MMP": 1000,
+      "MPReg": 1,
+      "HpBarSplit": 1,
+      "CalibratedID": 101
+    },
+    {
+      "ID": 81,
+      "StandardGroup": 102,
+      "AttackRatio": 7489,
+      "ArmorRatio": 7714,
+      "MHPRatio": 14797,
+      "MMP": 1000,
+      "MPReg": 1,
+      "HpBarSplit": 1,
+      "CalibratedID": 302
+    },
+    {
+      "ID": 101,
+      "StandardGroup": 102,
+      "AttackRatio": 13064,
+      "ArmorRatio": 8897,
+      "MHPRatio": 8040,
+      "MMP": 1000,
+      "MPReg": 1,
+      "HpBarSplit": 1,
+      "CalibratedID": 102
+    },
+    {
+      "ID": 111,
+      "StandardGroup": 102,
+      "AttackRatio": 6878,
+      "ArmorRatio": 7976,
+      "MHPRatio": 15146,
+      "MMP": 1000,
+      "MPReg": 1,
+      "HpBarSplit": 1,
+      "CalibratedID": 302
+    },
+    {
+      "ID": 121,
+      "StandardGroup": 102,
+      "AttackRatio": 12327,
+      "ArmorRatio": 8808,
+      "MHPRatio": 8865,
+      "MMP": 1000,
+      "MPReg": 1,
+      "HpBarSplit": 1,
+      "CalibratedID": 102
+    },
+    {
+      "ID": 131,
+      "StandardGroup": 103,
+      "AttackRatio": 13859,
+      "ArmorRatio": 8559,
+      "MHPRatio": 7583,
+      "MMP": 1000,
+      "MPReg": 1,
+      "HpBarSplit": 1,
+      "CalibratedID": 101
+    },
+    {
+      "ID": 141,
+      "StandardGroup": 102,
+      "AttackRatio": 7391,
+      "ArmorRatio": 13087,
+      "MHPRatio": 9522,
+      "MMP": 1000,
+      "MPReg": 1,
+      "HpBarSplit": 1,
+      "CalibratedID": 202
+    },
+    {
+      "ID": 151,
+      "StandardGroup": 103,
+      "AttackRatio": 13391,
+      "ArmorRatio": 8821,
+      "MHPRatio": 7789,
+      "MMP": 1000,
+      "MPReg": 1,
+      "HpBarSplit": 1,
+      "CalibratedID": 201
+    }
+  ]
+}

@@ -1,0 +1,906 @@
+[
+  {
+    "stat": "Precision",
+    "rating": 117,
+    "shown_percent": 60.64,
+    "constants": {
+      "BaseValue": 5000,
+      "ConstValue": 50,
+      "ConstLevelCondition": 1,
+      "ConstLevelValue": 50,
+      "Min": 0,
+      "Max": -1,
+      "tooltip_fra": "Ajuste le montant minimum de dégâts lors des attaques.",
+      "tooltip_eng": "Adjusts the minimum amount of damage when attacking."
+    },
+    "inferred_K_for_base_plus_rating_over_rating_plus_K": 982.62406,
+    "fixed_constant_tests_base_plus_rating_over_rating_plus_K": [
+      {
+        "constant": "table_ConstValue",
+        "K": 50.0,
+        "percent": 120.0599,
+        "abs_error": 59.41988
+      },
+      {
+        "constant": "BattleConfig.PrecisionLevelConstValue",
+        "K": 50,
+        "percent": 120.0599,
+        "abs_error": 59.41988
+      },
+      {
+        "constant": "BattleConfig.DefRefConstant",
+        "K": 107,
+        "percent": 102.2321,
+        "abs_error": 41.592143
+      },
+      {
+        "constant": "BattleConfig.BaseCriChanceWeight",
+        "K": 500,
+        "percent": 68.9627,
+        "abs_error": 8.322723
+      },
+      {
+        "constant": "BattleConfig.BaseCriDamP",
+        "K": 3000,
+        "percent": 53.7536,
+        "abs_error": 6.886391
+      }
+    ],
+    "best_level_K_matches_with_K_eq_max_0_level_minus_condition_times_level_value": [
+      {
+        "level": 21,
+        "K": 1000.0,
+        "percent": 60.4745,
+        "abs_error": 0.165515
+      },
+      {
+        "level": 20,
+        "K": 950.0,
+        "percent": 60.9653,
+        "abs_error": 0.325323
+      },
+      {
+        "level": 22,
+        "K": 1050.0,
+        "percent": 60.0257,
+        "abs_error": 0.614293
+      },
+      {
+        "level": 19,
+        "K": 900.0,
+        "percent": 61.5044,
+        "abs_error": 0.864425
+      },
+      {
+        "level": 23,
+        "K": 1100.0,
+        "percent": 59.6138,
+        "abs_error": 1.026196
+      },
+      {
+        "level": 24,
+        "K": 1150.0,
+        "percent": 59.2344,
+        "abs_error": 1.405588
+      },
+      {
+        "level": 18,
+        "K": 850.0,
+        "percent": 62.0993,
+        "abs_error": 1.459276
+      },
+      {
+        "level": 25,
+        "K": 1200.0,
+        "percent": 58.8838,
+        "abs_error": 1.756173
+      },
+      {
+        "level": 26,
+        "K": 1250.0,
+        "percent": 58.5589,
+        "abs_error": 2.081112
+      },
+      {
+        "level": 17,
+        "K": 800.0,
+        "percent": 62.759,
+        "abs_error": 2.118997
+      }
+    ],
+    "negative_control_linear_candidate": [
+      {
+        "level": 1,
+        "percent": 51.17,
+        "abs_error": 9.47,
+        "denominator": 50.0
+      },
+      {
+        "level": 2,
+        "percent": 50.585,
+        "abs_error": 10.055,
+        "denominator": 100.0
+      },
+      {
+        "level": 3,
+        "percent": 50.39,
+        "abs_error": 10.25,
+        "denominator": 150.0
+      },
+      {
+        "level": 4,
+        "percent": 50.2925,
+        "abs_error": 10.3475,
+        "denominator": 200.0
+      },
+      {
+        "level": 5,
+        "percent": 50.234,
+        "abs_error": 10.406,
+        "denominator": 250.0
+      },
+      {
+        "level": 6,
+        "percent": 50.195,
+        "abs_error": 10.445,
+        "denominator": 300.0
+      },
+      {
+        "level": 7,
+        "percent": 50.1671,
+        "abs_error": 10.472857,
+        "denominator": 350.0
+      },
+      {
+        "level": 8,
+        "percent": 50.1463,
+        "abs_error": 10.49375,
+        "denominator": 400.0
+      },
+      {
+        "level": 9,
+        "percent": 50.13,
+        "abs_error": 10.51,
+        "denominator": 450.0
+      },
+      {
+        "level": 10,
+        "percent": 50.117,
+        "abs_error": 10.523,
+        "denominator": 500.0
+      }
+    ]
+  },
+  {
+    "stat": "Arm",
+    "rating": 497,
+    "shown_percent": 35.42,
+    "constants": {
+      "BaseValue": 0,
+      "ConstValue": 0,
+      "ConstLevelCondition": 1,
+      "ConstLevelValue": 40,
+      "Min": 0,
+      "Max": -1,
+      "tooltip_fra": "",
+      "tooltip_eng": ""
+    },
+    "inferred_K_for_base_plus_rating_over_rating_plus_K": 906.162055,
+    "fixed_constant_tests_base_plus_rating_over_rating_plus_K": [
+      {
+        "constant": "BattleConfig.PrecisionLevelConstValue",
+        "K": 50,
+        "percent": 90.8592,
+        "abs_error": 55.439232
+      },
+      {
+        "constant": "BattleConfig.DefRefConstant",
+        "K": 107,
+        "percent": 82.2848,
+        "abs_error": 46.864768
+      },
+      {
+        "constant": "BattleConfig.BaseCriChanceWeight",
+        "K": 500,
+        "percent": 49.8495,
+        "abs_error": 14.429549
+      },
+      {
+        "constant": "BattleConfig.BaseCriDamP",
+        "K": 3000,
+        "percent": 14.2122,
+        "abs_error": 21.207818
+      }
+    ],
+    "best_level_K_matches_with_K_eq_max_0_level_minus_condition_times_level_value": [
+      {
+        "level": 24,
+        "K": 920.0,
+        "percent": 35.0741,
+        "abs_error": 0.3459
+      },
+      {
+        "level": 23,
+        "K": 880.0,
+        "percent": 36.093,
+        "abs_error": 0.672956
+      },
+      {
+        "level": 25,
+        "K": 960.0,
+        "percent": 34.1112,
+        "abs_error": 1.308813
+      },
+      {
+        "level": 22,
+        "K": 840.0,
+        "percent": 37.1728,
+        "abs_error": 1.752775
+      },
+      {
+        "level": 26,
+        "K": 1000.0,
+        "percent": 33.1997,
+        "abs_error": 2.220267
+      },
+      {
+        "level": 21,
+        "K": 800.0,
+        "percent": 38.3192,
+        "abs_error": 2.899198
+      },
+      {
+        "level": 27,
+        "K": 1040.0,
+        "percent": 32.3357,
+        "abs_error": 3.084281
+      },
+      {
+        "level": 28,
+        "K": 1080.0,
+        "percent": 31.5155,
+        "abs_error": 3.904464
+      },
+      {
+        "level": 20,
+        "K": 760.0,
+        "percent": 39.5386,
+        "abs_error": 4.118584
+      },
+      {
+        "level": 29,
+        "K": 1120.0,
+        "percent": 30.7359,
+        "abs_error": 4.684069
+      }
+    ],
+    "negative_control_linear_candidate": [
+      {
+        "level": 2,
+        "percent": 0.0,
+        "abs_error": 35.42,
+        "denominator": 40.0
+      },
+      {
+        "level": 3,
+        "percent": 0.0,
+        "abs_error": 35.42,
+        "denominator": 80.0
+      },
+      {
+        "level": 4,
+        "percent": 0.0,
+        "abs_error": 35.42,
+        "denominator": 120.0
+      },
+      {
+        "level": 5,
+        "percent": 0.0,
+        "abs_error": 35.42,
+        "denominator": 160.0
+      },
+      {
+        "level": 6,
+        "percent": 0.0,
+        "abs_error": 35.42,
+        "denominator": 200.0
+      },
+      {
+        "level": 7,
+        "percent": 0.0,
+        "abs_error": 35.42,
+        "denominator": 240.0
+      },
+      {
+        "level": 8,
+        "percent": 0.0,
+        "abs_error": 35.42,
+        "denominator": 280.0
+      },
+      {
+        "level": 9,
+        "percent": 0.0,
+        "abs_error": 35.42,
+        "denominator": 320.0
+      },
+      {
+        "level": 10,
+        "percent": 0.0,
+        "abs_error": 35.42,
+        "denominator": 360.0
+      },
+      {
+        "level": 11,
+        "percent": 0.0,
+        "abs_error": 35.42,
+        "denominator": 400.0
+      }
+    ]
+  },
+  {
+    "stat": "Critical",
+    "rating": 157,
+    "shown_percent": 8.04,
+    "constants": {
+      "BaseValue": 500,
+      "ConstValue": 5000,
+      "ConstLevelCondition": 0,
+      "ConstLevelValue": 0,
+      "Min": 0,
+      "Max": -1,
+      "tooltip_fra": "Chances d'infliger des Dégâts de coup critique. La valeur de stats requise dépend du niveau de la cible.",
+      "tooltip_eng": "The chance to inflict Critical Hit Damage. The required stat value increases depending on the target's level."
+    },
+    "inferred_K_for_base_plus_rating_over_rating_plus_K": 5007.473684,
+    "fixed_constant_tests_base_plus_rating_over_rating_plus_K": [
+      {
+        "constant": "table_ConstValue",
+        "K": 5000.0,
+        "percent": 8.0444,
+        "abs_error": 0.004406
+      },
+      {
+        "constant": "BattleConfig.PrecisionLevelConstValue",
+        "K": 50,
+        "percent": 80.8454,
+        "abs_error": 72.805411
+      },
+      {
+        "constant": "BattleConfig.DefRefConstant",
+        "K": 107,
+        "percent": 64.4697,
+        "abs_error": 56.429697
+      },
+      {
+        "constant": "BattleConfig.BaseCriChanceWeight",
+        "K": 500,
+        "percent": 28.8965,
+        "abs_error": 20.856499
+      },
+      {
+        "constant": "BattleConfig.BaseCriDamP",
+        "K": 3000,
+        "percent": 9.9731,
+        "abs_error": 1.933076
+      }
+    ],
+    "best_level_K_matches_with_K_eq_max_0_level_minus_condition_times_level_value": [],
+    "negative_control_linear_candidate": [
+      {
+        "level": 1,
+        "percent": 6.57,
+        "abs_error": 1.47,
+        "denominator": 5000.0
+      },
+      {
+        "level": 2,
+        "percent": 6.57,
+        "abs_error": 1.47,
+        "denominator": 5000.0
+      },
+      {
+        "level": 3,
+        "percent": 6.57,
+        "abs_error": 1.47,
+        "denominator": 5000.0
+      },
+      {
+        "level": 4,
+        "percent": 6.57,
+        "abs_error": 1.47,
+        "denominator": 5000.0
+      },
+      {
+        "level": 5,
+        "percent": 6.57,
+        "abs_error": 1.47,
+        "denominator": 5000.0
+      },
+      {
+        "level": 6,
+        "percent": 6.57,
+        "abs_error": 1.47,
+        "denominator": 5000.0
+      },
+      {
+        "level": 7,
+        "percent": 6.57,
+        "abs_error": 1.47,
+        "denominator": 5000.0
+      },
+      {
+        "level": 8,
+        "percent": 6.57,
+        "abs_error": 1.47,
+        "denominator": 5000.0
+      },
+      {
+        "level": 9,
+        "percent": 6.57,
+        "abs_error": 1.47,
+        "denominator": 5000.0
+      },
+      {
+        "level": 10,
+        "percent": 6.57,
+        "abs_error": 1.47,
+        "denominator": 5000.0
+      }
+    ]
+  },
+  {
+    "stat": "CriDam",
+    "rating": 140,
+    "shown_percent": 55.45,
+    "constants": {
+      "BaseValue": 5000,
+      "ConstValue": 5000,
+      "ConstLevelCondition": 0,
+      "ConstLevelValue": 0,
+      "Min": 0,
+      "Max": -1,
+      "tooltip_fra": "Dégâts supplémentaires lorsque le coup critique s'active. La valeur de stats requise dépend du niveau de la cible.",
+      "tooltip_eng": "Additional damage when a Critical Hit activates. The required stat value increases depending on the target's level."
+    },
+    "inferred_K_for_base_plus_rating_over_rating_plus_K": 2428.807339,
+    "fixed_constant_tests_base_plus_rating_over_rating_plus_K": [
+      {
+        "constant": "table_ConstValue",
+        "K": 5000.0,
+        "percent": 52.7237,
+        "abs_error": 2.726265
+      },
+      {
+        "constant": "BattleConfig.PrecisionLevelConstValue",
+        "K": 50,
+        "percent": 123.6842,
+        "abs_error": 68.234211
+      },
+      {
+        "constant": "BattleConfig.DefRefConstant",
+        "K": 107,
+        "percent": 106.6802,
+        "abs_error": 51.230162
+      },
+      {
+        "constant": "BattleConfig.BaseCriChanceWeight",
+        "K": 500,
+        "percent": 71.875,
+        "abs_error": 16.425
+      },
+      {
+        "constant": "BattleConfig.BaseCriDamP",
+        "K": 3000,
+        "percent": 54.4586,
+        "abs_error": 0.991401
+      }
+    ],
+    "best_level_K_matches_with_K_eq_max_0_level_minus_condition_times_level_value": [],
+    "negative_control_linear_candidate": [
+      {
+        "level": 1,
+        "percent": 51.4,
+        "abs_error": 4.05,
+        "denominator": 5000.0
+      },
+      {
+        "level": 2,
+        "percent": 51.4,
+        "abs_error": 4.05,
+        "denominator": 5000.0
+      },
+      {
+        "level": 3,
+        "percent": 51.4,
+        "abs_error": 4.05,
+        "denominator": 5000.0
+      },
+      {
+        "level": 4,
+        "percent": 51.4,
+        "abs_error": 4.05,
+        "denominator": 5000.0
+      },
+      {
+        "level": 5,
+        "percent": 51.4,
+        "abs_error": 4.05,
+        "denominator": 5000.0
+      },
+      {
+        "level": 6,
+        "percent": 51.4,
+        "abs_error": 4.05,
+        "denominator": 5000.0
+      },
+      {
+        "level": 7,
+        "percent": 51.4,
+        "abs_error": 4.05,
+        "denominator": 5000.0
+      },
+      {
+        "level": 8,
+        "percent": 51.4,
+        "abs_error": 4.05,
+        "denominator": 5000.0
+      },
+      {
+        "level": 9,
+        "percent": 51.4,
+        "abs_error": 4.05,
+        "denominator": 5000.0
+      },
+      {
+        "level": 10,
+        "percent": 51.4,
+        "abs_error": 4.05,
+        "denominator": 5000.0
+      }
+    ]
+  },
+  {
+    "stat": "ArmPen",
+    "rating": 167,
+    "shown_percent": 7.71,
+    "constants": {
+      "BaseValue": 0,
+      "ConstValue": 2000,
+      "ConstLevelCondition": 60,
+      "ConstLevelValue": 40,
+      "Min": 0,
+      "Max": -1,
+      "tooltip_fra": "Pourcentage d'attaques qui ignorent la Défense de la cible. La valeur de stats requise dépend du niveau de la cible.",
+      "tooltip_eng": "Percent of attacks that ignore the target's Defense. The required stat value increases depending on the target's level."
+    },
+    "inferred_K_for_base_plus_rating_over_rating_plus_K": 1999.018158,
+    "fixed_constant_tests_base_plus_rating_over_rating_plus_K": [
+      {
+        "constant": "table_ConstValue",
+        "K": 2000.0,
+        "percent": 7.7065,
+        "abs_error": 0.003493
+      },
+      {
+        "constant": "BattleConfig.PrecisionLevelConstValue",
+        "K": 50,
+        "percent": 76.9585,
+        "abs_error": 69.248525
+      },
+      {
+        "constant": "BattleConfig.DefRefConstant",
+        "K": 107,
+        "percent": 60.9489,
+        "abs_error": 53.238905
+      },
+      {
+        "constant": "BattleConfig.BaseCriChanceWeight",
+        "K": 500,
+        "percent": 25.0375,
+        "abs_error": 17.327481
+      },
+      {
+        "constant": "BattleConfig.BaseCriDamP",
+        "K": 3000,
+        "percent": 5.2731,
+        "abs_error": 2.436871
+      }
+    ],
+    "best_level_K_matches_with_K_eq_max_0_level_minus_condition_times_level_value": [
+      {
+        "level": 110,
+        "K": 2000.0,
+        "percent": 7.7065,
+        "abs_error": 0.003493
+      },
+      {
+        "level": 109,
+        "K": 1960.0,
+        "percent": 7.8514,
+        "abs_error": 0.141434
+      },
+      {
+        "level": 111,
+        "K": 2040.0,
+        "percent": 7.5668,
+        "abs_error": 0.143167
+      },
+      {
+        "level": 112,
+        "K": 2080.0,
+        "percent": 7.4321,
+        "abs_error": 0.277868
+      },
+      {
+        "level": 108,
+        "K": 1920.0,
+        "percent": 8.0019,
+        "abs_error": 0.291917
+      },
+      {
+        "level": 113,
+        "K": 2120.0,
+        "percent": 7.3021,
+        "abs_error": 0.407857
+      },
+      {
+        "level": 107,
+        "K": 1880.0,
+        "percent": 8.1583,
+        "abs_error": 0.44828
+      },
+      {
+        "level": 114,
+        "K": 2160.0,
+        "percent": 7.1766,
+        "abs_error": 0.533378
+      },
+      {
+        "level": 106,
+        "K": 1840.0,
+        "percent": 8.3209,
+        "abs_error": 0.610877
+      },
+      {
+        "level": 115,
+        "K": 2200.0,
+        "percent": 7.0553,
+        "abs_error": 0.654656
+      }
+    ],
+    "negative_control_linear_candidate": [
+      {
+        "level": 1,
+        "percent": 1.67,
+        "abs_error": 6.04,
+        "denominator": 2000.0
+      },
+      {
+        "level": 2,
+        "percent": 1.67,
+        "abs_error": 6.04,
+        "denominator": 2000.0
+      },
+      {
+        "level": 3,
+        "percent": 1.67,
+        "abs_error": 6.04,
+        "denominator": 2000.0
+      },
+      {
+        "level": 4,
+        "percent": 1.67,
+        "abs_error": 6.04,
+        "denominator": 2000.0
+      },
+      {
+        "level": 5,
+        "percent": 1.67,
+        "abs_error": 6.04,
+        "denominator": 2000.0
+      },
+      {
+        "level": 6,
+        "percent": 1.67,
+        "abs_error": 6.04,
+        "denominator": 2000.0
+      },
+      {
+        "level": 7,
+        "percent": 1.67,
+        "abs_error": 6.04,
+        "denominator": 2000.0
+      },
+      {
+        "level": 8,
+        "percent": 1.67,
+        "abs_error": 6.04,
+        "denominator": 2000.0
+      },
+      {
+        "level": 9,
+        "percent": 1.67,
+        "abs_error": 6.04,
+        "denominator": 2000.0
+      },
+      {
+        "level": 10,
+        "percent": 1.67,
+        "abs_error": 6.04,
+        "denominator": 2000.0
+      }
+    ]
+  },
+  {
+    "stat": "Dam",
+    "rating": 74,
+    "shown_percent": 3.57,
+    "constants": {
+      "BaseValue": 0,
+      "ConstValue": 2000,
+      "ConstLevelCondition": 60,
+      "ConstLevelValue": 40,
+      "Min": 0,
+      "Max": -1,
+      "tooltip_fra": "Augmentation du taux de dégâts infligés lorsque les attaques touchent. La valeur de stats requise dépend du niveau de la cible.",
+      "tooltip_eng": "Increased rate of damage dealt when attacks hit. The required stat value increases depending on the target's level."
+    },
+    "inferred_K_for_base_plus_rating_over_rating_plus_K": 1998.829132,
+    "fixed_constant_tests_base_plus_rating_over_rating_plus_K": [
+      {
+        "constant": "table_ConstValue",
+        "K": 2000.0,
+        "percent": 3.568,
+        "abs_error": 0.002015
+      },
+      {
+        "constant": "BattleConfig.PrecisionLevelConstValue",
+        "K": 50,
+        "percent": 59.6774,
+        "abs_error": 56.107419
+      },
+      {
+        "constant": "BattleConfig.DefRefConstant",
+        "K": 107,
+        "percent": 40.884,
+        "abs_error": 37.313978
+      },
+      {
+        "constant": "BattleConfig.BaseCriChanceWeight",
+        "K": 500,
+        "percent": 12.892,
+        "abs_error": 9.321986
+      },
+      {
+        "constant": "BattleConfig.BaseCriDamP",
+        "K": 3000,
+        "percent": 2.4073,
+        "abs_error": 1.162713
+      }
+    ],
+    "best_level_K_matches_with_K_eq_max_0_level_minus_condition_times_level_value": [
+      {
+        "level": 110,
+        "K": 2000.0,
+        "percent": 3.568,
+        "abs_error": 0.002015
+      },
+      {
+        "level": 109,
+        "K": 1960.0,
+        "percent": 3.6382,
+        "abs_error": 0.068151
+      },
+      {
+        "level": 111,
+        "K": 2040.0,
+        "percent": 3.5005,
+        "abs_error": 0.069527
+      },
+      {
+        "level": 112,
+        "K": 2080.0,
+        "percent": 3.4355,
+        "abs_error": 0.134531
+      },
+      {
+        "level": 108,
+        "K": 1920.0,
+        "percent": 3.7111,
+        "abs_error": 0.141133
+      },
+      {
+        "level": 113,
+        "K": 2120.0,
+        "percent": 3.3728,
+        "abs_error": 0.197165
+      },
+      {
+        "level": 107,
+        "K": 1880.0,
+        "percent": 3.7871,
+        "abs_error": 0.217103
+      },
+      {
+        "level": 114,
+        "K": 2160.0,
+        "percent": 3.3124,
+        "abs_error": 0.257556
+      },
+      {
+        "level": 106,
+        "K": 1840.0,
+        "percent": 3.8662,
+        "abs_error": 0.296249
+      },
+      {
+        "level": 115,
+        "K": 2200.0,
+        "percent": 3.2542,
+        "abs_error": 0.315822
+      }
+    ],
+    "negative_control_linear_candidate": [
+      {
+        "level": 1,
+        "percent": 0.74,
+        "abs_error": 2.83,
+        "denominator": 2000.0
+      },
+      {
+        "level": 2,
+        "percent": 0.74,
+        "abs_error": 2.83,
+        "denominator": 2000.0
+      },
+      {
+        "level": 3,
+        "percent": 0.74,
+        "abs_error": 2.83,
+        "denominator": 2000.0
+      },
+      {
+        "level": 4,
+        "percent": 0.74,
+        "abs_error": 2.83,
+        "denominator": 2000.0
+      },
+      {
+        "level": 5,
+        "percent": 0.74,
+        "abs_error": 2.83,
+        "denominator": 2000.0
+      },
+      {
+        "level": 6,
+        "percent": 0.74,
+        "abs_error": 2.83,
+        "denominator": 2000.0
+      },
+      {
+        "level": 7,
+        "percent": 0.74,
+        "abs_error": 2.83,
+        "denominator": 2000.0
+      },
+      {
+        "level": 8,
+        "percent": 0.74,
+        "abs_error": 2.83,
+        "denominator": 2000.0
+      },
+      {
+        "level": 9,
+        "percent": 0.74,
+        "abs_error": 2.83,
+        "denominator": 2000.0
+      },
+      {
+        "level": 10,
+        "percent": 0.74,
+        "abs_error": 2.83,
+        "denominator": 2000.0
+      }
+    ]
+  }
+]

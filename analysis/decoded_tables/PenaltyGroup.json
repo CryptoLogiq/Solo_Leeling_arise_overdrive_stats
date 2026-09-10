@@ -1,0 +1,51 @@
+{
+  "table": "PenaltyGroup",
+  "row_count": 8,
+  "columns": [
+    "ID",
+    "Unused",
+    "PenaltyKind"
+  ],
+  "records": [
+    {
+      "ID": 1,
+      "Unused": "0",
+      "PenaltyKind": "[2,3,4]"
+    },
+    {
+      "ID": 2,
+      "Unused": "0",
+      "PenaltyKind": "[1,4,7,10,11]"
+    },
+    {
+      "ID": 3,
+      "Unused": "0",
+      "PenaltyKind": "[2,3,4]"
+    },
+    {
+      "ID": 4,
+      "Unused": "0",
+      "PenaltyKind": "[1,4,7,10,11]"
+    },
+    {
+      "ID": 5,
+      "Unused": "0",
+      "PenaltyKind": "[2,3,4]"
+    },
+    {
+      "ID": 6,
+      "Unused": "0",
+      "PenaltyKind": "[1,4,7,10,11]"
+    },
+    {
+      "ID": 7,
+      "Unused": "0",
+      "PenaltyKind": "[1,2,3,4,7]"
+    },
+    {
+      "ID": 8,
+      "Unused": "0",
+      "PenaltyKind": "[13,14,15,16,17,18,19,20,21,22,23]"
+    }
+  ]
+}

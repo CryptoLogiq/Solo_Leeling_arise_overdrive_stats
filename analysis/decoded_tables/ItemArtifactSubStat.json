@@ -1,0 +1,1584 @@
+{
+  "table": "ItemArtifactSubStat",
+  "row_count": 262,
+  "columns": [
+    "ID",
+    "SubStatID",
+    "OptLocation",
+    "RandomOptID"
+  ],
+  "records": [
+    {
+      "ID": 101010001,
+      "SubStatID": 10101000,
+      "OptLocation": 1,
+      "RandomOptID": 10101000
+    },
+    {
+      "ID": 101010002,
+      "SubStatID": 10101000,
+      "OptLocation": 2,
+      "RandomOptID": 10101000
+    },
+    {
+      "ID": 102010001,
+      "SubStatID": 10201000,
+      "OptLocation": 1,
+      "RandomOptID": 10201000
+    },
+    {
+      "ID": 102010002,
+      "SubStatID": 10201000,
+      "OptLocation": 2,
+      "RandomOptID": 10201000
+    },
+    {
+      "ID": 103010001,
+      "SubStatID": 10301000,
+      "OptLocation": 1,
+      "RandomOptID": 10301000
+    },
+    {
+      "ID": 103010002,
+      "SubStatID": 10301000,
+      "OptLocation": 2,
+      "RandomOptID": 10301000
+    },
+    {
+      "ID": 104010001,
+      "SubStatID": 10401000,
+      "OptLocation": 1,
+      "RandomOptID": 10401000
+    },
+    {
+      "ID": 104010002,
+      "SubStatID": 10401000,
+      "OptLocation": 2,
+      "RandomOptID": 10401000
+    },
+    {
+      "ID": 105010001,
+      "SubStatID": 10501000,
+      "OptLocation": 1,
+      "RandomOptID": 10501000
+    },
+    {
+      "ID": 105010002,
+      "SubStatID": 10501000,
+      "OptLocation": 2,
+      "RandomOptID": 10501000
+    },
+    {
+      "ID": 106010001,
+      "SubStatID": 10601000,
+      "OptLocation": 1,
+      "RandomOptID": 10601000
+    },
+    {
+      "ID": 106010002,
+      "SubStatID": 10601000,
+      "OptLocation": 2,
+      "RandomOptID": 10601000
+    },
+    {
+      "ID": 101016001,
+      "SubStatID": 10101600,
+      "OptLocation": 1,
+      "RandomOptID": 10101600
+    },
+    {
+      "ID": 101016002,
+      "SubStatID": 10101600,
+      "OptLocation": 2,
+      "RandomOptID": 10101600
+    },
+    {
+      "ID": 102016001,
+      "SubStatID": 10201600,
+      "OptLocation": 1,
+      "RandomOptID": 10201600
+    },
+    {
+      "ID": 102016002,
+      "SubStatID": 10201600,
+      "OptLocation": 2,
+      "RandomOptID": 10201600
+    },
+    {
+      "ID": 103016001,
+      "SubStatID": 10301600,
+      "OptLocation": 1,
+      "RandomOptID": 10301600
+    },
+    {
+      "ID": 103016002,
+      "SubStatID": 10301600,
+      "OptLocation": 2,
+      "RandomOptID": 10301600
+    },
+    {
+      "ID": 104016001,
+      "SubStatID": 10401600,
+      "OptLocation": 1,
+      "RandomOptID": 10401600
+    },
+    {
+      "ID": 104016002,
+      "SubStatID": 10401600,
+      "OptLocation": 2,
+      "RandomOptID": 10401600
+    },
+    {
+      "ID": 105016001,
+      "SubStatID": 10501600,
+      "OptLocation": 1,
+      "RandomOptID": 10501600
+    },
+    {
+      "ID": 105016002,
+      "SubStatID": 10501600,
+      "OptLocation": 2,
+      "RandomOptID": 10501600
+    },
+    {
+      "ID": 106016001,
+      "SubStatID": 10601600,
+      "OptLocation": 1,
+      "RandomOptID": 10601600
+    },
+    {
+      "ID": 106016002,
+      "SubStatID": 10601600,
+      "OptLocation": 2,
+      "RandomOptID": 10601600
+    },
+    {
+      "ID": 101023001,
+      "SubStatID": 10102300,
+      "OptLocation": 1,
+      "RandomOptID": 10102300
+    },
+    {
+      "ID": 101023002,
+      "SubStatID": 10102300,
+      "OptLocation": 2,
+      "RandomOptID": 10102300
+    },
+    {
+      "ID": 102023001,
+      "SubStatID": 10202300,
+      "OptLocation": 1,
+      "RandomOptID": 10202300
+    },
+    {
+      "ID": 102023002,
+      "SubStatID": 10202300,
+      "OptLocation": 2,
+      "RandomOptID": 10202300
+    },
+    {
+      "ID": 103023001,
+      "SubStatID": 10302300,
+      "OptLocation": 1,
+      "RandomOptID": 10302300
+    },
+    {
+      "ID": 103023002,
+      "SubStatID": 10302300,
+      "OptLocation": 2,
+      "RandomOptID": 10302300
+    },
+    {
+      "ID": 104023001,
+      "SubStatID": 10402300,
+      "OptLocation": 1,
+      "RandomOptID": 10402300
+    },
+    {
+      "ID": 104023002,
+      "SubStatID": 10402300,
+      "OptLocation": 2,
+      "RandomOptID": 10402300
+    },
+    {
+      "ID": 105023001,
+      "SubStatID": 10502300,
+      "OptLocation": 1,
+      "RandomOptID": 10502300
+    },
+    {
+      "ID": 105023002,
+      "SubStatID": 10502300,
+      "OptLocation": 2,
+      "RandomOptID": 10502300
+    },
+    {
+      "ID": 106023001,
+      "SubStatID": 10602300,
+      "OptLocation": 1,
+      "RandomOptID": 10602300
+    },
+    {
+      "ID": 106023002,
+      "SubStatID": 10602300,
+      "OptLocation": 2,
+      "RandomOptID": 10602300
+    },
+    {
+      "ID": 107029001,
+      "SubStatID": 10702900,
+      "OptLocation": 1,
+      "RandomOptID": 10702900
+    },
+    {
+      "ID": 107029002,
+      "SubStatID": 10702900,
+      "OptLocation": 2,
+      "RandomOptID": 10702900
+    },
+    {
+      "ID": 108029001,
+      "SubStatID": 10802900,
+      "OptLocation": 1,
+      "RandomOptID": 10802900
+    },
+    {
+      "ID": 108029002,
+      "SubStatID": 10802900,
+      "OptLocation": 2,
+      "RandomOptID": 10802900
+    },
+    {
+      "ID": 109029001,
+      "SubStatID": 10902900,
+      "OptLocation": 1,
+      "RandomOptID": 10902900
+    },
+    {
+      "ID": 109029002,
+      "SubStatID": 10902900,
+      "OptLocation": 2,
+      "RandomOptID": 10902900
+    },
+    {
+      "ID": 110029001,
+      "SubStatID": 11002900,
+      "OptLocation": 1,
+      "RandomOptID": 11002900
+    },
+    {
+      "ID": 110029002,
+      "SubStatID": 11002900,
+      "OptLocation": 2,
+      "RandomOptID": 11002900
+    },
+    {
+      "ID": 111029001,
+      "SubStatID": 11102900,
+      "OptLocation": 1,
+      "RandomOptID": 11102900
+    },
+    {
+      "ID": 111029002,
+      "SubStatID": 11102900,
+      "OptLocation": 2,
+      "RandomOptID": 11102900
+    },
+    {
+      "ID": 112029001,
+      "SubStatID": 11202900,
+      "OptLocation": 1,
+      "RandomOptID": 11202900
+    },
+    {
+      "ID": 112029002,
+      "SubStatID": 11202900,
+      "OptLocation": 2,
+      "RandomOptID": 11202900
+    },
+    {
+      "ID": 107036001,
+      "SubStatID": 10703600,
+      "OptLocation": 1,
+      "RandomOptID": 10703600
+    },
+    {
+      "ID": 107036002,
+      "SubStatID": 10703600,
+      "OptLocation": 2,
+      "RandomOptID": 10703600
+    },
+    {
+      "ID": 108036001,
+      "SubStatID": 10803600,
+      "OptLocation": 1,
+      "RandomOptID": 10803600
+    },
+    {
+      "ID": 108036002,
+      "SubStatID": 10803600,
+      "OptLocation": 2,
+      "RandomOptID": 10803600
+    },
+    {
+      "ID": 109036001,
+      "SubStatID": 10903600,
+      "OptLocation": 1,
+      "RandomOptID": 10903600
+    },
+    {
+      "ID": 109036002,
+      "SubStatID": 10903600,
+      "OptLocation": 2,
+      "RandomOptID": 10903600
+    },
+    {
+      "ID": 110036001,
+      "SubStatID": 11003600,
+      "OptLocation": 1,
+      "RandomOptID": 11003600
+    },
+    {
+      "ID": 110036002,
+      "SubStatID": 11003600,
+      "OptLocation": 2,
+      "RandomOptID": 11003600
+    },
+    {
+      "ID": 111036001,
+      "SubStatID": 11103600,
+      "OptLocation": 1,
+      "RandomOptID": 11103600
+    },
+    {
+      "ID": 111036002,
+      "SubStatID": 11103600,
+      "OptLocation": 2,
+      "RandomOptID": 11103600
+    },
+    {
+      "ID": 112036001,
+      "SubStatID": 11203600,
+      "OptLocation": 1,
+      "RandomOptID": 11203600
+    },
+    {
+      "ID": 112036002,
+      "SubStatID": 11203600,
+      "OptLocation": 2,
+      "RandomOptID": 11203600
+    },
+    {
+      "ID": 107043001,
+      "SubStatID": 10704300,
+      "OptLocation": 1,
+      "RandomOptID": 10704300
+    },
+    {
+      "ID": 107043002,
+      "SubStatID": 10704300,
+      "OptLocation": 2,
+      "RandomOptID": 10704300
+    },
+    {
+      "ID": 108043001,
+      "SubStatID": 10804300,
+      "OptLocation": 1,
+      "RandomOptID": 10804300
+    },
+    {
+      "ID": 108043002,
+      "SubStatID": 10804300,
+      "OptLocation": 2,
+      "RandomOptID": 10804300
+    },
+    {
+      "ID": 109043001,
+      "SubStatID": 10904300,
+      "OptLocation": 1,
+      "RandomOptID": 10904300
+    },
+    {
+      "ID": 109043002,
+      "SubStatID": 10904300,
+      "OptLocation": 2,
+      "RandomOptID": 10904300
+    },
+    {
+      "ID": 110043001,
+      "SubStatID": 11004300,
+      "OptLocation": 1,
+      "RandomOptID": 11004300
+    },
+    {
+      "ID": 110043002,
+      "SubStatID": 11004300,
+      "OptLocation": 2,
+      "RandomOptID": 11004300
+    },
+    {
+      "ID": 111043001,
+      "SubStatID": 11104300,
+      "OptLocation": 1,
+      "RandomOptID": 11104300
+    },
+    {
+      "ID": 111043002,
+      "SubStatID": 11104300,
+      "OptLocation": 2,
+      "RandomOptID": 11104300
+    },
+    {
+      "ID": 112043001,
+      "SubStatID": 11204300,
+      "OptLocation": 1,
+      "RandomOptID": 11204300
+    },
+    {
+      "ID": 112043002,
+      "SubStatID": 11204300,
+      "OptLocation": 2,
+      "RandomOptID": 11204300
+    },
+    {
+      "ID": 113049001,
+      "SubStatID": 11304900,
+      "OptLocation": 1,
+      "RandomOptID": 11304900
+    },
+    {
+      "ID": 113049002,
+      "SubStatID": 11304900,
+      "OptLocation": 2,
+      "RandomOptID": 11304900
+    },
+    {
+      "ID": 114049001,
+      "SubStatID": 11404900,
+      "OptLocation": 1,
+      "RandomOptID": 11404900
+    },
+    {
+      "ID": 114049002,
+      "SubStatID": 11404900,
+      "OptLocation": 2,
+      "RandomOptID": 11404900
+    },
+    {
+      "ID": 115049001,
+      "SubStatID": 11504900,
+      "OptLocation": 1,
+      "RandomOptID": 11504900
+    },
+    {
+      "ID": 115049002,
+      "SubStatID": 11504900,
+      "OptLocation": 2,
+      "RandomOptID": 11504900
+    },
+    {
+      "ID": 116049001,
+      "SubStatID": 11604900,
+      "OptLocation": 1,
+      "RandomOptID": 11604900
+    },
+    {
+      "ID": 116049002,
+      "SubStatID": 11604900,
+      "OptLocation": 2,
+      "RandomOptID": 11604900
+    },
+    {
+      "ID": 117049001,
+      "SubStatID": 11704900,
+      "OptLocation": 1,
+      "RandomOptID": 11704900
+    },
+    {
+      "ID": 117049002,
+      "SubStatID": 11704900,
+      "OptLocation": 2,
+      "RandomOptID": 11704900
+    },
+    {
+      "ID": 118049001,
+      "SubStatID": 11804900,
+      "OptLocation": 1,
+      "RandomOptID": 11804900
+    },
+    {
+      "ID": 118049002,
+      "SubStatID": 11804900,
+      "OptLocation": 2,
+      "RandomOptID": 11804900
+    },
+    {
+      "ID": 113055001,
+      "SubStatID": 11305500,
+      "OptLocation": 1,
+      "RandomOptID": 11305500
+    },
+    {
+      "ID": 113055002,
+      "SubStatID": 11305500,
+      "OptLocation": 2,
+      "RandomOptID": 11305500
+    },
+    {
+      "ID": 114055001,
+      "SubStatID": 11405500,
+      "OptLocation": 1,
+      "RandomOptID": 11405500
+    },
+    {
+      "ID": 114055002,
+      "SubStatID": 11405500,
+      "OptLocation": 2,
+      "RandomOptID": 11405500
+    },
+    {
+      "ID": 115055001,
+      "SubStatID": 11505500,
+      "OptLocation": 1,
+      "RandomOptID": 11505500
+    },
+    {
+      "ID": 115055002,
+      "SubStatID": 11505500,
+      "OptLocation": 2,
+      "RandomOptID": 11505500
+    },
+    {
+      "ID": 116055001,
+      "SubStatID": 11605500,
+      "OptLocation": 1,
+      "RandomOptID": 11605500
+    },
+    {
+      "ID": 116055002,
+      "SubStatID": 11605500,
+      "OptLocation": 2,
+      "RandomOptID": 11605500
+    },
+    {
+      "ID": 117055001,
+      "SubStatID": 11705500,
+      "OptLocation": 1,
+      "RandomOptID": 11705500
+    },
+    {
+      "ID": 117055002,
+      "SubStatID": 11705500,
+      "OptLocation": 2,
+      "RandomOptID": 11705500
+    },
+    {
+      "ID": 118055001,
+      "SubStatID": 11805500,
+      "OptLocation": 1,
+      "RandomOptID": 11805500
+    },
+    {
+      "ID": 118055002,
+      "SubStatID": 11805500,
+      "OptLocation": 2,
+      "RandomOptID": 11805500
+    },
+    {
+      "ID": 113063001,
+      "SubStatID": 11306300,
+      "OptLocation": 1,
+      "RandomOptID": 11306300
+    },
+    {
+      "ID": 113063002,
+      "SubStatID": 11306300,
+      "OptLocation": 2,
+      "RandomOptID": 11306300
+    },
+    {
+      "ID": 114063001,
+      "SubStatID": 11406300,
+      "OptLocation": 1,
+      "RandomOptID": 11406300
+    },
+    {
+      "ID": 114063002,
+      "SubStatID": 11406300,
+      "OptLocation": 2,
+      "RandomOptID": 11406300
+    },
+    {
+      "ID": 115063001,
+      "SubStatID": 11506300,
+      "OptLocation": 1,
+      "RandomOptID": 11506300
+    },
+    {
+      "ID": 115063002,
+      "SubStatID": 11506300,
+      "OptLocation": 2,
+      "RandomOptID": 11506300
+    },
+    {
+      "ID": 116063001,
+      "SubStatID": 11606300,
+      "OptLocation": 1,
+      "RandomOptID": 11606300
+    },
+    {
+      "ID": 116063002,
+      "SubStatID": 11606300,
+      "OptLocation": 2,
+      "RandomOptID": 11606300
+    },
+    {
+      "ID": 117063001,
+      "SubStatID": 11706300,
+      "OptLocation": 1,
+      "RandomOptID": 11706300
+    },
+    {
+      "ID": 117063002,
+      "SubStatID": 11706300,
+      "OptLocation": 2,
+      "RandomOptID": 11706300
+    },
+    {
+      "ID": 118063001,
+      "SubStatID": 11806300,
+      "OptLocation": 1,
+      "RandomOptID": 11806300
+    },
+    {
+      "ID": 118063002,
+      "SubStatID": 11806300,
+      "OptLocation": 2,
+      "RandomOptID": 11806300
+    },
+    {
+      "ID": 701080001,
+      "SubStatID": 70108000,
+      "OptLocation": 1,
+      "RandomOptID": 70108000
+    },
+    {
+      "ID": 701080002,
+      "SubStatID": 70108000,
+      "OptLocation": 2,
+      "RandomOptID": 70108000
+    },
+    {
+      "ID": 702080001,
+      "SubStatID": 70208000,
+      "OptLocation": 1,
+      "RandomOptID": 70208000
+    },
+    {
+      "ID": 702080002,
+      "SubStatID": 70208000,
+      "OptLocation": 2,
+      "RandomOptID": 70208000
+    },
+    {
+      "ID": 703080001,
+      "SubStatID": 70308000,
+      "OptLocation": 1,
+      "RandomOptID": 70308000
+    },
+    {
+      "ID": 703080002,
+      "SubStatID": 70308000,
+      "OptLocation": 2,
+      "RandomOptID": 70308000
+    },
+    {
+      "ID": 704080001,
+      "SubStatID": 70408000,
+      "OptLocation": 1,
+      "RandomOptID": 70408000
+    },
+    {
+      "ID": 704080002,
+      "SubStatID": 70408000,
+      "OptLocation": 2,
+      "RandomOptID": 70408000
+    },
+    {
+      "ID": 711080001,
+      "SubStatID": 71108000,
+      "OptLocation": 1,
+      "RandomOptID": 71108000
+    },
+    {
+      "ID": 711080002,
+      "SubStatID": 71108000,
+      "OptLocation": 2,
+      "RandomOptID": 71108000
+    },
+    {
+      "ID": 712080001,
+      "SubStatID": 71208000,
+      "OptLocation": 1,
+      "RandomOptID": 71208000
+    },
+    {
+      "ID": 712080002,
+      "SubStatID": 71208000,
+      "OptLocation": 2,
+      "RandomOptID": 71208000
+    },
+    {
+      "ID": 713080001,
+      "SubStatID": 71308000,
+      "OptLocation": 1,
+      "RandomOptID": 71308000
+    },
+    {
+      "ID": 713080002,
+      "SubStatID": 71308000,
+      "OptLocation": 2,
+      "RandomOptID": 71308000
+    },
+    {
+      "ID": 714080001,
+      "SubStatID": 71408000,
+      "OptLocation": 1,
+      "RandomOptID": 71408000
+    },
+    {
+      "ID": 714080002,
+      "SubStatID": 71408000,
+      "OptLocation": 2,
+      "RandomOptID": 71408000
+    },
+    {
+      "ID": 721080001,
+      "SubStatID": 72108000,
+      "OptLocation": 1,
+      "RandomOptID": 72108000
+    },
+    {
+      "ID": 721080002,
+      "SubStatID": 72108000,
+      "OptLocation": 2,
+      "RandomOptID": 72108000
+    },
+    {
+      "ID": 722080001,
+      "SubStatID": 72208000,
+      "OptLocation": 1,
+      "RandomOptID": 72208000
+    },
+    {
+      "ID": 722080002,
+      "SubStatID": 72208000,
+      "OptLocation": 2,
+      "RandomOptID": 72208000
+    },
+    {
+      "ID": 723080001,
+      "SubStatID": 72308000,
+      "OptLocation": 1,
+      "RandomOptID": 72308000
+    },
+    {
+      "ID": 723080002,
+      "SubStatID": 72308000,
+      "OptLocation": 2,
+      "RandomOptID": 72308000
+    },
+    {
+      "ID": 724080001,
+      "SubStatID": 72408000,
+      "OptLocation": 1,
+      "RandomOptID": 72408000
+    },
+    {
+      "ID": 724080002,
+      "SubStatID": 72408000,
+      "OptLocation": 2,
+      "RandomOptID": 72408000
+    },
+    {
+      "ID": 731080001,
+      "SubStatID": 73108000,
+      "OptLocation": 1,
+      "RandomOptID": 73108000
+    },
+    {
+      "ID": 731080002,
+      "SubStatID": 73108000,
+      "OptLocation": 2,
+      "RandomOptID": 73108000
+    },
+    {
+      "ID": 732080001,
+      "SubStatID": 73208000,
+      "OptLocation": 1,
+      "RandomOptID": 73208000
+    },
+    {
+      "ID": 732080002,
+      "SubStatID": 73208000,
+      "OptLocation": 2,
+      "RandomOptID": 73208000
+    },
+    {
+      "ID": 733080001,
+      "SubStatID": 73308000,
+      "OptLocation": 1,
+      "RandomOptID": 73308000
+    },
+    {
+      "ID": 733080002,
+      "SubStatID": 73308000,
+      "OptLocation": 2,
+      "RandomOptID": 73308000
+    },
+    {
+      "ID": 734080001,
+      "SubStatID": 73408000,
+      "OptLocation": 1,
+      "RandomOptID": 73408000
+    },
+    {
+      "ID": 734080002,
+      "SubStatID": 73408000,
+      "OptLocation": 2,
+      "RandomOptID": 73408000
+    },
+    {
+      "ID": 741080001,
+      "SubStatID": 74108000,
+      "OptLocation": 1,
+      "RandomOptID": 74108000
+    },
+    {
+      "ID": 741080002,
+      "SubStatID": 74108000,
+      "OptLocation": 2,
+      "RandomOptID": 74108000
+    },
+    {
+      "ID": 742080001,
+      "SubStatID": 74208000,
+      "OptLocation": 1,
+      "RandomOptID": 74208000
+    },
+    {
+      "ID": 742080002,
+      "SubStatID": 74208000,
+      "OptLocation": 2,
+      "RandomOptID": 74208000
+    },
+    {
+      "ID": 743080001,
+      "SubStatID": 74308000,
+      "OptLocation": 1,
+      "RandomOptID": 74308000
+    },
+    {
+      "ID": 743080002,
+      "SubStatID": 74308000,
+      "OptLocation": 2,
+      "RandomOptID": 74308000
+    },
+    {
+      "ID": 744080001,
+      "SubStatID": 74408000,
+      "OptLocation": 1,
+      "RandomOptID": 74408000
+    },
+    {
+      "ID": 744080002,
+      "SubStatID": 74408000,
+      "OptLocation": 2,
+      "RandomOptID": 74408000
+    },
+    {
+      "ID": 751080001,
+      "SubStatID": 75108000,
+      "OptLocation": 1,
+      "RandomOptID": 75108000
+    },
+    {
+      "ID": 751080002,
+      "SubStatID": 75108000,
+      "OptLocation": 2,
+      "RandomOptID": 75108000
+    },
+    {
+      "ID": 752080001,
+      "SubStatID": 75208000,
+      "OptLocation": 1,
+      "RandomOptID": 75208000
+    },
+    {
+      "ID": 752080002,
+      "SubStatID": 75208000,
+      "OptLocation": 2,
+      "RandomOptID": 75208000
+    },
+    {
+      "ID": 753080001,
+      "SubStatID": 75308000,
+      "OptLocation": 1,
+      "RandomOptID": 75308000
+    },
+    {
+      "ID": 753080002,
+      "SubStatID": 75308000,
+      "OptLocation": 2,
+      "RandomOptID": 75308000
+    },
+    {
+      "ID": 754080001,
+      "SubStatID": 75408000,
+      "OptLocation": 1,
+      "RandomOptID": 75408000
+    },
+    {
+      "ID": 754080002,
+      "SubStatID": 75408000,
+      "OptLocation": 2,
+      "RandomOptID": 75408000
+    },
+    {
+      "ID": 401010001,
+      "SubStatID": 40101000,
+      "OptLocation": 1,
+      "RandomOptID": 40101000
+    },
+    {
+      "ID": 401010002,
+      "SubStatID": 40101000,
+      "OptLocation": 2,
+      "RandomOptID": 40101000
+    },
+    {
+      "ID": 402010001,
+      "SubStatID": 40201000,
+      "OptLocation": 1,
+      "RandomOptID": 40201000
+    },
+    {
+      "ID": 402010002,
+      "SubStatID": 40201000,
+      "OptLocation": 2,
+      "RandomOptID": 40201000
+    },
+    {
+      "ID": 403010001,
+      "SubStatID": 40301000,
+      "OptLocation": 1,
+      "RandomOptID": 40301000
+    },
+    {
+      "ID": 403010002,
+      "SubStatID": 40301000,
+      "OptLocation": 2,
+      "RandomOptID": 40301000
+    },
+    {
+      "ID": 404010001,
+      "SubStatID": 40401000,
+      "OptLocation": 1,
+      "RandomOptID": 40401000
+    },
+    {
+      "ID": 404010002,
+      "SubStatID": 40401000,
+      "OptLocation": 2,
+      "RandomOptID": 40401000
+    },
+    {
+      "ID": 405010001,
+      "SubStatID": 40501000,
+      "OptLocation": 1,
+      "RandomOptID": 40501000
+    },
+    {
+      "ID": 405010002,
+      "SubStatID": 40501000,
+      "OptLocation": 2,
+      "RandomOptID": 40501000
+    },
+    {
+      "ID": 401016001,
+      "SubStatID": 40101600,
+      "OptLocation": 1,
+      "RandomOptID": 40101600
+    },
+    {
+      "ID": 401016002,
+      "SubStatID": 40101600,
+      "OptLocation": 2,
+      "RandomOptID": 40101600
+    },
+    {
+      "ID": 402016001,
+      "SubStatID": 40201600,
+      "OptLocation": 1,
+      "RandomOptID": 40201600
+    },
+    {
+      "ID": 402016002,
+      "SubStatID": 40201600,
+      "OptLocation": 2,
+      "RandomOptID": 40201600
+    },
+    {
+      "ID": 403016001,
+      "SubStatID": 40301600,
+      "OptLocation": 1,
+      "RandomOptID": 40301600
+    },
+    {
+      "ID": 403016002,
+      "SubStatID": 40301600,
+      "OptLocation": 2,
+      "RandomOptID": 40301600
+    },
+    {
+      "ID": 404016001,
+      "SubStatID": 40401600,
+      "OptLocation": 1,
+      "RandomOptID": 40401600
+    },
+    {
+      "ID": 404016002,
+      "SubStatID": 40401600,
+      "OptLocation": 2,
+      "RandomOptID": 40401600
+    },
+    {
+      "ID": 405016001,
+      "SubStatID": 40501600,
+      "OptLocation": 1,
+      "RandomOptID": 40501600
+    },
+    {
+      "ID": 405016002,
+      "SubStatID": 40501600,
+      "OptLocation": 2,
+      "RandomOptID": 40501600
+    },
+    {
+      "ID": 401023001,
+      "SubStatID": 40102300,
+      "OptLocation": 1,
+      "RandomOptID": 40102300
+    },
+    {
+      "ID": 401023002,
+      "SubStatID": 40102300,
+      "OptLocation": 2,
+      "RandomOptID": 40102300
+    },
+    {
+      "ID": 402023001,
+      "SubStatID": 40202300,
+      "OptLocation": 1,
+      "RandomOptID": 40202300
+    },
+    {
+      "ID": 402023002,
+      "SubStatID": 40202300,
+      "OptLocation": 2,
+      "RandomOptID": 40202300
+    },
+    {
+      "ID": 403023001,
+      "SubStatID": 40302300,
+      "OptLocation": 1,
+      "RandomOptID": 40302300
+    },
+    {
+      "ID": 403023002,
+      "SubStatID": 40302300,
+      "OptLocation": 2,
+      "RandomOptID": 40302300
+    },
+    {
+      "ID": 404023001,
+      "SubStatID": 40402300,
+      "OptLocation": 1,
+      "RandomOptID": 40402300
+    },
+    {
+      "ID": 404023002,
+      "SubStatID": 40402300,
+      "OptLocation": 2,
+      "RandomOptID": 40402300
+    },
+    {
+      "ID": 405023001,
+      "SubStatID": 40502300,
+      "OptLocation": 1,
+      "RandomOptID": 40502300
+    },
+    {
+      "ID": 405023002,
+      "SubStatID": 40502300,
+      "OptLocation": 2,
+      "RandomOptID": 40502300
+    },
+    {
+      "ID": 406029001,
+      "SubStatID": 40602900,
+      "OptLocation": 1,
+      "RandomOptID": 40602900
+    },
+    {
+      "ID": 406029002,
+      "SubStatID": 40602900,
+      "OptLocation": 2,
+      "RandomOptID": 40602900
+    },
+    {
+      "ID": 407029001,
+      "SubStatID": 40702900,
+      "OptLocation": 1,
+      "RandomOptID": 40702900
+    },
+    {
+      "ID": 407029002,
+      "SubStatID": 40702900,
+      "OptLocation": 2,
+      "RandomOptID": 40702900
+    },
+    {
+      "ID": 408029001,
+      "SubStatID": 40802900,
+      "OptLocation": 1,
+      "RandomOptID": 40802900
+    },
+    {
+      "ID": 408029002,
+      "SubStatID": 40802900,
+      "OptLocation": 2,
+      "RandomOptID": 40802900
+    },
+    {
+      "ID": 406036001,
+      "SubStatID": 40603600,
+      "OptLocation": 1,
+      "RandomOptID": 40603600
+    },
+    {
+      "ID": 406036002,
+      "SubStatID": 40603600,
+      "OptLocation": 2,
+      "RandomOptID": 40603600
+    },
+    {
+      "ID": 407036001,
+      "SubStatID": 40703600,
+      "OptLocation": 1,
+      "RandomOptID": 40703600
+    },
+    {
+      "ID": 407036002,
+      "SubStatID": 40703600,
+      "OptLocation": 2,
+      "RandomOptID": 40703600
+    },
+    {
+      "ID": 408036001,
+      "SubStatID": 40803600,
+      "OptLocation": 1,
+      "RandomOptID": 40803600
+    },
+    {
+      "ID": 408036002,
+      "SubStatID": 40803600,
+      "OptLocation": 2,
+      "RandomOptID": 40803600
+    },
+    {
+      "ID": 406043001,
+      "SubStatID": 40604300,
+      "OptLocation": 1,
+      "RandomOptID": 40604300
+    },
+    {
+      "ID": 406043002,
+      "SubStatID": 40604300,
+      "OptLocation": 2,
+      "RandomOptID": 40604300
+    },
+    {
+      "ID": 407043001,
+      "SubStatID": 40704300,
+      "OptLocation": 1,
+      "RandomOptID": 40704300
+    },
+    {
+      "ID": 407043002,
+      "SubStatID": 40704300,
+      "OptLocation": 2,
+      "RandomOptID": 40704300
+    },
+    {
+      "ID": 408043001,
+      "SubStatID": 40804300,
+      "OptLocation": 1,
+      "RandomOptID": 40804300
+    },
+    {
+      "ID": 408043002,
+      "SubStatID": 40804300,
+      "OptLocation": 2,
+      "RandomOptID": 40804300
+    },
+    {
+      "ID": 409049001,
+      "SubStatID": 40904900,
+      "OptLocation": 1,
+      "RandomOptID": 40904900
+    },
+    {
+      "ID": 409049002,
+      "SubStatID": 40904900,
+      "OptLocation": 2,
+      "RandomOptID": 40904900
+    },
+    {
+      "ID": 410049001,
+      "SubStatID": 41004900,
+      "OptLocation": 1,
+      "RandomOptID": 41004900
+    },
+    {
+      "ID": 410049002,
+      "SubStatID": 41004900,
+      "OptLocation": 2,
+      "RandomOptID": 41004900
+    },
+    {
+      "ID": 411049001,
+      "SubStatID": 41104900,
+      "OptLocation": 1,
+      "RandomOptID": 41104900
+    },
+    {
+      "ID": 411049002,
+      "SubStatID": 41104900,
+      "OptLocation": 2,
+      "RandomOptID": 41104900
+    },
+    {
+      "ID": 409055001,
+      "SubStatID": 40905500,
+      "OptLocation": 1,
+      "RandomOptID": 40905500
+    },
+    {
+      "ID": 409055002,
+      "SubStatID": 40905500,
+      "OptLocation": 2,
+      "RandomOptID": 40905500
+    },
+    {
+      "ID": 410055001,
+      "SubStatID": 41005500,
+      "OptLocation": 1,
+      "RandomOptID": 41005500
+    },
+    {
+      "ID": 410055002,
+      "SubStatID": 41005500,
+      "OptLocation": 2,
+      "RandomOptID": 41005500
+    },
+    {
+      "ID": 411055001,
+      "SubStatID": 41105500,
+      "OptLocation": 1,
+      "RandomOptID": 41105500
+    },
+    {
+      "ID": 411055002,
+      "SubStatID": 41105500,
+      "OptLocation": 2,
+      "RandomOptID": 41105500
+    },
+    {
+      "ID": 409063001,
+      "SubStatID": 40906300,
+      "OptLocation": 1,
+      "RandomOptID": 40906300
+    },
+    {
+      "ID": 409063002,
+      "SubStatID": 40906300,
+      "OptLocation": 2,
+      "RandomOptID": 40906300
+    },
+    {
+      "ID": 410063001,
+      "SubStatID": 41006300,
+      "OptLocation": 1,
+      "RandomOptID": 41006300
+    },
+    {
+      "ID": 410063002,
+      "SubStatID": 41006300,
+      "OptLocation": 2,
+      "RandomOptID": 41006300
+    },
+    {
+      "ID": 411063001,
+      "SubStatID": 41106300,
+      "OptLocation": 1,
+      "RandomOptID": 41106300
+    },
+    {
+      "ID": 411063002,
+      "SubStatID": 41106300,
+      "OptLocation": 2,
+      "RandomOptID": 41106300
+    },
+    {
+      "ID": 119069001,
+      "SubStatID": 11906900,
+      "OptLocation": 1,
+      "RandomOptID": 11906900
+    },
+    {
+      "ID": 119069002,
+      "SubStatID": 11906900,
+      "OptLocation": 2,
+      "RandomOptID": 11906900
+    },
+    {
+      "ID": 120069001,
+      "SubStatID": 12006900,
+      "OptLocation": 1,
+      "RandomOptID": 12006900
+    },
+    {
+      "ID": 120069002,
+      "SubStatID": 12006900,
+      "OptLocation": 2,
+      "RandomOptID": 12006900
+    },
+    {
+      "ID": 121069001,
+      "SubStatID": 12106900,
+      "OptLocation": 1,
+      "RandomOptID": 12106900
+    },
+    {
+      "ID": 121069002,
+      "SubStatID": 12106900,
+      "OptLocation": 2,
+      "RandomOptID": 12106900
+    },
+    {
+      "ID": 122069001,
+      "SubStatID": 12206900,
+      "OptLocation": 1,
+      "RandomOptID": 12206900
+    },
+    {
+      "ID": 122069002,
+      "SubStatID": 12206900,
+      "OptLocation": 2,
+      "RandomOptID": 12206900
+    },
+    {
+      "ID": 123069001,
+      "SubStatID": 12306900,
+      "OptLocation": 1,
+      "RandomOptID": 12306900
+    },
+    {
+      "ID": 123069002,
+      "SubStatID": 12306900,
+      "OptLocation": 2,
+      "RandomOptID": 12306900
+    },
+    {
+      "ID": 124069001,
+      "SubStatID": 12406900,
+      "OptLocation": 1,
+      "RandomOptID": 12406900
+    },
+    {
+      "ID": 124069002,
+      "SubStatID": 12406900,
+      "OptLocation": 2,
+      "RandomOptID": 12406900
+    },
+    {
+      "ID": 119076001,
+      "SubStatID": 11907600,
+      "OptLocation": 1,
+      "RandomOptID": 11907600
+    },
+    {
+      "ID": 119076002,
+      "SubStatID": 11907600,
+      "OptLocation": 2,
+      "RandomOptID": 11907600
+    },
+    {
+      "ID": 120076001,
+      "SubStatID": 12007600,
+      "OptLocation": 1,
+      "RandomOptID": 12007600
+    },
+    {
+      "ID": 120076002,
+      "SubStatID": 12007600,
+      "OptLocation": 2,
+      "RandomOptID": 12007600
+    },
+    {
+      "ID": 121076001,
+      "SubStatID": 12107600,
+      "OptLocation": 1,
+      "RandomOptID": 12107600
+    },
+    {
+      "ID": 121076002,
+      "SubStatID": 12107600,
+      "OptLocation": 2,
+      "RandomOptID": 12107600
+    },
+    {
+      "ID": 122076001,
+      "SubStatID": 12207600,
+      "OptLocation": 1,
+      "RandomOptID": 12207600
+    },
+    {
+      "ID": 122076002,
+      "SubStatID": 12207600,
+      "OptLocation": 2,
+      "RandomOptID": 12207600
+    },
+    {
+      "ID": 123076001,
+      "SubStatID": 12307600,
+      "OptLocation": 1,
+      "RandomOptID": 12307600
+    },
+    {
+      "ID": 123076002,
+      "SubStatID": 12307600,
+      "OptLocation": 2,
+      "RandomOptID": 12307600
+    },
+    {
+      "ID": 124076001,
+      "SubStatID": 12407600,
+      "OptLocation": 1,
+      "RandomOptID": 12407600
+    },
+    {
+      "ID": 124076002,
+      "SubStatID": 12407600,
+      "OptLocation": 2,
+      "RandomOptID": 12407600
+    },
+    {
+      "ID": 119084001,
+      "SubStatID": 11908400,
+      "OptLocation": 1,
+      "RandomOptID": 11908400
+    },
+    {
+      "ID": 119084002,
+      "SubStatID": 11908400,
+      "OptLocation": 2,
+      "RandomOptID": 11908400
+    },
+    {
+      "ID": 120084001,
+      "SubStatID": 12008400,
+      "OptLocation": 1,
+      "RandomOptID": 12008400
+    },
+    {
+      "ID": 120084002,
+      "SubStatID": 12008400,
+      "OptLocation": 2,
+      "RandomOptID": 12008400
+    },
+    {
+      "ID": 121084001,
+      "SubStatID": 12108400,
+      "OptLocation": 1,
+      "RandomOptID": 12108400
+    },
+    {
+      "ID": 121084002,
+      "SubStatID": 12108400,
+      "OptLocation": 2,
+      "RandomOptID": 12108400
+    },
+    {
+      "ID": 122084001,
+      "SubStatID": 12208400,
+      "OptLocation": 1,
+      "RandomOptID": 12208400
+    },
+    {
+      "ID": 122084002,
+      "SubStatID": 12208400,
+      "OptLocation": 2,
+      "RandomOptID": 12208400
+    },
+    {
+      "ID": 123084001,
+      "SubStatID": 12308400,
+      "OptLocation": 1,
+      "RandomOptID": 12308400
+    },
+    {
+      "ID": 123084002,
+      "SubStatID": 12308400,
+      "OptLocation": 2,
+      "RandomOptID": 12308400
+    },
+    {
+      "ID": 124084001,
+      "SubStatID": 12408400,
+      "OptLocation": 1,
+      "RandomOptID": 12408400
+    },
+    {
+      "ID": 124084002,
+      "SubStatID": 12408400,
+      "OptLocation": 2,
+      "RandomOptID": 12408400
+    },
+    {
+      "ID": 761084001,
+      "SubStatID": 76108400,
+      "OptLocation": 1,
+      "RandomOptID": 76108400
+    },
+    {
+      "ID": 761084002,
+      "SubStatID": 76108400,
+      "OptLocation": 2,
+      "RandomOptID": 76108400
+    },
+    {
+      "ID": 771084001,
+      "SubStatID": 77108400,
+      "OptLocation": 1,
+      "RandomOptID": 77108400
+    },
+    {
+      "ID": 771084002,
+      "SubStatID": 77108400,
+      "OptLocation": 2,
+      "RandomOptID": 77108400
+    }
+  ]
+}

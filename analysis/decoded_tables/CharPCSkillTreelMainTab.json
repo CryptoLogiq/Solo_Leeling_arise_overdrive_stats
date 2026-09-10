@@ -1,0 +1,72 @@
+{
+  "table": "CharPCSkillTreelMainTab",
+  "row_count": 3,
+  "columns": [
+    "ID",
+    "SkillTreeMainType",
+    "SkillTreeTitle",
+    "SkillTreeIcon",
+    "SkillTreeUnlockCondition",
+    "SkillTreeTopMenuDisplayType",
+    "SkillTreeTopMenuDisplayGroup"
+  ],
+  "records": [
+    {
+      "ID": 1,
+      "SkillTreeMainType": "SJWSkillTree",
+      "SkillTreeTitle": "ESkillTreeTab.SJWSkillTree",
+      "SkillTreeIcon": "",
+      "SkillTreeUnlockCondition": 0,
+      "SkillTreeTopMenuDisplayType": "[3,3]",
+      "SkillTreeTopMenuDisplayGroup": "[1000029, 1000033]",
+      "SkillTreeMainType_fra": "SJWSkillTree",
+      "SkillTreeMainType_eng": "SJWSkillTree",
+      "SkillTreeTitle_fra": "ESkillTreeTab.SJWSkillTree",
+      "SkillTreeTitle_eng": "ESkillTreeTab.SJWSkillTree",
+      "SkillTreeIcon_fra": "",
+      "SkillTreeIcon_eng": "",
+      "SkillTreeTopMenuDisplayType_fra": "[3,3]",
+      "SkillTreeTopMenuDisplayType_eng": "[3,3]",
+      "SkillTreeTopMenuDisplayGroup_fra": "[1000029, 1000033]",
+      "SkillTreeTopMenuDisplayGroup_eng": "[1000029, 1000033]"
+    },
+    {
+      "ID": 2,
+      "SkillTreeMainType": "GSSkillTree",
+      "SkillTreeTitle": "ESkillTreeTab.GSSkillTree",
+      "SkillTreeIcon": "",
+      "SkillTreeUnlockCondition": 0,
+      "SkillTreeTopMenuDisplayType": "[3,3]",
+      "SkillTreeTopMenuDisplayGroup": "[1000030, 1000033]",
+      "SkillTreeMainType_fra": "GSSkillTree",
+      "SkillTreeMainType_eng": "GSSkillTree",
+      "SkillTreeTitle_fra": "ESkillTreeTab.GSSkillTree",
+      "SkillTreeTitle_eng": "ESkillTreeTab.GSSkillTree",
+      "SkillTreeIcon_fra": "",
+      "SkillTreeIcon_eng": "",
+      "SkillTreeTopMenuDisplayType_fra": "[3,3]",
+      "SkillTreeTopMenuDisplayType_eng": "[3,3]",
+      "SkillTreeTopMenuDisplayGroup_fra": "[1000030, 1000033]",
+      "SkillTreeTopMenuDisplayGroup_eng": "[1000030, 1000033]"
+    },
+    {
+      "ID": 3,
+      "SkillTreeMainType": "LordSkillTree",
+      "SkillTreeTitle": "ESkillTreeTab.SJWPassiveSkillTree",
+      "SkillTreeIcon": "",
+      "SkillTreeUnlockCondition": 0,
+      "SkillTreeTopMenuDisplayType": "[3,3]",
+      "SkillTreeTopMenuDisplayGroup": "[1000031, 1000033]",
+      "SkillTreeMainType_fra": "LordSkillTree",
+      "SkillTreeMainType_eng": "LordSkillTree",
+      "SkillTreeTitle_fra": "ESkillTreeTab.SJWPassiveSkillTree",
+      "SkillTreeTitle_eng": "ESkillTreeTab.SJWPassiveSkillTree",
+      "SkillTreeIcon_fra": "",
+      "SkillTreeIcon_eng": "",
+      "SkillTreeTopMenuDisplayType_fra": "[3,3]",
+      "SkillTreeTopMenuDisplayType_eng": "[3,3]",
+      "SkillTreeTopMenuDisplayGroup_fra": "[1000031, 1000033]",
+      "SkillTreeTopMenuDisplayGroup_eng": "[1000031, 1000033]"
+    }
+  ]
+}

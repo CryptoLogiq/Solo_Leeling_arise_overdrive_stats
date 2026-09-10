@@ -1,0 +1,20 @@
+{
+  "table": "SJWP",
+  "row_count": 1,
+  "columns": [
+    "ID",
+    "UISkillType1",
+    "UISkillType2"
+  ],
+  "records": [
+    {
+      "ID": 1,
+      "UISkillType1": "[]",
+      "UISkillType2": "[]",
+      "UISkillType1_fra": "[]",
+      "UISkillType1_eng": "[]",
+      "UISkillType2_fra": "[]",
+      "UISkillType2_eng": "[]"
+    }
+  ]
+}
