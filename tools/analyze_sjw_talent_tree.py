@@ -24,6 +24,10 @@ CSV_COLUMNS = [
     "SubTab",
     "Branch",
     "TalentName",
+    "LogicalTalentID",
+    "LogicalTalentName",
+    "LogicalRank",
+    "LogicalGroupingEvidence",
     "NodeID",
     "Rank",
     "MaxRank",
@@ -281,6 +285,34 @@ def label_for(effect_type):
     return STAT_LABELS.get(effect_type) or SPECIAL_LABELS.get(effect_type) or effect_type
 
 
+def logical_talent_for_node(node, base_name: str, rank: int):
+    node_id = str(node["ID"])
+    return {
+        "LogicalTalentID": f"node:{node_id}",
+        "LogicalTalentName": base_name,
+        "LogicalRank": rank,
+        "LogicalGroupingEvidence": "RAW_NODE_ONLY",
+    }
+
+
+def validate_logical_rows(rows):
+    node_to_logical = defaultdict(set)
+    logical_rank_nodes = defaultdict(set)
+    for row in rows:
+        node_to_logical[str(row["NodeID"])].add(row["LogicalTalentID"])
+        logical_rank_nodes[(row["LogicalTalentID"], str(row["LogicalRank"]))].add(str(row["NodeID"]))
+    duplicated_nodes = sorted(node_id for node_id, logical_ids in node_to_logical.items() if len(logical_ids) > 1)
+    if duplicated_nodes:
+        raise SystemExit("NodeID associé à plusieurs talents logiques: " + ", ".join(duplicated_nodes))
+    ambiguous_ranks = sorted(
+        f"{logical_id} rang {rank}: {', '.join(sorted(node_ids))}"
+        for (logical_id, rank), node_ids in logical_rank_nodes.items()
+        if len(node_ids) > 1
+    )
+    if ambiguous_ranks:
+        raise SystemExit("Rang logique associé à plusieurs NodeID sans validation: " + "; ".join(ambiguous_ranks))
+
+
 def make_rows():
     nodes = load_json("CharPCSkillTreeNode")
     buffs = {row["ID"]: row for row in load_json("ChComBuff")}
@@ -341,6 +373,7 @@ def make_rows():
             effects = [("PassiveNoNumericEffect", "")]
 
         for rank in range(1, max_rank + 1):
+            logical = logical_talent_for_node(node, base_name, rank)
             rank_cost = cost_for_rank(costs, rank)
             if rank_cost != "" and cost_kind:
                 rank_cost = f"{rank_cost} {cost_kind}"
@@ -359,6 +392,7 @@ def make_rows():
                         "SubTab": tab["sub"],
                         "Branch": tab["branch"],
                         "TalentName": f"{base_name}{rank_suffix}",
+                        **logical,
                         "NodeID": node["ID"],
                         "Rank": rank,
                         "MaxRank": max_rank,
@@ -512,6 +546,7 @@ def write_report(rows):
         f"Nœuds avec effet numérique/stat lisible: {numeric_nodes}.",
         "",
         "Progression: `ProgressionDepth` est calculé depuis les relations Parent. `VisualRow` conserve la valeur GameData `NodeTierY` et décrit seulement la rangée dans l'interface.",
+        "Talent logique: `LogicalTalentID` ajoute une couche au-dessus des NodeID. Par défaut, chaque NodeID reste son propre talent logique; un regroupement multi-NodeID exige une preuve explicite dans `LogicalGroupingEvidence`.",
         "",
     ]
     lines.extend(attack_answer(rows))
@@ -559,6 +594,7 @@ def write_report(rows):
             "- **FORTEMENT PROBABLE**: quand `NodeMaxLevel=3` et que le buff a une seule valeur brute, chaque rang réapplique le même gain marginal; le cumul est donc `raw * rang`.",
             "- **NON DÉTERMINÉ**: les données GameData seules ne prouvent pas si plusieurs sources de même stat sont additionnées avant ou après d'autres multiplicateurs runtime.",
             "- **NON DÉTERMINÉ**: la base exacte affectée par `AttFR` est nommée comme Attaque finale/ratio dans les tables (`FR`), mais l'ordre exact par rapport à attaque de base, arme, artefacts ou buffs temporaires n'est pas prouvé ici.",
+            "- Les colonnes `LogicalTalentID`, `LogicalTalentName`, `LogicalRank` et `LogicalGroupingEvidence` séparent nœud GameData, talent logique et rang logique sans fusionner par nom.",
             "- Quand deux lignes CSV ont le même `NodeID`, le même rang et le même effet, cela correspond à plusieurs slots de buff/special state dans `ChComBuff`; les colonnes demandées ne prévoient pas de champ slot/cible séparé.",
             "- Les groupes `9` et `10` existent dans `CharPCSkillTreeNode`, mais aucun sous-onglet de `CharPCSkillTreelSubTab` ne les référence explicitement; ils restent donc libellés `Groupe 9/10` au lieu d'être rattachés artificiellement.",
             "",
@@ -644,6 +680,7 @@ def write_efficiency(rows):
 
 def main():
     rows = make_rows()
+    validate_logical_rows(rows)
     write_csv(rows)
     write_report(rows)
     write_efficiency(rows)

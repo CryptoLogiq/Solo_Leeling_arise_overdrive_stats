@@ -8,6 +8,7 @@ Nœuds affichés reconstruits: 258.
 Nœuds avec effet numérique/stat lisible: 84.
 
 Progression: `ProgressionDepth` est calculé depuis les relations Parent. `VisualRow` conserve la valeur GameData `NodeTierY` et décrit seulement la rangée dans l'interface.
+Talent logique: `LogicalTalentID` ajoute une couche au-dessus des NodeID. Par défaut, chaque NodeID reste son propre talent logique; un regroupement multi-NodeID exige une preuve explicite dans `LogicalGroupingEvidence`.
 
 ## Réponse immédiate: Attaque 1/3 -> 3/3
 
@@ -301,6 +302,7 @@ Statut: **FORTEMENT PROBABLE** pour `+1% par rang / +3% au rang 3`; **NON DÉTER
 - **FORTEMENT PROBABLE**: quand `NodeMaxLevel=3` et que le buff a une seule valeur brute, chaque rang réapplique le même gain marginal; le cumul est donc `raw * rang`.
 - **NON DÉTERMINÉ**: les données GameData seules ne prouvent pas si plusieurs sources de même stat sont additionnées avant ou après d'autres multiplicateurs runtime.
 - **NON DÉTERMINÉ**: la base exacte affectée par `AttFR` est nommée comme Attaque finale/ratio dans les tables (`FR`), mais l'ordre exact par rapport à attaque de base, arme, artefacts ou buffs temporaires n'est pas prouvé ici.
+- Les colonnes `LogicalTalentID`, `LogicalTalentName`, `LogicalRank` et `LogicalGroupingEvidence` séparent nœud GameData, talent logique et rang logique sans fusionner par nom.
 - Quand deux lignes CSV ont le même `NodeID`, le même rang et le même effet, cela correspond à plusieurs slots de buff/special state dans `ChComBuff`; les colonnes demandées ne prévoient pas de champ slot/cible séparé.
 - Les groupes `9` et `10` existent dans `CharPCSkillTreeNode`, mais aucun sous-onglet de `CharPCSkillTreelSubTab` ne les référence explicitement; ils restent donc libellés `Groupe 9/10` au lieu d'être rattachés artificiellement.
 

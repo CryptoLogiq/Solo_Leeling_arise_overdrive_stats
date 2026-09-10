@@ -86,6 +86,8 @@ Règles :
 Une représentation normalisée doit conserver au minimum :
 
 - NodeID
+- logical_talent_id
+- logical_rank
 - système
 - arbre
 - section
@@ -104,6 +106,12 @@ Une représentation normalisée doit conserver au minimum :
 HUMAN, TECHNICAL, Mermaid et futurs calculateurs doivent dériver d'une source
 commune quand elle existe. Une perte d'information lors d'une amélioration est
 une **régression**.
+
+Un `NodeID` est un nœud technique GameData, pas forcément un talent HUMAN.
+Deux `NodeID` différents restent toujours deux nœuds techniques distincts et ne
+doivent jamais être fusionnés dans les données brutes. En revanche, plusieurs
+`NodeID` peuvent appartenir à un même talent logique seulement s'il est démontré
+qu'ils représentent ses rangs ou upgrades successifs.
 
 `progression_depth` est calculé depuis les relations Parent/Enfant.
 `visual_row` conserve la rangée verticale GameData/UI (`NodeTierY`). Ne jamais

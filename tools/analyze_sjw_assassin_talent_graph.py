@@ -72,6 +72,8 @@ EXPECTED_PROGRESSION_DEPTHS = {
     },
 }
 
+AMBUSH_NODE_IDS = ["111201", "111202", "111402", "111602"]
+
 
 def load_json(name: str):
     payload = json.loads((TABLES / f"{name}.json").read_text(encoding="utf-8"))
@@ -308,6 +310,48 @@ def render_depth_detail(lines, items, children):
             )
 
 
+def render_ambush_logical_check(lines, items, children):
+    by_id = {item["node_id"]: item for item in items}
+    raw_nodes = {str(row["ID"]): row for row in load_json("CharPCSkillTreeNode")}
+    buffs = {str(row["ID"]): row for row in load_json("ChComBuff")}
+    lines.extend(
+        [
+            "### Contrôle talent logique / rang - Embuscade",
+            "",
+            "Décision: **NON FUSIONNÉ**. Les GameData disponibles ne démontrent pas que ces NodeID sont les rangs d'un même talent logique.",
+            "",
+            "Preuves contrôlées:",
+            "",
+            "- `NodeMaxLevel=1` pour chaque NodeID Embuscade.",
+            "- `BuffLevel=1` pour chaque BuffID direct.",
+            "- `BuffGroupID` diffère entre les BuffID directs.",
+            "- `NodeValue`, `TriggeredBuffID`, descriptions et effets déclenchés diffèrent.",
+            "- Les suffixes I/II/III/IV et les icônes `st_ambushed_1..4` signalent un candidat de revue, pas une preuve suffisante de rang logique.",
+            "",
+            "| Libellé | NodeID | NodeValue / BuffID | NodeMaxLevel | BuffGroupID | BuffLevel | Parent(s) | Enfant(s) |",
+            "|---|---:|---:|---:|---:|---:|---|---|",
+        ]
+    )
+    for node_id in AMBUSH_NODE_IDS:
+        item = by_id[node_id]
+        node = raw_nodes[node_id]
+        buff = buffs.get(str(node.get("NodeValue")), {})
+        parents = ", ".join(item["parents"]) if item["parents"] else "RACINE"
+        child_ids = ", ".join(children[item["node_id"]]) if children[item["node_id"]] else "FEUILLE"
+        lines.append(
+            f"| {md_escape(clean_name(item['talent']))} | {node_id} | {node.get('NodeValue')} | "
+            f"{node.get('NodeMaxLevel')} | {buff.get('BuffGroupID', '')} | {buff.get('BuffLevel', '')} | "
+            f"{parents} | {child_ids} |"
+        )
+    lines.extend(
+        [
+            "",
+            "Conséquence HUMAN: ces entrées restent des talents logiques séparés tant qu'aucun champ ou observation validée ne prouve le regroupement multi-NodeID.",
+            "",
+        ]
+    )
+
+
 def build_assassin():
     rows = read_rows()
     talents = aggregate_nodes(rows)
@@ -335,7 +379,7 @@ def write_report():
     lines = [
         "# Assassin - Graphe orienté de l'arbre de talents",
         "",
-        "Source primaire: `CharPCSkillTreeNode` pour les nœuds, parents, rangées visuelles et positions; `sjw_talent_tree.csv` pour les noms, coûts, rangs, effets et profondeurs de progression.",
+        "Source primaire: `CharPCSkillTreeNode` pour les nœuds, parents, rangées visuelles et positions; `sjw_talent_tree.csv` pour les noms, coûts, rangs techniques, talents logiques, effets et profondeurs de progression.",
         "",
         "Règle de reconstruction: la progression réelle vient uniquement des relations Parent/Enfant (`SlotLinkNodeID`). `NodeTierY` est conservé comme rangée visuelle (`VisualRow`) et ne crée aucune connexion.",
         "",
@@ -379,6 +423,8 @@ def write_report():
         lines.extend([f"Validation des profondeurs de progression: **{depth_status}**", ""])
         render_validation(lines, stats)
         render_node_inventory(lines, items, children)
+        if branch == "Attaque sournoise":
+            render_ambush_logical_check(lines, items, children)
         lines.extend(["### Vue de progression", "", "Version Mermaid complète:", ""])
         render_mermaid(lines, items, children)
         lines.extend(["Version ASCII de lecture:", ""])

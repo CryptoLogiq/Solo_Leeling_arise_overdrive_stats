@@ -7,16 +7,22 @@ Ces règles spécialisent le `AGENTS.md` racine pour les rapports Markdown de
 
 Ordre principal :
 
-`Système -> Arbre -> Section / NodeGroup -> Profondeur de progression -> Rangée visuelle -> Position -> Talent`
+`Système -> Arbre -> Section / NodeGroup -> Talent logique -> Rang(s)`
 
 Règles :
 
 - Ne jamais trier la vue principale par stat, rendement ou intérêt de build.
 - Les vues transversales par stat sont uniquement des annexes.
 - Le rendement est une information du talent, jamais un critère de classement.
-- La progression HUMAN doit suivre `progression_depth`, calculé depuis les
-  parents; la rangée visuelle `NodeTierY` ne doit pas être présentée comme un
-  mécanisme de progression.
+- La progression technique `progression_depth`, calculée depuis les parents,
+  peut décrire la position d'accès d'un talent logique, mais ne doit jamais
+  découper les rangs d'un même talent entre plusieurs sections HUMAN.
+- La rangée visuelle `NodeTierY` ne doit pas être présentée comme un mécanisme
+  de progression.
+- Un `NodeID` est un nœud GameData technique. HUMAN doit présenter un talent
+  logique une seule fois quand plusieurs NodeID sont démontrés comme ses rangs
+  ou upgrades.
+- Ne jamais fusionner plusieurs NodeID en talent logique sur le seul nom.
 - Les détails techniques lourds (`NodeID`, `BuffID`, offsets, raw complexes)
   peuvent rester dans TECHNICAL / GRAPH_DATA.
 - Les tableaux de gains / progression doivent rester dans HUMAN.
@@ -61,8 +67,8 @@ Pour les documents longs, utiliser une hiérarchie cohérente :
 # Titre
 ## Arbre / système
 ### Section / NodeGroup
-#### Niveau de progression
-##### Talent
+#### Talent logique
+##### Détails techniques optionnels
 ```
 
 Ne jamais utiliser les niveaux de titre uniquement pour obtenir une taille de
@@ -85,7 +91,7 @@ seulement. Ne pas créer un sommaire contenant chaque talent.
 Présenter l'information dans cet ordre :
 
 1. vue / graphe de l'arbre ;
-2. talents par niveau de progression ;
+2. talents logiques dans l'ordre du jeu ;
 3. gains et progression ;
 4. informations complémentaires ;
 5. détails techniques / preuves si nécessaires.

@@ -1,6 +1,6 @@
 # Assassin - Graphe orienté de l'arbre de talents
 
-Source primaire: `CharPCSkillTreeNode` pour les nœuds, parents, rangées visuelles et positions; `sjw_talent_tree.csv` pour les noms, coûts, rangs, effets et profondeurs de progression.
+Source primaire: `CharPCSkillTreeNode` pour les nœuds, parents, rangées visuelles et positions; `sjw_talent_tree.csv` pour les noms, coûts, rangs techniques, talents logiques, effets et profondeurs de progression.
 
 Règle de reconstruction: la progression réelle vient uniquement des relations Parent/Enfant (`SlotLinkNodeID`). `NodeTierY` est conservé comme rangée visuelle (`VisualRow`) et ne crée aucune connexion.
 
@@ -90,6 +90,27 @@ Validation des profondeurs de progression: **CONFORME aux profondeurs attendues*
 | 111501 | Taux de coup critique augmenté - [Effet passif spécial] | 4 | 5 | 3 / 5 (offset [0,0,0]) | 111401 | 111601, 111701 |
 | 111601 | Attaque augmentée | 5 | 6 | 2 / 6 (offset [0,0,0]) | 111501 | FEUILLE |
 | 111701 | Marque de l'assassin | 5 | 7 | 3 / 7 (offset [0,0,0]) | 111501 | FEUILLE |
+
+### Contrôle talent logique / rang - Embuscade
+
+Décision: **NON FUSIONNÉ**. Les GameData disponibles ne démontrent pas que ces NodeID sont les rangs d'un même talent logique.
+
+Preuves contrôlées:
+
+- `NodeMaxLevel=1` pour chaque NodeID Embuscade.
+- `BuffLevel=1` pour chaque BuffID direct.
+- `BuffGroupID` diffère entre les BuffID directs.
+- `NodeValue`, `TriggeredBuffID`, descriptions et effets déclenchés diffèrent.
+- Les suffixes I/II/III/IV et les icônes `st_ambushed_1..4` signalent un candidat de revue, pas une preuve suffisante de rang logique.
+
+| Libellé | NodeID | NodeValue / BuffID | NodeMaxLevel | BuffGroupID | BuffLevel | Parent(s) | Enfant(s) |
+|---|---:|---:|---:|---:|---:|---|---|
+| Embuscade I | 111201 | 90000001 | 1 | 90000001 | 1 | 111101 | 111301 |
+| Embuscade II | 111202 | 94100001 | 1 | 94100001 | 1 | 111101 | 111301, 111402 |
+| Embuscade III - [Effet passif spécial] | 111402 | 90000007 | 1 | 90000007 | 1 | 111202 | 111602 |
+| Embuscade IV | 111602 | 94100002 | 1 | 94100002 | 1 | 111402 | FEUILLE |
+
+Conséquence HUMAN: ces entrées restent des talents logiques séparés tant qu'aucun champ ou observation validée ne prouve le regroupement multi-NodeID.
 
 ### Vue de progression
 

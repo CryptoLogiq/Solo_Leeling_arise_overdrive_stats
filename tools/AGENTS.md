@@ -8,6 +8,7 @@ Ces règles spécialisent le `AGENTS.md` racine pour les scripts de `tools/`.
   systèmes exploités par plusieurs sorties.
 - Construire des index réutilisables :
   - `NodeID -> node`
+  - `LogicalTalentID -> logical_talent`
   - `BuffID -> buff`
   - `SkillID -> skill`
   - `ParentID -> children`
@@ -33,8 +34,13 @@ Un arbre de talents est un **graphe orienté**, pas une liste par rangée visuel
 - Préserver les racines, bifurcations, convergences et feuilles / chemins
   terminaux.
 - `PALIER != RANG`.
-- Deux `NodeID` différents restent deux talents distincts même si leur texte est
-  identique.
+- Deux `NodeID` différents restent deux nœuds techniques distincts même si leur
+  texte est identique.
+- Plusieurs `NodeID` peuvent appartenir au même talent logique seulement si les
+  GameData, références communes, champs de rang ou observations validées le
+  démontrent.
+- Ne jamais fusionner des `NodeID` uniquement par suffixe romain, préfixe de nom
+  ou similarité de texte.
 - Plusieurs effets appartenant au même `NodeID` restent **un seul talent
   multi-effets**.
 - Ne pas confondre `NodeGroup` / section UI avec un chemin linéaire.
@@ -56,6 +62,8 @@ représentation, sans remplacer les GameData comme source primaire.
 Conserver pour chaque nœud :
 
 - `NodeID`
+- `LogicalTalentID`
+- `LogicalRank`
 - `NodeGroup`
 - `NodeTierY`
 - `progression_depth`
@@ -168,6 +176,9 @@ Si cette interprétation n'est pas démontrée, marquer le gain marginal
 - children cohérents avec Parent ;
 - absence de cycles inattendus ;
 - profondeur de progression calculable pour chaque nœud représenté ;
+- chaque NodeID appartient à au plus un talent logique ;
+- chaque rang logique est unique dans son talent logique ;
+- le regroupement HUMAN ne crée aucune relation Parent/Enfant inexistante ;
 - nombre de nœuds source = nombre de nœuds normalisés ;
 - nombre de nœuds normalisés = nombre de nœuds représentés ;
 - aucune donnée précédemment disponible supprimée par une nouvelle version.

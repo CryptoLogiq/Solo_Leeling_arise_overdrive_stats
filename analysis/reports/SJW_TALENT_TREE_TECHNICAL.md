@@ -13,12 +13,14 @@ Ces sources ne sont utilisées que pour corroborer la structure visuelle. Les co
 
 ## Modèle
 
-- Le rapport joueur agrège par `NodeID`: un nœud visuel = une ligne de talent.
-- Les effets multiples d'un même `NodeID`/`BuffID` sont regroupés dans la colonne `Effet`.
+- Le rapport joueur agrège par `LogicalTalentID`, pas directement par `NodeID`.
+- Par défaut, un NodeID reste son propre talent logique (`RAW_NODE_ONLY`).
+- Plusieurs NodeID ne peuvent partager un talent logique que si une preuve explicite est ajoutée dans `LogicalGroupingEvidence`.
+- Les effets multiples d'un même rang logique sont regroupés dans la colonne `Effet`.
 - `ProgressionDepth`: profondeur réelle calculée depuis les relations Parent.
 - `VisualRow`: valeur GameData `NodeTierY`, utilisée seulement comme rangée visuelle.
 - Position horizontale: `NodeTierX`.
-- Rang: `NodeMaxLevel`, affiché comme nombre de rangs du talent.
+- Rang technique: `NodeMaxLevel`; rang logique: `LogicalRank`.
 - Les groupes 9/10 ne sont pas forcés dans les classes; ils deviennent des structures non rattachées avec noms déduits.
 - Données détaillées vérifiables: `analysis/csv/sjw_talent_tree.csv` et `analysis/csv/sjw_talent_tree_detailed.csv`.
 
@@ -33,7 +35,9 @@ Ces sources ne sont utilisées que pour corroborer la structure visuelle. Les co
 
 ## Contrôle qualité
 
-- La partie principale du rapport joueur est triée arbre -> branche -> profondeur de progression -> rangée visuelle -> position.
+- La partie principale du rapport joueur est triée arbre -> branche -> talent logique dans l'ordre technique.
+- Chaque NodeID source appartient à au plus un talent logique.
+- Chaque rang logique pointe vers un seul NodeID sauf preuve explicite future.
 - Les sections de rendement/statistiques sont déplacées en annexe.
 - `NodeID`, `BuffID`, noms de tables et groupes internes sont absents du corps principal.
 - Les détails `NodeID`/`BuffID` complets restent dans ce rapport technique, pas dans le rapport HUMAN.

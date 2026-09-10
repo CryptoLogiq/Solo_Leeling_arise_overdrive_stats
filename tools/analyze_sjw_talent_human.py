@@ -190,7 +190,7 @@ def cost_summary(rows):
     for row in rows:
         if row["Cost"]:
             parts = row["Cost"].split()
-            costs_by_rank[int(row["Rank"])].append(parts[0])
+            costs_by_rank[int(row.get("LogicalRank") or row["Rank"])].append(parts[0])
             units.append(" ".join(parts[1:]))
         confidences.append(row["Confidence"])
     unit = next((unit for unit in units if unit), "")
@@ -202,7 +202,7 @@ def cost_summary(rows):
     if not costs:
         return "", None, False
     ambiguous = any("coût FORTEMENT PROBABLE" in conf or "coût NON" in conf for conf in confidences)
-    max_rank = max(int(row["Rank"]) for row in rows if row["Rank"])
+    max_rank = max(int(row.get("LogicalRank") or row["Rank"]) for row in rows if row.get("LogicalRank") or row["Rank"])
     if len(set(costs)) == 1:
         suffix = "/rang" if max_rank > 1 else ""
         label = f"{costs[0]} {unit}{suffix}".strip()
@@ -243,7 +243,7 @@ def effect_summary(rows):
             chunks.append(label)
             continue
         displays = []
-        for entry in sorted(entries, key=lambda r: int(r["Rank"])):
+        for entry in sorted(entries, key=lambda r: int(r.get("LogicalRank") or r["Rank"])):
             value = entry["DisplayedValue"] or entry["MarginalGain"] or entry["RawValue"]
             if value and value not in displays:
                 displays.append(value)
@@ -260,21 +260,23 @@ def effect_summary(rows):
 
 def aggregate_nodes(rows):
     nodes = {str(row["ID"]): row for row in load_json("CharPCSkillTreeNode")}
-    by_node = defaultdict(list)
+    by_logical = defaultdict(list)
     for row in rows:
-        by_node[row["NodeID"]].append(row)
+        by_logical[row.get("LogicalTalentID") or f"node:{row['NodeID']}"].append(row)
 
     talents = []
-    for node_id, entries in by_node.items():
+    for logical_id, entries in by_logical.items():
+        node_ids = sorted({str(row["NodeID"]) for row in entries}, key=int)
+        sample = sorted(entries, key=lambda row: (int(row.get("LogicalRank") or row["Rank"]), int(row["NodeID"])))[0]
+        node_id = str(sample["NodeID"])
         node = nodes.get(node_id)
         if not node:
             continue
-        sample = entries[0]
         system, section, branch, deduced = system_for(sample["MainTab"], sample["SubTab"], sample["Branch"])
         node_type = str(node.get("NodeType") or "")
         if system == "class" and node_type == "Identity":
             branch = "Nœud de classe / Overdrive"
-        ranks = sorted({int(row["Rank"]) for row in entries if row["Rank"]})
+        ranks = sorted({int(row.get("LogicalRank") or row["Rank"]) for row in entries if row.get("LogicalRank") or row["Rank"]})
         max_rank = max(ranks) if ranks else int(sample["MaxRank"] or 1)
         cost, total_cost, cost_ambiguous = cost_summary(entries)
         unit_cost = cost_unit(entries)
@@ -307,8 +309,11 @@ def aggregate_nodes(rows):
                 "visual_row": int(sample.get("VisualRow") or node.get("NodeTierY") or 0),
                 "x": int(node.get("NodeTierX") or 0),
                 "node_id": node_id,
+                "node_ids": node_ids,
+                "logical_id": logical_id,
+                "logical_evidence": "; ".join(sorted({row.get("LogicalGroupingEvidence", "") for row in entries if row.get("LogicalGroupingEvidence")})),
                 "parent": ",".join(str(v) for v in maybe_list(node.get("SlotLinkNodeID"))),
-                "talent": clean_name(sample["TalentName"]),
+                "talent": clean_name(sample.get("LogicalTalentName") or sample["TalentName"]),
                 "effect": effect,
                 "ranks": max_rank,
                 "cost": cost,
@@ -322,6 +327,39 @@ def aggregate_nodes(rows):
             }
         )
     return talents
+
+
+def validate_logical_talents(rows, talents):
+    source_nodes = {str(row["NodeID"]) for row in rows}
+    represented_nodes = {node_id for talent in talents for node_id in talent["node_ids"]}
+    if source_nodes != represented_nodes:
+        missing = sorted(source_nodes - represented_nodes, key=int)
+        extra = sorted(represented_nodes - source_nodes, key=int)
+        details = []
+        if missing:
+            details.append("NodeID perdus: " + ", ".join(missing))
+        if extra:
+            details.append("NodeID inattendus: " + ", ".join(extra))
+        raise SystemExit("; ".join(details))
+
+    owners = defaultdict(set)
+    for talent in talents:
+        for node_id in talent["node_ids"]:
+            owners[node_id].add(talent["logical_id"])
+    duplicates = sorted(node_id for node_id, logical_ids in owners.items() if len(logical_ids) > 1)
+    if duplicates:
+        raise SystemExit("NodeID représenté dans plusieurs talents logiques: " + ", ".join(duplicates))
+
+    rank_nodes = defaultdict(set)
+    for row in rows:
+        rank_nodes[(row.get("LogicalTalentID") or f"node:{row['NodeID']}", row.get("LogicalRank") or row["Rank"])].add(row["NodeID"])
+    ambiguous = sorted(
+        f"{logical_id} rang {rank}: {', '.join(sorted(node_ids, key=int))}"
+        for (logical_id, rank), node_ids in rank_nodes.items()
+        if len(node_ids) > 1
+    )
+    if ambiguous:
+        raise SystemExit("Rang logique ambigu: " + "; ".join(ambiguous))
 
 
 def human_access(value):
@@ -368,13 +406,14 @@ def write_detailed(talents):
 def table(lines, talents):
     lines.extend(
         [
-            "| Talent | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |",
-            "|---|---|---:|---|---|---|---|---|",
+            "| Talent | Position | Effet | Rangs | Coût | Gain/rang | Bonus max | Rendement | Accès |",
+            "|---|---|---|---:|---|---|---|---|---|",
         ]
     )
     for talent in sorted(talents, key=lambda t: (t["visual_row"], t["x"], t["node_id"])):
+        position = f"profondeur {talent['progression_depth'] + 1}, UI {talent['visual_row']}, X {talent['x']}"
         lines.append(
-            f"| {talent['talent']} | {fr_text(talent['effect'])} | {talent['ranks']} | {talent['cost']} | "
+            f"| {talent['talent']} | {position} | {fr_text(talent['effect'])} | {talent['ranks']} | {talent['cost']} | "
             f"{fr_text(talent['gain'])} | {fr_text(talent['bonus_max'])} | {fr_text(talent['yield'])} | {talent['access']} |"
         )
     lines.append("")
@@ -387,18 +426,10 @@ def branch_section(lines, branch_name, talents, number=None, deduced=False):
     else:
         title = f"### Branche {number} — {branch_name}{suffix}"
     lines.extend([title, ""])
-    by_depth = defaultdict(list)
-    for talent in talents:
-        by_depth[talent["progression_depth"]].append(talent)
-    if not by_depth:
+    if not talents:
         lines.extend(["Aucun nœud identifié.", ""])
         return
-    for depth in range(0, max(by_depth) + 1):
-        lines.extend([f"#### Niveau de progression {depth + 1}", ""])
-        if depth not in by_depth:
-            lines.extend(["Aucun nœud identifié à ce niveau de progression.", ""])
-            continue
-        table(lines, by_depth[depth])
+    table(lines, talents)
 
 
 def render_system(lines, title, talents, order):
@@ -430,7 +461,7 @@ def summary_by_system(talents):
     lines = [
         "# Résumé de l'arbre",
         "",
-        "Ce rapport HUMAN présente les arbres de talents de Sung Jinwoo sous une forme lisible sur GitHub: topologie par système, branches, niveaux de progression, coûts, rangs, gains interprétés et rendements seulement lorsqu'ils sont démontrés.",
+        "Ce rapport HUMAN présente les arbres de talents de Sung Jinwoo sous une forme lisible sur GitHub: topologie par système, branches, talents logiques, coûts, rangs, gains interprétés et rendements seulement lorsqu'ils sont démontrés.",
         "",
         "Validation: nœuds, parents, coûts, rangs, BuffID/SkillID et valeurs raw proviennent des GameData décodés. `ProgressionDepth` est calculé depuis les parents; `VisualRow` conserve la rangée UI `NodeTierY`. Les valeurs affichées en pourcentage restent marquées selon leur niveau de confiance; les valeurs brutes sans unité démontrée conservent un gain/rendement `NON DÉTERMINÉ`.",
         "",
@@ -472,7 +503,7 @@ def stat_index(lines, talents):
         lines.extend([f"## {effect}", ""])
         for talent in sorted(by_effect[effect], key=lambda t: (t["system"], t["section"], t["branch"], t["progression_depth"], t["visual_row"], t["x"])):
             lines.append(
-                f"- {talent['section']} / {talent['branch']} / Niveau {talent['progression_depth'] + 1}: "
+                f"- {talent['section']} / {talent['branch']} / profondeur technique {talent['progression_depth'] + 1}: "
                 f"{talent['talent']} ({fr_text(talent['gain'])}, {fr_text(talent['yield'])})"
             )
         lines.append("")
@@ -496,7 +527,7 @@ def write_human(talents):
     lines = summary_by_system(talents)
     lines.extend(
         [
-            "Lecture: le rapport est trié par arbre, puis branche, puis profondeur de progression calculée depuis les parents. La rangée visuelle `NodeTierY` n'est pas utilisée pour reconstruire les chemins.",
+            "Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans l'ordre technique. `ProgressionDepth` reste une propriété du graphe technique; `NodeTierY` reste une rangée visuelle et ne reconstruit jamais les chemins.",
             "",
         ]
     )
@@ -533,12 +564,14 @@ def write_technical(talents):
         "",
         "## Modèle",
         "",
-        "- Le rapport joueur agrège par `NodeID`: un nœud visuel = une ligne de talent.",
-        "- Les effets multiples d'un même `NodeID`/`BuffID` sont regroupés dans la colonne `Effet`.",
+        "- Le rapport joueur agrège par `LogicalTalentID`, pas directement par `NodeID`.",
+        "- Par défaut, un NodeID reste son propre talent logique (`RAW_NODE_ONLY`).",
+        "- Plusieurs NodeID ne peuvent partager un talent logique que si une preuve explicite est ajoutée dans `LogicalGroupingEvidence`.",
+        "- Les effets multiples d'un même rang logique sont regroupés dans la colonne `Effet`.",
         "- `ProgressionDepth`: profondeur réelle calculée depuis les relations Parent.",
         "- `VisualRow`: valeur GameData `NodeTierY`, utilisée seulement comme rangée visuelle.",
         "- Position horizontale: `NodeTierX`.",
-        "- Rang: `NodeMaxLevel`, affiché comme nombre de rangs du talent.",
+        "- Rang technique: `NodeMaxLevel`; rang logique: `LogicalRank`.",
         "- Les groupes 9/10 ne sont pas forcés dans les classes; ils deviennent des structures non rattachées avec noms déduits.",
         "- Données détaillées vérifiables: `analysis/csv/sjw_talent_tree.csv` et `analysis/csv/sjw_talent_tree_detailed.csv`.",
         "",
@@ -554,7 +587,9 @@ def write_technical(talents):
             "",
             "## Contrôle qualité",
             "",
-            "- La partie principale du rapport joueur est triée arbre -> branche -> profondeur de progression -> rangée visuelle -> position.",
+            "- La partie principale du rapport joueur est triée arbre -> branche -> talent logique dans l'ordre technique.",
+            "- Chaque NodeID source appartient à au plus un talent logique.",
+            "- Chaque rang logique pointe vers un seul NodeID sauf preuve explicite future.",
             "- Les sections de rendement/statistiques sont déplacées en annexe.",
             "- `NodeID`, `BuffID`, noms de tables et groupes internes sont absents du corps principal.",
             "- Les détails `NodeID`/`BuffID` complets restent dans ce rapport technique, pas dans le rapport HUMAN.",
@@ -566,6 +601,7 @@ def write_technical(talents):
 def main():
     rows = read_full_rows()
     talents = aggregate_nodes(rows)
+    validate_logical_talents(rows, talents)
     write_detailed(talents)
     write_human(talents)
     write_technical(talents)
