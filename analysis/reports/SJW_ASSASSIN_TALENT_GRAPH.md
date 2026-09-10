@@ -93,7 +93,7 @@ Validation des profondeurs de progression: **CONFORME aux profondeurs attendues*
 
 ### Contrôle talent logique / rang - Embuscade
 
-Décision: **NON FUSIONNÉ**. Les GameData disponibles ne démontrent pas que ces NodeID sont les rangs d'un même talent logique.
+Décision HUMAN: **FUSIONNÉ** en un talent logique `Embuscade` à 4 rangs. Les NodeID restent distincts dans ce graphe technique.
 
 Preuves contrôlées:
 
@@ -101,7 +101,8 @@ Preuves contrôlées:
 - `BuffLevel=1` pour chaque BuffID direct.
 - `BuffGroupID` diffère entre les BuffID directs.
 - `NodeValue`, `TriggeredBuffID`, descriptions et effets déclenchés diffèrent.
-- Les suffixes I/II/III/IV et les icônes `st_ambushed_1..4` signalent un candidat de revue, pas une preuve suffisante de rang logique.
+- La fusion ne repose pas sur un regex de nom: elle est limitée aux NodeID explicites `111201`, `111202`, `111402`, `111602`, validés pour Assassin / Attaque sournoise.
+- Les signaux retenus ensemble sont la même branche GameData, la suite UI `st_ambushed_1..4`, les libellés localisés I..IV et le contrôle utilisateur.
 
 | Libellé | NodeID | NodeValue / BuffID | NodeMaxLevel | BuffGroupID | BuffLevel | Parent(s) | Enfant(s) |
 |---|---:|---:|---:|---:|---:|---|---|
@@ -110,7 +111,7 @@ Preuves contrôlées:
 | Embuscade III - [Effet passif spécial] | 111402 | 90000007 | 1 | 90000007 | 1 | 111202 | 111602 |
 | Embuscade IV | 111602 | 94100002 | 1 | 94100002 | 1 | 111402 | FEUILLE |
 
-Conséquence HUMAN: ces entrées restent des talents logiques séparés tant qu'aucun champ ou observation validée ne prouve le regroupement multi-NodeID.
+Conséquence HUMAN: `Embuscade` apparaît une seule fois avec les rangs I à IV; les parents, enfants, VisualRow et positions restent dans les données techniques.
 
 ### Vue de progression
 
@@ -294,7 +295,7 @@ Version ASCII de lecture:
 - profondeur de progression: 5
 - rangée visuelle / NodeTierY: 6
 - position UI: X 2, Y 6, offset [0,0,0]
-- gain/rendement: +0.8% / 0.27%/SkillPoint
+- gain/rendement: 0.8% / NON DÉTERMINÉ
 
 ##### Marque de l'assassin
 
@@ -514,7 +515,7 @@ Version ASCII de lecture:
 - profondeur de progression: 4
 - rangée visuelle / NodeTierY: 5
 - position UI: X 4, Y 5, offset [0,0,0]
-- gain/rendement: NON DÉTERMINÉ / NON DÉTERMINÉ
+- gain/rendement: Non chiffré / NON DÉTERMINÉ
 
 ##### Entailles croissantes
 

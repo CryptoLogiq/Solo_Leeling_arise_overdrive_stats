@@ -29,7 +29,7 @@ Ces sources ne sont utilisées que pour corroborer la structure visuelle. Les co
 | Système | Talents |
 |---|---:|
 | weapon | 99 |
-| class | 85 |
+| class | 82 |
 | jinwoo | 38 |
 | unattached | 36 |
 

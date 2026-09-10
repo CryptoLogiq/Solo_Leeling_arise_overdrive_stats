@@ -6,11 +6,7 @@ import subprocess
 from collections import defaultdict
 from pathlib import Path
 
-from analyze_sjw_talent_human import (
-    aggregate_nodes,
-    clean_name,
-    maybe_list,
-)
+from analyze_sjw_talent_human import clean_name, effect_summary, maybe_list
 
 
 WORK = Path(__file__).resolve().parents[1]
@@ -318,7 +314,7 @@ def render_ambush_logical_check(lines, items, children):
         [
             "### Contrôle talent logique / rang - Embuscade",
             "",
-            "Décision: **NON FUSIONNÉ**. Les GameData disponibles ne démontrent pas que ces NodeID sont les rangs d'un même talent logique.",
+            "Décision HUMAN: **FUSIONNÉ** en un talent logique `Embuscade` à 4 rangs. Les NodeID restent distincts dans ce graphe technique.",
             "",
             "Preuves contrôlées:",
             "",
@@ -326,7 +322,8 @@ def render_ambush_logical_check(lines, items, children):
             "- `BuffLevel=1` pour chaque BuffID direct.",
             "- `BuffGroupID` diffère entre les BuffID directs.",
             "- `NodeValue`, `TriggeredBuffID`, descriptions et effets déclenchés diffèrent.",
-            "- Les suffixes I/II/III/IV et les icônes `st_ambushed_1..4` signalent un candidat de revue, pas une preuve suffisante de rang logique.",
+            "- La fusion ne repose pas sur un regex de nom: elle est limitée aux NodeID explicites `111201`, `111202`, `111402`, `111602`, validés pour Assassin / Attaque sournoise.",
+            "- Les signaux retenus ensemble sont la même branche GameData, la suite UI `st_ambushed_1..4`, les libellés localisés I..IV et le contrôle utilisateur.",
             "",
             "| Libellé | NodeID | NodeValue / BuffID | NodeMaxLevel | BuffGroupID | BuffLevel | Parent(s) | Enfant(s) |",
             "|---|---:|---:|---:|---:|---:|---|---|",
@@ -346,7 +343,7 @@ def render_ambush_logical_check(lines, items, children):
     lines.extend(
         [
             "",
-            "Conséquence HUMAN: ces entrées restent des talents logiques séparés tant qu'aucun champ ou observation validée ne prouve le regroupement multi-NodeID.",
+            "Conséquence HUMAN: `Embuscade` apparaît une seule fois avec les rangs I à IV; les parents, enfants, VisualRow et positions restent dans les données techniques.",
             "",
         ]
     )
@@ -354,9 +351,33 @@ def render_ambush_logical_check(lines, items, children):
 
 def build_assassin():
     rows = read_rows()
-    talents = aggregate_nodes(rows)
     raw_nodes = {str(row["ID"]): row for row in load_json("CharPCSkillTreeNode")}
-    assassin = [t for t in talents if t["system"] == "class" and t["section"] == "Assassin"]
+    by_node = defaultdict(list)
+    for row in rows:
+        if row["MainTab"] == "SJWSkillTree" and row["SubTab"] == "Assassin":
+            by_node[str(row["NodeID"])].append(row)
+    assassin = []
+    for node_id, entries in by_node.items():
+        sample = entries[0]
+        effect, gain_values, _ = effect_summary(entries)
+        gain = " / ".join(gain_values) if gain_values else "Non chiffré"
+        assassin.append(
+            {
+                "system": "class",
+                "section": "Assassin",
+                "branch": sample["Branch"],
+                "node_id": node_id,
+                "talent": clean_name(sample["TalentName"]),
+                "effect": effect,
+                "cost": sample["Cost"],
+                "ranks": sample["MaxRank"],
+                "gain": gain,
+                "yield": "NON DÉTERMINÉ",
+                "progression_depth": int(sample["ProgressionDepth"]),
+                "visual_row": int(sample["VisualRow"]),
+                "x": int(raw_nodes[node_id].get("NodeTierX") or 0),
+            }
+        )
     for item in assassin:
         node = raw_nodes[item["node_id"]]
         item["node_group"] = int(node["SkillTreelNodeGroup"])

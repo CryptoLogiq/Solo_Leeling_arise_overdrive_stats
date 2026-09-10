@@ -246,6 +246,13 @@ def cost_unit(rows):
     return "pt"
 
 
+def single_rank_cost(rows):
+    costs = sorted({row["Cost"] for row in rows if row["Cost"]})
+    if not costs:
+        return ""
+    return costs[0] if len(costs) == 1 else " / ".join(costs)
+
+
 def has_interpretable_gain(entry):
     return entry.get("Unit") == "%" and (entry.get("DisplayedValue") or "").endswith("%")
 
@@ -305,6 +312,7 @@ def aggregate_nodes(rows):
         node_type = str(node.get("NodeType") or "")
         if system == "class" and node_type == "Identity":
             branch = "Nœud de classe / Overdrive"
+        scoped_human_cleanup = system == "class" and section == "Assassin" and branch == "Attaque sournoise"
         ranks = sorted({int(row.get("LogicalRank") or row["Rank"]) for row in entries if row.get("LogicalRank") or row["Rank"]})
         max_rank = max(ranks) if ranks else int(sample["MaxRank"] or 1)
         cost, total_cost, cost_ambiguous = cost_summary(entries)
@@ -352,7 +360,7 @@ def aggregate_nodes(rows):
                     "visual_row": int(rank_entries[0].get("VisualRow") or rank_node.get("NodeTierY") or 0),
                     "x": int(rank_node.get("NodeTierX") or 0),
                     "progression_depth": int(rank_entries[0].get("ProgressionDepth") or 0),
-                    "cost": cost_summary(rank_entries)[0],
+                    "cost": single_rank_cost(rank_entries) if scoped_human_cleanup else cost_summary(rank_entries)[0],
                     "effect": rank_effect,
                     "gain": rank_gain or ("NON DÉTERMINÉ" if rank_unresolved else "Non chiffré"),
                     "cumulative": " / ".join(cumulative_values)
@@ -415,16 +423,35 @@ def aggregate_nodes(rows):
                 key=lambda item: talent_by_logical[item[0]]["node_id"],
             )
         ]
-        talent["unlocks_human"] = [
-            (
+        scoped_human_cleanup = (
+            talent["system"] == "class"
+            and talent["section"] == "Assassin"
+            and talent["branch"] == "Attaque sournoise"
+        )
+        if scoped_human_cleanup:
+            unlock_by_logical = {}
+            for logical_id, rank in unlock_refs:
+                if logical_id not in talent_by_logical:
+                    continue
+                unlock_by_logical.setdefault(logical_id, set()).add(rank)
+            talent["unlocks_human"] = [
                 talent_by_logical[logical_id]["talent"]
-                + (f" (depuis rang {rank_label(rank)})" if talent["ranks"] > 1 else "")
-            )
-            for logical_id, rank in sorted(
-                [item for item in unlock_refs if item[0] in talent_by_logical],
-                key=lambda item: (talent_by_logical[item[0]]["visual_row"], talent_by_logical[item[0]]["x"]),
-            )
-        ]
+                for logical_id in sorted(
+                    unlock_by_logical,
+                    key=lambda item: (talent_by_logical[item]["visual_row"], talent_by_logical[item]["x"]),
+                )
+            ]
+        else:
+            talent["unlocks_human"] = [
+                (
+                    talent_by_logical[logical_id]["talent"]
+                    + (f" (depuis rang {rank_label(rank)})" if talent["ranks"] > 1 else "")
+                )
+                for logical_id, rank in sorted(
+                    [item for item in unlock_refs if item[0] in talent_by_logical],
+                    key=lambda item: (talent_by_logical[item[0]]["visual_row"], talent_by_logical[item[0]]["x"]),
+                )
+            ]
     return talents
 
 
@@ -506,11 +533,21 @@ def render_talent(lines, talent):
     parents = ", ".join(dict.fromkeys(talent["parents_human"])) if talent["parents_human"] else "RACINE"
     unlocks = ", ".join(dict.fromkeys(talent["unlocks_human"])) if talent["unlocks_human"] else "aucun"
     position = f"profondeur technique {talent['progression_depth'] + 1}, rangée UI {talent['visual_row']}, X {talent['x']}"
+    scoped_human_cleanup = (
+        talent["system"] == "class"
+        and talent["section"] == "Assassin"
+        and talent["branch"] == "Attaque sournoise"
+    )
     lines.extend(
         [
             f"#### {talent['talent']}",
             "",
-            f"**Position dans l'arbre :** {position}",
+        ]
+    )
+    if not scoped_human_cleanup:
+        lines.append(f"**Position dans l'arbre :** {position}")
+    lines.extend(
+        [
             f"**Prérequis :** {parents}",
             f"**Débloque :** {unlocks}",
             "",
@@ -530,15 +567,16 @@ def render_talent(lines, talent):
                 "<details>",
                 "<summary>Données techniques</summary>",
                 "",
-                "| Rang | NodeID | Parent(s) | VisualRow | Position X | BuffID | Preuve de regroupement |",
-                "|---:|---:|---|---:|---:|---|---|",
+                "| Rang | NodeID | Parent(s) | Profondeur technique | VisualRow | Position X | BuffID | Preuve de regroupement |",
+                "|---:|---:|---|---:|---:|---:|---|---|",
             ]
         )
         for rank_row in sorted(talent["rank_rows"], key=lambda row: (row["rank"], row["node_id"])):
             parents_raw = ", ".join(rank_row["parents"]) if rank_row["parents"] else "RACINE"
             lines.append(
                 f"| {rank_label(rank_row['rank'])} | {rank_row['node_id']} | {parents_raw} | "
-                f"{rank_row['visual_row']} | {rank_row['x']} | {rank_row['buff_ids']} | {talent['logical_evidence']} |"
+                f"{rank_row['progression_depth'] + 1} | {rank_row['visual_row']} | {rank_row['x']} | "
+                f"{rank_row['buff_ids']} | {talent['logical_evidence']} |"
             )
         lines.extend(["", "</details>"])
     lines.append("")

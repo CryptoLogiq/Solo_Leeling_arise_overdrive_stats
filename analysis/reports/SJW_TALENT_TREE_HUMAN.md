@@ -41,38 +41,40 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 #### Ruée acérée
 
-**Position dans l'arbre :** profondeur technique 1, rangée UI 1, X 3
 **Prérequis :** RACINE
-**Débloque :** Embuscade I, Embuscade II
+**Débloque :** Embuscade
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
 | I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
-#### Embuscade I
+#### Embuscade
 
-**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 2
 **Prérequis :** Ruée acérée
 **Débloque :** Arts verticaux
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
 | I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 2 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| II | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 2 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| III | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| IV | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 10 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
-#### Embuscade II
+<details>
+<summary>Données techniques</summary>
 
-**Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 4
-**Prérequis :** Ruée acérée
-**Débloque :** Arts verticaux, Embuscade III - [Effet passif spécial]
+| Rang | NodeID | Parent(s) | Profondeur technique | VisualRow | Position X | BuffID | Preuve de regroupement |
+|---:|---:|---|---:|---:|---:|---|---|
+| I | 111201 | 111101 | 2 | 2 | 2 | 90000001 | VALIDÉ ASSASSIN: NodeID explicites, même branche GameData, suite UI st_ambushed_1..4, libellés localisés I..IV et contrôle utilisateur |
+| II | 111202 | 111101 | 2 | 2 | 4 | 94100001 | VALIDÉ ASSASSIN: NodeID explicites, même branche GameData, suite UI st_ambushed_1..4, libellés localisés I..IV et contrôle utilisateur |
+| III | 111402 | 111202 | 3 | 4 | 4 | 90000007 | VALIDÉ ASSASSIN: NodeID explicites, même branche GameData, suite UI st_ambushed_1..4, libellés localisés I..IV et contrôle utilisateur |
+| IV | 111602 | 111402 | 4 | 6 | 4 | 94100002 | VALIDÉ ASSASSIN: NodeID explicites, même branche GameData, suite UI st_ambushed_1..4, libellés localisés I..IV et contrôle utilisateur |
 
-| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
-|---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 2 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+</details>
 
 #### Arts verticaux
 
-**Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
-**Prérequis :** Embuscade I, Embuscade II
+**Prérequis :** Embuscade
 **Débloque :** Taux de coup critique augmenté
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
@@ -81,7 +83,6 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 #### Taux de coup critique augmenté
 
-**Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 2
 **Prérequis :** Arts verticaux
 **Débloque :** Taux de coup critique augmenté - [Effet passif spécial]
 
@@ -89,19 +90,8 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 |---:|---|---|---|---|---|---|
 | I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 14 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
-#### Embuscade III - [Effet passif spécial]
-
-**Position dans l'arbre :** profondeur technique 3, rangée UI 4, X 4
-**Prérequis :** Embuscade II
-**Débloque :** Embuscade IV
-
-| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
-|---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
-
 #### Taux de coup critique augmenté - [Effet passif spécial]
 
-**Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 3
 **Prérequis :** Taux de coup critique augmenté
 **Débloque :** Attaque augmentée, Marque de l'assassin
 
@@ -111,7 +101,6 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 #### Attaque augmentée
 
-**Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 2
 **Prérequis :** Taux de coup critique augmenté - [Effet passif spécial]
 **Débloque :** aucun
 
@@ -119,19 +108,8 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 |---:|---|---|---|---|---|---|
 | I | 3 SkillPoint | Attaque: 0,8 % | +0,8 % | 0,8 % | 23 pts requis | FORTEMENT PROBABLE |
 
-#### Embuscade IV
-
-**Position dans l'arbre :** profondeur technique 4, rangée UI 6, X 4
-**Prérequis :** Embuscade III - [Effet passif spécial]
-**Débloque :** aucun
-
-| Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
-|---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 10 pts requis | CONFIRMÉ PAR LES GAMEDATA |
-
 #### Marque de l'assassin
 
-**Position dans l'arbre :** profondeur technique 6, rangée UI 7, X 3
 **Prérequis :** Taux de coup critique augmenté - [Effet passif spécial]
 **Débloque :** aucun
 
