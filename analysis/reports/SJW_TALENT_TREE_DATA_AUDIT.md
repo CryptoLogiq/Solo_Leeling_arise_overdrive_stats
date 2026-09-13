@@ -6,7 +6,7 @@ Audit global généré depuis le modèle canonique `analysis/data/sjw_talent_tre
 
 - Systèmes: 4
 - Arbres / onglets: 15
-- Sections / branches: 28
+- Sections / branches: 32
 - NodeID visibles source: 258
 - NodeID exportés JSON: 258
 - NodeID exportés CSV: 258

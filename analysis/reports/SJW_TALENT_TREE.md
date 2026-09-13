@@ -63,114 +63,114 @@ Statut: **FORTEMENT PROBABLE** pour `+1% par rang / +3% au rang 3`; **NON DÉTER
 | SJWSkillTree | Duelliste | Coup unique | Augmentation des PV | 114501 | 4 | 5 | 1/1 | 3 SkillPoint | PV | 6.4% | 6.4% | FORTEMENT PROBABLE |
 | SJWSkillTree | Magicien élémentaire | Glace | Augmentation de la Pénétration de défense | 115402 | 3 | 4 | 1/1 | 3 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
 | SJWSkillTree | Magicien élémentaire | Feu | Pénétration de défense augmentée | 116401 | 3 | 4 | 1/1 | 3 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
-| Groupe 9 |  | Groupe 9 | Attaque augmentée 1 1/3 | 119101 | 0 | 1 | 1/3 | 2 SkillPoint | Attaque | 1% | 1% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Attaque augmentée 1 2/3 | 119101 | 0 | 1 | 2/3 | 3 SkillPoint | Attaque | 1% | 2% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Attaque augmentée 1 3/3 | 119101 | 0 | 1 | 3/3 | 4 SkillPoint | Attaque | 1% | 3% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Défense augmentée 1 1/3 | 119102 | 0 | 1 | 1/3 | 2 SkillPoint | Défense | 1% | 1% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Défense augmentée 1 2/3 | 119102 | 0 | 1 | 2/3 | 3 SkillPoint | Défense | 1% | 2% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Défense augmentée 1 3/3 | 119102 | 0 | 1 | 3/3 | 4 SkillPoint | Défense | 1% | 3% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | PV augmentés 1 1/3 | 119103 | 0 | 1 | 1/3 | 2 SkillPoint | PV | 1% | 1% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | PV augmentés 1 2/3 | 119103 | 0 | 1 | 2/3 | 3 SkillPoint | PV | 1% | 2% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | PV augmentés 1 3/3 | 119103 | 0 | 1 | 3/3 | 4 SkillPoint | PV | 1% | 3% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Attaque augmentée 2 1/3 | 119201 | 1 | 2 | 1/3 | 2 SkillPoint | Attaque | 2% | 2% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Attaque augmentée 2 2/3 | 119201 | 1 | 2 | 2/3 | 3 SkillPoint | Attaque | 2% | 4% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Attaque augmentée 2 3/3 | 119201 | 1 | 2 | 3/3 | 4 SkillPoint | Attaque | 2% | 6% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Défense augmentée 2 1/3 | 119202 | 1 | 2 | 1/3 | 2 SkillPoint | Défense | 2% | 2% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Défense augmentée 2 2/3 | 119202 | 1 | 2 | 2/3 | 3 SkillPoint | Défense | 2% | 4% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Défense augmentée 2 3/3 | 119202 | 1 | 2 | 3/3 | 4 SkillPoint | Défense | 2% | 6% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | PV augmentés 2 1/3 | 119203 | 1 | 2 | 1/3 | 2 SkillPoint | PV | 2% | 2% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | PV augmentés 2 2/3 | 119203 | 1 | 2 | 2/3 | 3 SkillPoint | PV | 2% | 4% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | PV augmentés 2 3/3 | 119203 | 1 | 2 | 3/3 | 4 SkillPoint | PV | 2% | 6% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Attaque augmentée 3 1/3 | 119301 | 2 | 3 | 1/3 | 2 SkillPoint | Attaque | 3% | 3% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Attaque augmentée 3 2/3 | 119301 | 2 | 3 | 2/3 | 3 SkillPoint | Attaque | 3% | 6% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Attaque augmentée 3 3/3 | 119301 | 2 | 3 | 3/3 | 4 SkillPoint | Attaque | 3% | 9% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Défense augmentée 3 1/3 | 119302 | 2 | 3 | 1/3 | 2 SkillPoint | Défense | 3% | 3% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Défense augmentée 3 2/3 | 119302 | 2 | 3 | 2/3 | 3 SkillPoint | Défense | 3% | 6% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Défense augmentée 3 3/3 | 119302 | 2 | 3 | 3/3 | 4 SkillPoint | Défense | 3% | 9% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | PV augmentés 3 1/3 | 119303 | 2 | 3 | 1/3 | 2 SkillPoint | PV | 3% | 3% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | PV augmentés 3 2/3 | 119303 | 2 | 3 | 2/3 | 3 SkillPoint | PV | 3% | 6% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | PV augmentés 3 3/3 | 119303 | 2 | 3 | 3/3 | 4 SkillPoint | PV | 3% | 9% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Attaque augmentée 4 1/3 | 119401 | 3 | 4 | 1/3 | 3 SkillPoint | Attaque | 4% | 4% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Attaque augmentée 4 2/3 | 119401 | 3 | 4 | 2/3 | 4 SkillPoint | Attaque | 4% | 8% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Attaque augmentée 4 3/3 | 119401 | 3 | 4 | 3/3 | 5 SkillPoint | Attaque | 4% | 12% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Défense augmentée 4 1/3 | 119402 | 3 | 4 | 1/3 | 3 SkillPoint | Défense | 4% | 4% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Défense augmentée 4 2/3 | 119402 | 3 | 4 | 2/3 | 4 SkillPoint | Défense | 4% | 8% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Défense augmentée 4 3/3 | 119402 | 3 | 4 | 3/3 | 5 SkillPoint | Défense | 4% | 12% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | PV augmentés 4 1/3 | 119403 | 3 | 4 | 1/3 | 3 SkillPoint | PV | 4% | 4% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | PV augmentés 4 2/3 | 119403 | 3 | 4 | 2/3 | 4 SkillPoint | PV | 4% | 8% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | PV augmentés 4 3/3 | 119403 | 3 | 4 | 3/3 | 5 SkillPoint | PV | 4% | 12% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Attaque augmentée 5 1/3 | 119501 | 4 | 5 | 1/3 | 3 SkillPoint | Attaque | 5% | 5% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Attaque augmentée 5 2/3 | 119501 | 4 | 5 | 2/3 | 4 SkillPoint | Attaque | 5% | 10% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Attaque augmentée 5 3/3 | 119501 | 4 | 5 | 3/3 | 5 SkillPoint | Attaque | 5% | 15% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Défense augmentée 5 1/3 | 119502 | 4 | 5 | 1/3 | 3 SkillPoint | Défense | 5% | 5% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Défense augmentée 5 2/3 | 119502 | 4 | 5 | 2/3 | 4 SkillPoint | Défense | 5% | 10% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Défense augmentée 5 3/3 | 119502 | 4 | 5 | 3/3 | 5 SkillPoint | Défense | 5% | 15% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | PV augmentés 5 1/3 | 119503 | 4 | 5 | 1/3 | 3 SkillPoint | PV | 5% | 5% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | PV augmentés 5 2/3 | 119503 | 4 | 5 | 2/3 | 4 SkillPoint | PV | 5% | 10% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | PV augmentés 5 3/3 | 119503 | 4 | 5 | 3/3 | 5 SkillPoint | PV | 5% | 15% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Attaque augmentée 6 1/3 | 119601 | 5 | 6 | 1/3 | 3 SkillPoint | Attaque | 6% | 6% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Attaque augmentée 6 2/3 | 119601 | 5 | 6 | 2/3 | 4 SkillPoint | Attaque | 6% | 12% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Attaque augmentée 6 3/3 | 119601 | 5 | 6 | 3/3 | 5 SkillPoint | Attaque | 6% | 18% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Défense augmentée 6 1/3 | 119602 | 5 | 6 | 1/3 | 3 SkillPoint | Défense | 6% | 6% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Défense augmentée 6 2/3 | 119602 | 5 | 6 | 2/3 | 4 SkillPoint | Défense | 6% | 12% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | Défense augmentée 6 3/3 | 119602 | 5 | 6 | 3/3 | 5 SkillPoint | Défense | 6% | 18% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | PV augmentés 6 1/3 | 119603 | 5 | 6 | 1/3 | 3 SkillPoint | PV | 6% | 6% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | PV augmentés 6 2/3 | 119603 | 5 | 6 | 2/3 | 4 SkillPoint | PV | 6% | 12% | FORTEMENT PROBABLE |
-| Groupe 9 |  | Groupe 9 | PV augmentés 6 3/3 | 119603 | 5 | 6 | 3/3 | 5 SkillPoint | PV | 6% | 18% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Taux de coup critique 1 1/3 | 1110101 | 0 | 1 | 1/3 | 2 SkillPoint | Taux de coup critique | 1% | 1% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Taux de coup critique 1 2/3 | 1110101 | 0 | 1 | 2/3 | 3 SkillPoint | Taux de coup critique | 1% | 2% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Taux de coup critique 1 3/3 | 1110101 | 0 | 1 | 3/3 | 4 SkillPoint | Taux de coup critique | 1% | 3% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Dégâts de coup critique 1 1/3 | 1110102 | 0 | 1 | 1/3 | 2 SkillPoint | Dégâts de coup critique | 1% | 1% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Dégâts de coup critique 1 2/3 | 1110102 | 0 | 1 | 2/3 | 3 SkillPoint | Dégâts de coup critique | 1% | 2% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Dégâts de coup critique 1 3/3 | 1110102 | 0 | 1 | 3/3 | 4 SkillPoint | Dégâts de coup critique | 1% | 3% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Pénétration de défense 1 1/3 | 1110103 | 0 | 1 | 1/3 | 2 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
-| Groupe 10 |  | Groupe 10 | Pénétration de défense 1 2/3 | 1110103 | 0 | 1 | 2/3 | 3 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
-| Groupe 10 |  | Groupe 10 | Pénétration de défense 1 3/3 | 1110103 | 0 | 1 | 3/3 | 4 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
-| Groupe 10 |  | Groupe 10 | Taux de coup critique 2 1/3 | 1110201 | 1 | 2 | 1/3 | 2 SkillPoint | Taux de coup critique | 2% | 2% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Taux de coup critique 2 2/3 | 1110201 | 1 | 2 | 2/3 | 3 SkillPoint | Taux de coup critique | 2% | 4% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Taux de coup critique 2 3/3 | 1110201 | 1 | 2 | 3/3 | 4 SkillPoint | Taux de coup critique | 2% | 6% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Dégâts de coup critique 2 1/3 | 1110202 | 1 | 2 | 1/3 | 2 SkillPoint | Dégâts de coup critique | 2% | 2% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Dégâts de coup critique 2 2/3 | 1110202 | 1 | 2 | 2/3 | 3 SkillPoint | Dégâts de coup critique | 2% | 4% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Dégâts de coup critique 2 3/3 | 1110202 | 1 | 2 | 3/3 | 4 SkillPoint | Dégâts de coup critique | 2% | 6% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Pénétration de défense 2 1/3 | 1110203 | 1 | 2 | 1/3 | 2 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
-| Groupe 10 |  | Groupe 10 | Pénétration de défense 2 2/3 | 1110203 | 1 | 2 | 2/3 | 3 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
-| Groupe 10 |  | Groupe 10 | Pénétration de défense 2 3/3 | 1110203 | 1 | 2 | 3/3 | 4 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
-| Groupe 10 |  | Groupe 10 | Taux de coup critique 3 1/3 | 1110301 | 2 | 3 | 1/3 | 2 SkillPoint | Taux de coup critique | 3% | 3% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Taux de coup critique 3 2/3 | 1110301 | 2 | 3 | 2/3 | 3 SkillPoint | Taux de coup critique | 3% | 6% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Taux de coup critique 3 3/3 | 1110301 | 2 | 3 | 3/3 | 4 SkillPoint | Taux de coup critique | 3% | 9% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Dégâts de coup critique 3 1/3 | 1110302 | 2 | 3 | 1/3 | 2 SkillPoint | Dégâts de coup critique | 3% | 3% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Dégâts de coup critique 3 2/3 | 1110302 | 2 | 3 | 2/3 | 3 SkillPoint | Dégâts de coup critique | 3% | 6% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Dégâts de coup critique 3 3/3 | 1110302 | 2 | 3 | 3/3 | 4 SkillPoint | Dégâts de coup critique | 3% | 9% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Pénétration de défense 3 1/3 | 1110303 | 2 | 3 | 1/3 | 2 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
-| Groupe 10 |  | Groupe 10 | Pénétration de défense 3 2/3 | 1110303 | 2 | 3 | 2/3 | 3 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
-| Groupe 10 |  | Groupe 10 | Pénétration de défense 3 3/3 | 1110303 | 2 | 3 | 3/3 | 4 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
-| Groupe 10 |  | Groupe 10 | Taux de coup critique 4 1/3 | 1110401 | 3 | 4 | 1/3 | 3 SkillPoint | Taux de coup critique | 4% | 4% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Taux de coup critique 4 2/3 | 1110401 | 3 | 4 | 2/3 | 4 SkillPoint | Taux de coup critique | 4% | 8% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Taux de coup critique 4 3/3 | 1110401 | 3 | 4 | 3/3 | 5 SkillPoint | Taux de coup critique | 4% | 12% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Dégâts de coup critique 4 1/3 | 1110402 | 3 | 4 | 1/3 | 3 SkillPoint | Dégâts de coup critique | 4% | 4% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Dégâts de coup critique 4 2/3 | 1110402 | 3 | 4 | 2/3 | 4 SkillPoint | Dégâts de coup critique | 4% | 8% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Dégâts de coup critique 4 3/3 | 1110402 | 3 | 4 | 3/3 | 5 SkillPoint | Dégâts de coup critique | 4% | 12% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Pénétration de défense 4 1/3 | 1110403 | 3 | 4 | 1/3 | 3 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
-| Groupe 10 |  | Groupe 10 | Pénétration de défense 4 2/3 | 1110403 | 3 | 4 | 2/3 | 4 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
-| Groupe 10 |  | Groupe 10 | Pénétration de défense 4 3/3 | 1110403 | 3 | 4 | 3/3 | 5 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
-| Groupe 10 |  | Groupe 10 | Taux de coup critique 5 1/3 | 1110501 | 4 | 5 | 1/3 | 3 SkillPoint | Taux de coup critique | 5% | 5% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Taux de coup critique 5 2/3 | 1110501 | 4 | 5 | 2/3 | 4 SkillPoint | Taux de coup critique | 5% | 10% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Taux de coup critique 5 3/3 | 1110501 | 4 | 5 | 3/3 | 5 SkillPoint | Taux de coup critique | 5% | 15% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Dégâts de coup critique 5 1/3 | 1110502 | 4 | 5 | 1/3 | 3 SkillPoint | Dégâts de coup critique | 5% | 5% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Dégâts de coup critique 5 2/3 | 1110502 | 4 | 5 | 2/3 | 4 SkillPoint | Dégâts de coup critique | 5% | 10% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Dégâts de coup critique 5 3/3 | 1110502 | 4 | 5 | 3/3 | 5 SkillPoint | Dégâts de coup critique | 5% | 15% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Pénétration de défense 5 1/3 | 1110503 | 4 | 5 | 1/3 | 3 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
-| Groupe 10 |  | Groupe 10 | Pénétration de défense 5 2/3 | 1110503 | 4 | 5 | 2/3 | 4 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
-| Groupe 10 |  | Groupe 10 | Pénétration de défense 5 3/3 | 1110503 | 4 | 5 | 3/3 | 5 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
-| Groupe 10 |  | Groupe 10 | Taux de coup critique 6 1/3 | 1110601 | 5 | 6 | 1/3 | 3 SkillPoint | Taux de coup critique | 6% | 6% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Taux de coup critique 6 2/3 | 1110601 | 5 | 6 | 2/3 | 4 SkillPoint | Taux de coup critique | 6% | 12% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Taux de coup critique 6 3/3 | 1110601 | 5 | 6 | 3/3 | 5 SkillPoint | Taux de coup critique | 6% | 18% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Dégâts de coup critique 6 1/3 | 1110602 | 5 | 6 | 1/3 | 3 SkillPoint | Dégâts de coup critique | 6% | 6% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Dégâts de coup critique 6 2/3 | 1110602 | 5 | 6 | 2/3 | 4 SkillPoint | Dégâts de coup critique | 6% | 12% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Dégâts de coup critique 6 3/3 | 1110602 | 5 | 6 | 3/3 | 5 SkillPoint | Dégâts de coup critique | 6% | 18% | FORTEMENT PROBABLE |
-| Groupe 10 |  | Groupe 10 | Pénétration de défense 6 1/3 | 1110603 | 5 | 6 | 1/3 | 3 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
-| Groupe 10 |  | Groupe 10 | Pénétration de défense 6 2/3 | 1110603 | 5 | 6 | 2/3 | 4 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
-| Groupe 10 |  | Groupe 10 | Pénétration de défense 6 3/3 | 1110603 | 5 | 6 | 3/3 | 5 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
+| Groupe 9 | Stats principales | Stats principales | Attaque augmentée 1 1/3 | 119101 | 0 | 1 | 1/3 | 2 SkillPoint | Attaque | 1% | 1% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Attaque augmentée 1 2/3 | 119101 | 0 | 1 | 2/3 | 3 SkillPoint | Attaque | 1% | 2% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Attaque augmentée 1 3/3 | 119101 | 0 | 1 | 3/3 | 4 SkillPoint | Attaque | 1% | 3% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Défense augmentée 1 1/3 | 119102 | 0 | 1 | 1/3 | 2 SkillPoint | Défense | 1% | 1% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Défense augmentée 1 2/3 | 119102 | 0 | 1 | 2/3 | 3 SkillPoint | Défense | 1% | 2% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Défense augmentée 1 3/3 | 119102 | 0 | 1 | 3/3 | 4 SkillPoint | Défense | 1% | 3% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | PV augmentés 1 1/3 | 119103 | 0 | 1 | 1/3 | 2 SkillPoint | PV | 1% | 1% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | PV augmentés 1 2/3 | 119103 | 0 | 1 | 2/3 | 3 SkillPoint | PV | 1% | 2% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | PV augmentés 1 3/3 | 119103 | 0 | 1 | 3/3 | 4 SkillPoint | PV | 1% | 3% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Attaque augmentée 2 1/3 | 119201 | 1 | 2 | 1/3 | 2 SkillPoint | Attaque | 2% | 2% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Attaque augmentée 2 2/3 | 119201 | 1 | 2 | 2/3 | 3 SkillPoint | Attaque | 2% | 4% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Attaque augmentée 2 3/3 | 119201 | 1 | 2 | 3/3 | 4 SkillPoint | Attaque | 2% | 6% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Défense augmentée 2 1/3 | 119202 | 1 | 2 | 1/3 | 2 SkillPoint | Défense | 2% | 2% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Défense augmentée 2 2/3 | 119202 | 1 | 2 | 2/3 | 3 SkillPoint | Défense | 2% | 4% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Défense augmentée 2 3/3 | 119202 | 1 | 2 | 3/3 | 4 SkillPoint | Défense | 2% | 6% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | PV augmentés 2 1/3 | 119203 | 1 | 2 | 1/3 | 2 SkillPoint | PV | 2% | 2% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | PV augmentés 2 2/3 | 119203 | 1 | 2 | 2/3 | 3 SkillPoint | PV | 2% | 4% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | PV augmentés 2 3/3 | 119203 | 1 | 2 | 3/3 | 4 SkillPoint | PV | 2% | 6% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Attaque augmentée 3 1/3 | 119301 | 2 | 3 | 1/3 | 2 SkillPoint | Attaque | 3% | 3% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Attaque augmentée 3 2/3 | 119301 | 2 | 3 | 2/3 | 3 SkillPoint | Attaque | 3% | 6% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Attaque augmentée 3 3/3 | 119301 | 2 | 3 | 3/3 | 4 SkillPoint | Attaque | 3% | 9% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Défense augmentée 3 1/3 | 119302 | 2 | 3 | 1/3 | 2 SkillPoint | Défense | 3% | 3% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Défense augmentée 3 2/3 | 119302 | 2 | 3 | 2/3 | 3 SkillPoint | Défense | 3% | 6% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Défense augmentée 3 3/3 | 119302 | 2 | 3 | 3/3 | 4 SkillPoint | Défense | 3% | 9% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | PV augmentés 3 1/3 | 119303 | 2 | 3 | 1/3 | 2 SkillPoint | PV | 3% | 3% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | PV augmentés 3 2/3 | 119303 | 2 | 3 | 2/3 | 3 SkillPoint | PV | 3% | 6% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | PV augmentés 3 3/3 | 119303 | 2 | 3 | 3/3 | 4 SkillPoint | PV | 3% | 9% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Attaque augmentée 4 1/3 | 119401 | 3 | 4 | 1/3 | 3 SkillPoint | Attaque | 4% | 4% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Attaque augmentée 4 2/3 | 119401 | 3 | 4 | 2/3 | 4 SkillPoint | Attaque | 4% | 8% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Attaque augmentée 4 3/3 | 119401 | 3 | 4 | 3/3 | 5 SkillPoint | Attaque | 4% | 12% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Défense augmentée 4 1/3 | 119402 | 3 | 4 | 1/3 | 3 SkillPoint | Défense | 4% | 4% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Défense augmentée 4 2/3 | 119402 | 3 | 4 | 2/3 | 4 SkillPoint | Défense | 4% | 8% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Défense augmentée 4 3/3 | 119402 | 3 | 4 | 3/3 | 5 SkillPoint | Défense | 4% | 12% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | PV augmentés 4 1/3 | 119403 | 3 | 4 | 1/3 | 3 SkillPoint | PV | 4% | 4% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | PV augmentés 4 2/3 | 119403 | 3 | 4 | 2/3 | 4 SkillPoint | PV | 4% | 8% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | PV augmentés 4 3/3 | 119403 | 3 | 4 | 3/3 | 5 SkillPoint | PV | 4% | 12% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Attaque augmentée 5 1/3 | 119501 | 4 | 5 | 1/3 | 3 SkillPoint | Attaque | 5% | 5% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Attaque augmentée 5 2/3 | 119501 | 4 | 5 | 2/3 | 4 SkillPoint | Attaque | 5% | 10% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Attaque augmentée 5 3/3 | 119501 | 4 | 5 | 3/3 | 5 SkillPoint | Attaque | 5% | 15% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Défense augmentée 5 1/3 | 119502 | 4 | 5 | 1/3 | 3 SkillPoint | Défense | 5% | 5% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Défense augmentée 5 2/3 | 119502 | 4 | 5 | 2/3 | 4 SkillPoint | Défense | 5% | 10% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Défense augmentée 5 3/3 | 119502 | 4 | 5 | 3/3 | 5 SkillPoint | Défense | 5% | 15% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | PV augmentés 5 1/3 | 119503 | 4 | 5 | 1/3 | 3 SkillPoint | PV | 5% | 5% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | PV augmentés 5 2/3 | 119503 | 4 | 5 | 2/3 | 4 SkillPoint | PV | 5% | 10% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | PV augmentés 5 3/3 | 119503 | 4 | 5 | 3/3 | 5 SkillPoint | PV | 5% | 15% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Attaque augmentée 6 1/3 | 119601 | 5 | 6 | 1/3 | 3 SkillPoint | Attaque | 6% | 6% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Attaque augmentée 6 2/3 | 119601 | 5 | 6 | 2/3 | 4 SkillPoint | Attaque | 6% | 12% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Attaque augmentée 6 3/3 | 119601 | 5 | 6 | 3/3 | 5 SkillPoint | Attaque | 6% | 18% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Défense augmentée 6 1/3 | 119602 | 5 | 6 | 1/3 | 3 SkillPoint | Défense | 6% | 6% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Défense augmentée 6 2/3 | 119602 | 5 | 6 | 2/3 | 4 SkillPoint | Défense | 6% | 12% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | Défense augmentée 6 3/3 | 119602 | 5 | 6 | 3/3 | 5 SkillPoint | Défense | 6% | 18% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | PV augmentés 6 1/3 | 119603 | 5 | 6 | 1/3 | 3 SkillPoint | PV | 6% | 6% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | PV augmentés 6 2/3 | 119603 | 5 | 6 | 2/3 | 4 SkillPoint | PV | 6% | 12% | FORTEMENT PROBABLE |
+| Groupe 9 | Stats principales | Stats principales | PV augmentés 6 3/3 | 119603 | 5 | 6 | 3/3 | 5 SkillPoint | PV | 6% | 18% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Taux de coup critique 1 1/3 | 1110101 | 0 | 1 | 1/3 | 2 SkillPoint | Taux de coup critique | 1% | 1% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Taux de coup critique 1 2/3 | 1110101 | 0 | 1 | 2/3 | 3 SkillPoint | Taux de coup critique | 1% | 2% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Taux de coup critique 1 3/3 | 1110101 | 0 | 1 | 3/3 | 4 SkillPoint | Taux de coup critique | 1% | 3% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Dégâts de coup critique 1 1/3 | 1110102 | 0 | 1 | 1/3 | 2 SkillPoint | Dégâts de coup critique | 1% | 1% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Dégâts de coup critique 1 2/3 | 1110102 | 0 | 1 | 2/3 | 3 SkillPoint | Dégâts de coup critique | 1% | 2% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Dégâts de coup critique 1 3/3 | 1110102 | 0 | 1 | 3/3 | 4 SkillPoint | Dégâts de coup critique | 1% | 3% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Pénétration de défense 1 1/3 | 1110103 | 0 | 1 | 1/3 | 2 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Pénétration de défense 1 2/3 | 1110103 | 0 | 1 | 2/3 | 3 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Pénétration de défense 1 3/3 | 1110103 | 0 | 1 | 3/3 | 4 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Taux de coup critique 2 1/3 | 1110201 | 1 | 2 | 1/3 | 2 SkillPoint | Taux de coup critique | 2% | 2% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Taux de coup critique 2 2/3 | 1110201 | 1 | 2 | 2/3 | 3 SkillPoint | Taux de coup critique | 2% | 4% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Taux de coup critique 2 3/3 | 1110201 | 1 | 2 | 3/3 | 4 SkillPoint | Taux de coup critique | 2% | 6% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Dégâts de coup critique 2 1/3 | 1110202 | 1 | 2 | 1/3 | 2 SkillPoint | Dégâts de coup critique | 2% | 2% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Dégâts de coup critique 2 2/3 | 1110202 | 1 | 2 | 2/3 | 3 SkillPoint | Dégâts de coup critique | 2% | 4% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Dégâts de coup critique 2 3/3 | 1110202 | 1 | 2 | 3/3 | 4 SkillPoint | Dégâts de coup critique | 2% | 6% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Pénétration de défense 2 1/3 | 1110203 | 1 | 2 | 1/3 | 2 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Pénétration de défense 2 2/3 | 1110203 | 1 | 2 | 2/3 | 3 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Pénétration de défense 2 3/3 | 1110203 | 1 | 2 | 3/3 | 4 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Taux de coup critique 3 1/3 | 1110301 | 2 | 3 | 1/3 | 2 SkillPoint | Taux de coup critique | 3% | 3% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Taux de coup critique 3 2/3 | 1110301 | 2 | 3 | 2/3 | 3 SkillPoint | Taux de coup critique | 3% | 6% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Taux de coup critique 3 3/3 | 1110301 | 2 | 3 | 3/3 | 4 SkillPoint | Taux de coup critique | 3% | 9% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Dégâts de coup critique 3 1/3 | 1110302 | 2 | 3 | 1/3 | 2 SkillPoint | Dégâts de coup critique | 3% | 3% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Dégâts de coup critique 3 2/3 | 1110302 | 2 | 3 | 2/3 | 3 SkillPoint | Dégâts de coup critique | 3% | 6% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Dégâts de coup critique 3 3/3 | 1110302 | 2 | 3 | 3/3 | 4 SkillPoint | Dégâts de coup critique | 3% | 9% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Pénétration de défense 3 1/3 | 1110303 | 2 | 3 | 1/3 | 2 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Pénétration de défense 3 2/3 | 1110303 | 2 | 3 | 2/3 | 3 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Pénétration de défense 3 3/3 | 1110303 | 2 | 3 | 3/3 | 4 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Taux de coup critique 4 1/3 | 1110401 | 3 | 4 | 1/3 | 3 SkillPoint | Taux de coup critique | 4% | 4% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Taux de coup critique 4 2/3 | 1110401 | 3 | 4 | 2/3 | 4 SkillPoint | Taux de coup critique | 4% | 8% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Taux de coup critique 4 3/3 | 1110401 | 3 | 4 | 3/3 | 5 SkillPoint | Taux de coup critique | 4% | 12% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Dégâts de coup critique 4 1/3 | 1110402 | 3 | 4 | 1/3 | 3 SkillPoint | Dégâts de coup critique | 4% | 4% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Dégâts de coup critique 4 2/3 | 1110402 | 3 | 4 | 2/3 | 4 SkillPoint | Dégâts de coup critique | 4% | 8% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Dégâts de coup critique 4 3/3 | 1110402 | 3 | 4 | 3/3 | 5 SkillPoint | Dégâts de coup critique | 4% | 12% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Pénétration de défense 4 1/3 | 1110403 | 3 | 4 | 1/3 | 3 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Pénétration de défense 4 2/3 | 1110403 | 3 | 4 | 2/3 | 4 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Pénétration de défense 4 3/3 | 1110403 | 3 | 4 | 3/3 | 5 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Taux de coup critique 5 1/3 | 1110501 | 4 | 5 | 1/3 | 3 SkillPoint | Taux de coup critique | 5% | 5% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Taux de coup critique 5 2/3 | 1110501 | 4 | 5 | 2/3 | 4 SkillPoint | Taux de coup critique | 5% | 10% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Taux de coup critique 5 3/3 | 1110501 | 4 | 5 | 3/3 | 5 SkillPoint | Taux de coup critique | 5% | 15% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Dégâts de coup critique 5 1/3 | 1110502 | 4 | 5 | 1/3 | 3 SkillPoint | Dégâts de coup critique | 5% | 5% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Dégâts de coup critique 5 2/3 | 1110502 | 4 | 5 | 2/3 | 4 SkillPoint | Dégâts de coup critique | 5% | 10% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Dégâts de coup critique 5 3/3 | 1110502 | 4 | 5 | 3/3 | 5 SkillPoint | Dégâts de coup critique | 5% | 15% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Pénétration de défense 5 1/3 | 1110503 | 4 | 5 | 1/3 | 3 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Pénétration de défense 5 2/3 | 1110503 | 4 | 5 | 2/3 | 4 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Pénétration de défense 5 3/3 | 1110503 | 4 | 5 | 3/3 | 5 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Taux de coup critique 6 1/3 | 1110601 | 5 | 6 | 1/3 | 3 SkillPoint | Taux de coup critique | 6% | 6% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Taux de coup critique 6 2/3 | 1110601 | 5 | 6 | 2/3 | 4 SkillPoint | Taux de coup critique | 6% | 12% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Taux de coup critique 6 3/3 | 1110601 | 5 | 6 | 3/3 | 5 SkillPoint | Taux de coup critique | 6% | 18% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Dégâts de coup critique 6 1/3 | 1110602 | 5 | 6 | 1/3 | 3 SkillPoint | Dégâts de coup critique | 6% | 6% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Dégâts de coup critique 6 2/3 | 1110602 | 5 | 6 | 2/3 | 4 SkillPoint | Dégâts de coup critique | 6% | 12% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Dégâts de coup critique 6 3/3 | 1110602 | 5 | 6 | 3/3 | 5 SkillPoint | Dégâts de coup critique | 6% | 18% | FORTEMENT PROBABLE |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Pénétration de défense 6 1/3 | 1110603 | 5 | 6 | 1/3 | 3 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Pénétration de défense 6 2/3 | 1110603 | 5 | 6 | 2/3 | 4 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
+| Groupe 10 | Critique et pénétration | Critique et pénétration | Pénétration de défense 6 3/3 | 1110603 | 5 | 6 | 3/3 | 5 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
 | GSSkillTree | Épée | Cœur d'acier | Attaque augmentée 1/3 | 2150401 | 3 | 4 | 1/3 | 2 WeaponPoint | Attaque | 0.5% | 0.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
 | GSSkillTree | Épée | Cœur d'acier | Attaque augmentée 2/3 | 2150401 | 3 | 4 | 2/3 | 2 WeaponPoint | Attaque | 0.5% | 1% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
 | GSSkillTree | Épée | Cœur d'acier | Attaque augmentée 3/3 | 2150401 | 3 | 4 | 3/3 | 2 WeaponPoint | Attaque | 0.5% | 1.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |

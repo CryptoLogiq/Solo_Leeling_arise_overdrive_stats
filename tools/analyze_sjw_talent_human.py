@@ -1,17 +1,13 @@
 from __future__ import annotations
 
-import ast
-import csv
-import json
 import re
 import shutil
-import subprocess
 from collections import Counter, defaultdict
 from pathlib import Path
 
+from sjw_talent_data import flatten_effect_rows, iter_nodes, load_canonical_tree, nodes_by_id
 
 WORK = Path(__file__).resolve().parents[1]
-TABLES = WORK / "analysis" / "decoded_tables"
 FULL_CSV = WORK / "analysis" / "csv" / "sjw_talent_tree.csv"
 DETAILED_CSV = WORK / "analysis" / "csv" / "sjw_talent_tree_detailed.csv"
 HUMAN = WORK / "analysis" / "reports" / "SJW_TALENT_TREE_HUMAN.md"
@@ -108,29 +104,6 @@ NUMERIC_GAIN_EFFECTS = {
 }
 
 
-def load_json(name: str):
-    payload = json.loads((TABLES / f"{name}.json").read_text(encoding="utf-8"))
-    return payload.get("records", payload)
-
-
-def maybe_list(value):
-    if value in ("", None):
-        return []
-    if isinstance(value, list):
-        return value
-    if isinstance(value, (int, float)):
-        return [value]
-    raw = str(value).strip()
-    try:
-        parsed = ast.literal_eval(raw)
-    except (SyntaxError, ValueError):
-        if raw.startswith("[") and raw.endswith("]"):
-            inner = raw[1:-1].strip()
-            return [] if not inner else [part.strip() for part in inner.split(",")]
-        return [value]
-    return parsed if isinstance(parsed, list) else [parsed]
-
-
 def first_number(text: str):
     if not text:
         return None
@@ -180,29 +153,8 @@ def rank_label(rank: int):
     return labels.get(rank, str(rank))
 
 
-def ensure_source_csv():
-    if not FULL_CSV.exists():
-        subprocess.run(["python", "tools/analyze_sjw_talent_tree.py"], cwd=WORK, check=True)
-
-
 def read_full_rows():
-    ensure_source_csv()
-    with FULL_CSV.open(encoding="utf-8", newline="") as handle:
-        return list(csv.DictReader(handle))
-
-
-def system_for(main, sub, branch):
-    if main == "SJWSkillTree":
-        return "class", sub, branch, False
-    if main == "GSSkillTree":
-        return "weapon", sub, branch, False
-    if main == "LordSkillTree":
-        return "jinwoo", sub, branch, False
-    if main == "Groupe 9":
-        return "unattached", "Stats principales", "Stats principales", True
-    if main == "Groupe 10":
-        return "unattached", "Critique et pénétration", "Critique et pénétration", True
-    return "unattached", "Structure non rattachée", branch or "Talents", True
+    return flatten_effect_rows(load_canonical_tree())
 
 
 def cost_summary(rows):
@@ -287,8 +239,9 @@ def effect_summary(rows):
     return "; ".join(chunks), gain_values, unresolved_numeric
 
 
-def aggregate_nodes(rows):
-    nodes = {str(row["ID"]): row for row in load_json("CharPCSkillTreeNode")}
+def aggregate_nodes(rows, model):
+    nodes = nodes_by_id(model)
+    section_by_node = {node["nodeId"]: section for section, node in iter_nodes(model)}
     by_logical = defaultdict(list)
     for row in rows:
         by_logical[row.get("LogicalTalentID") or f"node:{row['NodeID']}"].append(row)
@@ -296,11 +249,6 @@ def aggregate_nodes(rows):
         str(row["NodeID"]): row.get("LogicalTalentID") or f"node:{row['NodeID']}"
         for row in rows
     }
-    raw_children = defaultdict(list)
-    for node in nodes.values():
-        node_id = str(node["ID"])
-        for parent in maybe_list(node.get("SlotLinkNodeID")):
-            raw_children[str(parent)].append(node_id)
 
     talents = []
     for logical_id, entries in by_logical.items():
@@ -310,10 +258,12 @@ def aggregate_nodes(rows):
         node = nodes.get(node_id)
         if not node:
             continue
-        system, section, branch, deduced = system_for(sample["MainTab"], sample["SubTab"], sample["Branch"])
-        node_type = str(node.get("NodeType") or "")
-        if system == "class" and node_type == "Identity":
-            branch = "Nœud de classe / Overdrive"
+        section_meta = section_by_node[node_id]
+        system = section_meta["system"]
+        section = section_meta["section"]
+        branch = section_meta["branch"]
+        deduced = bool(section_meta.get("deduced"))
+        node_type = str(node.get("nodeType") or "")
         scoped_human_cleanup = system == "class" and section == "Assassin" and branch == "Attaque sournoise"
         ranks = sorted({int(row.get("LogicalRank") or row["Rank"]) for row in entries if row.get("LogicalRank") or row["Rank"]})
         max_rank = max(ranks) if ranks else int(sample["MaxRank"] or 1)
@@ -358,9 +308,10 @@ def aggregate_nodes(rows):
                 {
                     "rank": logical_rank,
                     "node_id": rank_node_id,
-                    "parents": [str(v) for v in maybe_list(rank_node.get("SlotLinkNodeID"))],
-                    "visual_row": int(rank_entries[0].get("VisualRow") or rank_node.get("NodeTierY") or 0),
-                    "x": int(rank_entries[0].get("VisualColumn") or rank_node.get("NodeTierX") or 0),
+                    "parents": rank_node.get("parents", []),
+                    "children": rank_node.get("children", []),
+                    "visual_row": int(rank_entries[0].get("VisualRow") or rank_node.get("visual", {}).get("row") or 0),
+                    "x": int(rank_entries[0].get("VisualColumn") or rank_node.get("visual", {}).get("column") or 0),
                     "progression_depth": int(rank_entries[0].get("ProgressionDepth") or 0),
                     "cost": single_rank_cost(rank_entries) if scoped_human_cleanup else cost_summary(rank_entries)[0],
                     "effect": rank_effect,
@@ -381,14 +332,14 @@ def aggregate_nodes(rows):
                 "branch": branch,
                 "deduced": deduced,
                 "node_type": node_type,
-                "progression_depth": int(sample.get("ProgressionDepth") or 0),
-                "visual_row": int(sample.get("VisualRow") or node.get("NodeTierY") or 0),
-                "x": int(sample.get("VisualColumn") or node.get("NodeTierX") or 0),
+                "progression_depth": int(sample.get("ProgressionDepth") or node.get("progressionDepth") or 0),
+                "visual_row": int(sample.get("VisualRow") or node.get("visual", {}).get("row") or 0),
+                "x": int(sample.get("VisualColumn") or node.get("visual", {}).get("column") or 0),
                 "node_id": node_id,
                 "node_ids": node_ids,
                 "logical_id": logical_id,
                 "logical_evidence": "; ".join(sorted({row.get("LogicalGroupingEvidence", "") for row in entries if row.get("LogicalGroupingEvidence")})),
-                "parent": ",".join(str(v) for v in maybe_list(node.get("SlotLinkNodeID"))),
+                "parent": ",".join(node.get("parents", [])),
                 "talent": clean_name(sample.get("LogicalTalentName") or sample["TalentName"]),
                 "effect": effect,
                 "ranks": max_rank,
@@ -414,7 +365,7 @@ def aggregate_nodes(rows):
                 parent_logical = node_to_logical.get(parent)
                 if parent_logical and parent_logical != talent["logical_id"]:
                     parent_refs.add((parent_logical, rank_row["rank"]))
-            for child in raw_children.get(rank_row["node_id"], []):
+            for child in rank_row["children"]:
                 child_logical = node_to_logical.get(child)
                 if child_logical and child_logical != talent["logical_id"]:
                     unlock_refs.add((child_logical, rank_row["rank"]))
@@ -510,14 +461,12 @@ def required_path_cost(node_id, nodes):
         if not node:
             return 0
         total = 0
-        for parent in maybe_list(node.get("SlotLinkNodeID")):
-            parent = str(parent)
+        for parent in node.get("parents", []):
             parent_node = nodes.get(parent)
             if not parent_node:
                 continue
-            costs = maybe_list(parent_node.get("LevelUpCostValue"))
             try:
-                total += float(costs[0]) if costs else 0
+                total += float(parent_node["ranks"][0].get("cost") or 0)
             except (TypeError, ValueError):
                 pass
             total += walk(parent)
@@ -630,7 +579,7 @@ def summary_by_system(talents):
         "",
         "Ce rapport HUMAN présente les arbres de talents de Sung Jinwoo sous une forme lisible sur GitHub: topologie par système, branches, talents logiques, coûts, rangs, gains interprétés et rendements seulement lorsqu'ils sont démontrés.",
         "",
-        "Validation: nœuds, parents, coûts, rangs, BuffID/SkillID et valeurs raw proviennent des GameData décodés. `ProgressionDepth` est calculé depuis les parents; `VisualRow` conserve la rangée UI `NodeTierY`. Les valeurs affichées en pourcentage restent marquées selon leur niveau de confiance; les valeurs brutes sans unité démontrée conservent un gain/rendement `NON DÉTERMINÉ`.",
+        "Validation: nœuds, parents, coûts, rangs, BuffID/SkillID et valeurs raw proviennent du modèle canonique. `ProgressionDepth` est calculé depuis les parents; `VisualRow` conserve la rangée UI source. Les valeurs affichées en pourcentage restent marquées selon leur niveau de confiance; les valeurs brutes sans unité démontrée conservent un gain/rendement `NON DÉTERMINÉ`.",
         "",
         "Reste non déterminé: conversion runtime de certaines valeurs raw, ordre d'application des buffs, additivité exacte entre sources différentes et exclusivité éventuelle de certaines branches/classes/armes.",
         "",
@@ -695,7 +644,7 @@ def write_human(talents):
     lines = summary_by_system(talents)
     lines.extend(
         [
-            "Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans l'ordre technique. `ProgressionDepth` reste une propriété du graphe technique; `NodeTierY` reste une rangée visuelle et ne reconstruit jamais les chemins.",
+            "Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans l'ordre technique. `ProgressionDepth` reste une propriété du graphe technique; `VisualRow` reste une rangée visuelle et ne reconstruit jamais les chemins.",
             "",
         ]
     )
@@ -737,9 +686,9 @@ def write_technical(talents):
         "- Plusieurs NodeID ne peuvent partager un talent logique que si une preuve explicite est ajoutée dans `LogicalGroupingEvidence`.",
         "- Les effets multiples d'un même rang logique sont regroupés dans la colonne `Effet`.",
         "- `ProgressionDepth`: profondeur réelle calculée depuis les relations Parent.",
-        "- `VisualRow`: valeur GameData `NodeTierY`, utilisée seulement comme rangée visuelle.",
-        "- `VisualColumn`: valeur GameData `NodeTierX`, utilisée seulement comme colonne visuelle.",
-        "- Rang technique: `NodeMaxLevel`; rang logique: `LogicalRank`.",
+        "- `VisualRow`: rangée visuelle source, utilisée seulement comme rangée visuelle.",
+        "- `VisualColumn`: colonne visuelle source, utilisée seulement comme colonne visuelle.",
+        "- `nodeMaxLevel`: rang maximum source; `LogicalRank`: rang interne exporté.",
         "- Les groupes 9/10 ne sont pas forcés dans les classes; ils deviennent des structures non rattachées avec noms déduits.",
         "- Données détaillées vérifiables: `analysis/csv/sjw_talent_tree.csv` et `analysis/csv/sjw_talent_tree_detailed.csv`.",
         "- Export canonique consommable par les futurs rendus: `analysis/data/sjw_talent_tree.json`.",
@@ -794,8 +743,8 @@ def write_rank_parent_audit(talents):
         "## Conclusion",
         "",
         "- Un suffixe romain/numérique dans le nom localisé ne prouve pas un rang interne.",
-        "- Le rang interne provient du même `NodeID` quand `NodeMaxLevel > 1`.",
-        "- `SlotLinkNodeID` référence un `NodeID`, pas un rang interne précis; HUMAN affiche donc une seule relation tant qu'aucun champ GameData ne prouve une condition par rang.",
+        "- Le rang interne provient du même `NodeID` quand le rang maximum source est supérieur à 1.",
+        "- `ParentNodeID` référence un `NodeID`, pas un rang interne précis; HUMAN affiche donc une seule relation tant qu'aucun champ GameData ne prouve une condition par rang.",
         "- Une famille/série sémantique peut aider la lecture, mais elle ne remplace jamais la topologie du graphe.",
         "",
         "## Échantillons validés",
@@ -833,8 +782,9 @@ def write_rank_parent_audit(talents):
 
 
 def main():
-    rows = read_full_rows()
-    talents = aggregate_nodes(rows)
+    model = load_canonical_tree()
+    rows = flatten_effect_rows(model)
+    talents = aggregate_nodes(rows, model)
     validate_logical_talents(rows, talents)
     write_detailed(talents)
     write_human(talents)

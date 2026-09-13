@@ -18,9 +18,9 @@ Ces sources ne sont utilisées que pour corroborer la structure visuelle. Les co
 - Plusieurs NodeID ne peuvent partager un talent logique que si une preuve explicite est ajoutée dans `LogicalGroupingEvidence`.
 - Les effets multiples d'un même rang logique sont regroupés dans la colonne `Effet`.
 - `ProgressionDepth`: profondeur réelle calculée depuis les relations Parent.
-- `VisualRow`: valeur GameData `NodeTierY`, utilisée seulement comme rangée visuelle.
-- `VisualColumn`: valeur GameData `NodeTierX`, utilisée seulement comme colonne visuelle.
-- Rang technique: `NodeMaxLevel`; rang logique: `LogicalRank`.
+- `VisualRow`: rangée visuelle source, utilisée seulement comme rangée visuelle.
+- `VisualColumn`: colonne visuelle source, utilisée seulement comme colonne visuelle.
+- `nodeMaxLevel`: rang maximum source; `LogicalRank`: rang interne exporté.
 - Les groupes 9/10 ne sont pas forcés dans les classes; ils deviennent des structures non rattachées avec noms déduits.
 - Données détaillées vérifiables: `analysis/csv/sjw_talent_tree.csv` et `analysis/csv/sjw_talent_tree_detailed.csv`.
 - Export canonique consommable par les futurs rendus: `analysis/data/sjw_talent_tree.json`.

@@ -1,17 +1,13 @@
 from __future__ import annotations
 
-import csv
-import json
-import subprocess
 from collections import defaultdict
 from pathlib import Path
 
-from analyze_sjw_talent_human import clean_name, effect_summary, maybe_list
+from analyze_sjw_talent_human import clean_name, effect_summary
+from sjw_talent_data import flatten_effect_rows, load_canonical_tree
 
 
 WORK = Path(__file__).resolve().parents[1]
-TABLES = WORK / "analysis" / "decoded_tables"
-FULL_CSV = WORK / "analysis" / "csv" / "sjw_talent_tree.csv"
 OUT = WORK / "analysis" / "reports" / "SJW_ASSASSIN_TALENT_GRAPH.md"
 
 EXPECTED_UI_EDGES = {
@@ -69,22 +65,6 @@ EXPECTED_PROGRESSION_DEPTHS = {
 }
 
 AMBUSH_NODE_IDS = ["111201", "111202", "111402", "111602"]
-
-
-def load_json(name: str):
-    payload = json.loads((TABLES / f"{name}.json").read_text(encoding="utf-8"))
-    return payload.get("records", payload)
-
-
-def ensure_source_csv():
-    if not FULL_CSV.exists():
-        subprocess.run(["python", "tools/analyze_sjw_talent_tree.py"], cwd=WORK, check=True)
-
-
-def read_rows():
-    ensure_source_csv()
-    with FULL_CSV.open(encoding="utf-8", newline="") as handle:
-        return list(csv.DictReader(handle))
 
 
 def natural_node_key(item):
@@ -298,7 +278,7 @@ def render_depth_detail(lines, items, children):
                     f"- parent(s): {parents}",
                     f"- débloque: {child_ids}",
                     f"- profondeur de progression: {item['progression_depth']}",
-                    f"- rangée visuelle / NodeTierY: {item['visual_row']}",
+                    f"- rangée visuelle: {item['visual_row']}",
                     f"- position UI: X {item['x']}, Y {item['y']}, offset {item['offset']}",
                     f"- gain/rendement: {item['gain']} / {item['yield']}",
                     "",
@@ -308,8 +288,6 @@ def render_depth_detail(lines, items, children):
 
 def render_ambush_logical_check(lines, items, children):
     by_id = {item["node_id"]: item for item in items}
-    raw_nodes = {str(row["ID"]): row for row in load_json("CharPCSkillTreeNode")}
-    buffs = {str(row["ID"]): row for row in load_json("ChComBuff")}
     lines.extend(
         [
             "### Contrôle talent logique / rang - Embuscade",
@@ -318,27 +296,22 @@ def render_ambush_logical_check(lines, items, children):
             "",
             "Preuves contrôlées:",
             "",
-            "- `NodeMaxLevel=1` pour chaque NodeID Embuscade.",
-            "- `BuffLevel=1` pour chaque BuffID direct.",
-            "- `BuffGroupID` diffère entre les BuffID directs.",
-            "- `NodeValue`, `TriggeredBuffID`, descriptions et effets déclenchés diffèrent.",
+            "- rang maximum source = 1 pour chaque NodeID Embuscade.",
+            "- Les `NodeValue`/BuffID directs diffèrent.",
             "- Les positions UI diffèrent: `111201` rangée 2 / X2, `111202` rangée 2 / X4, `111402` rangée 4 / X4, `111602` rangée 6 / X4.",
             "- Le suffixe romain appartient ici au nom localisé et ne démontre pas un rang interne.",
             "",
-            "| Libellé | NodeID | NodeValue / BuffID | NodeMaxLevel | BuffGroupID | BuffLevel | Parent(s) | Enfant(s) |",
-            "|---|---:|---:|---:|---:|---:|---|---|",
+            "| Libellé | NodeID | NodeValue / BuffID direct | Rangs internes | Parent(s) | Enfant(s) |",
+            "|---|---:|---:|---:|---|---|",
         ]
     )
     for node_id in AMBUSH_NODE_IDS:
         item = by_id[node_id]
-        node = raw_nodes[node_id]
-        buff = buffs.get(str(node.get("NodeValue")), {})
         parents = ", ".join(item["parents"]) if item["parents"] else "RACINE"
         child_ids = ", ".join(children[item["node_id"]]) if children[item["node_id"]] else "FEUILLE"
         lines.append(
-            f"| {md_escape(clean_name(item['talent']))} | {node_id} | {node.get('NodeValue')} | "
-            f"{node.get('NodeMaxLevel')} | {buff.get('BuffGroupID', '')} | {buff.get('BuffLevel', '')} | "
-            f"{parents} | {child_ids} |"
+            f"| {md_escape(clean_name(item['talent']))} | {node_id} | {item['node_value']} | "
+            f"{item['ranks']} | {parents} | {child_ids} |"
         )
     lines.extend(
         [
@@ -350,41 +323,46 @@ def render_ambush_logical_check(lines, items, children):
 
 
 def build_assassin():
-    rows = read_rows()
-    raw_nodes = {str(row["ID"]): row for row in load_json("CharPCSkillTreeNode")}
+    model = load_canonical_tree()
+    rows = flatten_effect_rows(model)
     by_node = defaultdict(list)
     for row in rows:
         if row["MainTab"] == "SJWSkillTree" and row["SubTab"] == "Assassin":
             by_node[str(row["NodeID"])].append(row)
     assassin = []
-    for node_id, entries in by_node.items():
-        sample = entries[0]
-        effect, gain_values, _ = effect_summary(entries)
-        gain = " / ".join(gain_values) if gain_values else "Non chiffré"
-        assassin.append(
-            {
-                "system": "class",
-                "section": "Assassin",
-                "branch": sample["Branch"],
-                "node_id": node_id,
-                "talent": clean_name(sample["TalentName"]),
-                "effect": effect,
-                "cost": sample["Cost"],
-                "ranks": sample["MaxRank"],
-                "gain": gain,
-                "yield": "NON DÉTERMINÉ",
-                "progression_depth": int(sample["ProgressionDepth"]),
-                "visual_row": int(sample["VisualRow"]),
-                "x": int(raw_nodes[node_id].get("NodeTierX") or 0),
-            }
-        )
-    for item in assassin:
-        node = raw_nodes[item["node_id"]]
-        item["node_group"] = int(node["SkillTreelNodeGroup"])
-        item["parents"] = [str(v) for v in maybe_list(node.get("SlotLinkNodeID"))]
-        item["y"] = item["visual_row"]
-        item["offset"] = str(node.get("NodeOffset") or "")
-        item["node_type"] = str(node.get("NodeType") or "")
+    for section in model["trees"]:
+        if section["system"] != "class" or section["section"] != "Assassin":
+            continue
+        for node in section["nodes"]:
+            node_id = node["nodeId"]
+            entries = by_node[node_id]
+            sample = entries[0]
+            effect, gain_values, _ = effect_summary(entries)
+            gain = " / ".join(gain_values) if gain_values else "Non chiffré"
+            assassin.append(
+                {
+                    "system": "class",
+                    "section": "Assassin",
+                    "branch": section["branch"],
+                    "node_group": section["nodeGroup"],
+                    "node_id": node_id,
+                    "talent": clean_name(node["name"]),
+                    "node_value": node["nodeValue"],
+                    "node_type": node["nodeType"],
+                    "parents": node["parents"],
+                    "canonical_children": node["children"],
+                    "effect": effect,
+                    "cost": sample["Cost"],
+                    "ranks": str(node["nodeMaxLevel"]),
+                    "gain": gain,
+                    "yield": "NON DÉTERMINÉ",
+                    "progression_depth": int(node["progressionDepth"]),
+                    "visual_row": int(node["visual"]["row"]),
+                    "x": int(node["visual"]["column"]),
+                    "y": int(node["visual"]["row"]),
+                    "offset": str(node["visual"]["offset"] or ""),
+                }
+            )
     by_section = defaultdict(list)
     class_nodes = []
     for item in assassin:
@@ -400,9 +378,9 @@ def write_report():
     lines = [
         "# Assassin - Graphe orienté de l'arbre de talents",
         "",
-        "Source primaire: `CharPCSkillTreeNode` pour les nœuds, parents, rangées visuelles et positions; `sjw_talent_tree.csv` pour les noms, coûts, rangs techniques, talents logiques, effets et profondeurs de progression.",
+        "Source primaire de rendu: `analysis/data/sjw_talent_tree.json` pour les nœuds, parents, enfants, rangées/colonnes visuelles, coûts, rangs, effets et profondeurs de progression.",
         "",
-        "Règle de reconstruction: la progression réelle vient uniquement des relations Parent/Enfant (`SlotLinkNodeID`). `NodeTierY` est conservé comme rangée visuelle (`VisualRow`) et ne crée aucune connexion.",
+        "Règle de rendu: les relations Parent/Enfant et le placement visuel sont consommés depuis le modèle canonique. Aucune connexion n'est déduite depuis la position, le nom ou le rang.",
         "",
         "Structure UI validée: Assassin contient deux sections de progression et un nœud central de classe / Overdrive séparé. Total: 21 nœuds.",
         "",
@@ -425,16 +403,20 @@ def write_report():
 
     for (node_group, branch), items in sorted(by_section.items()):
         node_ids = {item["node_id"] for item in items}
-        children = {item["node_id"]: [] for item in items}
-        missing_parents = []
-        for item in items:
-            for parent in item["parents"]:
-                if parent in node_ids:
-                    children[parent].append(item["node_id"])
-                else:
-                    missing_parents.append(f"{item['node_id']}→{parent}")
+        children = {
+            item["node_id"]: [child_id for child_id in item["canonical_children"] if child_id in node_ids]
+            for item in items
+        }
+        missing_parents = [
+            f"{item['node_id']}→{parent}"
+            for item in items
+            for parent in item["parents"]
+            if parent not in node_ids
+        ]
         for node_id in children:
-            children[node_id].sort(key=lambda child_id: natural_node_key(next(i for i in items if i["node_id"] == child_id)))
+            children[node_id].sort(
+                key=lambda child_id: natural_node_key(next(i for i in items if i["node_id"] == child_id))
+            )
         stats = graph_stats(items, children, sorted(set(missing_parents)))
         ui_status, _, _ = validate_against_ui(branch, items)
         depth_status = validate_depths(branch, items)

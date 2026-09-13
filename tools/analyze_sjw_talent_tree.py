@@ -394,6 +394,7 @@ def build_canonical_model(rows):
                 "mainTab": sample["MainTab"],
                 "section": sample["SubTab"],
                 "branch": sample["Branch"],
+                "deduced": system_key(sample["MainTab"]) == "unattached",
                 "nodeGroup": int(node["SkillTreelNodeGroup"]),
                 "nodes": [],
             },
@@ -686,6 +687,10 @@ def make_rows():
             continue
         group = int(node["SkillTreelNodeGroup"])
         tab = tabs.get(group, {"main": f"Groupe {group}", "sub": "", "branch": f"Groupe {group}"})
+        if tab["main"] == "Groupe 9":
+            tab = {"main": "Groupe 9", "sub": "Stats principales", "branch": "Stats principales"}
+        elif tab["main"] == "Groupe 10":
+            tab = {"main": "Groupe 10", "sub": "Critique et pénétration", "branch": "Critique et pénétration"}
         max_rank = int(node.get("NodeMaxLevel") or 1)
         costs = maybe_list(node.get("LevelUpCostValue"))
         cost_kind = node.get("LevelUpCost") or ""
@@ -723,6 +728,10 @@ def make_rows():
         if not effects:
             effects = [("PassiveNoNumericEffect", "")]
 
+        branch_name = tab["branch"]
+        if tab["main"] == "SJWSkillTree" and str(node_type) == "Identity":
+            branch_name = "Nœud de classe / Overdrive"
+
         for rank in range(1, max_rank + 1):
             logical = logical_talent_for_node(node, base_name, rank)
             rank_cost = cost_for_rank(costs, rank)
@@ -741,7 +750,7 @@ def make_rows():
                     {
                         "MainTab": tab["main"],
                         "SubTab": tab["sub"],
-                        "Branch": tab["branch"],
+                        "Branch": branch_name,
                         "TalentName": f"{base_name}{rank_suffix}",
                         **logical,
                         "NodeID": node["ID"],

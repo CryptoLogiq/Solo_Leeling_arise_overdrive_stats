@@ -1,8 +1,8 @@
 # Assassin - Graphe orienté de l'arbre de talents
 
-Source primaire: `CharPCSkillTreeNode` pour les nœuds, parents, rangées visuelles et positions; `sjw_talent_tree.csv` pour les noms, coûts, rangs techniques, talents logiques, effets et profondeurs de progression.
+Source primaire de rendu: `analysis/data/sjw_talent_tree.json` pour les nœuds, parents, enfants, rangées/colonnes visuelles, coûts, rangs, effets et profondeurs de progression.
 
-Règle de reconstruction: la progression réelle vient uniquement des relations Parent/Enfant (`SlotLinkNodeID`). `NodeTierY` est conservé comme rangée visuelle (`VisualRow`) et ne crée aucune connexion.
+Règle de rendu: les relations Parent/Enfant et le placement visuel sont consommés depuis le modèle canonique. Aucune connexion n'est déduite depuis la position, le nom ou le rang.
 
 Structure UI validée: Assassin contient deux sections de progression et un nœud central de classe / Overdrive séparé. Total: 21 nœuds.
 
@@ -49,7 +49,7 @@ Structure UI validée: Assassin contient deux sections de progression et un nœu
 - parent(s): RACINE
 - débloque: aucun
 - profondeur de progression: 0
-- rangée visuelle / NodeTierY: 1
+- rangée visuelle: 1
 - position UI: X 4, Y 1, offset [300,-200,0]
 - gain/rendement: Non chiffré / NON DÉTERMINÉ
 
@@ -97,19 +97,17 @@ Décision HUMAN: **NON FUSIONNÉ**. `Embuscade I`, `Embuscade II`, `Embuscade II
 
 Preuves contrôlées:
 
-- `NodeMaxLevel=1` pour chaque NodeID Embuscade.
-- `BuffLevel=1` pour chaque BuffID direct.
-- `BuffGroupID` diffère entre les BuffID directs.
-- `NodeValue`, `TriggeredBuffID`, descriptions et effets déclenchés diffèrent.
+- rang maximum source = 1 pour chaque NodeID Embuscade.
+- Les `NodeValue`/BuffID directs diffèrent.
 - Les positions UI diffèrent: `111201` rangée 2 / X2, `111202` rangée 2 / X4, `111402` rangée 4 / X4, `111602` rangée 6 / X4.
 - Le suffixe romain appartient ici au nom localisé et ne démontre pas un rang interne.
 
-| Libellé | NodeID | NodeValue / BuffID | NodeMaxLevel | BuffGroupID | BuffLevel | Parent(s) | Enfant(s) |
-|---|---:|---:|---:|---:|---:|---|---|
-| Embuscade I | 111201 | 90000001 | 1 | 90000001 | 1 | 111101 | 111301 |
-| Embuscade II | 111202 | 94100001 | 1 | 94100001 | 1 | 111101 | 111301, 111402 |
-| Embuscade III - [Effet passif spécial] | 111402 | 90000007 | 1 | 90000007 | 1 | 111202 | 111602 |
-| Embuscade IV | 111602 | 94100002 | 1 | 94100002 | 1 | 111402 | FEUILLE |
+| Libellé | NodeID | NodeValue / BuffID direct | Rangs internes | Parent(s) | Enfant(s) |
+|---|---:|---:|---:|---|---|
+| Embuscade I | 111201 | 90000001 | 1 | 111101 | 111301 |
+| Embuscade II | 111202 | 94100001 | 1 | 111101 | 111301, 111402 |
+| Embuscade III - [Effet passif spécial] | 111402 | 90000007 | 1 | 111202 | 111602 |
+| Embuscade IV | 111602 | 94100002 | 1 | 111402 | FEUILLE |
 
 Conséquence HUMAN: les quatre talents Embuscade restent visibles séparément dans le graphe et dans les fiches. Une éventuelle famille/série `Embuscade` peut être notée plus tard, mais elle ne remplace pas la topologie.
 
@@ -171,7 +169,7 @@ Version ASCII de lecture:
 - parent(s): RACINE
 - débloque: Embuscade I (`111201`), Embuscade II (`111202`)
 - profondeur de progression: 0
-- rangée visuelle / NodeTierY: 1
+- rangée visuelle: 1
 - position UI: X 3, Y 1, offset [0,0,0]
 - gain/rendement: Non chiffré / NON DÉTERMINÉ
 
@@ -187,7 +185,7 @@ Version ASCII de lecture:
 - parent(s): Ruée acérée (`111101`)
 - débloque: Arts verticaux (`111301`)
 - profondeur de progression: 1
-- rangée visuelle / NodeTierY: 2
+- rangée visuelle: 2
 - position UI: X 2, Y 2, offset [0,0,0]
 - gain/rendement: Non chiffré / NON DÉTERMINÉ
 
@@ -201,7 +199,7 @@ Version ASCII de lecture:
 - parent(s): Ruée acérée (`111101`)
 - débloque: Arts verticaux (`111301`), Embuscade III - [Effet passif spécial] (`111402`)
 - profondeur de progression: 1
-- rangée visuelle / NodeTierY: 2
+- rangée visuelle: 2
 - position UI: X 4, Y 2, offset [0,0,0]
 - gain/rendement: Non chiffré / NON DÉTERMINÉ
 
@@ -217,7 +215,7 @@ Version ASCII de lecture:
 - parent(s): Embuscade I (`111201`), Embuscade II (`111202`)
 - débloque: Taux de coup critique augmenté (`111401`)
 - profondeur de progression: 2
-- rangée visuelle / NodeTierY: 3
+- rangée visuelle: 3
 - position UI: X 3, Y 3, offset [0,0,0]
 - gain/rendement: Non chiffré / NON DÉTERMINÉ
 
@@ -231,7 +229,7 @@ Version ASCII de lecture:
 - parent(s): Embuscade II (`111202`)
 - débloque: Embuscade IV (`111602`)
 - profondeur de progression: 2
-- rangée visuelle / NodeTierY: 4
+- rangée visuelle: 4
 - position UI: X 4, Y 4, offset [0,0,0]
 - gain/rendement: Non chiffré / NON DÉTERMINÉ
 
@@ -247,7 +245,7 @@ Version ASCII de lecture:
 - parent(s): Arts verticaux (`111301`)
 - débloque: Taux de coup critique augmenté - [Effet passif spécial] (`111501`)
 - profondeur de progression: 3
-- rangée visuelle / NodeTierY: 4
+- rangée visuelle: 4
 - position UI: X 2, Y 4, offset [0,0,0]
 - gain/rendement: Non chiffré / NON DÉTERMINÉ
 
@@ -261,7 +259,7 @@ Version ASCII de lecture:
 - parent(s): Embuscade III - [Effet passif spécial] (`111402`)
 - débloque: aucun
 - profondeur de progression: 3
-- rangée visuelle / NodeTierY: 6
+- rangée visuelle: 6
 - position UI: X 4, Y 6, offset [0,0,0]
 - gain/rendement: Non chiffré / NON DÉTERMINÉ
 
@@ -277,7 +275,7 @@ Version ASCII de lecture:
 - parent(s): Taux de coup critique augmenté (`111401`)
 - débloque: Attaque augmentée (`111601`), Marque de l'assassin (`111701`)
 - profondeur de progression: 4
-- rangée visuelle / NodeTierY: 5
+- rangée visuelle: 5
 - position UI: X 3, Y 5, offset [0,0,0]
 - gain/rendement: Non chiffré / NON DÉTERMINÉ
 
@@ -293,7 +291,7 @@ Version ASCII de lecture:
 - parent(s): Taux de coup critique augmenté - [Effet passif spécial] (`111501`)
 - débloque: aucun
 - profondeur de progression: 5
-- rangée visuelle / NodeTierY: 6
+- rangée visuelle: 6
 - position UI: X 2, Y 6, offset [0,0,0]
 - gain/rendement: 0.8% / NON DÉTERMINÉ
 
@@ -307,7 +305,7 @@ Version ASCII de lecture:
 - parent(s): Taux de coup critique augmenté - [Effet passif spécial] (`111501`)
 - débloque: aucun
 - profondeur de progression: 5
-- rangée visuelle / NodeTierY: 7
+- rangée visuelle: 7
 - position UI: X 3, Y 7, offset [0,0,0]
 - gain/rendement: Non chiffré / NON DÉTERMINÉ
 
@@ -407,7 +405,7 @@ Version ASCII de lecture:
 - parent(s): RACINE
 - débloque: Dévastation I (`112201`)
 - profondeur de progression: 0
-- rangée visuelle / NodeTierY: 1
+- rangée visuelle: 1
 - position UI: X 3, Y 1, offset [0,0,0]
 - gain/rendement: Non chiffré / NON DÉTERMINÉ
 
@@ -423,7 +421,7 @@ Version ASCII de lecture:
 - parent(s): Lésion interne (`112102`)
 - débloque: Dévastation II (`112301`), À point (`112302`), Attaque dans le dos I (`112303`)
 - profondeur de progression: 1
-- rangée visuelle / NodeTierY: 2
+- rangée visuelle: 2
 - position UI: X 3, Y 2, offset [0,0,0]
 - gain/rendement: Non chiffré / NON DÉTERMINÉ
 
@@ -439,7 +437,7 @@ Version ASCII de lecture:
 - parent(s): Dévastation I (`112201`)
 - débloque: Ruée de l'ombre (`112501`)
 - profondeur de progression: 2
-- rangée visuelle / NodeTierY: 3
+- rangée visuelle: 3
 - position UI: X 2, Y 3, offset [0,0,0]
 - gain/rendement: Non chiffré / NON DÉTERMINÉ
 
@@ -453,7 +451,7 @@ Version ASCII de lecture:
 - parent(s): Dévastation I (`112201`)
 - débloque: Position d'embuscade (`112401`)
 - profondeur de progression: 2
-- rangée visuelle / NodeTierY: 3
+- rangée visuelle: 3
 - position UI: X 3, Y 3, offset [0,0,0]
 - gain/rendement: Non chiffré / NON DÉTERMINÉ
 
@@ -467,7 +465,7 @@ Version ASCII de lecture:
 - parent(s): Dévastation I (`112201`)
 - débloque: Attaque dans le dos II (`112502`)
 - profondeur de progression: 2
-- rangée visuelle / NodeTierY: 3
+- rangée visuelle: 3
 - position UI: X 4, Y 3, offset [0,0,0]
 - gain/rendement: Non chiffré / NON DÉTERMINÉ
 
@@ -483,7 +481,7 @@ Version ASCII de lecture:
 - parent(s): À point (`112302`)
 - débloque: Attaque dans le dos II (`112502`), Entailles croissantes (`112601`)
 - profondeur de progression: 3
-- rangée visuelle / NodeTierY: 4
+- rangée visuelle: 4
 - position UI: X 3, Y 4, offset [0,0,0]
 - gain/rendement: Non chiffré / NON DÉTERMINÉ
 
@@ -497,7 +495,7 @@ Version ASCII de lecture:
 - parent(s): Dévastation II (`112301`)
 - débloque: Intention du prédateur (`112701`)
 - profondeur de progression: 3
-- rangée visuelle / NodeTierY: 5
+- rangée visuelle: 5
 - position UI: X 2, Y 5, offset [0,0,0]
 - gain/rendement: Non chiffré / NON DÉTERMINÉ
 
@@ -513,7 +511,7 @@ Version ASCII de lecture:
 - parent(s): Position d'embuscade (`112401`), Attaque dans le dos I (`112303`)
 - débloque: aucun
 - profondeur de progression: 4
-- rangée visuelle / NodeTierY: 5
+- rangée visuelle: 5
 - position UI: X 4, Y 5, offset [0,0,0]
 - gain/rendement: Non chiffré / NON DÉTERMINÉ
 
@@ -527,7 +525,7 @@ Version ASCII de lecture:
 - parent(s): Position d'embuscade (`112401`)
 - débloque: aucun
 - profondeur de progression: 4
-- rangée visuelle / NodeTierY: 6
+- rangée visuelle: 6
 - position UI: X 3, Y 6, offset [0,0,0]
 - gain/rendement: Non chiffré / NON DÉTERMINÉ
 
@@ -541,7 +539,7 @@ Version ASCII de lecture:
 - parent(s): Ruée de l'ombre (`112501`)
 - débloque: aucun
 - profondeur de progression: 4
-- rangée visuelle / NodeTierY: 7
+- rangée visuelle: 7
 - position UI: X 2, Y 7, offset [0,0,0]
 - gain/rendement: Non chiffré / NON DÉTERMINÉ
 

@@ -2,7 +2,7 @@
 
 Ce rapport HUMAN présente les arbres de talents de Sung Jinwoo sous une forme lisible sur GitHub: topologie par système, branches, talents logiques, coûts, rangs, gains interprétés et rendements seulement lorsqu'ils sont démontrés.
 
-Validation: nœuds, parents, coûts, rangs, BuffID/SkillID et valeurs raw proviennent des GameData décodés. `ProgressionDepth` est calculé depuis les parents; `VisualRow` conserve la rangée UI `NodeTierY`. Les valeurs affichées en pourcentage restent marquées selon leur niveau de confiance; les valeurs brutes sans unité démontrée conservent un gain/rendement `NON DÉTERMINÉ`.
+Validation: nœuds, parents, coûts, rangs, BuffID/SkillID et valeurs raw proviennent du modèle canonique. `ProgressionDepth` est calculé depuis les parents; `VisualRow` conserve la rangée UI source. Les valeurs affichées en pourcentage restent marquées selon leur niveau de confiance; les valeurs brutes sans unité démontrée conservent un gain/rendement `NON DÉTERMINÉ`.
 
 Reste non déterminé: conversion runtime de certaines valeurs raw, ordre d'application des buffs, additivité exacte entre sources différentes et exclusivité éventuelle de certaines branches/classes/armes.
 
@@ -31,7 +31,7 @@ Structures non rattachées:
 - Critique et pénétration: Critique et pénétration
 - Stats principales: Stats principales
 
-Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans l'ordre technique. `ProgressionDepth` reste une propriété du graphe technique; `NodeTierY` reste une rangée visuelle et ne reconstruit jamais les chemins.
+Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans l'ordre technique. `ProgressionDepth` reste une propriété du graphe technique; `VisualRow` reste une rangée visuelle et ne reconstruit jamais les chemins.
 
 # ARBRES DE CLASSE
 

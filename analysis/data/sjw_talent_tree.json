@@ -26,6 +26,7 @@
       "mainTab": "SJWSkillTree",
       "section": "Assassin",
       "branch": "Attaque sournoise",
+      "deduced": false,
       "nodeGroup": 1,
       "nodes": [
         {
@@ -64,44 +65,6 @@
                   "buffId": "",
                   "abilityId": "1001102000000",
                   "confidence": "CONFIRMÉ PAR LES GAMEDATA"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "nodeId": "111100",
-          "name": "Overdrive",
-          "nodeType": "Identity",
-          "nodeValue": "92000001",
-          "parents": [],
-          "children": [],
-          "progressionDepth": 0,
-          "visual": {
-            "row": 1,
-            "column": 4,
-            "offset": "[300,-200,0]"
-          },
-          "nodeMaxLevel": 1,
-          "logicalTalentId": "node:111100",
-          "logicalGroupingEvidence": "RAW_NODE_ONLY",
-          "ranks": [
-            {
-              "rank": 1,
-              "cost": "1",
-              "pointCurrency": "IdentityPoint",
-              "accessCondition": "MainQuestChapter:10301",
-              "effects": [
-                {
-                  "effectType": "PassiveNoNumericEffect",
-                  "rawValue": "",
-                  "displayedValue": "",
-                  "marginalGain": "NON DÉTERMINÉ",
-                  "cumulativeGain": "NON DÉTERMINÉ",
-                  "unit": "",
-                  "buffId": "92000001",
-                  "abilityId": "",
-                  "confidence": "NON DÉTERMINÉ"
                 }
               ]
             }
@@ -488,7 +451,56 @@
       "system": "class",
       "mainTab": "SJWSkillTree",
       "section": "Assassin",
+      "branch": "Nœud de classe / Overdrive",
+      "deduced": false,
+      "nodeGroup": 1,
+      "nodes": [
+        {
+          "nodeId": "111100",
+          "name": "Overdrive",
+          "nodeType": "Identity",
+          "nodeValue": "92000001",
+          "parents": [],
+          "children": [],
+          "progressionDepth": 0,
+          "visual": {
+            "row": 1,
+            "column": 4,
+            "offset": "[300,-200,0]"
+          },
+          "nodeMaxLevel": 1,
+          "logicalTalentId": "node:111100",
+          "logicalGroupingEvidence": "RAW_NODE_ONLY",
+          "ranks": [
+            {
+              "rank": 1,
+              "cost": "1",
+              "pointCurrency": "IdentityPoint",
+              "accessCondition": "MainQuestChapter:10301",
+              "effects": [
+                {
+                  "effectType": "PassiveNoNumericEffect",
+                  "rawValue": "",
+                  "displayedValue": "",
+                  "marginalGain": "NON DÉTERMINÉ",
+                  "cumulativeGain": "NON DÉTERMINÉ",
+                  "unit": "",
+                  "buffId": "92000001",
+                  "abilityId": "",
+                  "confidence": "NON DÉTERMINÉ"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "system": "class",
+      "mainTab": "SJWSkillTree",
+      "section": "Assassin",
       "branch": "Frappe vitale",
+      "deduced": false,
       "nodeGroup": 2,
       "nodes": [
         {
@@ -914,6 +926,7 @@
       "mainTab": "SJWSkillTree",
       "section": "Duelliste",
       "branch": "Frappe enragée",
+      "deduced": false,
       "nodeGroup": 3,
       "nodes": [
         {
@@ -951,55 +964,6 @@
                   "unit": "valeur brute",
                   "buffId": "",
                   "abilityId": "1001103100000",
-                  "confidence": "CONFIRMÉ PAR LES GAMEDATA"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "nodeId": "113100",
-          "name": "Overdrive",
-          "nodeType": "Identity",
-          "nodeValue": "92000003",
-          "parents": [],
-          "children": [],
-          "progressionDepth": 0,
-          "visual": {
-            "row": 1,
-            "column": 4,
-            "offset": "[300,-200,0]"
-          },
-          "nodeMaxLevel": 1,
-          "logicalTalentId": "node:113100",
-          "logicalGroupingEvidence": "RAW_NODE_ONLY",
-          "ranks": [
-            {
-              "rank": 1,
-              "cost": "1",
-              "pointCurrency": "IdentityPoint",
-              "accessCondition": "MainQuestChapter:10301",
-              "effects": [
-                {
-                  "effectType": "EnhanceSkillDamage",
-                  "rawValue": "20000",
-                  "displayedValue": "20000",
-                  "marginalGain": "NON DÉTERMINÉ",
-                  "cumulativeGain": "NON DÉTERMINÉ",
-                  "unit": "valeur brute",
-                  "buffId": "92000003",
-                  "abilityId": "",
-                  "confidence": "CONFIRMÉ PAR LES GAMEDATA"
-                },
-                {
-                  "effectType": "PeriodGiveBuff",
-                  "rawValue": "92000201",
-                  "displayedValue": "92000201",
-                  "marginalGain": "NON DÉTERMINÉ",
-                  "cumulativeGain": "NON DÉTERMINÉ",
-                  "unit": "valeur brute",
-                  "buffId": "92000003",
-                  "abilityId": "",
                   "confidence": "CONFIRMÉ PAR LES GAMEDATA"
                 }
               ]
@@ -1435,7 +1399,67 @@
       "system": "class",
       "mainTab": "SJWSkillTree",
       "section": "Duelliste",
+      "branch": "Nœud de classe / Overdrive",
+      "deduced": false,
+      "nodeGroup": 3,
+      "nodes": [
+        {
+          "nodeId": "113100",
+          "name": "Overdrive",
+          "nodeType": "Identity",
+          "nodeValue": "92000003",
+          "parents": [],
+          "children": [],
+          "progressionDepth": 0,
+          "visual": {
+            "row": 1,
+            "column": 4,
+            "offset": "[300,-200,0]"
+          },
+          "nodeMaxLevel": 1,
+          "logicalTalentId": "node:113100",
+          "logicalGroupingEvidence": "RAW_NODE_ONLY",
+          "ranks": [
+            {
+              "rank": 1,
+              "cost": "1",
+              "pointCurrency": "IdentityPoint",
+              "accessCondition": "MainQuestChapter:10301",
+              "effects": [
+                {
+                  "effectType": "EnhanceSkillDamage",
+                  "rawValue": "20000",
+                  "displayedValue": "20000",
+                  "marginalGain": "NON DÉTERMINÉ",
+                  "cumulativeGain": "NON DÉTERMINÉ",
+                  "unit": "valeur brute",
+                  "buffId": "92000003",
+                  "abilityId": "",
+                  "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+                },
+                {
+                  "effectType": "PeriodGiveBuff",
+                  "rawValue": "92000201",
+                  "displayedValue": "92000201",
+                  "marginalGain": "NON DÉTERMINÉ",
+                  "cumulativeGain": "NON DÉTERMINÉ",
+                  "unit": "valeur brute",
+                  "buffId": "92000003",
+                  "abilityId": "",
+                  "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "system": "class",
+      "mainTab": "SJWSkillTree",
+      "section": "Duelliste",
       "branch": "Coup unique",
+      "deduced": false,
       "nodeGroup": 4,
       "nodes": [
         {
@@ -1865,6 +1889,7 @@
       "mainTab": "SJWSkillTree",
       "section": "Magicien élémentaire",
       "branch": "Glace",
+      "deduced": false,
       "nodeGroup": 5,
       "nodes": [
         {
@@ -1902,44 +1927,6 @@
                   "buffId": "",
                   "abilityId": "1001201100000",
                   "confidence": "CONFIRMÉ PAR LES GAMEDATA"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "nodeId": "115100",
-          "name": "Overdrive",
-          "nodeType": "Identity",
-          "nodeValue": "92000011",
-          "parents": [],
-          "children": [],
-          "progressionDepth": 0,
-          "visual": {
-            "row": 1,
-            "column": 4,
-            "offset": "[300,-200,0]"
-          },
-          "nodeMaxLevel": 1,
-          "logicalTalentId": "node:115100",
-          "logicalGroupingEvidence": "RAW_NODE_ONLY",
-          "ranks": [
-            {
-              "rank": 1,
-              "cost": "1",
-              "pointCurrency": "IdentityPoint",
-              "accessCondition": "MainQuestChapter:10301",
-              "effects": [
-                {
-                  "effectType": "PassiveNoNumericEffect",
-                  "rawValue": "",
-                  "displayedValue": "",
-                  "marginalGain": "NON DÉTERMINÉ",
-                  "cumulativeGain": "NON DÉTERMINÉ",
-                  "unit": "",
-                  "buffId": "92000011",
-                  "abilityId": "",
-                  "confidence": "NON DÉTERMINÉ"
                 }
               ]
             }
@@ -2338,7 +2325,56 @@
       "system": "class",
       "mainTab": "SJWSkillTree",
       "section": "Magicien élémentaire",
+      "branch": "Nœud de classe / Overdrive",
+      "deduced": false,
+      "nodeGroup": 5,
+      "nodes": [
+        {
+          "nodeId": "115100",
+          "name": "Overdrive",
+          "nodeType": "Identity",
+          "nodeValue": "92000011",
+          "parents": [],
+          "children": [],
+          "progressionDepth": 0,
+          "visual": {
+            "row": 1,
+            "column": 4,
+            "offset": "[300,-200,0]"
+          },
+          "nodeMaxLevel": 1,
+          "logicalTalentId": "node:115100",
+          "logicalGroupingEvidence": "RAW_NODE_ONLY",
+          "ranks": [
+            {
+              "rank": 1,
+              "cost": "1",
+              "pointCurrency": "IdentityPoint",
+              "accessCondition": "MainQuestChapter:10301",
+              "effects": [
+                {
+                  "effectType": "PassiveNoNumericEffect",
+                  "rawValue": "",
+                  "displayedValue": "",
+                  "marginalGain": "NON DÉTERMINÉ",
+                  "cumulativeGain": "NON DÉTERMINÉ",
+                  "unit": "",
+                  "buffId": "92000011",
+                  "abilityId": "",
+                  "confidence": "NON DÉTERMINÉ"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "system": "class",
+      "mainTab": "SJWSkillTree",
+      "section": "Magicien élémentaire",
       "branch": "Feu",
+      "deduced": false,
       "nodeGroup": 6,
       "nodes": [
         {
@@ -2763,7 +2799,56 @@
       "system": "class",
       "mainTab": "SJWSkillTree",
       "section": "Souverain",
+      "branch": "Nœud de classe / Overdrive",
+      "deduced": false,
+      "nodeGroup": 7,
+      "nodes": [
+        {
+          "nodeId": "117100",
+          "name": "Overdrive",
+          "nodeType": "Identity",
+          "nodeValue": "92000009",
+          "parents": [],
+          "children": [],
+          "progressionDepth": 0,
+          "visual": {
+            "row": 1,
+            "column": 4,
+            "offset": "[300,-200,0]"
+          },
+          "nodeMaxLevel": 1,
+          "logicalTalentId": "node:117100",
+          "logicalGroupingEvidence": "RAW_NODE_ONLY",
+          "ranks": [
+            {
+              "rank": 1,
+              "cost": "1",
+              "pointCurrency": "IdentityPoint",
+              "accessCondition": "MainQuestChapter:10501",
+              "effects": [
+                {
+                  "effectType": "PassiveNoNumericEffect",
+                  "rawValue": "",
+                  "displayedValue": "",
+                  "marginalGain": "NON DÉTERMINÉ",
+                  "cumulativeGain": "NON DÉTERMINÉ",
+                  "unit": "",
+                  "buffId": "92000009",
+                  "abilityId": "",
+                  "confidence": "NON DÉTERMINÉ"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "system": "class",
+      "mainTab": "SJWSkillTree",
+      "section": "Souverain",
       "branch": "Toucher",
+      "deduced": false,
       "nodeGroup": 7,
       "nodes": [
         {
@@ -2801,44 +2886,6 @@
                   "buffId": "",
                   "abilityId": "1001203000000",
                   "confidence": "CONFIRMÉ PAR LES GAMEDATA"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "nodeId": "117100",
-          "name": "Overdrive",
-          "nodeType": "Identity",
-          "nodeValue": "92000009",
-          "parents": [],
-          "children": [],
-          "progressionDepth": 0,
-          "visual": {
-            "row": 1,
-            "column": 4,
-            "offset": "[300,-200,0]"
-          },
-          "nodeMaxLevel": 1,
-          "logicalTalentId": "node:117100",
-          "logicalGroupingEvidence": "RAW_NODE_ONLY",
-          "ranks": [
-            {
-              "rank": 1,
-              "cost": "1",
-              "pointCurrency": "IdentityPoint",
-              "accessCondition": "MainQuestChapter:10501",
-              "effects": [
-                {
-                  "effectType": "PassiveNoNumericEffect",
-                  "rawValue": "",
-                  "displayedValue": "",
-                  "marginalGain": "NON DÉTERMINÉ",
-                  "cumulativeGain": "NON DÉTERMINÉ",
-                  "unit": "",
-                  "buffId": "92000009",
-                  "abilityId": "",
-                  "confidence": "NON DÉTERMINÉ"
                 }
               ]
             }
@@ -3231,6 +3278,7 @@
       "mainTab": "SJWSkillTree",
       "section": "Souverain",
       "branch": "Changement gravitationnel",
+      "deduced": false,
       "nodeGroup": 8,
       "nodes": [
         {
@@ -3657,6 +3705,7 @@
       "mainTab": "LordSkillTree",
       "section": "Physique",
       "branch": "Amélioration corporelle I",
+      "deduced": false,
       "nodeGroup": 100,
       "nodes": [
         {
@@ -4385,6 +4434,7 @@
       "mainTab": "LordSkillTree",
       "section": "Physique",
       "branch": "Amélioration corporelle II",
+      "deduced": false,
       "nodeGroup": 101,
       "nodes": [
         {
@@ -5191,6 +5241,7 @@
       "mainTab": "LordSkillTree",
       "section": "Éveil du monarque",
       "branch": "Vision ombrale",
+      "deduced": false,
       "nodeGroup": 102,
       "nodes": [
         {
@@ -5616,6 +5667,7 @@
       "mainTab": "LordSkillTree",
       "section": "Éveil du monarque",
       "branch": "Libération d'âme",
+      "deduced": false,
       "nodeGroup": 103,
       "nodes": [
         {
@@ -5996,8 +6048,9 @@
     {
       "system": "unattached",
       "mainTab": "Groupe 10",
-      "section": "",
-      "branch": "Groupe 10",
+      "section": "Critique et pénétration",
+      "branch": "Critique et pénétration",
+      "deduced": true,
       "nodeGroup": 10,
       "nodes": [
         {
@@ -7433,8 +7486,9 @@
     {
       "system": "unattached",
       "mainTab": "Groupe 9",
-      "section": "",
-      "branch": "Groupe 9",
+      "section": "Stats principales",
+      "branch": "Stats principales",
+      "deduced": true,
       "nodeGroup": 9,
       "nodes": [
         {
@@ -8872,6 +8926,7 @@
       "mainTab": "GSSkillTree",
       "section": "Arc",
       "branch": "Visée concentrée",
+      "deduced": false,
       "nodeGroup": 54,
       "nodes": [
         {
@@ -9287,6 +9342,7 @@
       "mainTab": "GSSkillTree",
       "section": "Arc",
       "branch": "Visée sécurisée",
+      "deduced": false,
       "nodeGroup": 55,
       "nodes": [
         {
@@ -9713,6 +9769,7 @@
       "mainTab": "GSSkillTree",
       "section": "Arme d'hast",
       "branch": "Fer-de-lance dévié",
+      "deduced": false,
       "nodeGroup": 60,
       "nodes": [
         {
@@ -10101,6 +10158,7 @@
       "mainTab": "GSSkillTree",
       "section": "Arme d'hast",
       "branch": "Frappe brutale",
+      "deduced": false,
       "nodeGroup": 61,
       "nodes": [
         {
@@ -10516,6 +10574,7 @@
       "mainTab": "GSSkillTree",
       "section": "Arme à deux mains",
       "branch": "Ruée de berserker",
+      "deduced": false,
       "nodeGroup": 62,
       "nodes": [
         {
@@ -10915,6 +10974,7 @@
       "mainTab": "GSSkillTree",
       "section": "Arme à deux mains",
       "branch": "Contre-offensive et restauration",
+      "deduced": false,
       "nodeGroup": 63,
       "nodes": [
         {
@@ -11330,6 +11390,7 @@
       "mainTab": "GSSkillTree",
       "section": "Arme à feu",
       "branch": "Arme à feu - Kata",
+      "deduced": false,
       "nodeGroup": 56,
       "nodes": [
         {
@@ -11663,6 +11724,7 @@
       "mainTab": "GSSkillTree",
       "section": "Arme à feu",
       "branch": "Visée patiente",
+      "deduced": false,
       "nodeGroup": 57,
       "nodes": [
         {
@@ -12072,6 +12134,7 @@
       "mainTab": "GSSkillTree",
       "section": "Dague",
       "branch": "Plaie mortelle",
+      "deduced": false,
       "nodeGroup": 52,
       "nodes": [
         {
@@ -12566,6 +12629,7 @@
       "mainTab": "GSSkillTree",
       "section": "Dague",
       "branch": "Éviction",
+      "deduced": false,
       "nodeGroup": 53,
       "nodes": [
         {
@@ -12953,6 +13017,7 @@
       "mainTab": "GSSkillTree",
       "section": "Focalisateur",
       "branch": "Recherche de PM",
+      "deduced": false,
       "nodeGroup": 58,
       "nodes": [
         {
@@ -13368,6 +13433,7 @@
       "mainTab": "GSSkillTree",
       "section": "Focalisateur",
       "branch": "Énergie de mana fluide",
+      "deduced": false,
       "nodeGroup": 59,
       "nodes": [
         {
@@ -13793,6 +13859,7 @@
       "mainTab": "GSSkillTree",
       "section": "Épée",
       "branch": "Cœur d'acier",
+      "deduced": false,
       "nodeGroup": 50,
       "nodes": [
         {
@@ -14219,6 +14286,7 @@
       "mainTab": "GSSkillTree",
       "section": "Épée",
       "branch": "Résistance à la lame",
+      "deduced": false,
       "nodeGroup": 51,
       "nodes": [
         {
