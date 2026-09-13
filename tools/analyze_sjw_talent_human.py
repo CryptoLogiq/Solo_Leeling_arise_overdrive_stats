@@ -319,8 +319,7 @@ def aggregate_nodes(rows, model):
                     "cumulative": " / ".join(cumulative_values)
                     if cumulative_values
                     else ("NON DÉTERMINÉ" if rank_unresolved else "Non chiffré"),
-                    "access": human_access(rank_entries[0].get("RequiredLevel"))
-                    or f"{required_path_cost(rank_node_id, nodes)} pts requis",
+                    "access": human_access(rank_entries[0].get("RequiredLevel")) or required_path_access(rank_node_id, nodes),
                     "confidence": "; ".join(sorted({row["Confidence"] for row in rank_entries if row["Confidence"]})),
                     "buff_ids": ",".join(sorted({row["BuffID"] for row in rank_entries if row["BuffID"]})),
                 }
@@ -347,7 +346,7 @@ def aggregate_nodes(rows, model):
                 "gain": gain or ("NON DÉTERMINÉ" if unresolved_numeric else "Non chiffré"),
                 "bonus_max": total_gain,
                 "yield": gain_per_point,
-                "access": human_access(sample.get("RequiredLevel")) or f"{required_path_cost(node_id, nodes)} pts requis",
+                "access": human_access(sample.get("RequiredLevel")) or required_path_access(node_id, nodes),
                 "buff_ids": ",".join(sorted({row["BuffID"] for row in entries if row["BuffID"]})),
                 "effect_types": ",".join(sorted({row["EffectType"] for row in entries})),
                 "confidence": "; ".join(sorted({row["Confidence"] for row in entries if row["Confidence"]})),
@@ -452,14 +451,18 @@ def human_access(value):
 
 def required_path_cost(node_id, nodes):
     seen = set()
+    uncertain = False
 
     def walk(nid):
+        nonlocal uncertain
         if nid in seen:
             return 0
         seen.add(nid)
         node = nodes.get(str(nid))
         if not node:
             return 0
+        if len(node.get("parents", [])) > 1:
+            uncertain = True
         total = 0
         for parent in node.get("parents", []):
             parent_node = nodes.get(parent)
@@ -473,7 +476,14 @@ def required_path_cost(node_id, nodes):
         return total
 
     value = walk(node_id)
-    return fmt_number(value)
+    return None if uncertain else fmt_number(value)
+
+
+def required_path_access(node_id, nodes):
+    value = required_path_cost(node_id, nodes)
+    if value is None:
+        return "NON DÉTERMINÉ (convergence multi-parent)"
+    return f"{value} pts requis"
 
 
 def write_detailed(talents):
@@ -483,6 +493,8 @@ def write_detailed(talents):
 
 def render_talent(lines, talent):
     parents = ", ".join(dict.fromkeys(talent["parents_human"])) if talent["parents_human"] else "RACINE"
+    if len(dict.fromkeys(talent["parents_human"])) > 1:
+        parents += " (convergence: condition exacte NON DÉTERMINÉE)"
     unlocks = ", ".join(dict.fromkeys(talent["unlocks_human"])) if talent["unlocks_human"] else "aucun"
     position = f"profondeur technique {talent['progression_depth'] + 1}, rangée UI {talent['visual_row']}, X {talent['x']}"
     scoped_human_cleanup = (
@@ -581,7 +593,7 @@ def summary_by_system(talents):
         "",
         "Validation: nœuds, parents, coûts, rangs, BuffID/SkillID et valeurs raw proviennent du modèle canonique. `ProgressionDepth` est calculé depuis les parents; `VisualRow` conserve la rangée UI source. Les valeurs affichées en pourcentage restent marquées selon leur niveau de confiance; les valeurs brutes sans unité démontrée conservent un gain/rendement `NON DÉTERMINÉ`.",
         "",
-        "Reste non déterminé: conversion runtime de certaines valeurs raw, ordre d'application des buffs, additivité exacte entre sources différentes et exclusivité éventuelle de certaines branches/classes/armes.",
+        "Reste non déterminé: conversion runtime de certaines valeurs raw, ordre d'application des buffs, additivité exacte entre sources différentes, sémantique exacte des convergences multi-parent et exclusivité éventuelle de certaines branches/classes/armes.",
         "",
         "## Sommaire",
         "",
@@ -745,6 +757,7 @@ def write_rank_parent_audit(talents):
         "- Un suffixe romain/numérique dans le nom localisé ne prouve pas un rang interne.",
         "- Le rang interne provient du même `NodeID` quand le rang maximum source est supérieur à 1.",
         "- `ParentNodeID` référence un `NodeID`, pas un rang interne précis; HUMAN affiche donc une seule relation tant qu'aucun champ GameData ne prouve une condition par rang.",
+        "- Les convergences multi-parent prouvent plusieurs liens entrants, pas une condition d'achat `TOUS les parents`; les coûts de chemin traversant ces convergences restent donc `NON DÉTERMINÉ`.",
         "- Une famille/série sémantique peut aider la lecture, mais elle ne remplace jamais la topologie du graphe.",
         "",
         "## Échantillons validés",

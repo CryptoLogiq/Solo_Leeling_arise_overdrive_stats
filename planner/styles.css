@@ -131,7 +131,7 @@ button {
 
 .control-strip {
   display: grid;
-  grid-template-columns: minmax(9rem, 0.85fr) minmax(10rem, 1fr) minmax(12rem, 1.35fr) minmax(8rem, 0.7fr) auto;
+  grid-template-columns: minmax(9rem, 0.9fr) minmax(11rem, 1.1fr) minmax(10rem, 0.75fr) auto;
   gap: 0.75rem;
   align-items: end;
   padding: 0.85rem;
@@ -239,6 +239,29 @@ input {
   stroke-dasharray: 7 6;
 }
 
+.branch-band {
+  position: absolute;
+  top: 16px;
+  height: calc(100% - 32px);
+  border: 1px solid rgba(214, 168, 79, 0.16);
+  border-radius: 8px;
+  background: rgba(12, 11, 10, 0.28);
+  pointer-events: none;
+}
+
+.branch-title {
+  position: absolute;
+  left: 14px;
+  top: 12px;
+  right: 14px;
+  color: var(--gold-2);
+  font-size: 0.78rem;
+  font-weight: 900;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .node-card {
   position: absolute;
   width: 164px;
@@ -286,6 +309,13 @@ input {
   gap: 0.4rem;
   color: var(--muted);
   font-size: 0.72rem;
+}
+
+.node-cost {
+  margin-top: 0.35rem;
+  color: var(--gold-2);
+  font-size: 0.74rem;
+  font-weight: 800;
 }
 
 .node-buttons {
@@ -454,6 +484,35 @@ button.selection-row:hover {
 .compact .effect-row {
   display: grid;
   gap: 0.15rem;
+}
+
+.effect-group {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.55rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.effect-group:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.effect-group h3 {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.effect-group ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.effect-group .formula-note {
+  color: var(--soft);
+  font-size: 0.78rem;
 }
 
 @media (max-width: 1120px) {

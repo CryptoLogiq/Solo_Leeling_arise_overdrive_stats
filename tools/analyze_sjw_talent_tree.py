@@ -608,6 +608,7 @@ def validate_canonical_model(model, rows):
         "non_determined": [
             "Conversion runtime exacte de certaines valeurs raw.",
             "Additivité exacte entre sources de stats différentes.",
+            "Sémantique d'achat des convergences multi-parent: les GameData prouvent les liens entrants, pas encore `TOUS` ou `AU MOINS UN` parent.",
             "Rôle final de sjw_talent_tree_detailed.csv: copie de compatibilité du CSV canonique tant qu'aucune vue détaillée distincte n'est définie.",
         ],
     }

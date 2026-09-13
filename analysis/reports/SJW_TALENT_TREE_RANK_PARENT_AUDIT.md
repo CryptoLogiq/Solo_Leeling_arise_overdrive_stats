@@ -7,6 +7,7 @@ Audit ciblé généré depuis les GameData normalisées avant tout rendu web.
 - Un suffixe romain/numérique dans le nom localisé ne prouve pas un rang interne.
 - Le rang interne provient du même `NodeID` quand le rang maximum source est supérieur à 1.
 - `ParentNodeID` référence un `NodeID`, pas un rang interne précis; HUMAN affiche donc une seule relation tant qu'aucun champ GameData ne prouve une condition par rang.
+- Les convergences multi-parent prouvent plusieurs liens entrants, pas une condition d'achat `TOUS les parents`; les coûts de chemin traversant ces convergences restent donc `NON DÉTERMINÉ`.
 - Une famille/série sémantique peut aider la lecture, mais elle ne remplace jamais la topologie du graphe.
 
 ## Échantillons validés

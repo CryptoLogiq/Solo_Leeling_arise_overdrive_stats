@@ -4,7 +4,7 @@ Ce rapport HUMAN présente les arbres de talents de Sung Jinwoo sous une forme l
 
 Validation: nœuds, parents, coûts, rangs, BuffID/SkillID et valeurs raw proviennent du modèle canonique. `ProgressionDepth` est calculé depuis les parents; `VisualRow` conserve la rangée UI source. Les valeurs affichées en pourcentage restent marquées selon leur niveau de confiance; les valeurs brutes sans unité démontrée conservent un gain/rendement `NON DÉTERMINÉ`.
 
-Reste non déterminé: conversion runtime de certaines valeurs raw, ordre d'application des buffs, additivité exacte entre sources différentes et exclusivité éventuelle de certaines branches/classes/armes.
+Reste non déterminé: conversion runtime de certaines valeurs raw, ordre d'application des buffs, additivité exacte entre sources différentes, sémantique exacte des convergences multi-parent et exclusivité éventuelle de certaines branches/classes/armes.
 
 ## Sommaire
 
@@ -68,12 +68,12 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 #### Arts verticaux
 
-**Prérequis :** Embuscade I, Embuscade II
+**Prérequis :** Embuscade I, Embuscade II (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** Taux de coup critique augmenté
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Taux de coup critique augmenté
 
@@ -82,7 +82,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 14 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Embuscade III - [Effet passif spécial]
 
@@ -100,7 +100,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 5 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 18 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 5 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Attaque augmentée
 
@@ -109,7 +109,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 SkillPoint | Attaque: 0,8 % | +0,8 % | 0,8 % | 23 pts requis | FORTEMENT PROBABLE |
+| I | 3 SkillPoint | Attaque: 0,8 % | +0,8 % | 0,8 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE |
 
 #### Embuscade IV
 
@@ -127,7 +127,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 23 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Frappe vitale
 
@@ -204,12 +204,12 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 #### Attaque dans le dos II
 
 **Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 4
-**Prérequis :** Attaque dans le dos I, Position d'embuscade
+**Prérequis :** Attaque dans le dos I, Position d'embuscade (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** aucun
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 5 SkillPoint | Dégâts dans le dos: 320 | NON DÉTERMINÉ | NON DÉTERMINÉ | 20 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 5 SkillPoint | Dégâts dans le dos: 320 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Entailles croissantes
 
@@ -290,12 +290,12 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 #### Percussion
 
 **Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
-**Prérequis :** Contre-offensive I, Ombre vive : Contre-attaque
+**Prérequis :** Contre-offensive I, Ombre vive : Contre-attaque (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** Défense augmentée, Amélioration de contre-attaque
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Déséquilibre augmenté
 
@@ -315,37 +315,37 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 SkillPoint | Défense: 6,4 % | +6,4 % | 6,4 % | 14 pts requis | FORTEMENT PROBABLE |
+| I | 3 SkillPoint | Défense: 6,4 % | +6,4 % | 6,4 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE |
 
 #### Amélioration de contre-attaque
 
 **Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 4
-**Prérequis :** Percussion, Déséquilibre augmenté
+**Prérequis :** Percussion, Déséquilibre augmenté (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** aucun
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 5 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 22 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 5 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Contre-offensive III
 
 **Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 2
-**Prérequis :** Contre-offensive II, Défense augmentée
+**Prérequis :** Contre-offensive II, Défense augmentée (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** Déchaînement, Champion de la contre-offensive
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 25 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Déchaînement
 
 **Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 3
-**Prérequis :** Défense augmentée, Contre-offensive III
+**Prérequis :** Défense augmentée, Contre-offensive III (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** aucun
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 32 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Champion de la contre-offensive
 
@@ -355,7 +355,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 29 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Coup unique
 
@@ -392,12 +392,12 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 #### Annihilation
 
 **Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
-**Prérequis :** Combo I, Smash I
+**Prérequis :** Combo I, Smash I (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** Déséquilibre augmenté - [Effet passif spécial]
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Déséquilibre augmenté - [Effet passif spécial]
 
@@ -407,7 +407,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 5 SkillPoint | Déséquilibre / Break: 160 | NON DÉTERMINÉ | NON DÉTERMINÉ | 14 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 5 SkillPoint | Déséquilibre / Break: 160 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Augmentation des PV
 
@@ -417,7 +417,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 SkillPoint | PV: 6,4 % | +6,4 % | 6,4 % | 19 pts requis | FORTEMENT PROBABLE |
+| I | 3 SkillPoint | PV: 6,4 % | +6,4 % | 6,4 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE |
 
 #### Fougue
 
@@ -427,7 +427,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 19 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Combo II
 
@@ -437,7 +437,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 22 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Smash II
 
@@ -447,17 +447,17 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 22 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Force amplifiée
 
 **Position dans l'arbre :** profondeur technique 7, rangée UI 7, X 3
-**Prérequis :** Combo II, Smash II
+**Prérequis :** Combo II, Smash II (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** aucun
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 38 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Nœud de classe / Overdrive
 
@@ -548,12 +548,12 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 #### Infusion élémentaire
 
 **Position dans l'arbre :** profondeur technique 5, rangée UI 6, X 4
-**Prérequis :** Augmentation de la Pénétration de défense, Lame de glace
+**Prérequis :** Augmentation de la Pénétration de défense, Lame de glace (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** Harmonie de givrefeu
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 17 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Anneau gelé
 
@@ -573,7 +573,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 20 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Feu
 
@@ -640,12 +640,12 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 #### Boost élémentaire
 
 **Position dans l'arbre :** profondeur technique 5, rangée UI 6, X 2
-**Prérequis :** Pénétration de défense augmentée, Armure en fusion
+**Prérequis :** Pénétration de défense augmentée, Armure en fusion (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** Paume embrasée
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 5 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 17 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 5 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Amélioration de Magicien élémentaire : Feu II
 
@@ -675,7 +675,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 22 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Nœud de classe / Overdrive
 
@@ -756,12 +756,12 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 #### Suppression II
 
 **Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 2
-**Prérequis :** Suppression I, Festin des faibles
+**Prérequis :** Suppression I, Festin des faibles (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** Champ de bataille de la domination
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 25 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Trou noir
 
@@ -776,12 +776,12 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 #### Champ de bataille de la domination
 
 **Position dans l'arbre :** profondeur technique 7, rangée UI 7, X 3
-**Prérequis :** Suppression II, Trou noir
+**Prérequis :** Suppression II, Trou noir (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** Main de célérité
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 36 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Main de célérité
 
@@ -791,7 +791,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 40 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Changement gravitationnel
 
@@ -868,12 +868,12 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 #### Désintégration multipliée
 
 **Position dans l'arbre :** profondeur technique 7, rangée UI 7, X 2
-**Prérequis :** Désintégration, Changement gravitationnel
+**Prérequis :** Désintégration, Changement gravitationnel (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** aucun
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 25 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Posture parfaite
 
@@ -972,12 +972,12 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 #### Cœur d'acier
 
 **Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 3
-**Prérequis :** Attaque augmentée, Défense augmentée
+**Prérequis :** Attaque augmentée, Défense augmentée (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** Affrontement frontal
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 16 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Affrontement frontal
 
@@ -987,7 +987,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 19 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Résistance à la lame
 
@@ -1026,14 +1026,14 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 #### Précision augmentée
 
 **Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
-**Prérequis :** Épée gardienne, Attaquer et bloquer
+**Prérequis :** Épée gardienne, Attaquer et bloquer (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** Pénétration de défense augmentée
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 2 WeaponPoint - par rang probable | Précision: 0,5 % | +0,5 % | 0,5 % | 12 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| II | 2 WeaponPoint/rang - par rang probable | Précision: 0,5 % | +0,5 % | 1 % | 12 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| III | 2 WeaponPoint/rang - par rang probable | Précision: 0,5 % | +0,5 % | 1,5 % | 12 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| I | 2 WeaponPoint - par rang probable | Précision: 0,5 % | +0,5 % | 0,5 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | Précision: 0,5 % | +0,5 % | 1 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | Précision: 0,5 % | +0,5 % | 1,5 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
 
 #### Pénétration de défense augmentée
 
@@ -1043,9 +1043,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 2 WeaponPoint - par rang probable | Pénétration: 0,25 % | +0,25 % | 0,25 % | 14 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| II | 2 WeaponPoint/rang - par rang probable | Pénétration: 0,25 % | +0,25 % | 0,5 % | 14 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| III | 2 WeaponPoint/rang - par rang probable | Pénétration: 0,25 % | +0,25 % | 0,75 % | 14 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| I | 2 WeaponPoint - par rang probable | Pénétration: 0,25 % | +0,25 % | 0,25 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | Pénétration: 0,25 % | +0,25 % | 0,5 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | Pénétration: 0,25 % | +0,25 % | 0,75 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
 
 #### Lancement de contre-attaque
 
@@ -1055,7 +1055,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 16 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Frappe maîtrisée
 
@@ -1065,7 +1065,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 19 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 ## DAGUE
 
@@ -1098,12 +1098,12 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 #### Plaie mortelle
 
 **Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
-**Prérequis :** Taux de coup critique augmenté, Dégâts de coup critique augmentés
+**Prérequis :** Taux de coup critique augmenté, Dégâts de coup critique augmentés (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** Taux de coup critique augmenté, Dégâts de coup critique augmentés
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 4 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Taux de coup critique augmenté
 
@@ -1113,9 +1113,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 2 WeaponPoint - par rang probable | Taux critique: 0,25 % | +0,25 % | 0,25 % | 7 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| II | 2 WeaponPoint/rang - par rang probable | Taux critique: 0,25 % | +0,25 % | 0,5 % | 7 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| III | 2 WeaponPoint/rang - par rang probable | Taux critique: 0,25 % | +0,25 % | 0,75 % | 7 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| I | 2 WeaponPoint - par rang probable | Taux critique: 0,25 % | +0,25 % | 0,25 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | Taux critique: 0,25 % | +0,25 % | 0,5 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | Taux critique: 0,25 % | +0,25 % | 0,75 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
 
 #### Dégâts de coup critique augmentés
 
@@ -1125,9 +1125,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 2 WeaponPoint - par rang probable | Dégâts critiques: 0,25 % | +0,25 % | 0,25 % | 7 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| II | 2 WeaponPoint/rang - par rang probable | Dégâts critiques: 0,25 % | +0,25 % | 0,5 % | 7 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| III | 2 WeaponPoint/rang - par rang probable | Dégâts critiques: 0,25 % | +0,25 % | 0,75 % | 7 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| I | 2 WeaponPoint - par rang probable | Dégâts critiques: 0,25 % | +0,25 % | 0,25 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | Dégâts critiques: 0,25 % | +0,25 % | 0,5 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | Dégâts critiques: 0,25 % | +0,25 % | 0,75 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
 
 #### Amplification de la douleur
 
@@ -1137,7 +1137,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Dégâts contre cible affectée: 3 % | +3 % | 3 % | 9 pts requis | FORTEMENT PROBABLE |
+| I | 3 WeaponPoint | Dégâts contre cible affectée: 3 % | +3 % | 3 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE |
 
 #### Approche violente
 
@@ -1147,17 +1147,17 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Dégâts de compétence: 1500 | NON DÉTERMINÉ | NON DÉTERMINÉ | 9 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Dégâts de compétence: 1500 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Frappe préparée
 
 **Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 3
-**Prérequis :** Amplification de la douleur, Approche violente
+**Prérequis :** Amplification de la douleur, Approche violente (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** aucun
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 20 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Éviction
 
@@ -1188,12 +1188,12 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 #### Attaque en embuscade
 
 **Position dans l'arbre :** profondeur technique 2, rangée UI 2, X 3
-**Prérequis :** Dégâts de compétence à la dague augmentés, Dégâts des attaques dans le dos augmentés
+**Prérequis :** Dégâts de compétence à la dague augmentés, Dégâts des attaques dans le dos augmentés (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** Dégâts de Foulée de l'ombre augmentés
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Dégâts dans le dos: 750; Dégâts de compétence: -300 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Dégâts dans le dos: 750; Dégâts de compétence: -300 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Dégâts de Foulée de l'ombre augmentés
 
@@ -1203,7 +1203,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Dégâts de compétence: 1500 | NON DÉTERMINÉ | NON DÉTERMINÉ | 9 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Dégâts de compétence: 1500 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Frappe de l'ombre
 
@@ -1213,7 +1213,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Faille de l'ombre
 
@@ -1223,17 +1223,17 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Coup dans le dos
 
 **Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 3
-**Prérequis :** Frappe de l'ombre, Faille de l'ombre
+**Prérequis :** Frappe de l'ombre, Faille de l'ombre (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** aucun
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 21 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 ## ARC
 
@@ -1298,12 +1298,12 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 #### Visée sécurisée
 
 **Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 2
-**Prérequis :** Tir d'esquive, Pénétration de défense augmentée
+**Prérequis :** Tir d'esquive, Pénétration de défense augmentée (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** Distance parfaite
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Dégâts infligés: 5,5 %; Dégâts selon distance: -1550 | +5,5 % | 5,5 % | 16 pts requis | CONFIRMÉ PAR LES GAMEDATA; FORTEMENT PROBABLE |
+| I | 3 WeaponPoint | Dégâts infligés: 5,5 %; Dégâts selon distance: -1550 | +5,5 % | 5,5 % | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA; FORTEMENT PROBABLE |
 
 #### Distance parfaite
 
@@ -1313,7 +1313,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 19 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Visée concentrée
 
@@ -1376,12 +1376,12 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 #### Frappe véloce
 
 **Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 4
-**Prérequis :** Tir en reculant, Dégâts de coup critique augmentés
+**Prérequis :** Tir en reculant, Dégâts de coup critique augmentés (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** Veille funeste
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Conversion stat -> dégâts: 2 | NON DÉTERMINÉ | NON DÉTERMINÉ | 16 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Conversion stat -> dégâts: 2 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Veille funeste
 
@@ -1391,7 +1391,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 19 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 ## ARME À FEU
 
@@ -1583,7 +1583,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Dégâts de compétence d'arme: 7; Réduction coût MP: -2000 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Dégâts de compétence d'arme: 7; Réduction coût MP: -2000 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Augmente les PM max
 
@@ -1593,9 +1593,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 2 WeaponPoint - par rang probable | PM max: 66 | NON DÉTERMINÉ | NON DÉTERMINÉ | 9 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
-| II | 2 WeaponPoint/rang - par rang probable | PM max: 66 | NON DÉTERMINÉ | NON DÉTERMINÉ | 9 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
-| III | 2 WeaponPoint/rang - par rang probable | PM max: 66 | NON DÉTERMINÉ | NON DÉTERMINÉ | 9 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| I | 2 WeaponPoint - par rang probable | PM max: 66 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| II | 2 WeaponPoint/rang - par rang probable | PM max: 66 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| III | 2 WeaponPoint/rang - par rang probable | PM max: 66 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
 
 #### Combo de mana
 
@@ -1605,7 +1605,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 11 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Carnage de mana
 
@@ -1615,17 +1615,17 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 11 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Afflux d'énergie de mana
 
 **Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 3
-**Prérequis :** Combo de mana, Carnage de mana
+**Prérequis :** Combo de mana, Carnage de mana (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** aucun
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 19 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Recherche de PM
 
@@ -1698,12 +1698,12 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 #### Énergie de mana dissimulée
 
 **Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 3
-**Prérequis :** Recherche d'élément, Onde de mana
+**Prérequis :** Recherche d'élément, Onde de mana (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** aucun
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 21 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 ## ARME D'HAST
 
@@ -1776,12 +1776,12 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 #### Brèche exploitée
 
 **Position dans l'arbre :** profondeur technique 6, rangée UI 6, X 3
-**Prérequis :** Fer-de-lance dévié, Frappe initiale
+**Prérequis :** Fer-de-lance dévié, Frappe initiale (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** aucun
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 20 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Frappe brutale
 
@@ -1834,12 +1834,12 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 #### Dégâts déviés
 
 **Position dans l'arbre :** profondeur technique 4, rangée UI 4, X 3
-**Prérequis :** Physique endurant, Amélioration des PV
+**Prérequis :** Physique endurant, Amélioration des PV (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** Contre-offensive
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 14 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Contre-offensive
 
@@ -1849,7 +1849,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 17 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Frappe de riposte
 
@@ -1859,7 +1859,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 20 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 ## ARME À DEUX MAINS
 
@@ -1932,12 +1932,12 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 #### Échange équivalent
 
 **Position dans l'arbre :** profondeur technique 5, rangée UI 6, X 3
-**Prérequis :** Posture offensive, Frappe sanglante
+**Prérequis :** Posture offensive, Frappe sanglante (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** aucun
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 19 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Contre-offensive et restauration
 
@@ -2010,12 +2010,12 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 #### Seconde chance
 
 **Position dans l'arbre :** profondeur technique 5, rangée UI 6, X 3
-**Prérequis :** Récupération de force, Frappe de rage
+**Prérequis :** Récupération de force, Frappe de rage (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** aucun
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 18 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 # AMÉLIORATIONS DE JINWOO
 
@@ -2062,14 +2062,14 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 #### Attaque augmentée
 
 **Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
-**Prérequis :** Défense augmentée, PV augmentés
+**Prérequis :** Défense augmentée, PV augmentés (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** Défense augmentée, PV augmentés
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 1 SpecialPoint - par rang probable | Attaque: 1 % | +1 % | 1 % | 4 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| II | 1 SpecialPoint/rang - par rang probable | Attaque: 1 % | +1 % | 2 % | 4 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| III | 1 SpecialPoint/rang - par rang probable | Attaque: 1 % | +1 % | 3 % | 4 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| I | 1 SpecialPoint - par rang probable | Attaque: 1 % | +1 % | 1 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Attaque: 1 % | +1 % | 2 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Attaque: 1 % | +1 % | 3 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
 
 #### Défense augmentée
 
@@ -2079,9 +2079,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 1 SpecialPoint - par rang probable | Défense: 1 % | +1 % | 1 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| II | 1 SpecialPoint/rang - par rang probable | Défense: 1 % | +1 % | 2 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| III | 1 SpecialPoint/rang - par rang probable | Défense: 1 % | +1 % | 3 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| I | 1 SpecialPoint - par rang probable | Défense: 1 % | +1 % | 1 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Défense: 1 % | +1 % | 2 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Défense: 1 % | +1 % | 3 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
 
 #### PV augmentés
 
@@ -2091,21 +2091,21 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 1 SpecialPoint - par rang probable | PV: 1 % | +1 % | 1 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| II | 1 SpecialPoint/rang - par rang probable | PV: 1 % | +1 % | 2 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| III | 1 SpecialPoint/rang - par rang probable | PV: 1 % | +1 % | 3 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| I | 1 SpecialPoint - par rang probable | PV: 1 % | +1 % | 1 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | PV: 1 % | +1 % | 2 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | PV: 1 % | +1 % | 3 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
 
 #### Attaque augmentée
 
 **Position dans l'arbre :** profondeur technique 5, rangée UI 5, X 3
-**Prérequis :** Défense augmentée, PV augmentés
+**Prérequis :** Défense augmentée, PV augmentés (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** Défense augmentée, PV augmentés
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 1 SpecialPoint - par rang probable | Attaque: 1 % | +1 % | 1 % | 8 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| II | 1 SpecialPoint/rang - par rang probable | Attaque: 1 % | +1 % | 2 % | 8 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| III | 1 SpecialPoint/rang - par rang probable | Attaque: 1 % | +1 % | 3 % | 8 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| I | 1 SpecialPoint - par rang probable | Attaque: 1 % | +1 % | 1 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Attaque: 1 % | +1 % | 2 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Attaque: 1 % | +1 % | 3 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
 
 #### Défense augmentée
 
@@ -2115,9 +2115,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 1 SpecialPoint - par rang probable | Défense: 1 % | +1 % | 1 % | 9 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| II | 1 SpecialPoint/rang - par rang probable | Défense: 1 % | +1 % | 2 % | 9 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| III | 1 SpecialPoint/rang - par rang probable | Défense: 1 % | +1 % | 3 % | 9 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| I | 1 SpecialPoint - par rang probable | Défense: 1 % | +1 % | 1 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Défense: 1 % | +1 % | 2 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Défense: 1 % | +1 % | 3 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
 
 #### PV augmentés
 
@@ -2127,9 +2127,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 1 SpecialPoint - par rang probable | PV: 1 % | +1 % | 1 % | 9 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| II | 1 SpecialPoint/rang - par rang probable | PV: 1 % | +1 % | 2 % | 9 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| III | 1 SpecialPoint/rang - par rang probable | PV: 1 % | +1 % | 3 % | 9 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| I | 1 SpecialPoint - par rang probable | PV: 1 % | +1 % | 1 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | PV: 1 % | +1 % | 2 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | PV: 1 % | +1 % | 3 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
 
 ### Branche 2 — Amélioration corporelle II
 
@@ -2177,9 +2177,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 1 SpecialPoint - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,33 % | 4 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| II | 1 SpecialPoint/rang - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,66 % | 4 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| III | 1 SpecialPoint/rang - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,99 % | 4 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| I | 1 SpecialPoint - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,33 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,66 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,99 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
 
 #### Pénétration de défense augmentée
 
@@ -2189,9 +2189,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 1 SpecialPoint - par rang probable | Pénétration: 0,33 % | +0,33 % | 0,33 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| II | 1 SpecialPoint/rang - par rang probable | Pénétration: 0,33 % | +0,33 % | 0,66 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| III | 1 SpecialPoint/rang - par rang probable | Pénétration: 0,33 % | +0,33 % | 0,99 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| I | 1 SpecialPoint - par rang probable | Pénétration: 0,33 % | +0,33 % | 0,33 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Pénétration: 0,33 % | +0,33 % | 0,66 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Pénétration: 0,33 % | +0,33 % | 0,99 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
 
 #### Pénétration de défense augmentée
 
@@ -2201,9 +2201,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 1 SpecialPoint - par rang probable | Pénétration: 0,33 % | +0,33 % | 0,33 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| II | 1 SpecialPoint/rang - par rang probable | Pénétration: 0,33 % | +0,33 % | 0,66 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| III | 1 SpecialPoint/rang - par rang probable | Pénétration: 0,33 % | +0,33 % | 0,99 % | 5 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| I | 1 SpecialPoint - par rang probable | Pénétration: 0,33 % | +0,33 % | 0,33 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Pénétration: 0,33 % | +0,33 % | 0,66 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Pénétration: 0,33 % | +0,33 % | 0,99 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
 
 #### Dégâts subis réduits
 
@@ -2213,9 +2213,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 1 SpecialPoint - par rang probable | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,33 % | 6 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| II | 1 SpecialPoint/rang - par rang probable | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,66 % | 6 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| III | 1 SpecialPoint/rang - par rang probable | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,99 % | 6 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| I | 1 SpecialPoint - par rang probable | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,33 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,66 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,99 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
 
 #### Dégâts subis réduits
 
@@ -2225,9 +2225,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 1 SpecialPoint - par rang probable | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,33 % | 6 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| II | 1 SpecialPoint/rang - par rang probable | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,66 % | 6 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| III | 1 SpecialPoint/rang - par rang probable | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,99 % | 6 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| I | 1 SpecialPoint - par rang probable | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,33 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,66 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,99 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
 
 #### Taux de coup critique augmenté
 
@@ -2237,9 +2237,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 1 SpecialPoint - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,33 % | 7 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| II | 1 SpecialPoint/rang - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,66 % | 7 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| III | 1 SpecialPoint/rang - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,99 % | 7 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| I | 1 SpecialPoint - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,33 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,66 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,99 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
 
 #### Taux de coup critique augmenté
 
@@ -2249,9 +2249,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 1 SpecialPoint - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,33 % | 7 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| II | 1 SpecialPoint/rang - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,66 % | 7 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| III | 1 SpecialPoint/rang - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,99 % | 7 pts requis | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| I | 1 SpecialPoint - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,33 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| II | 1 SpecialPoint/rang - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,66 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| III | 1 SpecialPoint/rang - par rang probable | Taux critique: 0,33 % | +0,33 % | 0,99 % | NON DÉTERMINÉ (convergence multi-parent) | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
 
 ## ÉVEIL DU MONARQUE
 
@@ -2290,12 +2290,12 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 #### L'Aube du règne IV
 
 **Position dans l'arbre :** profondeur technique 3, rangée UI 3, X 3
-**Prérequis :** L'Aube du règne II, L'Aube du règne III
+**Prérequis :** L'Aube du règne II, L'Aube du règne III (convergence: condition exacte NON DÉTERMINÉE)
 **Débloque :** Lame vampirique, Tranchant des ombres I, Tempête d'ombre I
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 SpecialPoint | Gain de jauge: 2000 | NON DÉTERMINÉ | NON DÉTERMINÉ | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 SpecialPoint | Gain de jauge: 2000 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Lame vampirique
 
@@ -2305,7 +2305,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | 15 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Tranchant des ombres I
 
@@ -2315,7 +2315,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | 15 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Tempête d'ombre I
 
@@ -2325,7 +2325,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | 15 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Ruée de l'ombre
 
@@ -2335,7 +2335,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | 18 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Tranchant des ombres II
 
@@ -2345,7 +2345,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 SpecialPoint | Modification de compétence | Non chiffré | Non chiffré | 18 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 SpecialPoint | Modification de compétence | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Tempête d'ombre II
 
@@ -2355,7 +2355,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | 18 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (convergence multi-parent) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Libération d'âme
 
