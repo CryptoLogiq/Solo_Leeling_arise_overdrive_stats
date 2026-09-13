@@ -6,6 +6,9 @@ Ces règles spécialisent le `AGENTS.md` racine pour les scripts de `tools/`.
 
 - Maintenir une représentation normalisée unique quand un script reconstruit des
   systèmes exploités par plusieurs sorties.
+- Pour les arbres de talents, générer le modèle canonique machine-readable avant
+  les vues de rendu. CSV, HUMAN, TECHNICAL, Mermaid et futur WEB doivent rester
+  des consommateurs de ce contrat, pas des sources de vérité concurrentes.
 - Construire des index réutilisables :
   - `NodeID -> node`
   - `LogicalTalentID -> logical_talent`
@@ -69,6 +72,7 @@ Conserver pour chaque nœud :
 - `progression_depth`
 - `visual_row`
 - position X/Y
+- `VisualColumn`
 - offsets
 - Parent(s)
 

@@ -19,10 +19,12 @@ Ces sources ne sont utilisées que pour corroborer la structure visuelle. Les co
 - Les effets multiples d'un même rang logique sont regroupés dans la colonne `Effet`.
 - `ProgressionDepth`: profondeur réelle calculée depuis les relations Parent.
 - `VisualRow`: valeur GameData `NodeTierY`, utilisée seulement comme rangée visuelle.
-- Position horizontale: `NodeTierX`.
+- `VisualColumn`: valeur GameData `NodeTierX`, utilisée seulement comme colonne visuelle.
 - Rang technique: `NodeMaxLevel`; rang logique: `LogicalRank`.
 - Les groupes 9/10 ne sont pas forcés dans les classes; ils deviennent des structures non rattachées avec noms déduits.
 - Données détaillées vérifiables: `analysis/csv/sjw_talent_tree.csv` et `analysis/csv/sjw_talent_tree_detailed.csv`.
+- Export canonique consommable par les futurs rendus: `analysis/data/sjw_talent_tree.json`.
+- `sjw_talent_tree_detailed.csv` est actuellement une copie de compatibilité de `sjw_talent_tree.csv`; aucune vue détaillée distincte n'est encore définie.
 
 ## Talents agrégés
 

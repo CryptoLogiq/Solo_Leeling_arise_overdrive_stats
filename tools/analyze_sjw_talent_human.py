@@ -17,6 +17,7 @@ DETAILED_CSV = WORK / "analysis" / "csv" / "sjw_talent_tree_detailed.csv"
 HUMAN = WORK / "analysis" / "reports" / "SJW_TALENT_TREE_HUMAN.md"
 TECH = WORK / "analysis" / "reports" / "SJW_TALENT_TREE_TECHNICAL.md"
 RANK_PARENT_AUDIT = WORK / "analysis" / "reports" / "SJW_TALENT_TREE_RANK_PARENT_AUDIT.md"
+CANONICAL_JSON = WORK / "analysis" / "data" / "sjw_talent_tree.json"
 
 
 CLASS_ORDER = ["Assassin", "Duelliste", "Magicien élémentaire", "Souverain"]
@@ -359,7 +360,7 @@ def aggregate_nodes(rows):
                     "node_id": rank_node_id,
                     "parents": [str(v) for v in maybe_list(rank_node.get("SlotLinkNodeID"))],
                     "visual_row": int(rank_entries[0].get("VisualRow") or rank_node.get("NodeTierY") or 0),
-                    "x": int(rank_node.get("NodeTierX") or 0),
+                    "x": int(rank_entries[0].get("VisualColumn") or rank_node.get("NodeTierX") or 0),
                     "progression_depth": int(rank_entries[0].get("ProgressionDepth") or 0),
                     "cost": single_rank_cost(rank_entries) if scoped_human_cleanup else cost_summary(rank_entries)[0],
                     "effect": rank_effect,
@@ -382,7 +383,7 @@ def aggregate_nodes(rows):
                 "node_type": node_type,
                 "progression_depth": int(sample.get("ProgressionDepth") or 0),
                 "visual_row": int(sample.get("VisualRow") or node.get("NodeTierY") or 0),
-                "x": int(node.get("NodeTierX") or 0),
+                "x": int(sample.get("VisualColumn") or node.get("NodeTierX") or 0),
                 "node_id": node_id,
                 "node_ids": node_ids,
                 "logical_id": logical_id,
@@ -683,6 +684,7 @@ def technical_reference(lines, talents):
             f"- Talents représentés dans la vue principale: {len(talents)}.",
             "- Détails techniques complets: `SJW_TALENT_TREE_TECHNICAL.md`.",
             "- Données sources normalisées: `analysis/csv/sjw_talent_tree.csv` et `analysis/csv/sjw_talent_tree_detailed.csv`.",
+            f"- Export canonique web-ready: `analysis/data/{CANONICAL_JSON.name}`.",
             "",
         ]
     )
@@ -736,10 +738,12 @@ def write_technical(talents):
         "- Les effets multiples d'un même rang logique sont regroupés dans la colonne `Effet`.",
         "- `ProgressionDepth`: profondeur réelle calculée depuis les relations Parent.",
         "- `VisualRow`: valeur GameData `NodeTierY`, utilisée seulement comme rangée visuelle.",
-        "- Position horizontale: `NodeTierX`.",
+        "- `VisualColumn`: valeur GameData `NodeTierX`, utilisée seulement comme colonne visuelle.",
         "- Rang technique: `NodeMaxLevel`; rang logique: `LogicalRank`.",
         "- Les groupes 9/10 ne sont pas forcés dans les classes; ils deviennent des structures non rattachées avec noms déduits.",
         "- Données détaillées vérifiables: `analysis/csv/sjw_talent_tree.csv` et `analysis/csv/sjw_talent_tree_detailed.csv`.",
+        "- Export canonique consommable par les futurs rendus: `analysis/data/sjw_talent_tree.json`.",
+        "- `sjw_talent_tree_detailed.csv` est actuellement une copie de compatibilité de `sjw_talent_tree.csv`; aucune vue détaillée distincte n'est encore définie.",
         "",
         "## Talents agrégés",
         "",

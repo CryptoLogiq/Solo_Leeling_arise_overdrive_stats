@@ -19,6 +19,8 @@ marquée `NON DÉTERMINÉ`.
 
 - [Arbre de talents HUMAN](analysis/reports/SJW_TALENT_TREE_HUMAN.md)
 - [Détails techniques de l'arbre](analysis/reports/SJW_TALENT_TREE_TECHNICAL.md)
+- [Export canonique JSON des arbres](analysis/data/sjw_talent_tree.json)
+- [Audit data des arbres](analysis/reports/SJW_TALENT_TREE_DATA_AUDIT.md)
 - [Graphe Assassin validé](analysis/reports/SJW_ASSASSIN_TALENT_GRAPH.md)
 - [Transitions de rang des compétences](analysis/reports/SJW_SKILL_TRANSITION_CARDS.md)
 - [CSV générés](analysis/csv/)

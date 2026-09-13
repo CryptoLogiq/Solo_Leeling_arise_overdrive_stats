@@ -11,6 +11,8 @@ Ordre principal :
 
 Règles :
 
+- Les rapports Markdown sont des vues de rendu: ils doivent dériver du modèle
+  canonique/CSV généré et ne jamais devenir une source manuelle de topologie.
 - Ne jamais trier la vue principale par stat, rendement ou intérêt de build.
 - Les vues transversales par stat sont uniquement des annexes.
 - Le rendement est une information du talent, jamais un critère de classement.

@@ -107,6 +107,20 @@ HUMAN, TECHNICAL, Mermaid et futurs calculateurs doivent dériver d'une source
 commune quand elle existe. Une perte d'information lors d'une amélioration est
 une **régression**.
 
+Pour les arbres de talents, l'export canonique machine-readable doit être généré
+depuis les GameData normalisés avant les vues de rendu :
+
+```text
+GameData décodés
+    ↓
+modèle canonique
+    ↓
+HUMAN / TECHNICAL / CSV / futur WEB
+```
+
+Le futur frontend web doit consommer le modèle canonique sans reconstruire ni
+deviner les parents, enfants, rangs internes ou positions visuelles.
+
 Un `NodeID` est un nœud technique GameData, pas forcément un talent HUMAN.
 Deux `NodeID` différents restent toujours deux nœuds techniques distincts et ne
 doivent jamais être fusionnés dans les données brutes. En revanche, plusieurs

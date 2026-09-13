@@ -3031,4 +3031,5 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 - Talents représentés dans la vue principale: 258.
 - Détails techniques complets: `SJW_TALENT_TREE_TECHNICAL.md`.
 - Données sources normalisées: `analysis/csv/sjw_talent_tree.csv` et `analysis/csv/sjw_talent_tree_detailed.csv`.
+- Export canonique web-ready: `analysis/data/sjw_talent_tree.json`.
 

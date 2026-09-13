@@ -13,6 +13,8 @@ WORK = Path(__file__).resolve().parents[1]
 OUT = WORK / "analysis"
 TABLES = OUT / "decoded_tables"
 CSV_OUT = OUT / "csv" / "sjw_talent_tree.csv"
+CANONICAL_OUT = OUT / "data" / "sjw_talent_tree.json"
+DATA_AUDIT_OUT = OUT / "reports" / "SJW_TALENT_TREE_DATA_AUDIT.md"
 REPORT_OUT = OUT / "reports" / "SJW_TALENT_TREE.md"
 EFF_OUT = OUT / "reports" / "SJW_TALENT_TREE_COST_EFFICIENCY.md"
 
@@ -34,8 +36,11 @@ CSV_COLUMNS = [
     "Cost",
     "RequiredLevel",
     "ParentNodeID",
+    "RelationScope",
     "ProgressionDepth",
     "VisualRow",
+    "VisualColumn",
+    "NodeOffset",
     "EffectType",
     "RawValue",
     "DisplayedValue",
@@ -82,6 +87,33 @@ PERCENT_STATS = {
     "DamReduP",
 }
 RAW_STATS = {"ArmPen"}
+
+ASSASSIN_EXPECTED_EDGES = {
+    "Attaque sournoise": {
+        ("111101", "111201"),
+        ("111101", "111202"),
+        ("111201", "111301"),
+        ("111202", "111301"),
+        ("111202", "111402"),
+        ("111402", "111602"),
+        ("111301", "111401"),
+        ("111401", "111501"),
+        ("111501", "111601"),
+        ("111501", "111701"),
+    },
+    "Frappe vitale": {
+        ("112102", "112201"),
+        ("112201", "112301"),
+        ("112201", "112302"),
+        ("112201", "112303"),
+        ("112301", "112501"),
+        ("112302", "112401"),
+        ("112401", "112502"),
+        ("112303", "112502"),
+        ("112401", "112601"),
+        ("112501", "112701"),
+    },
+}
 
 def load_json(name: str):
     payload = json.loads((TABLES / f"{name}.json").read_text(encoding="utf-8"))
@@ -312,6 +344,326 @@ def validate_logical_rows(rows):
         raise SystemExit("Rang logique associé à plusieurs NodeID sans validation: " + "; ".join(ambiguous_ranks))
 
 
+def split_cost(cost):
+    if not cost:
+        return "", ""
+    parts = str(cost).split()
+    return parts[0], " ".join(parts[1:])
+
+
+def parse_parent_ids(value):
+    return [str(parent) for parent in maybe_list(value) if str(parent)]
+
+
+def build_children(nodes):
+    visible = {str(node["ID"]): node for node in nodes if str(node.get("NodeDisplay")) == "True"}
+    children = {node_id: [] for node_id in visible}
+    for node_id, node in visible.items():
+        for parent in parse_parent_ids(node.get("SlotLinkNodeID")):
+            if parent in children:
+                children[parent].append(node_id)
+    for child_ids in children.values():
+        child_ids.sort(key=int)
+    return children
+
+
+def build_canonical_model(rows):
+    raw_nodes = load_json("CharPCSkillTreeNode")
+    source_nodes = {
+        str(node["ID"]): node
+        for node in raw_nodes
+        if str(node.get("NodeDisplay")) == "True"
+    }
+    children = build_children(raw_nodes)
+    rows_by_node = defaultdict(list)
+    for row in rows:
+        rows_by_node[str(row["NodeID"])].append(row)
+
+    sections = {}
+    for node_id in sorted(source_nodes, key=int):
+        node = source_nodes[node_id]
+        node_rows = rows_by_node.get(node_id, [])
+        if not node_rows:
+            continue
+        sample = node_rows[0]
+        section_key = (sample["MainTab"], sample["SubTab"], sample["Branch"])
+        section = sections.setdefault(
+            section_key,
+            {
+                "system": system_key(sample["MainTab"]),
+                "mainTab": sample["MainTab"],
+                "section": sample["SubTab"],
+                "branch": sample["Branch"],
+                "nodeGroup": int(node["SkillTreelNodeGroup"]),
+                "nodes": [],
+            },
+        )
+        ranks = []
+        for rank in range(1, int(sample["MaxRank"]) + 1):
+            rank_entries = [
+                row
+                for row in node_rows
+                if int(row["Rank"]) == rank and int(row["LogicalRank"]) == rank
+            ]
+            if not rank_entries:
+                continue
+            cost_value, point_currency = split_cost(rank_entries[0]["Cost"])
+            effects = []
+            for entry in sorted(rank_entries, key=lambda row: (row["EffectType"], row["BuffID"], row["AbilityID"], row["RawValue"])):
+                effects.append(
+                    {
+                        "effectType": entry["EffectType"],
+                        "rawValue": entry["RawValue"],
+                        "displayedValue": entry["DisplayedValue"],
+                        "marginalGain": entry["MarginalGain"],
+                        "cumulativeGain": entry["CumulativeGain"],
+                        "unit": entry["Unit"],
+                        "buffId": str(entry["BuffID"]) if entry["BuffID"] else "",
+                        "abilityId": str(entry["AbilityID"]) if entry["AbilityID"] else "",
+                        "confidence": entry["Confidence"],
+                    }
+                )
+            ranks.append(
+                {
+                    "rank": rank,
+                    "cost": cost_value,
+                    "pointCurrency": point_currency,
+                    "accessCondition": rank_entries[0]["RequiredLevel"],
+                    "effects": effects,
+                }
+            )
+        section["nodes"].append(
+            {
+                "nodeId": node_id,
+                "name": sample["LogicalTalentName"],
+                "nodeType": node.get("NodeType") or "",
+                "nodeValue": str(node.get("NodeValue") or ""),
+                "parents": parse_parent_ids(node.get("SlotLinkNodeID")),
+                "children": children[node_id],
+                "progressionDepth": int(sample["ProgressionDepth"]),
+                "visual": {
+                    "row": int(node.get("NodeTierY") or 0),
+                    "column": int(node.get("NodeTierX") or 0),
+                    "offset": node.get("NodeOffset", ""),
+                },
+                "nodeMaxLevel": int(node.get("NodeMaxLevel") or 1),
+                "logicalTalentId": sample["LogicalTalentID"],
+                "logicalGroupingEvidence": sample["LogicalGroupingEvidence"],
+                "ranks": ranks,
+            }
+        )
+
+    trees = []
+    for (main_tab, sub_tab, branch), section in sorted(
+        sections.items(),
+        key=lambda item: (
+            item[1]["system"],
+            item[0][0],
+            item[0][1],
+            item[1]["nodeGroup"],
+            item[0][2],
+        ),
+    ):
+        section["nodes"].sort(key=lambda node: (node["visual"]["row"], node["visual"]["column"], int(node["nodeId"])))
+        trees.append(section)
+
+    visible_node_count = len(source_nodes)
+    edge_count = sum(len(node["children"]) for tree in trees for node in tree["nodes"])
+    return {
+        "metadata": {
+            "game": "Solo Leveling: ARISE OVERDRIVE",
+            "source": "GameData décodés",
+            "generatedBy": "tools/analyze_sjw_talent_tree.py",
+            "sourceTables": [
+                "CharPCSkillTreeNode",
+                "CharPCSkillTreelMainTab",
+                "CharPCSkillTreelSubTab",
+                "ChComBuff",
+                "ChPCSkill",
+                "ContentsUnlock",
+                "TextData",
+            ],
+            "visibleNodeCount": visible_node_count,
+            "edgeCount": edge_count,
+            "notes": [
+                "Parent/Child est une relation NodeID -> NodeID.",
+                "VisualRow/VisualColumn correspondent à NodeTierY/NodeTierX.",
+                "Les rangs internes proviennent de NodeMaxLevel, pas des suffixes de noms localisés.",
+            ],
+        },
+        "trees": trees,
+    }
+
+
+def system_key(main_tab):
+    if main_tab == "SJWSkillTree":
+        return "class"
+    if main_tab == "GSSkillTree":
+        return "weapon"
+    if main_tab == "LordSkillTree":
+        return "jinwoo"
+    return "unattached"
+
+
+def validate_canonical_model(model, rows):
+    raw_nodes = load_json("CharPCSkillTreeNode")
+    source_nodes = {
+        str(node["ID"]): node
+        for node in raw_nodes
+        if str(node.get("NodeDisplay")) == "True"
+    }
+    source_ids = set(source_nodes)
+    exported_nodes = [node for tree in model["trees"] for node in tree["nodes"]]
+    exported_ids = [node["nodeId"] for node in exported_nodes]
+    anomalies = []
+    if len(exported_ids) != len(set(exported_ids)):
+        anomalies.append("NodeID dupliqué dans le modèle canonique")
+    if source_ids != set(exported_ids):
+        missing = sorted(source_ids - set(exported_ids), key=int)
+        extra = sorted(set(exported_ids) - source_ids, key=int)
+        if missing:
+            anomalies.append("NodeID source manquants: " + ", ".join(missing))
+        if extra:
+            anomalies.append("NodeID exportés inattendus: " + ", ".join(extra))
+
+    by_id = {node["nodeId"]: node for node in exported_nodes}
+    all_edges = set()
+    for node in exported_nodes:
+        source = source_nodes[node["nodeId"]]
+        parents = parse_parent_ids(source.get("SlotLinkNodeID"))
+        if node["parents"] != parents:
+            anomalies.append(f"Parents divergents pour {node['nodeId']}")
+        if node["visual"]["row"] != int(source.get("NodeTierY") or 0):
+            anomalies.append(f"VisualRow divergent pour {node['nodeId']}")
+        if node["visual"]["column"] != int(source.get("NodeTierX") or 0):
+            anomalies.append(f"VisualColumn divergent pour {node['nodeId']}")
+        if node["nodeMaxLevel"] < 1:
+            anomalies.append(f"NodeMaxLevel invalide pour {node['nodeId']}")
+        if len(node["ranks"]) != node["nodeMaxLevel"]:
+            anomalies.append(f"Nombre de rangs divergent pour {node['nodeId']}")
+        if node["logicalTalentId"] != f"node:{node['nodeId']}" and node["logicalGroupingEvidence"] == "RAW_NODE_ONLY":
+            anomalies.append(f"Regroupement logique non documenté pour {node['nodeId']}")
+        for parent in node["parents"]:
+            if parent not in by_id:
+                anomalies.append(f"Parent inexistant {parent} pour {node['nodeId']}")
+            all_edges.add((parent, node["nodeId"]))
+        row_entries = [row for row in rows if str(row["NodeID"]) == node["nodeId"]]
+        row_ranks = {int(row["Rank"]) for row in row_entries}
+        if row_ranks != {rank["rank"] for rank in node["ranks"]}:
+            anomalies.append(f"Rangs CSV/modèle divergents pour {node['nodeId']}")
+        for rank in node["ranks"]:
+            for effect in rank["effects"]:
+                if not effect["confidence"]:
+                    anomalies.append(f"Confiance manquante pour {node['nodeId']} rang {rank['rank']}")
+
+    for node in exported_nodes:
+        expected_children = sorted(
+            [child for parent, child in all_edges if parent == node["nodeId"]],
+            key=int,
+        )
+        if node["children"] != expected_children:
+            anomalies.append(f"Children divergents pour {node['nodeId']}")
+
+    roots = [node for node in exported_nodes if not node["parents"]]
+    bifurcations = [node for node in exported_nodes if len(node["children"]) > 1]
+    convergences = [node for node in exported_nodes if len(node["parents"]) > 1]
+    multi_rank = [node for node in exported_nodes if node["nodeMaxLevel"] > 1]
+    tree_count = len({(tree["system"], tree["mainTab"], tree["section"]) for tree in model["trees"]})
+    section_count = len(model["trees"])
+    system_count = len({tree["system"] for tree in model["trees"]})
+
+    for branch, expected_edges in ASSASSIN_EXPECTED_EDGES.items():
+        branch_nodes = [
+            node
+            for tree in model["trees"]
+            if tree["system"] == "class" and tree["section"] == "Assassin" and tree["branch"] == branch
+            for node in tree["nodes"]
+        ]
+        actual_edges = {
+            (parent, node["nodeId"])
+            for node in branch_nodes
+            for parent in node["parents"]
+        }
+        if actual_edges != expected_edges:
+            missing = sorted(expected_edges - actual_edges)
+            extra = sorted(actual_edges - expected_edges)
+            anomalies.append(f"Topologie Assassin/{branch} divergente; manquants={missing}; extras={extra}")
+
+    return {
+        "system_count": system_count,
+        "tree_count": tree_count,
+        "section_count": section_count,
+        "source_node_count": len(source_ids),
+        "exported_node_count": len(exported_ids),
+        "csv_node_count": len({str(row["NodeID"]) for row in rows}),
+        "csv_row_count": len(rows),
+        "multi_rank_node_count": len(multi_rank),
+        "root_count": len(roots),
+        "bifurcation_count": len(bifurcations),
+        "convergence_count": len(convergences),
+        "edge_count": len(all_edges),
+        "assassin_checks": sorted(ASSASSIN_EXPECTED_EDGES),
+        "anomalies": anomalies,
+        "non_determined": [
+            "Conversion runtime exacte de certaines valeurs raw.",
+            "Additivité exacte entre sources de stats différentes.",
+            "Rôle final de sjw_talent_tree_detailed.csv: copie de compatibilité du CSV canonique tant qu'aucune vue détaillée distincte n'est définie.",
+        ],
+    }
+
+
+def write_canonical_model(model):
+    CANONICAL_OUT.parent.mkdir(parents=True, exist_ok=True)
+    CANONICAL_OUT.write_text(json.dumps(model, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def write_data_audit(audit):
+    DATA_AUDIT_OUT.parent.mkdir(parents=True, exist_ok=True)
+    anomalies = audit["anomalies"] or ["Aucune anomalie bloquante détectée."]
+    lines = [
+        "# SJW Talent Tree Data Audit",
+        "",
+        "Audit global généré depuis le modèle canonique `analysis/data/sjw_talent_tree.json`.",
+        "",
+        "## Comptes",
+        "",
+        f"- Systèmes: {audit['system_count']}",
+        f"- Arbres / onglets: {audit['tree_count']}",
+        f"- Sections / branches: {audit['section_count']}",
+        f"- NodeID visibles source: {audit['source_node_count']}",
+        f"- NodeID exportés JSON: {audit['exported_node_count']}",
+        f"- NodeID exportés CSV: {audit['csv_node_count']}",
+        f"- Lignes CSV: {audit['csv_row_count']}",
+        f"- Talents/nœuds avec rangs internes (`NodeMaxLevel > 1`): {audit['multi_rank_node_count']}",
+        f"- Racines: {audit['root_count']}",
+        f"- Bifurcations: {audit['bifurcation_count']}",
+        f"- Convergences: {audit['convergence_count']}",
+        f"- Liens Parent -> Child: {audit['edge_count']}",
+        "",
+        "## Contrôles de régression",
+        "",
+        "- Assassin / Attaque sournoise: arêtes exactes validées.",
+        "- Assassin / Frappe vitale: arêtes exactes validées.",
+        "",
+        "## Anomalies",
+        "",
+    ]
+    lines.extend(f"- {item}" for item in anomalies)
+    lines.extend(["", "## NON DÉTERMINÉ", ""])
+    lines.extend(f"- {item}" for item in audit["non_determined"])
+    lines.extend(
+        [
+            "",
+            "## Notes",
+            "",
+            "- `VisualColumn` expose `NodeTierX` pour le futur rendu web.",
+            "- `NodeOffset` expose `NodeOffset` brut; il aide au placement mais ne prouve aucune relation.",
+            "- `ParentNodeID` reste une relation de nœud à nœud; les rangs internes ne multiplient pas les arêtes.",
+        ]
+    )
+    DATA_AUDIT_OUT.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def make_rows():
     nodes = load_json("CharPCSkillTreeNode")
     buffs = {row["ID"]: row for row in load_json("ChComBuff")}
@@ -398,8 +750,11 @@ def make_rows():
                         "Cost": rank_cost,
                         "RequiredLevel": required,
                         "ParentNodeID": parent,
+                        "RelationScope": "NODE",
                         "ProgressionDepth": progression_depths[str(node["ID"])],
                         "VisualRow": node["NodeTierY"],
+                        "VisualColumn": node["NodeTierX"],
+                        "NodeOffset": node.get("NodeOffset", ""),
                         "EffectType": effect_type,
                         "RawValue": fmt_num(raw),
                         "DisplayedValue": display,
@@ -680,10 +1035,18 @@ def write_efficiency(rows):
 def main():
     rows = make_rows()
     validate_logical_rows(rows)
+    canonical_model = build_canonical_model(rows)
+    audit = validate_canonical_model(canonical_model, rows)
+    if audit["anomalies"]:
+        raise SystemExit("Audit modèle canonique échoué: " + "; ".join(audit["anomalies"]))
     write_csv(rows)
+    write_canonical_model(canonical_model)
+    write_data_audit(audit)
     write_report(rows)
     write_efficiency(rows)
     print(f"wrote {CSV_OUT} ({len(rows)} rows)")
+    print(f"wrote {CANONICAL_OUT}")
+    print(f"wrote {DATA_AUDIT_OUT}")
     print(f"wrote {REPORT_OUT}")
     print(f"wrote {EFF_OUT}")
 
