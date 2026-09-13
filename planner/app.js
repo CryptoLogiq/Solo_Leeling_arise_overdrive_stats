@@ -1,0 +1,618 @@
+"use strict";
+
+const DATA_URL = "../analysis/data/sjw_talent_tree.json";
+const RANK_LABELS = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
+const SYSTEM_LABELS = {
+  class: "Classes",
+  weapon: "Armes",
+  jinwoo: "Sung Jinwoo",
+  unattached: "Structures communes",
+};
+const DEFAULT_BUDGETS = {
+  SkillPoint: 40,
+  WeaponPoint: 40,
+  SpecialPoint: 40,
+  IdentityPoint: 4,
+};
+
+const state = {
+  model: null,
+  sections: [],
+  nodeById: new Map(),
+  activeSectionIndex: 0,
+  activeNodeId: null,
+  selected: {},
+  budgets: { ...DEFAULT_BUDGETS },
+  zoom: 1,
+};
+
+const els = {
+  system: document.getElementById("systemSelect"),
+  section: document.getElementById("sectionSelect"),
+  branch: document.getElementById("branchSelect"),
+  budget: document.getElementById("budgetInput"),
+  notice: document.getElementById("notice"),
+  viewport: document.getElementById("treeViewport"),
+  canvas: document.getElementById("treeCanvas"),
+  edgeLayer: document.getElementById("edgeLayer"),
+  nodeLayer: document.getElementById("nodeLayer"),
+  buildCount: document.getElementById("buildCount"),
+  activeRank: document.getElementById("activeRank"),
+  budgetSummary: document.getElementById("budgetSummary"),
+  nodeDetails: document.getElementById("nodeDetails"),
+  knownGains: document.getElementById("knownGains"),
+  rawEffects: document.getElementById("rawEffects"),
+  selectionList: document.getElementById("selectionList"),
+  reset: document.getElementById("resetBuild"),
+  share: document.getElementById("shareBuild"),
+  export: document.getElementById("exportBuild"),
+  import: document.getElementById("importBuild"),
+  importFile: document.getElementById("importFile"),
+  zoomIn: document.getElementById("zoomIn"),
+  zoomOut: document.getElementById("zoomOut"),
+  zoomReset: document.getElementById("zoomReset"),
+};
+
+function rankLabel(rank) {
+  return RANK_LABELS[rank] || String(rank);
+}
+
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
+}
+
+function parseOffset(raw) {
+  if (!raw) return [0, 0, 0];
+  const match = String(raw).match(/\[?\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\]?/);
+  return match ? [Number(match[1]), Number(match[2]), Number(match[3])] : [0, 0, 0];
+}
+
+function parseCost(rank) {
+  const value = Number(rank?.cost || 0);
+  return Number.isFinite(value) ? value : 0;
+}
+
+function nodeCurrency(node) {
+  return node.ranks.find((rank) => rank.pointCurrency)?.pointCurrency || "SkillPoint";
+}
+
+function selectedRank(nodeId) {
+  return Number(state.selected[nodeId] || 0);
+}
+
+function sectionNodes() {
+  return state.sections[state.activeSectionIndex]?.nodes || [];
+}
+
+function currentSection() {
+  return state.sections[state.activeSectionIndex];
+}
+
+function nodeName(nodeId) {
+  return state.nodeById.get(nodeId)?.name || nodeId;
+}
+
+function setNotice(message, tone = "info") {
+  els.notice.textContent = message || "";
+  els.notice.dataset.tone = tone;
+  if (message) {
+    window.clearTimeout(setNotice.timer);
+    setNotice.timer = window.setTimeout(() => {
+      els.notice.textContent = "";
+    }, 2800);
+  }
+}
+
+function buildPayload() {
+  return {
+    version: 1,
+    selected: Object.fromEntries(Object.entries(state.selected).filter(([, rank]) => Number(rank) > 0)),
+    budgets: state.budgets,
+  };
+}
+
+function encodeBuild(payload) {
+  const json = JSON.stringify(payload);
+  const bytes = new TextEncoder().encode(json);
+  let binary = "";
+  for (const byte of bytes) binary += String.fromCharCode(byte);
+  return btoa(binary).replaceAll("+", "-").replaceAll("/", "_").replaceAll("=", "");
+}
+
+function decodeBuild(encoded) {
+  const padded = encoded.replaceAll("-", "+").replaceAll("_", "/").padEnd(Math.ceil(encoded.length / 4) * 4, "=");
+  const binary = atob(padded);
+  const bytes = Uint8Array.from(binary, (char) => char.charCodeAt(0));
+  return JSON.parse(new TextDecoder().decode(bytes));
+}
+
+function loadBuildFromHash() {
+  const params = new URLSearchParams(window.location.hash.slice(1));
+  const encoded = params.get("build");
+  if (!encoded) return;
+  try {
+    applyBuild(decodeBuild(encoded));
+    setNotice("Build importé depuis le lien.");
+  } catch (error) {
+    setNotice("Lien de build illisible.", "error");
+  }
+}
+
+function applyBuild(payload) {
+  const next = {};
+  for (const [nodeId, rank] of Object.entries(payload.selected || payload.nodes || {})) {
+    const node = state.nodeById.get(nodeId);
+    const value = Math.max(0, Math.min(Number(rank) || 0, node?.nodeMaxLevel || 0));
+    if (node && value > 0) next[nodeId] = value;
+  }
+  state.selected = next;
+  state.budgets = { ...DEFAULT_BUDGETS, ...(payload.budgets || {}) };
+  pruneInvalidSelections();
+}
+
+function populateFilters() {
+  const systems = [...new Set(state.sections.map((section) => section.system))];
+  els.system.innerHTML = systems
+    .map((system) => `<option value="${escapeHtml(system)}">${escapeHtml(SYSTEM_LABELS[system] || system)}</option>`)
+    .join("");
+  els.system.value = currentSection()?.system || systems[0];
+  populateSectionSelect();
+}
+
+function populateSectionSelect() {
+  const system = els.system.value;
+  const sections = [...new Set(state.sections.filter((section) => section.system === system).map((section) => section.section))];
+  els.section.innerHTML = sections.map((name) => `<option value="${escapeHtml(name)}">${escapeHtml(name)}</option>`).join("");
+  const active = currentSection();
+  els.section.value = active?.system === system ? active.section : sections[0];
+  populateBranchSelect();
+}
+
+function populateBranchSelect() {
+  const system = els.system.value;
+  const sectionName = els.section.value;
+  const branches = state.sections
+    .map((section, index) => ({ section, index }))
+    .filter(({ section }) => section.system === system && section.section === sectionName);
+  els.branch.innerHTML = branches
+    .map(({ section, index }) => `<option value="${index}">${escapeHtml(section.branch)}</option>`)
+    .join("");
+  const active = branches.find(({ index }) => index === state.activeSectionIndex) || branches[0];
+  state.activeSectionIndex = active?.index || 0;
+  els.branch.value = String(state.activeSectionIndex);
+  updateBudgetInput();
+}
+
+function activeCurrency() {
+  const counts = new Map();
+  for (const node of sectionNodes()) {
+    for (const rank of node.ranks) {
+      const currency = rank.pointCurrency || "SkillPoint";
+      counts.set(currency, (counts.get(currency) || 0) + 1);
+    }
+  }
+  return [...counts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] || "SkillPoint";
+}
+
+function updateBudgetInput() {
+  const currency = activeCurrency();
+  els.budget.value = state.budgets[currency] ?? DEFAULT_BUDGETS[currency] ?? 40;
+  els.budget.parentElement.firstChild.textContent = `Budget ${currency}`;
+}
+
+function selectedCostByCurrency(selected = state.selected) {
+  const totals = {};
+  for (const [nodeId, rankCount] of Object.entries(selected)) {
+    const node = state.nodeById.get(nodeId);
+    if (!node) continue;
+    for (let index = 0; index < rankCount; index += 1) {
+      const rank = node.ranks[index];
+      const currency = rank?.pointCurrency || nodeCurrency(node);
+      totals[currency] = (totals[currency] || 0) + parseCost(rank);
+    }
+  }
+  return totals;
+}
+
+function parentsSatisfied(node, selected = state.selected) {
+  return node.parents.every((parentId) => Number(selected[parentId] || 0) > 0);
+}
+
+function canAfford(node, nextRank) {
+  const rank = node.ranks[nextRank - 1];
+  const currency = rank?.pointCurrency || nodeCurrency(node);
+  const preview = { ...state.selected, [node.nodeId]: nextRank };
+  const total = selectedCostByCurrency(preview)[currency] || 0;
+  const budget = Number(state.budgets[currency] ?? DEFAULT_BUDGETS[currency] ?? 0);
+  return total <= budget;
+}
+
+function canIncrease(node) {
+  const current = selectedRank(node.nodeId);
+  return current < node.nodeMaxLevel && parentsSatisfied(node) && canAfford(node, current + 1);
+}
+
+function setNodeRank(nodeId, rank) {
+  const node = state.nodeById.get(nodeId);
+  if (!node) return;
+  const nextRank = Math.max(0, Math.min(rank, node.nodeMaxLevel));
+  if (nextRank > selectedRank(nodeId) && !parentsSatisfied(node)) {
+    setNotice(`Prérequis manquant: ${node.parents.map(nodeName).join(", ")}`, "error");
+    return;
+  }
+  if (nextRank > selectedRank(nodeId) && !canAfford(node, nextRank)) {
+    setNotice("Budget insuffisant pour ce rang.", "error");
+    return;
+  }
+  if (nextRank > 0) state.selected[nodeId] = nextRank;
+  else delete state.selected[nodeId];
+  state.activeNodeId = nodeId;
+  pruneInvalidSelections();
+  render();
+}
+
+function pruneInvalidSelections() {
+  let changed = true;
+  while (changed) {
+    changed = false;
+    for (const nodeId of Object.keys(state.selected)) {
+      const node = state.nodeById.get(nodeId);
+      if (!node || !parentsSatisfied(node)) {
+        delete state.selected[nodeId];
+        changed = true;
+      }
+    }
+  }
+}
+
+function increaseNode(nodeId) {
+  const node = state.nodeById.get(nodeId);
+  if (!node) return;
+  setNodeRank(nodeId, selectedRank(nodeId) + 1);
+}
+
+function decreaseNode(nodeId) {
+  setNodeRank(nodeId, selectedRank(nodeId) - 1);
+}
+
+function layoutNodes(nodes) {
+  const raw = nodes.map((node) => {
+    const [offsetX, offsetY] = parseOffset(node.visual.offset);
+    return {
+      node,
+      x: (Number(node.visual.column) - 1) * 190 + offsetX * 0.35 + 80,
+      y: (Number(node.visual.row) - 1) * 124 + offsetY * 0.35 + 82,
+    };
+  });
+  const minX = Math.min(...raw.map((item) => item.x), 0);
+  const minY = Math.min(...raw.map((item) => item.y), 0);
+  return raw.map((item) => ({
+    ...item,
+    x: item.x - minX + 40,
+    y: item.y - minY + 38,
+  }));
+}
+
+function renderTree() {
+  const nodes = sectionNodes();
+  const layout = layoutNodes(nodes);
+  const pos = new Map(layout.map((item) => [item.node.nodeId, item]));
+  const width = Math.max(760, ...layout.map((item) => item.x + 220));
+  const height = Math.max(520, ...layout.map((item) => item.y + 140));
+  els.canvas.style.width = `${width}px`;
+  els.canvas.style.height = `${height}px`;
+  els.canvas.style.transform = `scale(${state.zoom})`;
+  els.edgeLayer.setAttribute("width", width);
+  els.edgeLayer.setAttribute("height", height);
+  els.edgeLayer.setAttribute("viewBox", `0 0 ${width} ${height}`);
+
+  const edgePaths = [];
+  for (const node of nodes) {
+    const parentPos = pos.get(node.nodeId);
+    if (!parentPos) continue;
+    for (const childId of node.children) {
+      const child = state.nodeById.get(childId);
+      const childPos = pos.get(childId);
+      if (!child || !childPos) continue;
+      const x1 = parentPos.x + 82;
+      const y1 = parentPos.y + 78;
+      const x2 = childPos.x + 82;
+      const y2 = childPos.y;
+      const mid = Math.max(34, Math.abs(y2 - y1) * 0.42);
+      const status = selectedRank(node.nodeId) > 0 && selectedRank(childId) > 0
+        ? "selected"
+        : selectedRank(node.nodeId) > 0
+          ? "available"
+          : child.parents.length && !parentsSatisfied(child)
+            ? "blocked"
+            : "";
+      edgePaths.push(`<path class="edge-path ${status}" d="M ${x1} ${y1} C ${x1} ${y1 + mid}, ${x2} ${y2 - mid}, ${x2} ${y2}"></path>`);
+    }
+  }
+  els.edgeLayer.innerHTML = edgePaths.join("");
+
+  els.nodeLayer.innerHTML = layout.map(({ node, x, y }) => {
+    const rank = selectedRank(node.nodeId);
+    const locked = !parentsSatisfied(node);
+    const active = state.activeNodeId === node.nodeId;
+    const currency = nodeCurrency(node);
+    const selectedClass = rank > 0 ? "selected" : "";
+    const activeClass = active ? "active" : "";
+    const lockedClass = locked ? "locked" : "";
+    return `
+      <article class="node-card ${selectedClass} ${activeClass} ${lockedClass}" style="left:${x}px; top:${y}px" data-node-id="${escapeHtml(node.nodeId)}">
+        <div>
+          <div class="node-name">${escapeHtml(node.name)}</div>
+          <div class="node-meta">
+            <span>${rank}/${node.nodeMaxLevel} rang</span>
+            <span>${escapeHtml(currency)}</span>
+          </div>
+        </div>
+        <div class="node-meta">
+          <span>${escapeHtml(node.nodeId)}</span>
+          <span class="node-buttons">
+            <button class="node-action" type="button" data-action="decrease" data-node-id="${escapeHtml(node.nodeId)}" ${rank === 0 ? "disabled" : ""} title="Retirer un rang">-</button>
+            <button class="node-action" type="button" data-action="increase" data-node-id="${escapeHtml(node.nodeId)}" ${canIncrease(node) ? "" : "disabled"} title="Ajouter un rang">+</button>
+          </span>
+        </div>
+      </article>`;
+  }).join("");
+}
+
+function selectedRanksForNode(node) {
+  const count = selectedRank(node.nodeId);
+  return node.ranks.slice(0, count);
+}
+
+function selectedEffects() {
+  const effects = [];
+  for (const [nodeId, rankCount] of Object.entries(state.selected)) {
+    const node = state.nodeById.get(nodeId);
+    if (!node) continue;
+    for (const rank of node.ranks.slice(0, rankCount)) {
+      for (const effect of rank.effects || []) {
+        effects.push({ node, rank, effect });
+      }
+    }
+  }
+  return effects;
+}
+
+function parsePercent(value) {
+  const text = String(value || "");
+  const match = text.match(/(-?\d+(?:[.,]\d+)?)\s*%/);
+  return match ? Number(match[1].replace(",", ".")) : null;
+}
+
+function renderSummary() {
+  const selectedEntries = Object.entries(state.selected).filter(([, rank]) => Number(rank) > 0);
+  els.buildCount.textContent = `${selectedEntries.length} talent${selectedEntries.length > 1 ? "s" : ""}`;
+  const totals = selectedCostByCurrency();
+  const currencies = [...new Set([...Object.keys(DEFAULT_BUDGETS), ...Object.keys(totals)])];
+  els.budgetSummary.innerHTML = currencies.map((currency) => {
+    const spent = totals[currency] || 0;
+    const budget = Number(state.budgets[currency] ?? DEFAULT_BUDGETS[currency] ?? 0);
+    const over = spent > budget;
+    return `<div class="metric-row ${over ? "over" : ""}"><span>${escapeHtml(currency)}</span><strong>${spent} / ${budget}</strong></div>`;
+  }).join("");
+
+  const percentTotals = new Map();
+  const rawRows = [];
+  for (const { node, rank, effect } of selectedEffects()) {
+    const gain = parsePercent(effect.marginalGain);
+    if (gain !== null && effect.confidence !== "NON DÉTERMINÉ") {
+      const key = `${effect.effectType}|${effect.unit || "%"}`;
+      const item = percentTotals.get(key) || { label: effect.effectType, unit: effect.unit || "%", value: 0 };
+      item.value += gain;
+      percentTotals.set(key, item);
+    } else {
+      rawRows.push({ node, rank, effect });
+    }
+  }
+
+  els.knownGains.innerHTML = percentTotals.size
+    ? [...percentTotals.values()]
+        .sort((a, b) => a.label.localeCompare(b.label, "fr"))
+        .map((item) => `<div class="effect-row"><span>${escapeHtml(item.label)}</span><strong>+${item.value.toLocaleString("fr-FR", { maximumFractionDigits: 2 })}%</strong></div>`)
+        .join("")
+    : `<div class="empty-state">Aucun gain chiffré démontré dans la sélection.</div>`;
+
+  els.rawEffects.innerHTML = rawRows.length
+    ? rawRows.slice(0, 18).map(({ node, rank, effect }) => `
+      <div class="effect-row">
+        <strong>${escapeHtml(node.name)} ${rankLabel(rank.rank)}</strong>
+        <span>${escapeHtml(effect.effectType)}: ${escapeHtml(effect.displayedValue || effect.rawValue || "NON DÉTERMINÉ")}</span>
+      </div>`).join("")
+    : `<div class="empty-state">Aucune valeur brute non interprétée dans la sélection.</div>`;
+
+  els.selectionList.innerHTML = selectedEntries.length
+    ? selectedEntries
+        .map(([nodeId, rank]) => ({ node: state.nodeById.get(nodeId), rank }))
+        .filter((item) => item.node)
+        .sort((a, b) => a.node.name.localeCompare(b.node.name, "fr"))
+        .map(({ node, rank }) => `<button class="selection-row" type="button" data-node-id="${escapeHtml(node.nodeId)}"><strong>${escapeHtml(node.name)}</strong><span>${rank}/${node.nodeMaxLevel}</span></button>`)
+        .join("")
+    : `<div class="empty-state">Aucun talent sélectionné.</div>`;
+}
+
+function effectText(rank) {
+  const effects = rank.effects || [];
+  if (!effects.length) return "NON DÉTERMINÉ";
+  return effects.map((effect) => {
+    const value = effect.marginalGain !== "NON DÉTERMINÉ"
+      ? effect.marginalGain
+      : effect.displayedValue || effect.rawValue || "NON DÉTERMINÉ";
+    return `${effect.effectType}: ${value}`;
+  }).join("; ");
+}
+
+function renderNodeDetails() {
+  const node = state.nodeById.get(state.activeNodeId) || sectionNodes()[0];
+  if (!node) {
+    els.nodeDetails.innerHTML = `<div class="empty-state">Aucun arbre chargé.</div>`;
+    els.activeRank.textContent = "-";
+    return;
+  }
+  state.activeNodeId = node.nodeId;
+  const rank = selectedRank(node.nodeId);
+  els.activeRank.textContent = `${rank}/${node.nodeMaxLevel}`;
+  const parents = node.parents.length ? node.parents.map(nodeName).join(", ") : "Racine";
+  const children = node.children.length ? node.children.map(nodeName).join(", ") : "Aucun";
+  els.nodeDetails.innerHTML = `
+    <div class="detail-title">
+      <h3>${escapeHtml(node.name)}</h3>
+      <span class="pill muted">${escapeHtml(node.nodeId)}</span>
+    </div>
+    <div class="rank-actions">
+      <button class="rank-button" type="button" data-action="decrease" data-node-id="${escapeHtml(node.nodeId)}" ${rank === 0 ? "disabled" : ""}>-</button>
+      <button class="rank-button" type="button" data-action="increase" data-node-id="${escapeHtml(node.nodeId)}" ${canIncrease(node) ? "" : "disabled"}>+</button>
+    </div>
+    <div class="metric-row"><span>Prérequis</span><strong>${escapeHtml(parents)}</strong></div>
+    <div class="metric-row"><span>Débloque</span><strong>${escapeHtml(children)}</strong></div>
+    <div class="metric-row"><span>Position</span><strong>R${escapeHtml(node.visual.row)} / C${escapeHtml(node.visual.column)}</strong></div>
+    <table class="mini-table">
+      <thead><tr><th>Rang</th><th>Coût</th><th>Effet</th></tr></thead>
+      <tbody>
+        ${node.ranks.map((item) => `
+          <tr>
+            <td>${rankLabel(item.rank)}</td>
+            <td>${escapeHtml(item.cost || 0)} ${escapeHtml(item.pointCurrency || "")}</td>
+            <td>${escapeHtml(effectText(item))}</td>
+          </tr>`).join("")}
+      </tbody>
+    </table>
+  `;
+}
+
+function render() {
+  updateBudgetInput();
+  renderTree();
+  renderNodeDetails();
+  renderSummary();
+}
+
+function setActiveSection(index) {
+  state.activeSectionIndex = Number(index) || 0;
+  state.activeNodeId = sectionNodes()[0]?.nodeId || null;
+  populateFilters();
+  render();
+}
+
+function setupEvents() {
+  els.system.addEventListener("change", () => {
+    populateSectionSelect();
+    state.activeNodeId = sectionNodes()[0]?.nodeId || null;
+    render();
+  });
+  els.section.addEventListener("change", () => {
+    populateBranchSelect();
+    state.activeNodeId = sectionNodes()[0]?.nodeId || null;
+    render();
+  });
+  els.branch.addEventListener("change", (event) => setActiveSection(event.target.value));
+  els.budget.addEventListener("change", () => {
+    state.budgets[activeCurrency()] = Math.max(0, Number(els.budget.value) || 0);
+    render();
+  });
+  els.nodeLayer.addEventListener("click", (event) => {
+    const button = event.target.closest("button[data-action]");
+    const card = event.target.closest("[data-node-id]");
+    if (!card) return;
+    const nodeId = card.dataset.nodeId;
+    state.activeNodeId = nodeId;
+    if (button?.dataset.action === "increase") increaseNode(nodeId);
+    else if (button?.dataset.action === "decrease") decreaseNode(nodeId);
+    else render();
+  });
+  document.body.addEventListener("click", (event) => {
+    const button = event.target.closest("button[data-action]");
+    if (!button || button.closest("#nodeLayer")) return;
+    if (button.dataset.action === "increase") increaseNode(button.dataset.nodeId);
+    if (button.dataset.action === "decrease") decreaseNode(button.dataset.nodeId);
+  });
+  els.selectionList.addEventListener("click", (event) => {
+    const row = event.target.closest("[data-node-id]");
+    if (!row) return;
+    state.activeNodeId = row.dataset.nodeId;
+    const sectionIndex = state.sections.findIndex((section) => section.nodes.some((node) => node.nodeId === state.activeNodeId));
+    if (sectionIndex >= 0) state.activeSectionIndex = sectionIndex;
+    populateFilters();
+    render();
+  });
+  els.reset.addEventListener("click", () => {
+    state.selected = {};
+    window.history.replaceState(null, "", window.location.pathname);
+    render();
+  });
+  els.share.addEventListener("click", async () => {
+    const url = new URL(window.location.href);
+    url.hash = `build=${encodeBuild(buildPayload())}`;
+    window.history.replaceState(null, "", url);
+    try {
+      await navigator.clipboard.writeText(url.toString());
+      setNotice("Lien copié.");
+    } catch (error) {
+      setNotice("Lien généré dans la barre d'adresse.");
+    }
+  });
+  els.export.addEventListener("click", () => {
+    const blob = new Blob([JSON.stringify(buildPayload(), null, 2)], { type: "application/json" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "sjw-overdrive-build.json";
+    link.click();
+    URL.revokeObjectURL(link.href);
+  });
+  els.import.addEventListener("click", () => els.importFile.click());
+  els.importFile.addEventListener("change", async () => {
+    const file = els.importFile.files[0];
+    if (!file) return;
+    try {
+      applyBuild(JSON.parse(await file.text()));
+      setNotice("Build importé.");
+      render();
+    } catch (error) {
+      setNotice("JSON de build invalide.", "error");
+    } finally {
+      els.importFile.value = "";
+    }
+  });
+  els.zoomIn.addEventListener("click", () => {
+    state.zoom = Math.min(1.6, state.zoom + 0.1);
+    renderTree();
+  });
+  els.zoomOut.addEventListener("click", () => {
+    state.zoom = Math.max(0.55, state.zoom - 0.1);
+    renderTree();
+  });
+  els.zoomReset.addEventListener("click", () => {
+    state.zoom = 1;
+    renderTree();
+  });
+}
+
+async function init() {
+  try {
+    const response = await fetch(DATA_URL);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    state.model = await response.json();
+    state.sections = state.model.trees || [];
+    for (const section of state.sections) {
+      for (const node of section.nodes || []) state.nodeById.set(node.nodeId, node);
+    }
+    setupEvents();
+    populateFilters();
+    state.activeNodeId = sectionNodes()[0]?.nodeId || null;
+    loadBuildFromHash();
+    render();
+  } catch (error) {
+    els.notice.textContent = "Impossible de charger analysis/data/sjw_talent_tree.json depuis cette page.";
+    els.nodeDetails.innerHTML = `<div class="empty-state">${escapeHtml(error.message)}</div>`;
+  }
+}
+
+init();
