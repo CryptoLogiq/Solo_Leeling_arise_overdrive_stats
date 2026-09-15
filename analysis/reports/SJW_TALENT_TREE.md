@@ -12,9 +12,9 @@ Talent logique: `LogicalTalentID` ajoute une couche au-dessus des NodeID. Par d�
 
 ## Réponse immédiate: Attaque 1/3 -> 3/3
 
-- Rang 1/3: gain marginal 1%, cumul 1%, coût 1 SpecialPoint, buff `200000086`.
-- Rang 2/3: gain marginal 1%, cumul 2%, coût 1 SpecialPoint, buff `200000086`.
-- Rang 3/3: gain marginal 1%, cumul 3%, coût 1 SpecialPoint, buff `200000086`.
+- Rang 1/3: gain marginal 1%, cumul 1%, coût NON DÉTERMINÉ, buff `200000086`.
+- Rang 2/3: gain marginal 1%, cumul 2%, coût NON DÉTERMINÉ, buff `200000086`.
+- Rang 3/3: gain marginal 1%, cumul 3%, coût NON DÉTERMINÉ, buff `200000086`.
 
 Lecture: le nœud `31100102` applique le buff `200000086`, `AttFR=100`, `NodeMaxLevel=3`. La conversion d'affichage `0.01` est fortement appuyée par les textes de buffs du jeu: `100` correspond à `1%`. Le rang 3/3 donne donc `3%` cumulés si le moteur applique une instance/stack par rang.
 
@@ -171,135 +171,136 @@ Statut: **FORTEMENT PROBABLE** pour `+1% par rang / +3% au rang 3`; **NON DÉTER
 | Groupe 10 | Critique et pénétration | Critique et pénétration | Pénétration de défense 6 1/3 | 1110603 | 5 | 6 | 1/3 | 3 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
 | Groupe 10 | Critique et pénétration | Critique et pénétration | Pénétration de défense 6 2/3 | 1110603 | 5 | 6 | 2/3 | 4 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
 | Groupe 10 | Critique et pénétration | Critique et pénétration | Pénétration de défense 6 3/3 | 1110603 | 5 | 6 | 3/3 | 5 SkillPoint | Pénétration de défense | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA |
-| GSSkillTree | Épée | Cœur d'acier | Attaque augmentée 1/3 | 2150401 | 3 | 4 | 1/3 | 2 WeaponPoint | Attaque | 0.5% | 0.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Épée | Cœur d'acier | Attaque augmentée 2/3 | 2150401 | 3 | 4 | 2/3 | 2 WeaponPoint | Attaque | 0.5% | 1% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Épée | Cœur d'acier | Attaque augmentée 3/3 | 2150401 | 3 | 4 | 3/3 | 2 WeaponPoint | Attaque | 0.5% | 1.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Épée | Cœur d'acier | Défense augmentée 1/3 | 2150403 | 3 | 4 | 1/3 | 2 WeaponPoint | Défense | 1% | 1% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Épée | Cœur d'acier | Défense augmentée 2/3 | 2150403 | 3 | 4 | 2/3 | 2 WeaponPoint | Défense | 1% | 2% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Épée | Cœur d'acier | Défense augmentée 3/3 | 2150403 | 3 | 4 | 3/3 | 2 WeaponPoint | Défense | 1% | 3% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Épée | Résistance à la lame | Précision augmentée 1/3 | 2151302 | 2 | 3 | 1/3 | 2 WeaponPoint | Précision | 0.5% | 0.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Épée | Résistance à la lame | Précision augmentée 2/3 | 2151302 | 2 | 3 | 2/3 | 2 WeaponPoint | Précision | 0.5% | 1% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Épée | Résistance à la lame | Précision augmentée 3/3 | 2151302 | 2 | 3 | 3/3 | 2 WeaponPoint | Précision | 0.5% | 1.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Épée | Résistance à la lame | Pénétration de défense augmentée 1/3 | 2151402 | 3 | 4 | 1/3 | 2 WeaponPoint | Pénétration de défense | 0.25% | 0.25% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Épée | Résistance à la lame | Pénétration de défense augmentée 2/3 | 2151402 | 3 | 4 | 2/3 | 2 WeaponPoint | Pénétration de défense | 0.25% | 0.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Épée | Résistance à la lame | Pénétration de défense augmentée 3/3 | 2151402 | 3 | 4 | 3/3 | 2 WeaponPoint | Pénétration de défense | 0.25% | 0.75% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Dague | Plaie mortelle | Taux de coup critique augmenté 1/3 | 2252101 | 0 | 1 | 1/3 | 2 WeaponPoint | Taux de coup critique | 0.25% | 0.25% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Dague | Plaie mortelle | Taux de coup critique augmenté 2/3 | 2252101 | 0 | 1 | 2/3 | 2 WeaponPoint | Taux de coup critique | 0.25% | 0.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Dague | Plaie mortelle | Taux de coup critique augmenté 3/3 | 2252101 | 0 | 1 | 3/3 | 2 WeaponPoint | Taux de coup critique | 0.25% | 0.75% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Dague | Plaie mortelle | Dégâts de coup critique augmentés 1/3 | 2252103 | 0 | 1 | 1/3 | 2 WeaponPoint | Dégâts de coup critique | 0.25% | 0.25% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Dague | Plaie mortelle | Dégâts de coup critique augmentés 2/3 | 2252103 | 0 | 1 | 2/3 | 2 WeaponPoint | Dégâts de coup critique | 0.25% | 0.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Dague | Plaie mortelle | Dégâts de coup critique augmentés 3/3 | 2252103 | 0 | 1 | 3/3 | 2 WeaponPoint | Dégâts de coup critique | 0.25% | 0.75% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Dague | Plaie mortelle | Taux de coup critique augmenté 1/3 | 2252301 | 2 | 3 | 1/3 | 2 WeaponPoint | Taux de coup critique | 0.25% | 0.25% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Dague | Plaie mortelle | Taux de coup critique augmenté 2/3 | 2252301 | 2 | 3 | 2/3 | 2 WeaponPoint | Taux de coup critique | 0.25% | 0.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Dague | Plaie mortelle | Taux de coup critique augmenté 3/3 | 2252301 | 2 | 3 | 3/3 | 2 WeaponPoint | Taux de coup critique | 0.25% | 0.75% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Dague | Plaie mortelle | Dégâts de coup critique augmentés 1/3 | 2252303 | 2 | 3 | 1/3 | 2 WeaponPoint | Dégâts de coup critique | 0.25% | 0.25% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Dague | Plaie mortelle | Dégâts de coup critique augmentés 2/3 | 2252303 | 2 | 3 | 2/3 | 2 WeaponPoint | Dégâts de coup critique | 0.25% | 0.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Dague | Plaie mortelle | Dégâts de coup critique augmentés 3/3 | 2252303 | 2 | 3 | 3/3 | 2 WeaponPoint | Dégâts de coup critique | 0.25% | 0.75% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| GSSkillTree | Épée | Cœur d'acier | Attaque augmentée 1/3 | 2150401 | 3 | 4 | 1/3 | NON DÉTERMINÉ | Attaque | 0.5% | 0.5% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Épée | Cœur d'acier | Attaque augmentée 2/3 | 2150401 | 3 | 4 | 2/3 | NON DÉTERMINÉ | Attaque | 0.5% | 1% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Épée | Cœur d'acier | Attaque augmentée 3/3 | 2150401 | 3 | 4 | 3/3 | NON DÉTERMINÉ | Attaque | 0.5% | 1.5% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Épée | Cœur d'acier | Défense augmentée 1/3 | 2150403 | 3 | 4 | 1/3 | NON DÉTERMINÉ | Défense | 1% | 1% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Épée | Cœur d'acier | Défense augmentée 2/3 | 2150403 | 3 | 4 | 2/3 | NON DÉTERMINÉ | Défense | 1% | 2% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Épée | Cœur d'acier | Défense augmentée 3/3 | 2150403 | 3 | 4 | 3/3 | NON DÉTERMINÉ | Défense | 1% | 3% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Épée | Résistance à la lame | Précision augmentée 1/3 | 2151302 | 2 | 3 | 1/3 | NON DÉTERMINÉ | Précision | 0.5% | 0.5% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Épée | Résistance à la lame | Précision augmentée 2/3 | 2151302 | 2 | 3 | 2/3 | NON DÉTERMINÉ | Précision | 0.5% | 1% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Épée | Résistance à la lame | Précision augmentée 3/3 | 2151302 | 2 | 3 | 3/3 | NON DÉTERMINÉ | Précision | 0.5% | 1.5% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Épée | Résistance à la lame | Pénétration de défense augmentée 1/3 | 2151402 | 3 | 4 | 1/3 | NON DÉTERMINÉ | Pénétration de défense | 0.25% | 0.25% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Épée | Résistance à la lame | Pénétration de défense augmentée 2/3 | 2151402 | 3 | 4 | 2/3 | NON DÉTERMINÉ | Pénétration de défense | 0.25% | 0.5% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Épée | Résistance à la lame | Pénétration de défense augmentée 3/3 | 2151402 | 3 | 4 | 3/3 | NON DÉTERMINÉ | Pénétration de défense | 0.25% | 0.75% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Dague | Plaie mortelle | Taux de coup critique augmenté 1/3 | 2252101 | 0 | 1 | 1/3 | NON DÉTERMINÉ | Taux de coup critique | 0.25% | 0.25% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Dague | Plaie mortelle | Taux de coup critique augmenté 2/3 | 2252101 | 0 | 1 | 2/3 | NON DÉTERMINÉ | Taux de coup critique | 0.25% | 0.5% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Dague | Plaie mortelle | Taux de coup critique augmenté 3/3 | 2252101 | 0 | 1 | 3/3 | NON DÉTERMINÉ | Taux de coup critique | 0.25% | 0.75% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Dague | Plaie mortelle | Dégâts de coup critique augmentés 1/3 | 2252103 | 0 | 1 | 1/3 | NON DÉTERMINÉ | Dégâts de coup critique | 0.25% | 0.25% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Dague | Plaie mortelle | Dégâts de coup critique augmentés 2/3 | 2252103 | 0 | 1 | 2/3 | NON DÉTERMINÉ | Dégâts de coup critique | 0.25% | 0.5% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Dague | Plaie mortelle | Dégâts de coup critique augmentés 3/3 | 2252103 | 0 | 1 | 3/3 | NON DÉTERMINÉ | Dégâts de coup critique | 0.25% | 0.75% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Dague | Plaie mortelle | Taux de coup critique augmenté 1/3 | 2252301 | 2 | 3 | 1/3 | NON DÉTERMINÉ | Taux de coup critique | 0.25% | 0.25% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Dague | Plaie mortelle | Taux de coup critique augmenté 2/3 | 2252301 | 2 | 3 | 2/3 | NON DÉTERMINÉ | Taux de coup critique | 0.25% | 0.5% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Dague | Plaie mortelle | Taux de coup critique augmenté 3/3 | 2252301 | 2 | 3 | 3/3 | NON DÉTERMINÉ | Taux de coup critique | 0.25% | 0.75% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Dague | Plaie mortelle | Dégâts de coup critique augmentés 1/3 | 2252303 | 2 | 3 | 1/3 | NON DÉTERMINÉ | Dégâts de coup critique | 0.25% | 0.25% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Dague | Plaie mortelle | Dégâts de coup critique augmentés 2/3 | 2252303 | 2 | 3 | 2/3 | NON DÉTERMINÉ | Dégâts de coup critique | 0.25% | 0.5% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Dague | Plaie mortelle | Dégâts de coup critique augmentés 3/3 | 2252303 | 2 | 3 | 3/3 | NON DÉTERMINÉ | Dégâts de coup critique | 0.25% | 0.75% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 | GSSkillTree | Dague | Plaie mortelle | Amplification de la douleur | 2252401 | 3 | 4 | 1/1 | 3 WeaponPoint | Dégâts conditionnels | 3% | 3% | FORTEMENT PROBABLE |
-| GSSkillTree | Arc | Visée concentrée | Taux de coup critique augmenté 1/3 | 2254202 | 1 | 2 | 1/3 | 2 WeaponPoint | Taux de coup critique | 0.25% | 0.25% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arc | Visée concentrée | Taux de coup critique augmenté 2/3 | 2254202 | 1 | 2 | 2/3 | 2 WeaponPoint | Taux de coup critique | 0.25% | 0.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arc | Visée concentrée | Taux de coup critique augmenté 3/3 | 2254202 | 1 | 2 | 3/3 | 2 WeaponPoint | Taux de coup critique | 0.25% | 0.75% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arc | Visée concentrée | Dégâts de coup critique augmentés 1/3 | 2254402 | 3 | 4 | 1/3 | 2 WeaponPoint | Dégâts de coup critique | 0.25% | 0.25% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arc | Visée concentrée | Dégâts de coup critique augmentés 2/3 | 2254402 | 3 | 4 | 2/3 | 2 WeaponPoint | Dégâts de coup critique | 0.25% | 0.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arc | Visée concentrée | Dégâts de coup critique augmentés 3/3 | 2254402 | 3 | 4 | 3/3 | 2 WeaponPoint | Dégâts de coup critique | 0.25% | 0.75% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arc | Visée sécurisée | Précision augmentée 1/3 | 2255202 | 1 | 2 | 1/3 | 2 WeaponPoint | Précision | 0.5% | 0.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arc | Visée sécurisée | Précision augmentée 2/3 | 2255202 | 1 | 2 | 2/3 | 2 WeaponPoint | Précision | 0.5% | 1% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arc | Visée sécurisée | Précision augmentée 3/3 | 2255202 | 1 | 2 | 3/3 | 2 WeaponPoint | Précision | 0.5% | 1.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arc | Visée sécurisée | Pénétration de défense augmentée 1/3 | 2255402 | 3 | 4 | 1/3 | 2 WeaponPoint | Pénétration de défense | 0.25% | 0.25% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arc | Visée sécurisée | Pénétration de défense augmentée 2/3 | 2255402 | 3 | 4 | 2/3 | 2 WeaponPoint | Pénétration de défense | 0.25% | 0.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arc | Visée sécurisée | Pénétration de défense augmentée 3/3 | 2255402 | 3 | 4 | 3/3 | 2 WeaponPoint | Pénétration de défense | 0.25% | 0.75% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| GSSkillTree | Arc | Visée concentrée | Taux de coup critique augmenté 1/3 | 2254202 | 1 | 2 | 1/3 | NON DÉTERMINÉ | Taux de coup critique | 0.25% | 0.25% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arc | Visée concentrée | Taux de coup critique augmenté 2/3 | 2254202 | 1 | 2 | 2/3 | NON DÉTERMINÉ | Taux de coup critique | 0.25% | 0.5% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arc | Visée concentrée | Taux de coup critique augmenté 3/3 | 2254202 | 1 | 2 | 3/3 | NON DÉTERMINÉ | Taux de coup critique | 0.25% | 0.75% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arc | Visée concentrée | Dégâts de coup critique augmentés 1/3 | 2254402 | 3 | 4 | 1/3 | NON DÉTERMINÉ | Dégâts de coup critique | 0.25% | 0.25% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arc | Visée concentrée | Dégâts de coup critique augmentés 2/3 | 2254402 | 3 | 4 | 2/3 | NON DÉTERMINÉ | Dégâts de coup critique | 0.25% | 0.5% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arc | Visée concentrée | Dégâts de coup critique augmentés 3/3 | 2254402 | 3 | 4 | 3/3 | NON DÉTERMINÉ | Dégâts de coup critique | 0.25% | 0.75% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arc | Visée sécurisée | Précision augmentée 1/3 | 2255202 | 1 | 2 | 1/3 | NON DÉTERMINÉ | Précision | 0.5% | 0.5% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arc | Visée sécurisée | Précision augmentée 2/3 | 2255202 | 1 | 2 | 2/3 | NON DÉTERMINÉ | Précision | 0.5% | 1% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arc | Visée sécurisée | Précision augmentée 3/3 | 2255202 | 1 | 2 | 3/3 | NON DÉTERMINÉ | Précision | 0.5% | 1.5% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arc | Visée sécurisée | Pénétration de défense augmentée 1/3 | 2255402 | 3 | 4 | 1/3 | NON DÉTERMINÉ | Pénétration de défense | 0.25% | 0.25% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arc | Visée sécurisée | Pénétration de défense augmentée 2/3 | 2255402 | 3 | 4 | 2/3 | NON DÉTERMINÉ | Pénétration de défense | 0.25% | 0.5% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arc | Visée sécurisée | Pénétration de défense augmentée 3/3 | 2255402 | 3 | 4 | 3/3 | NON DÉTERMINÉ | Pénétration de défense | 0.25% | 0.75% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 | GSSkillTree | Arc | Visée sécurisée | Visée sécurisée | 2255501 | 4 | 5 | 1/1 | 3 WeaponPoint | Dégâts infligés | 5.5% | 5.5% | FORTEMENT PROBABLE |
-| GSSkillTree | Arme à feu | Visée patiente | Pénétration de défense augmentée 1/3 | 2357202 | 1 | 2 | 1/3 | 2 WeaponPoint | Pénétration de défense | 0.25% | 0.25% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arme à feu | Visée patiente | Pénétration de défense augmentée 2/3 | 2357202 | 1 | 2 | 2/3 | 2 WeaponPoint | Pénétration de défense | 0.25% | 0.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arme à feu | Visée patiente | Pénétration de défense augmentée 3/3 | 2357202 | 1 | 2 | 3/3 | 2 WeaponPoint | Pénétration de défense | 0.25% | 0.75% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arme à feu | Visée patiente | Pénétration de défense augmentée 1/3 | 2357402 | 3 | 4 | 1/3 | 2 WeaponPoint | Pénétration de défense | 0.25% | 0.25% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arme à feu | Visée patiente | Pénétration de défense augmentée 2/3 | 2357402 | 3 | 4 | 2/3 | 2 WeaponPoint | Pénétration de défense | 0.25% | 0.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arme à feu | Visée patiente | Pénétration de défense augmentée 3/3 | 2357402 | 3 | 4 | 3/3 | 2 WeaponPoint | Pénétration de défense | 0.25% | 0.75% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Focalisateur | Énergie de mana fluide | Augmente les PM max 1/3 | 2359402 | 2 | 3 | 1/3 | 2 WeaponPoint | PM max | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
-| GSSkillTree | Focalisateur | Énergie de mana fluide | Augmente les PM max 2/3 | 2359402 | 2 | 3 | 2/3 | 2 WeaponPoint | PM max | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
-| GSSkillTree | Focalisateur | Énergie de mana fluide | Augmente les PM max 3/3 | 2359402 | 2 | 3 | 3/3 | 2 WeaponPoint | PM max | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA; coût FORTEMENT PROBABLE |
+| GSSkillTree | Arme à feu | Visée patiente | Pénétration de défense augmentée 1/3 | 2357202 | 1 | 2 | 1/3 | NON DÉTERMINÉ | Pénétration de défense | 0.25% | 0.25% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arme à feu | Visée patiente | Pénétration de défense augmentée 2/3 | 2357202 | 1 | 2 | 2/3 | NON DÉTERMINÉ | Pénétration de défense | 0.25% | 0.5% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arme à feu | Visée patiente | Pénétration de défense augmentée 3/3 | 2357202 | 1 | 2 | 3/3 | NON DÉTERMINÉ | Pénétration de défense | 0.25% | 0.75% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arme à feu | Visée patiente | Pénétration de défense augmentée 1/3 | 2357402 | 3 | 4 | 1/3 | NON DÉTERMINÉ | Pénétration de défense | 0.25% | 0.25% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arme à feu | Visée patiente | Pénétration de défense augmentée 2/3 | 2357402 | 3 | 4 | 2/3 | NON DÉTERMINÉ | Pénétration de défense | 0.25% | 0.5% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arme à feu | Visée patiente | Pénétration de défense augmentée 3/3 | 2357402 | 3 | 4 | 3/3 | NON DÉTERMINÉ | Pénétration de défense | 0.25% | 0.75% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Focalisateur | Énergie de mana fluide | Augmente les PM max 1/3 | 2359402 | 2 | 3 | 1/3 | NON DÉTERMINÉ | PM max | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| GSSkillTree | Focalisateur | Énergie de mana fluide | Augmente les PM max 2/3 | 2359402 | 2 | 3 | 2/3 | NON DÉTERMINÉ | PM max | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| GSSkillTree | Focalisateur | Énergie de mana fluide | Augmente les PM max 3/3 | 2359402 | 2 | 3 | 3/3 | NON DÉTERMINÉ | PM max | NON DÉTERMINÉ | NON DÉTERMINÉ | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 | GSSkillTree | Arme d'hast | Fer-de-lance dévié | Attaque pulvérisante | 2460403 | 3 | 4 | 1/1 | 3 WeaponPoint | Dégâts conditionnels | 3% | 3% | FORTEMENT PROBABLE |
 | GSSkillTree | Arme d'hast | Fer-de-lance dévié | Attaque pulvérisante | 2460403 | 3 | 4 | 1/1 | 3 WeaponPoint | Dégâts conditionnels | 3% | 3% | FORTEMENT PROBABLE |
-| GSSkillTree | Arme d'hast | Frappe brutale | Physique endurant 1/3 | 2461401 | 2 | 3 | 1/3 | 3 WeaponPoint | Réduction des dégâts | 0.5% | 0.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arme d'hast | Frappe brutale | Physique endurant 2/3 | 2461401 | 2 | 3 | 2/3 | 3 WeaponPoint | Réduction des dégâts | 0.5% | 1% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arme d'hast | Frappe brutale | Physique endurant 3/3 | 2461401 | 2 | 3 | 3/3 | 3 WeaponPoint | Réduction des dégâts | 0.5% | 1.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arme d'hast | Frappe brutale | Amélioration des PV 1/3 | 2461403 | 2 | 3 | 1/3 | 2 WeaponPoint | PV | 1% | 1% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arme d'hast | Frappe brutale | Amélioration des PV 2/3 | 2461403 | 2 | 3 | 2/3 | 2 WeaponPoint | PV | 1% | 2% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arme d'hast | Frappe brutale | Amélioration des PV 3/3 | 2461403 | 2 | 3 | 3/3 | 2 WeaponPoint | PV | 1% | 3% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arme à deux mains | Ruée de berserker | Dégâts de coup critique augmentés 1/3 | 2462202 | 1 | 2 | 1/3 | 2 WeaponPoint | Dégâts de coup critique | 0.25% | 0.25% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arme à deux mains | Ruée de berserker | Dégâts de coup critique augmentés 2/3 | 2462202 | 1 | 2 | 2/3 | 2 WeaponPoint | Dégâts de coup critique | 0.25% | 0.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arme à deux mains | Ruée de berserker | Dégâts de coup critique augmentés 3/3 | 2462202 | 1 | 2 | 3/3 | 2 WeaponPoint | Dégâts de coup critique | 0.25% | 0.75% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| GSSkillTree | Arme d'hast | Frappe brutale | Physique endurant 1/3 | 2461401 | 2 | 3 | 1/3 | NON DÉTERMINÉ | Réduction des dégâts | 0.5% | 0.5% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arme d'hast | Frappe brutale | Physique endurant 2/3 | 2461401 | 2 | 3 | 2/3 | NON DÉTERMINÉ | Réduction des dégâts | 0.5% | 1% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arme d'hast | Frappe brutale | Physique endurant 3/3 | 2461401 | 2 | 3 | 3/3 | NON DÉTERMINÉ | Réduction des dégâts | 0.5% | 1.5% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arme d'hast | Frappe brutale | Amélioration des PV 1/3 | 2461403 | 2 | 3 | 1/3 | NON DÉTERMINÉ | PV | 1% | 1% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arme d'hast | Frappe brutale | Amélioration des PV 2/3 | 2461403 | 2 | 3 | 2/3 | NON DÉTERMINÉ | PV | 1% | 2% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arme d'hast | Frappe brutale | Amélioration des PV 3/3 | 2461403 | 2 | 3 | 3/3 | NON DÉTERMINÉ | PV | 1% | 3% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arme à deux mains | Ruée de berserker | Dégâts de coup critique augmentés 1/3 | 2462202 | 1 | 2 | 1/3 | NON DÉTERMINÉ | Dégâts de coup critique | 0.25% | 0.25% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arme à deux mains | Ruée de berserker | Dégâts de coup critique augmentés 2/3 | 2462202 | 1 | 2 | 2/3 | NON DÉTERMINÉ | Dégâts de coup critique | 0.25% | 0.5% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arme à deux mains | Ruée de berserker | Dégâts de coup critique augmentés 3/3 | 2462202 | 1 | 2 | 3/3 | NON DÉTERMINÉ | Dégâts de coup critique | 0.25% | 0.75% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 | GSSkillTree | Arme à deux mains | Ruée de berserker | Posture offensive | 2462501 | 3 | 5 | 1/1 | 3 WeaponPoint | Réduction des dégâts | -2.5% | -2.5% | FORTEMENT PROBABLE |
 | GSSkillTree | Arme à deux mains | Ruée de berserker | Posture offensive | 2462501 | 3 | 5 | 1/1 | 3 WeaponPoint | Dégâts infligés | 4% | 4% | FORTEMENT PROBABLE |
-| GSSkillTree | Arme à deux mains | Contre-offensive et restauration | Précision augmentée 1/3 | 2463202 | 1 | 2 | 1/3 | 2 WeaponPoint | Précision | 0.5% | 0.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arme à deux mains | Contre-offensive et restauration | Précision augmentée 2/3 | 2463202 | 1 | 2 | 2/3 | 2 WeaponPoint | Précision | 0.5% | 1% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arme à deux mains | Contre-offensive et restauration | Précision augmentée 3/3 | 2463202 | 1 | 2 | 3/3 | 2 WeaponPoint | Précision | 0.5% | 1.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arme à deux mains | Contre-offensive et restauration | Attaque augmentée 1/3 | 2463302 | 2 | 3 | 1/3 | 2 WeaponPoint | Attaque | 0.5% | 0.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arme à deux mains | Contre-offensive et restauration | Attaque augmentée 2/3 | 2463302 | 2 | 3 | 2/3 | 2 WeaponPoint | Attaque | 0.5% | 1% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| GSSkillTree | Arme à deux mains | Contre-offensive et restauration | Attaque augmentée 3/3 | 2463302 | 2 | 3 | 3/3 | 2 WeaponPoint | Attaque | 0.5% | 1.5% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | Attaque augmentée 1/3 | 31100102 | 0 | 1 | 1/3 | 1 SpecialPoint | Attaque | 1% | 1% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | Attaque augmentée 2/3 | 31100102 | 0 | 1 | 2/3 | 1 SpecialPoint | Attaque | 1% | 2% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | Attaque augmentée 3/3 | 31100102 | 0 | 1 | 3/3 | 1 SpecialPoint | Attaque | 1% | 3% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | Défense augmentée 1/3 | 31100201 | 1 | 2 | 1/3 | 1 SpecialPoint | Défense | 1% | 1% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | Défense augmentée 2/3 | 31100201 | 1 | 2 | 2/3 | 1 SpecialPoint | Défense | 1% | 2% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | Défense augmentée 3/3 | 31100201 | 1 | 2 | 3/3 | 1 SpecialPoint | Défense | 1% | 3% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | PV augmentés 1/3 | 31100203 | 1 | 2 | 1/3 | 1 SpecialPoint | PV | 1% | 1% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | PV augmentés 2/3 | 31100203 | 1 | 2 | 2/3 | 1 SpecialPoint | PV | 1% | 2% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | PV augmentés 3/3 | 31100203 | 1 | 2 | 3/3 | 1 SpecialPoint | PV | 1% | 3% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | Attaque augmentée 1/3 | 31100302 | 2 | 3 | 1/3 | 1 SpecialPoint | Attaque | 1% | 1% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | Attaque augmentée 2/3 | 31100302 | 2 | 3 | 2/3 | 1 SpecialPoint | Attaque | 1% | 2% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | Attaque augmentée 3/3 | 31100302 | 2 | 3 | 3/3 | 1 SpecialPoint | Attaque | 1% | 3% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | Défense augmentée 1/3 | 31100401 | 3 | 4 | 1/3 | 1 SpecialPoint | Défense | 1% | 1% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | Défense augmentée 2/3 | 31100401 | 3 | 4 | 2/3 | 1 SpecialPoint | Défense | 1% | 2% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | Défense augmentée 3/3 | 31100401 | 3 | 4 | 3/3 | 1 SpecialPoint | Défense | 1% | 3% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | PV augmentés 1/3 | 31100403 | 3 | 4 | 1/3 | 1 SpecialPoint | PV | 1% | 1% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | PV augmentés 2/3 | 31100403 | 3 | 4 | 2/3 | 1 SpecialPoint | PV | 1% | 2% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | PV augmentés 3/3 | 31100403 | 3 | 4 | 3/3 | 1 SpecialPoint | PV | 1% | 3% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | Attaque augmentée 1/3 | 31100502 | 4 | 5 | 1/3 | 1 SpecialPoint | Attaque | 1% | 1% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | Attaque augmentée 2/3 | 31100502 | 4 | 5 | 2/3 | 1 SpecialPoint | Attaque | 1% | 2% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | Attaque augmentée 3/3 | 31100502 | 4 | 5 | 3/3 | 1 SpecialPoint | Attaque | 1% | 3% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | Défense augmentée 1/3 | 31100601 | 5 | 6 | 1/3 | 1 SpecialPoint | Défense | 1% | 1% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | Défense augmentée 2/3 | 31100601 | 5 | 6 | 2/3 | 1 SpecialPoint | Défense | 1% | 2% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | Défense augmentée 3/3 | 31100601 | 5 | 6 | 3/3 | 1 SpecialPoint | Défense | 1% | 3% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | PV augmentés 1/3 | 31100603 | 5 | 6 | 1/3 | 1 SpecialPoint | PV | 1% | 1% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | PV augmentés 2/3 | 31100603 | 5 | 6 | 2/3 | 1 SpecialPoint | PV | 1% | 2% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle I | PV augmentés 3/3 | 31100603 | 5 | 6 | 3/3 | 1 SpecialPoint | PV | 1% | 3% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Taux de coup critique augmenté 1/3 | 31101102 | 0 | 1 | 1/3 | 1 SpecialPoint | Taux de coup critique | 0.33% | 0.33% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Taux de coup critique augmenté 2/3 | 31101102 | 0 | 1 | 2/3 | 1 SpecialPoint | Taux de coup critique | 0.33% | 0.66% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Taux de coup critique augmenté 3/3 | 31101102 | 0 | 1 | 3/3 | 1 SpecialPoint | Taux de coup critique | 0.33% | 0.99% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Pénétration de défense augmentée 1/3 | 31101201 | 1 | 2 | 1/3 | 1 SpecialPoint | Pénétration de défense | 0.33% | 0.33% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Pénétration de défense augmentée 2/3 | 31101201 | 1 | 2 | 2/3 | 1 SpecialPoint | Pénétration de défense | 0.33% | 0.66% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Pénétration de défense augmentée 3/3 | 31101201 | 1 | 2 | 3/3 | 1 SpecialPoint | Pénétration de défense | 0.33% | 0.99% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Pénétration de défense augmentée 1/3 | 31101203 | 1 | 2 | 1/3 | 1 SpecialPoint | Pénétration de défense | 0.33% | 0.33% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Pénétration de défense augmentée 2/3 | 31101203 | 1 | 2 | 2/3 | 1 SpecialPoint | Pénétration de défense | 0.33% | 0.66% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Pénétration de défense augmentée 3/3 | 31101203 | 1 | 2 | 3/3 | 1 SpecialPoint | Pénétration de défense | 0.33% | 0.99% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Taux de coup critique augmenté 1/3 | 31101302 | 2 | 3 | 1/3 | 1 SpecialPoint | Taux de coup critique | 0.33% | 0.33% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Taux de coup critique augmenté 2/3 | 31101302 | 2 | 3 | 2/3 | 1 SpecialPoint | Taux de coup critique | 0.33% | 0.66% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Taux de coup critique augmenté 3/3 | 31101302 | 2 | 3 | 3/3 | 1 SpecialPoint | Taux de coup critique | 0.33% | 0.99% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Pénétration de défense augmentée 1/3 | 31101401 | 3 | 4 | 1/3 | 1 SpecialPoint | Pénétration de défense | 0.33% | 0.33% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Pénétration de défense augmentée 2/3 | 31101401 | 3 | 4 | 2/3 | 1 SpecialPoint | Pénétration de défense | 0.33% | 0.66% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Pénétration de défense augmentée 3/3 | 31101401 | 3 | 4 | 3/3 | 1 SpecialPoint | Pénétration de défense | 0.33% | 0.99% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Pénétration de défense augmentée 1/3 | 31101403 | 3 | 4 | 1/3 | 1 SpecialPoint | Pénétration de défense | 0.33% | 0.33% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Pénétration de défense augmentée 2/3 | 31101403 | 3 | 4 | 2/3 | 1 SpecialPoint | Pénétration de défense | 0.33% | 0.66% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Pénétration de défense augmentée 3/3 | 31101403 | 3 | 4 | 3/3 | 1 SpecialPoint | Pénétration de défense | 0.33% | 0.99% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Dégâts subis réduits 1/3 | 31101501 | 4 | 5 | 1/3 | 1 SpecialPoint | Réduction des dégâts | 0.33% | 0.33% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Dégâts subis réduits 2/3 | 31101501 | 4 | 5 | 2/3 | 1 SpecialPoint | Réduction des dégâts | 0.33% | 0.66% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Dégâts subis réduits 3/3 | 31101501 | 4 | 5 | 3/3 | 1 SpecialPoint | Réduction des dégâts | 0.33% | 0.99% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Dégâts subis réduits 1/3 | 31101503 | 4 | 5 | 1/3 | 1 SpecialPoint | Réduction des dégâts | 0.33% | 0.33% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Dégâts subis réduits 2/3 | 31101503 | 4 | 5 | 2/3 | 1 SpecialPoint | Réduction des dégâts | 0.33% | 0.66% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Dégâts subis réduits 3/3 | 31101503 | 4 | 5 | 3/3 | 1 SpecialPoint | Réduction des dégâts | 0.33% | 0.99% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Taux de coup critique augmenté 1/3 | 31101601 | 5 | 6 | 1/3 | 1 SpecialPoint | Taux de coup critique | 0.33% | 0.33% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Taux de coup critique augmenté 2/3 | 31101601 | 5 | 6 | 2/3 | 1 SpecialPoint | Taux de coup critique | 0.33% | 0.66% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Taux de coup critique augmenté 3/3 | 31101601 | 5 | 6 | 3/3 | 1 SpecialPoint | Taux de coup critique | 0.33% | 0.99% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Taux de coup critique augmenté 1/3 | 31101603 | 5 | 6 | 1/3 | 1 SpecialPoint | Taux de coup critique | 0.33% | 0.33% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Taux de coup critique augmenté 2/3 | 31101603 | 5 | 6 | 2/3 | 1 SpecialPoint | Taux de coup critique | 0.33% | 0.66% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| LordSkillTree | Physique | Amélioration corporelle II | Taux de coup critique augmenté 3/3 | 31101603 | 5 | 6 | 3/3 | 1 SpecialPoint | Taux de coup critique | 0.33% | 0.99% | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| GSSkillTree | Arme à deux mains | Contre-offensive et restauration | Précision augmentée 1/3 | 2463202 | 1 | 2 | 1/3 | NON DÉTERMINÉ | Précision | 0.5% | 0.5% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arme à deux mains | Contre-offensive et restauration | Précision augmentée 2/3 | 2463202 | 1 | 2 | 2/3 | NON DÉTERMINÉ | Précision | 0.5% | 1% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arme à deux mains | Contre-offensive et restauration | Précision augmentée 3/3 | 2463202 | 1 | 2 | 3/3 | NON DÉTERMINÉ | Précision | 0.5% | 1.5% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arme à deux mains | Contre-offensive et restauration | Attaque augmentée 1/3 | 2463302 | 2 | 3 | 1/3 | NON DÉTERMINÉ | Attaque | 0.5% | 0.5% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arme à deux mains | Contre-offensive et restauration | Attaque augmentée 2/3 | 2463302 | 2 | 3 | 2/3 | NON DÉTERMINÉ | Attaque | 0.5% | 1% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| GSSkillTree | Arme à deux mains | Contre-offensive et restauration | Attaque augmentée 3/3 | 2463302 | 2 | 3 | 3/3 | NON DÉTERMINÉ | Attaque | 0.5% | 1.5% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | Attaque augmentée 1/3 | 31100102 | 0 | 1 | 1/3 | NON DÉTERMINÉ | Attaque | 1% | 1% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | Attaque augmentée 2/3 | 31100102 | 0 | 1 | 2/3 | NON DÉTERMINÉ | Attaque | 1% | 2% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | Attaque augmentée 3/3 | 31100102 | 0 | 1 | 3/3 | NON DÉTERMINÉ | Attaque | 1% | 3% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | Défense augmentée 1/3 | 31100201 | 1 | 2 | 1/3 | NON DÉTERMINÉ | Défense | 1% | 1% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | Défense augmentée 2/3 | 31100201 | 1 | 2 | 2/3 | NON DÉTERMINÉ | Défense | 1% | 2% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | Défense augmentée 3/3 | 31100201 | 1 | 2 | 3/3 | NON DÉTERMINÉ | Défense | 1% | 3% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | PV augmentés 1/3 | 31100203 | 1 | 2 | 1/3 | NON DÉTERMINÉ | PV | 1% | 1% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | PV augmentés 2/3 | 31100203 | 1 | 2 | 2/3 | NON DÉTERMINÉ | PV | 1% | 2% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | PV augmentés 3/3 | 31100203 | 1 | 2 | 3/3 | NON DÉTERMINÉ | PV | 1% | 3% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | Attaque augmentée 1/3 | 31100302 | 2 | 3 | 1/3 | NON DÉTERMINÉ | Attaque | 1% | 1% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | Attaque augmentée 2/3 | 31100302 | 2 | 3 | 2/3 | NON DÉTERMINÉ | Attaque | 1% | 2% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | Attaque augmentée 3/3 | 31100302 | 2 | 3 | 3/3 | NON DÉTERMINÉ | Attaque | 1% | 3% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | Défense augmentée 1/3 | 31100401 | 3 | 4 | 1/3 | NON DÉTERMINÉ | Défense | 1% | 1% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | Défense augmentée 2/3 | 31100401 | 3 | 4 | 2/3 | NON DÉTERMINÉ | Défense | 1% | 2% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | Défense augmentée 3/3 | 31100401 | 3 | 4 | 3/3 | NON DÉTERMINÉ | Défense | 1% | 3% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | PV augmentés 1/3 | 31100403 | 3 | 4 | 1/3 | NON DÉTERMINÉ | PV | 1% | 1% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | PV augmentés 2/3 | 31100403 | 3 | 4 | 2/3 | NON DÉTERMINÉ | PV | 1% | 2% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | PV augmentés 3/3 | 31100403 | 3 | 4 | 3/3 | NON DÉTERMINÉ | PV | 1% | 3% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | Attaque augmentée 1/3 | 31100502 | 4 | 5 | 1/3 | NON DÉTERMINÉ | Attaque | 1% | 1% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | Attaque augmentée 2/3 | 31100502 | 4 | 5 | 2/3 | NON DÉTERMINÉ | Attaque | 1% | 2% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | Attaque augmentée 3/3 | 31100502 | 4 | 5 | 3/3 | NON DÉTERMINÉ | Attaque | 1% | 3% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | Défense augmentée 1/3 | 31100601 | 5 | 6 | 1/3 | NON DÉTERMINÉ | Défense | 1% | 1% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | Défense augmentée 2/3 | 31100601 | 5 | 6 | 2/3 | NON DÉTERMINÉ | Défense | 1% | 2% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | Défense augmentée 3/3 | 31100601 | 5 | 6 | 3/3 | NON DÉTERMINÉ | Défense | 1% | 3% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | PV augmentés 1/3 | 31100603 | 5 | 6 | 1/3 | NON DÉTERMINÉ | PV | 1% | 1% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | PV augmentés 2/3 | 31100603 | 5 | 6 | 2/3 | NON DÉTERMINÉ | PV | 1% | 2% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle I | PV augmentés 3/3 | 31100603 | 5 | 6 | 3/3 | NON DÉTERMINÉ | PV | 1% | 3% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Taux de coup critique augmenté 1/3 | 31101102 | 0 | 1 | 1/3 | NON DÉTERMINÉ | Taux de coup critique | 0.33% | 0.33% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Taux de coup critique augmenté 2/3 | 31101102 | 0 | 1 | 2/3 | NON DÉTERMINÉ | Taux de coup critique | 0.33% | 0.66% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Taux de coup critique augmenté 3/3 | 31101102 | 0 | 1 | 3/3 | NON DÉTERMINÉ | Taux de coup critique | 0.33% | 0.99% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Pénétration de défense augmentée 1/3 | 31101201 | 1 | 2 | 1/3 | NON DÉTERMINÉ | Pénétration de défense | 0.33% | 0.33% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Pénétration de défense augmentée 2/3 | 31101201 | 1 | 2 | 2/3 | NON DÉTERMINÉ | Pénétration de défense | 0.33% | 0.66% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Pénétration de défense augmentée 3/3 | 31101201 | 1 | 2 | 3/3 | NON DÉTERMINÉ | Pénétration de défense | 0.33% | 0.99% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Pénétration de défense augmentée 1/3 | 31101203 | 1 | 2 | 1/3 | NON DÉTERMINÉ | Pénétration de défense | 0.33% | 0.33% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Pénétration de défense augmentée 2/3 | 31101203 | 1 | 2 | 2/3 | NON DÉTERMINÉ | Pénétration de défense | 0.33% | 0.66% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Pénétration de défense augmentée 3/3 | 31101203 | 1 | 2 | 3/3 | NON DÉTERMINÉ | Pénétration de défense | 0.33% | 0.99% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Taux de coup critique augmenté 1/3 | 31101302 | 2 | 3 | 1/3 | NON DÉTERMINÉ | Taux de coup critique | 0.33% | 0.33% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Taux de coup critique augmenté 2/3 | 31101302 | 2 | 3 | 2/3 | NON DÉTERMINÉ | Taux de coup critique | 0.33% | 0.66% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Taux de coup critique augmenté 3/3 | 31101302 | 2 | 3 | 3/3 | NON DÉTERMINÉ | Taux de coup critique | 0.33% | 0.99% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Pénétration de défense augmentée 1/3 | 31101401 | 3 | 4 | 1/3 | NON DÉTERMINÉ | Pénétration de défense | 0.33% | 0.33% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Pénétration de défense augmentée 2/3 | 31101401 | 3 | 4 | 2/3 | NON DÉTERMINÉ | Pénétration de défense | 0.33% | 0.66% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Pénétration de défense augmentée 3/3 | 31101401 | 3 | 4 | 3/3 | NON DÉTERMINÉ | Pénétration de défense | 0.33% | 0.99% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Pénétration de défense augmentée 1/3 | 31101403 | 3 | 4 | 1/3 | NON DÉTERMINÉ | Pénétration de défense | 0.33% | 0.33% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Pénétration de défense augmentée 2/3 | 31101403 | 3 | 4 | 2/3 | NON DÉTERMINÉ | Pénétration de défense | 0.33% | 0.66% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Pénétration de défense augmentée 3/3 | 31101403 | 3 | 4 | 3/3 | NON DÉTERMINÉ | Pénétration de défense | 0.33% | 0.99% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Dégâts subis réduits 1/3 | 31101501 | 4 | 5 | 1/3 | NON DÉTERMINÉ | Réduction des dégâts | 0.33% | 0.33% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Dégâts subis réduits 2/3 | 31101501 | 4 | 5 | 2/3 | NON DÉTERMINÉ | Réduction des dégâts | 0.33% | 0.66% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Dégâts subis réduits 3/3 | 31101501 | 4 | 5 | 3/3 | NON DÉTERMINÉ | Réduction des dégâts | 0.33% | 0.99% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Dégâts subis réduits 1/3 | 31101503 | 4 | 5 | 1/3 | NON DÉTERMINÉ | Réduction des dégâts | 0.33% | 0.33% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Dégâts subis réduits 2/3 | 31101503 | 4 | 5 | 2/3 | NON DÉTERMINÉ | Réduction des dégâts | 0.33% | 0.66% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Dégâts subis réduits 3/3 | 31101503 | 4 | 5 | 3/3 | NON DÉTERMINÉ | Réduction des dégâts | 0.33% | 0.99% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Taux de coup critique augmenté 1/3 | 31101601 | 5 | 6 | 1/3 | NON DÉTERMINÉ | Taux de coup critique | 0.33% | 0.33% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Taux de coup critique augmenté 2/3 | 31101601 | 5 | 6 | 2/3 | NON DÉTERMINÉ | Taux de coup critique | 0.33% | 0.66% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Taux de coup critique augmenté 3/3 | 31101601 | 5 | 6 | 3/3 | NON DÉTERMINÉ | Taux de coup critique | 0.33% | 0.99% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Taux de coup critique augmenté 1/3 | 31101603 | 5 | 6 | 1/3 | NON DÉTERMINÉ | Taux de coup critique | 0.33% | 0.33% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Taux de coup critique augmenté 2/3 | 31101603 | 5 | 6 | 2/3 | NON DÉTERMINÉ | Taux de coup critique | 0.33% | 0.66% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| LordSkillTree | Physique | Amélioration corporelle II | Taux de coup critique augmenté 3/3 | 31101603 | 5 | 6 | 3/3 | NON DÉTERMINÉ | Taux de coup critique | 0.33% | 0.99% | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 ## Ce que les données confirment
 
 - **CONFIRMÉ PAR LES GAMEDATA**: `NodeValue` référence un buff ou une compétence; pour les talents de stat, le buff contient le type d'effet et la valeur brute.
 - **FORTEMENT PROBABLE**: pour les stats `AttFR`, `ArmFR`, `CriticalP`, `CriDamP`, `DamP`, `PrecisionP` et `IncreaseMHP`, la valeur affichée utilise `raw * 0.01%`, car de nombreux textes de buffs utilisent explicitement `{...,0.01}%`.
 - **FORTEMENT PROBABLE**: quand `NodeMaxLevel=3` et que le buff a une seule valeur brute, chaque rang réapplique le même gain marginal; le cumul est donc `raw * rang`.
+- **NON DÉTERMINÉ**: pour `NodeMaxLevel > 1`, une `LevelUpCostValue` singleton est conservée comme donnée brute mais n'est pas répétée comme coût gameplay par rang.
 - **NON DÉTERMINÉ**: les données GameData seules ne prouvent pas si plusieurs sources de même stat sont additionnées avant ou après d'autres multiplicateurs runtime.
 - **NON DÉTERMINÉ**: la base exacte affectée par `AttFR` est nommée comme Attaque finale/ratio dans les tables (`FR`), mais l'ordre exact par rapport à attaque de base, arme, artefacts ou buffs temporaires n'est pas prouvé ici.
 - Les colonnes `LogicalTalentID`, `LogicalTalentName`, `LogicalRank` et `LogicalGroupingEvidence` séparent nœud GameData, talent logique et rang logique sans fusionner par nom.

@@ -17,6 +17,7 @@ CANONICAL_OUT = OUT / "data" / "sjw_talent_tree.json"
 DATA_AUDIT_OUT = OUT / "reports" / "SJW_TALENT_TREE_DATA_AUDIT.md"
 REPORT_OUT = OUT / "reports" / "SJW_TALENT_TREE.md"
 EFF_OUT = OUT / "reports" / "SJW_TALENT_TREE_COST_EFFICIENCY.md"
+COST_AUDIT_OUT = OUT / "reports" / "SJW_TALENT_TREE_COST_SEMANTICS_AUDIT.md"
 
 MAIN = Path("/media/SSD_Evogames/SteamLibrary/steamapps/common/Solo Leveling/GameData")
 CODEC_PATH = Path("/home/cryptologiq/SoloLevelingAR-SaveGameEditor/tools/gamedata_codec.py")
@@ -34,6 +35,9 @@ CSV_COLUMNS = [
     "Rank",
     "MaxRank",
     "Cost",
+    "PointCurrency",
+    "RawLevelUpCostValue",
+    "CostConfidence",
     "RequiredLevel",
     "ParentNodeID",
     "RelationScope",
@@ -213,8 +217,14 @@ def progress_for_effect(effect_type: str, raw_value, rank: int):
     return display, unit, marginal_display, cumulative_display
 
 
-def cost_for_rank(cost_values, rank):
+def raw_cost_value(cost_values):
+    return "[" + ",".join(fmt_num(value) for value in cost_values) + "]" if cost_values else ""
+
+
+def cost_for_rank(cost_values, rank, max_rank):
     if not cost_values:
+        return ""
+    if max_rank > 1 and len(cost_values) == 1:
         return ""
     if len(cost_values) == 1:
         return cost_values[0]
@@ -227,8 +237,14 @@ def cost_confidence(cost_values, max_rank):
     if max_rank <= 1 or len(cost_values) == max_rank:
         return "CONFIRMÉ PAR LES GAMEDATA"
     if len(cost_values) == 1:
-        return "FORTEMENT PROBABLE"
+        return "NON DÉTERMINÉ"
     return "NON DÉTERMINÉ"
+
+
+def cost_label(cost_value, cost_kind):
+    if cost_value == "":
+        return "NON DÉTERMINÉ" if cost_kind else ""
+    return f"{fmt_num(cost_value)} {cost_kind}".strip()
 
 
 def build_tab_maps(subtabs, mains, text):
@@ -347,6 +363,8 @@ def validate_logical_rows(rows):
 def split_cost(cost):
     if not cost:
         return "", ""
+    if str(cost).startswith("NON DÉTERMINÉ"):
+        return "", ""
     parts = str(cost).split()
     return parts[0], " ".join(parts[1:])
 
@@ -409,6 +427,10 @@ def build_canonical_model(rows):
             if not rank_entries:
                 continue
             cost_value, point_currency = split_cost(rank_entries[0]["Cost"])
+            if not point_currency:
+                point_currency = rank_entries[0].get("PointCurrency", "")
+            raw_cost = rank_entries[0].get("RawLevelUpCostValue", "")
+            cost_conf = rank_entries[0].get("CostConfidence", "")
             effects = []
             for entry in sorted(rank_entries, key=lambda row: (row["EffectType"], row["BuffID"], row["AbilityID"], row["RawValue"])):
                 effects.append(
@@ -426,12 +448,14 @@ def build_canonical_model(rows):
                 )
             ranks.append(
                 {
-                    "rank": rank,
-                    "cost": cost_value,
-                    "pointCurrency": point_currency,
-                    "accessCondition": rank_entries[0]["RequiredLevel"],
-                    "effects": effects,
-                }
+                        "rank": rank,
+                        "cost": cost_value,
+                        "pointCurrency": point_currency,
+                        "rawLevelUpCostValue": raw_cost,
+                        "costConfidence": cost_conf,
+                        "accessCondition": rank_entries[0]["RequiredLevel"],
+                        "effects": effects,
+                    }
             )
         section["nodes"].append(
             {
@@ -490,6 +514,7 @@ def build_canonical_model(rows):
                 "Parent/Child est une relation NodeID -> NodeID.",
                 "VisualRow/VisualColumn correspondent à NodeTierY/NodeTierX.",
                 "Les rangs internes proviennent de NodeMaxLevel, pas des suffixes de noms localisés.",
+                "Pour NodeMaxLevel > 1, une LevelUpCostValue singleton est conservée en raw mais n'est pas répétée comme coût par rang.",
             ],
         },
         "trees": trees,
@@ -666,6 +691,123 @@ def write_data_audit(audit):
     DATA_AUDIT_OUT.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def write_cost_semantics_audit(rows):
+    COST_AUDIT_OUT.parent.mkdir(parents=True, exist_ok=True)
+    raw_nodes = [
+        node
+        for node in load_json("CharPCSkillTreeNode")
+        if str(node.get("NodeDisplay")) == "True"
+    ]
+    multi_single = []
+    physique_nodes = []
+    for node in raw_nodes:
+        max_rank = int(node.get("NodeMaxLevel") or 1)
+        cost_values = maybe_list(node.get("LevelUpCostValue"))
+        if max_rank > 1 and len(cost_values) == 1:
+            multi_single.append(node)
+        if int(node.get("SkillTreelNodeGroup") or 0) in {100, 101}:
+            physique_nodes.append(node)
+
+    patterns = Counter(
+        (
+            node.get("LevelUpCost") or "",
+            int(node.get("NodeMaxLevel") or 1),
+            raw_cost_value(maybe_list(node.get("LevelUpCostValue"))),
+        )
+        for node in multi_single
+    )
+    decoded_check = [31100102, 31100302, 31100502, 31100601, 31101102, 119101, 2150401]
+    by_id = {int(node["ID"]): node for node in raw_nodes}
+    checklist_ids = [31100102, 31100201, 31100302, 31100502, 31100601, 31101102, 31101401, 31101603]
+    first_rows_by_node = {}
+    for row in rows:
+        first_rows_by_node.setdefault(str(row["NodeID"]), row)
+
+    lines = [
+        "# SJW Talent Tree Cost Semantics Audit",
+        "",
+        "Audit ciblé sur `LevelUpCostValue` après contradiction in-game observée sur `LordSkillTree` / `Physique`.",
+        "",
+        "## Conclusion",
+        "",
+        "- Règle runtime de coût par rang: **NON DÉTERMINÉE** pour les nœuds multi-rangs dont `LevelUpCostValue` ne contient qu'une seule valeur.",
+        "- Le codec lit bien la valeur brute complète `[1]` pour Physique; ce n'est pas une liste tronquée.",
+        "- Le coût interprété n'est plus exporté comme `1 SpecialPoint` par rang pour ces cas; la valeur raw reste conservée séparément.",
+        "",
+        "## Tables contrôlées",
+        "",
+        "- `CharPCSkillTreeNode.byte`: NodeID, parents, placement, `NodeMaxLevel`, `LevelUpCost`, `LevelUpCostValue`.",
+        "- `ChComBuff.byte`: effets référencés par `NodeValue`.",
+        "- `CharPCSkillTreelMainTab.byte` / `CharPCSkillTreelSubTab.byte`: rattachement d'arbre et section.",
+        "- `ChSJWLv.byte` / `SysAccLv.byte`: attribution de points par niveau/compte, sans liaison de coût par NodeID.",
+        "- `ContentsUnlock.byte`: conditions d'accès de contenu, sans coût de rang Physique.",
+        "",
+        "## Patterns multi-rangs à liste de coût singleton",
+        "",
+        "| Monnaie raw | Max rank | Raw LevelUpCostValue | Nœuds |",
+        "|---|---:|---|---:|",
+    ]
+    for (currency, max_rank, raw_cost), count in sorted(patterns.items()):
+        lines.append(f"| {currency} | {max_rank} | `{raw_cost}` | {count} |")
+
+    lines.extend(
+        [
+            "",
+            "## Physique / NodeGroups 100 et 101",
+            "",
+            "| NodeID | Groupe | Row | Col | Max rank | LevelUpCost | Raw LevelUpCostValue | Parents | NodeValue | IconResource |",
+            "|---:|---:|---:|---:|---:|---|---|---|---:|---|",
+        ]
+    )
+    for node in sorted(physique_nodes, key=lambda item: (int(item["SkillTreelNodeGroup"]), int(item["NodeTierY"]), int(item["NodeTierX"]), int(item["ID"]))):
+        lines.append(
+            f"| {node['ID']} | {node['SkillTreelNodeGroup']} | {node['NodeTierY']} | {node['NodeTierX']} | "
+            f"{node['NodeMaxLevel']} | {node.get('LevelUpCost','')} | `{node.get('LevelUpCostValue','')}` | "
+            f"`{node.get('SlotLinkNodeID','')}` | {node.get('NodeValue','')} | {node.get('IconResource','')} |"
+        )
+
+    lines.extend(
+        [
+            "",
+            "## Vérification codec ciblée",
+            "",
+            "| NodeID | Max rank | LevelUpCost | Raw LevelUpCostValue | Remarque |",
+            "|---:|---:|---|---|---|",
+        ]
+    )
+    for node_id in decoded_check:
+        node = by_id[node_id]
+        max_rank = int(node.get("NodeMaxLevel") or 1)
+        values = maybe_list(node.get("LevelUpCostValue"))
+        if max_rank > 1 and len(values) == 1:
+            note = "coût par rang non prouvé"
+        elif max_rank > 1 and len(values) == max_rank:
+            note = "une valeur explicite par rang"
+        else:
+            note = "rang unique"
+        lines.append(f"| {node_id} | {max_rank} | {node.get('LevelUpCost','')} | `{raw_cost_value(values)}` | {note} |")
+
+    lines.extend(
+        [
+            "",
+            "## Checklist in-game à relever",
+            "",
+            "| NodeID | Nom généré | Branche | Position UI | Rang à relever | Raw LevelUpCostValue | Coût affiché in-game |",
+            "|---:|---|---|---|---|---|---|",
+        ]
+    )
+    for node_id in checklist_ids:
+        node = by_id[node_id]
+        row = first_rows_by_node.get(str(node_id), {})
+        lines.append(
+            f"| {node_id} | {row.get('LogicalTalentName','')} | {row.get('Branch','')} | "
+            f"R{node.get('NodeTierY')} / C{node.get('NodeTierX')} | I, II, III | "
+            f"`{node.get('LevelUpCostValue','')}` | à relever |"
+        )
+
+    COST_AUDIT_OUT.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def make_rows():
     nodes = load_json("CharPCSkillTreeNode")
     buffs = {row["ID"]: row for row in load_json("ChComBuff")}
@@ -696,6 +838,7 @@ def make_rows():
         costs = maybe_list(node.get("LevelUpCostValue"))
         cost_kind = node.get("LevelUpCost") or ""
         cost_note = cost_confidence(costs, max_rank)
+        raw_cost = raw_cost_value(costs)
         parent = ",".join(str(x) for x in maybe_list(node.get("SlotLinkNodeID")))
         unlock_id = node.get("NodeContentsUnlock") or 0
         required = ""
@@ -735,9 +878,7 @@ def make_rows():
 
         for rank in range(1, max_rank + 1):
             logical = logical_talent_for_node(node, base_name, rank)
-            rank_cost = cost_for_rank(costs, rank)
-            if rank_cost != "" and cost_kind:
-                rank_cost = f"{rank_cost} {cost_kind}"
+            rank_cost = cost_label(cost_for_rank(costs, rank, max_rank), cost_kind)
             rank_suffix = f" {rank}/{max_rank}" if max_rank > 1 else ""
             for effect_type, raw in effects:
                 display, unit, effect_conf = display_for_effect(effect_type, raw)
@@ -758,6 +899,9 @@ def make_rows():
                         "Rank": rank,
                         "MaxRank": max_rank,
                         "Cost": rank_cost,
+                        "PointCurrency": cost_kind,
+                        "RawLevelUpCostValue": raw_cost,
+                        "CostConfidence": cost_note,
                         "RequiredLevel": required,
                         "ParentNodeID": parent,
                         "RelationScope": "NODE",
@@ -956,6 +1100,7 @@ def write_report(rows):
             "- **CONFIRMÉ PAR LES GAMEDATA**: `NodeValue` référence un buff ou une compétence; pour les talents de stat, le buff contient le type d'effet et la valeur brute.",
             "- **FORTEMENT PROBABLE**: pour les stats `AttFR`, `ArmFR`, `CriticalP`, `CriDamP`, `DamP`, `PrecisionP` et `IncreaseMHP`, la valeur affichée utilise `raw * 0.01%`, car de nombreux textes de buffs utilisent explicitement `{...,0.01}%`.",
             "- **FORTEMENT PROBABLE**: quand `NodeMaxLevel=3` et que le buff a une seule valeur brute, chaque rang réapplique le même gain marginal; le cumul est donc `raw * rang`.",
+            "- **NON DÉTERMINÉ**: pour `NodeMaxLevel > 1`, une `LevelUpCostValue` singleton est conservée comme donnée brute mais n'est pas répétée comme coût gameplay par rang.",
             "- **NON DÉTERMINÉ**: les données GameData seules ne prouvent pas si plusieurs sources de même stat sont additionnées avant ou après d'autres multiplicateurs runtime.",
             "- **NON DÉTERMINÉ**: la base exacte affectée par `AttFR` est nommée comme Attaque finale/ratio dans les tables (`FR`), mais l'ordre exact par rapport à attaque de base, arme, artefacts ou buffs temporaires n'est pas prouvé ici.",
             "- Les colonnes `LogicalTalentID`, `LogicalTalentName`, `LogicalRank` et `LogicalGroupingEvidence` séparent nœud GameData, talent logique et rang logique sans fusionner par nom.",
@@ -1034,7 +1179,7 @@ def write_efficiency(rows):
             "",
             "## Notes",
             "",
-            "- Les nœuds avec `LevelUpCostValue=[1]` et `NodeMaxLevel=3` sont traités comme coût identique par rang: **FORTEMENT PROBABLE**, pas confirmé par une liste à trois valeurs.",
+            "- Les nœuds multi-rangs avec une seule valeur dans `LevelUpCostValue` sont exclus: le coût gameplay par rang est `NON DÉTERMINÉ`.",
             "- Les monnaies de coût sont séparées: `SkillPoint`, `WeaponPoint`, `SpecialPoint` et `IdentityPoint` ne sont pas comparées entre elles.",
             "- L'efficacité ne compare pas les dégâts réels en combat: elle compare seulement les gains en pourcentage dont l'unité est interprétée.",
         ]
@@ -1052,11 +1197,13 @@ def main():
     write_csv(rows)
     write_canonical_model(canonical_model)
     write_data_audit(audit)
+    write_cost_semantics_audit(rows)
     write_report(rows)
     write_efficiency(rows)
     print(f"wrote {CSV_OUT} ({len(rows)} rows)")
     print(f"wrote {CANONICAL_OUT}")
     print(f"wrote {DATA_AUDIT_OUT}")
+    print(f"wrote {COST_AUDIT_OUT}")
     print(f"wrote {REPORT_OUT}")
     print(f"wrote {EFF_OUT}")
 

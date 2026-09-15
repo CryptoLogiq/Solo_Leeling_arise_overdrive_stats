@@ -186,8 +186,10 @@ def node_effects(buff):
     return effects
 
 
-def cost_for_rank(costs, rank):
+def cost_for_rank(costs, rank, max_rank):
     if not costs:
+        return None
+    if max_rank > 1 and len(costs) == 1:
         return None
     if len(costs) == 1:
         return costs[0]
@@ -200,7 +202,7 @@ def cost_confidence(costs, max_rank):
     if max_rank <= 1 or len(costs) == max_rank:
         return "CONFIRMÉ PAR LES GAMEDATA"
     if len(costs) == 1:
-        return "FORTEMENT PROBABLE"
+        return "NON DÉTERMINÉ"
     return "NON DÉTERMINÉ"
 
 
@@ -273,8 +275,14 @@ def path_cost(node_id, node_by_id, first_cost_by_id, visiting=None):
             parent_id = int(parent)
         except (TypeError, ValueError):
             continue
-        total += first_cost_by_id.get(parent_id, 0)
-        total += path_cost(parent_id, node_by_id, first_cost_by_id, visiting)
+        first_cost = first_cost_by_id.get(parent_id, 0)
+        if first_cost is None:
+            return None
+        parent_path = path_cost(parent_id, node_by_id, first_cost_by_id, visiting)
+        if parent_path is None:
+            return None
+        total += first_cost
+        total += parent_path
     return total
 
 
@@ -332,8 +340,8 @@ def make_rows():
     first_cost_by_id = {}
     for node in nodes:
         costs = maybe_list(node.get("LevelUpCostValue"))
-        first = cost_for_rank(costs, 1)
-        first_cost_by_id[node["ID"]] = first or 0
+        first = cost_for_rank(costs, 1, int(node.get("NodeMaxLevel") or 1))
+        first_cost_by_id[node["ID"]] = first
 
     rows = []
     for node in sorted(nodes, key=lambda r: (r["SkillTreelNodeGroup"], r["NodeTierY"], r["NodeTierX"], r["ID"])):
@@ -354,7 +362,8 @@ def make_rows():
         costs = maybe_list(node.get("LevelUpCostValue"))
         cost_kind = node.get("LevelUpCost") or ""
         parent_ids = ",".join(str(parent) for parent in maybe_list(node.get("SlotLinkNodeID")))
-        required_path = path_cost(node["ID"], node_by_id, first_cost_by_id)
+        required_path_value = path_cost(node["ID"], node_by_id, first_cost_by_id)
+        required_path = "NON DÉTERMINÉ" if required_path_value is None else required_path_value
         unlock_id = node.get("NodeContentsUnlock") or 0
         unlock = contents.get(unlock_id, {})
         required = ""
@@ -378,8 +387,8 @@ def make_rows():
             )
             displayed, gain_number, effect_conf = display_value(effect_type, raw)
             for rank in range(1, max_rank + 1):
-                direct_cost = cost_for_rank(costs, rank)
-                cost_label = "" if direct_cost is None else f"{direct_cost} {cost_kind}".strip()
+                direct_cost = cost_for_rank(costs, rank, max_rank)
+                cost_label = "NON DÉTERMINÉ" if direct_cost is None and cost_kind else f"{direct_cost} {cost_kind}".strip()
                 gain_per_point = "NON DÉTERMINÉ"
                 if direct_cost not in (None, 0) and gain_number is not None:
                     gain_per_point = fmt_num(gain_number / direct_cost)
@@ -582,7 +591,7 @@ def write_report(rows, family_notes):
             "",
             "Conclusion Attaque: **Observation vraie seulement pour certains nœuds**. "
             "Les nœuds `119101` à `119601` sont des talents distincts par rangée visuelle avec valeurs +1% à +6%, mais leur coût de rang 1 n'est pas toujours proportionnel à cette rangée. "
-            "Les nœuds `31100102`, `31100302` et `31100502` répètent au contraire le même +1% pour 1 point à différentes profondeurs de progression.",
+            "Les nœuds `31100102`, `31100302` et `31100502` répètent le même +1% marginal, mais leur coût par rang reste `NON DÉTERMINÉ` parce que `LevelUpCostValue=[1]` n'est pas une liste explicite par rang.",
         ]
     )
 
@@ -613,7 +622,7 @@ def write_report(rows, family_notes):
             "",
             "- La priorité directe peut utiliser `GainPerPoint` uniquement quand l'unité du gain est démontrée, pas sur les valeurs brutes.",
             "- Deux nœuds donnant le même gain par point ont la même rentabilité directe; une rangée visuelle plus basse n'est pas automatiquement meilleure.",
-            "- `RequiredPathCost` sépare le coût d'accès du coût direct. Il indique les points minimums explicitement reliés par les parents, mais ces prérequis donnent eux-mêmes des bonus et ne doivent pas être considérés comme perdus.",
+            "- `RequiredPathCost` sépare le coût d'accès du coût direct. Il reste `NON DÉTERMINÉ` dès qu'un coût direct du chemin n'est pas démontré.",
             "- Les familles à rendement constant sont de bons candidats de remplissage stable pour leveling; les familles à rendement croissant peuvent devenir intéressantes une fois le chemin déjà ouvert.",
             "- Les effets conditionnels, bruts ou non comparables doivent être évalués selon le style de jeu et les conditions d'activation, pas uniquement par une formule gain/coût.",
         ]

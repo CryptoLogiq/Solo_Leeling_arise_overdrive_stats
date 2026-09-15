@@ -161,11 +161,20 @@ def cost_summary(rows):
     costs_by_rank = defaultdict(list)
     units = []
     confidences = []
+    raw_values = []
     for row in rows:
         if row["Cost"]:
+            if str(row["Cost"]).startswith("NON DÉTERMINÉ"):
+                costs_by_rank[int(row.get("LogicalRank") or row["Rank"])].append("NON DÉTERMINÉ")
+                if row.get("RawLevelUpCostValue"):
+                    raw_values.append(row["RawLevelUpCostValue"])
+                if row.get("PointCurrency"):
+                    units.append(row["PointCurrency"])
+                confidences.append(row["Confidence"])
+                continue
             parts = row["Cost"].split()
             costs_by_rank[int(row.get("LogicalRank") or row["Rank"])].append(parts[0])
-            units.append(" ".join(parts[1:]))
+            units.append(row.get("PointCurrency") or " ".join(parts[1:]))
         confidences.append(row["Confidence"])
     unit = next((unit for unit in units if unit), "")
     ranks = sorted(costs_by_rank)
@@ -176,6 +185,10 @@ def cost_summary(rows):
     if not costs:
         return "", None, False
     ambiguous = any("coût FORTEMENT PROBABLE" in conf or "coût NON" in conf for conf in confidences)
+    if any(cost == "NON DÉTERMINÉ" for cost in costs):
+        raw = sorted(set(raw_values))
+        raw_label = f" (raw {raw[0]} {unit})" if len(raw) == 1 and unit else ""
+        return "NON DÉTERMINÉ" + raw_label, None, True
     max_rank = max(int(row.get("LogicalRank") or row["Rank"]) for row in rows if row.get("LogicalRank") or row["Rank"])
     if len(set(costs)) == 1:
         suffix = "/rang" if max_rank > 1 else ""
@@ -186,14 +199,18 @@ def cost_summary(rows):
     if ambiguous and len(set(costs)) > 1:
         label += " - interprétation NON DÉTERMINÉE"
     elif ambiguous:
-        label += " - par rang probable"
+        label += " - interprétation NON DÉTERMINÉE"
     total = None if ambiguous and len(set(costs)) > 1 else sum(float(cost) for cost in costs if re.match(r"^-?\d+(\.\d+)?$", cost))
     return label, total, ambiguous
 
 
 def cost_unit(rows):
     for row in rows:
+        if row.get("PointCurrency"):
+            return row["PointCurrency"]
         if row["Cost"]:
+            if str(row["Cost"]).startswith("NON DÉTERMINÉ"):
+                continue
             parts = row["Cost"].split()
             if len(parts) > 1:
                 return " ".join(parts[1:])
@@ -204,6 +221,11 @@ def single_rank_cost(rows):
     costs = sorted({row["Cost"] for row in rows if row["Cost"]})
     if not costs:
         return ""
+    if any(cost.startswith("NON DÉTERMINÉ") for cost in costs):
+        raw = sorted({row.get("RawLevelUpCostValue", "") for row in rows if row.get("RawLevelUpCostValue")})
+        unit = cost_unit(rows)
+        raw_label = f" (raw {raw[0]} {unit})" if len(raw) == 1 and unit else ""
+        return "NON DÉTERMINÉ" + raw_label
     return costs[0] if len(costs) == 1 else " / ".join(costs)
 
 
@@ -468,6 +490,9 @@ def required_path_cost(node_id, nodes):
             parent_node = nodes.get(parent)
             if not parent_node:
                 continue
+            if parent_node["ranks"][0].get("costConfidence") == "NON DÉTERMINÉ":
+                uncertain = True
+                continue
             try:
                 total += float(parent_node["ranks"][0].get("cost") or 0)
             except (TypeError, ValueError):
@@ -482,7 +507,7 @@ def required_path_cost(node_id, nodes):
 def required_path_access(node_id, nodes):
     value = required_path_cost(node_id, nodes)
     if value is None:
-        return "NON DÉTERMINÉ (convergence multi-parent)"
+        return "NON DÉTERMINÉ (coût de chemin)"
     return f"{value} pts requis"
 
 

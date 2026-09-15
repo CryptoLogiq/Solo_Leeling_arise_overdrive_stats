@@ -40,41 +40,6 @@ Les valeurs brutes sans conversion validée restent exclues du classement.
 | Défense | Défense augmentée 5 2/3 | 119502 | 2/3 | 4 SkillPoint | 5% | 1.2500 | FORTEMENT PROBABLE |
 | PV | PV augmentés 5 2/3 | 119503 | 2/3 | 4 SkillPoint | 5% | 1.2500 | FORTEMENT PROBABLE |
 
-### SpecialPoint
-
-| Effet | Talent | NodeID | Rang | Coût | Gain marginal | Score %/point | Confiance |
-|---|---|---:|---:|---|---:|---:|---|
-| Attaque | Attaque augmentée 1/3 | 31100102 | 1/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Attaque | Attaque augmentée 2/3 | 31100102 | 2/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Attaque | Attaque augmentée 3/3 | 31100102 | 3/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Défense | Défense augmentée 1/3 | 31100201 | 1/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Défense | Défense augmentée 2/3 | 31100201 | 2/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Défense | Défense augmentée 3/3 | 31100201 | 3/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| PV | PV augmentés 1/3 | 31100203 | 1/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| PV | PV augmentés 2/3 | 31100203 | 2/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| PV | PV augmentés 3/3 | 31100203 | 3/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Attaque | Attaque augmentée 1/3 | 31100302 | 1/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Attaque | Attaque augmentée 2/3 | 31100302 | 2/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Attaque | Attaque augmentée 3/3 | 31100302 | 3/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Défense | Défense augmentée 1/3 | 31100401 | 1/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Défense | Défense augmentée 2/3 | 31100401 | 2/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Défense | Défense augmentée 3/3 | 31100401 | 3/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| PV | PV augmentés 1/3 | 31100403 | 1/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| PV | PV augmentés 2/3 | 31100403 | 2/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| PV | PV augmentés 3/3 | 31100403 | 3/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Attaque | Attaque augmentée 1/3 | 31100502 | 1/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Attaque | Attaque augmentée 2/3 | 31100502 | 2/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Attaque | Attaque augmentée 3/3 | 31100502 | 3/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Défense | Défense augmentée 1/3 | 31100601 | 1/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Défense | Défense augmentée 2/3 | 31100601 | 2/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Défense | Défense augmentée 3/3 | 31100601 | 3/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| PV | PV augmentés 1/3 | 31100603 | 1/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| PV | PV augmentés 2/3 | 31100603 | 2/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| PV | PV augmentés 3/3 | 31100603 | 3/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Taux de coup critique | Taux de coup critique augmenté 1/3 | 31101102 | 1/3 | 1 SpecialPoint | 0.33% | 0.3300 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Taux de coup critique | Taux de coup critique augmenté 2/3 | 31101102 | 2/3 | 1 SpecialPoint | 0.33% | 0.3300 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Taux de coup critique | Taux de coup critique augmenté 3/3 | 31101102 | 3/3 | 1 SpecialPoint | 0.33% | 0.3300 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-
 ### WeaponPoint
 
 | Effet | Talent | NodeID | Rang | Coût | Gain marginal | Score %/point | Confiance |
@@ -84,31 +49,7 @@ Les valeurs brutes sans conversion validée restent exclues du classement.
 | Dégâts conditionnels | Amplification de la douleur | 2252401 | 1/1 | 3 WeaponPoint | 3% | 1.0000 | FORTEMENT PROBABLE |
 | Dégâts conditionnels | Attaque pulvérisante | 2460403 | 1/1 | 3 WeaponPoint | 3% | 1.0000 | FORTEMENT PROBABLE |
 | Dégâts conditionnels | Attaque pulvérisante | 2460403 | 1/1 | 3 WeaponPoint | 3% | 1.0000 | FORTEMENT PROBABLE |
-| Défense | Défense augmentée 1/3 | 2150403 | 1/3 | 2 WeaponPoint | 1% | 0.5000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Défense | Défense augmentée 2/3 | 2150403 | 2/3 | 2 WeaponPoint | 1% | 0.5000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Défense | Défense augmentée 3/3 | 2150403 | 3/3 | 2 WeaponPoint | 1% | 0.5000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| PV | Amélioration des PV 1/3 | 2461403 | 1/3 | 2 WeaponPoint | 1% | 0.5000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| PV | Amélioration des PV 2/3 | 2461403 | 2/3 | 2 WeaponPoint | 1% | 0.5000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| PV | Amélioration des PV 3/3 | 2461403 | 3/3 | 2 WeaponPoint | 1% | 0.5000 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Attaque | Attaque augmentée 1/3 | 2150401 | 1/3 | 2 WeaponPoint | 0.5% | 0.2500 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Attaque | Attaque augmentée 2/3 | 2150401 | 2/3 | 2 WeaponPoint | 0.5% | 0.2500 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Attaque | Attaque augmentée 3/3 | 2150401 | 3/3 | 2 WeaponPoint | 0.5% | 0.2500 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Précision | Précision augmentée 1/3 | 2151302 | 1/3 | 2 WeaponPoint | 0.5% | 0.2500 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Précision | Précision augmentée 2/3 | 2151302 | 2/3 | 2 WeaponPoint | 0.5% | 0.2500 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Précision | Précision augmentée 3/3 | 2151302 | 3/3 | 2 WeaponPoint | 0.5% | 0.2500 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Précision | Précision augmentée 1/3 | 2255202 | 1/3 | 2 WeaponPoint | 0.5% | 0.2500 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Précision | Précision augmentée 2/3 | 2255202 | 2/3 | 2 WeaponPoint | 0.5% | 0.2500 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Précision | Précision augmentée 3/3 | 2255202 | 3/3 | 2 WeaponPoint | 0.5% | 0.2500 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Précision | Précision augmentée 1/3 | 2463202 | 1/3 | 2 WeaponPoint | 0.5% | 0.2500 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Précision | Précision augmentée 2/3 | 2463202 | 2/3 | 2 WeaponPoint | 0.5% | 0.2500 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Précision | Précision augmentée 3/3 | 2463202 | 3/3 | 2 WeaponPoint | 0.5% | 0.2500 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Attaque | Attaque augmentée 1/3 | 2463302 | 1/3 | 2 WeaponPoint | 0.5% | 0.2500 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Attaque | Attaque augmentée 2/3 | 2463302 | 2/3 | 2 WeaponPoint | 0.5% | 0.2500 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Attaque | Attaque augmentée 3/3 | 2463302 | 3/3 | 2 WeaponPoint | 0.5% | 0.2500 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Réduction des dégâts | Physique endurant 1/3 | 2461401 | 1/3 | 3 WeaponPoint | 0.5% | 0.1667 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Réduction des dégâts | Physique endurant 2/3 | 2461401 | 2/3 | 3 WeaponPoint | 0.5% | 0.1667 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Réduction des dégâts | Physique endurant 3/3 | 2461401 | 3/3 | 3 WeaponPoint | 0.5% | 0.1667 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
-| Pénétration de défense | Pénétration de défense augmentée 1/3 | 2151402 | 1/3 | 2 WeaponPoint | 0.25% | 0.1250 | FORTEMENT PROBABLE; coût FORTEMENT PROBABLE |
+| Réduction des dégâts | Posture offensive | 2462501 | 1/1 | 3 WeaponPoint | -2.5% | -0.8333 | FORTEMENT PROBABLE |
 
 ## Résumé par effet et monnaie
 
@@ -119,26 +60,13 @@ Les valeurs brutes sans conversion validée restent exclues du classement.
 | SkillPoint | Dégâts de coup critique (`CriDamP`) | 18 | 1.0139 |
 | SkillPoint | Taux de coup critique (`CriticalP`) | 18 | 1.0139 |
 | SkillPoint | Attaque (`AttFR`) | 19 | 0.9746 |
-| SpecialPoint | Défense (`ArmFR`) | 9 | 1.0000 |
-| SpecialPoint | Attaque (`AttFR`) | 9 | 1.0000 |
-| SpecialPoint | PV (`IncreaseMHP`) | 9 | 1.0000 |
-| SpecialPoint | Pénétration de défense (`ArmPenP`) | 12 | 0.3300 |
-| SpecialPoint | Taux de coup critique (`CriticalP`) | 12 | 0.3300 |
-| SpecialPoint | Réduction des dégâts (`DamReduP`) | 6 | 0.3300 |
 | WeaponPoint | Dégâts infligés (`DamP`) | 2 | 1.5833 |
 | WeaponPoint | Dégâts conditionnels (`IncreaseDamageByTargetBuff`) | 1 | 1.0000 |
 | WeaponPoint | Dégâts conditionnels (`IncreaseDamageByTargetSpecialState`) | 2 | 1.0000 |
-| WeaponPoint | Défense (`ArmFR`) | 3 | 0.5000 |
-| WeaponPoint | PV (`IncreaseMHP`) | 3 | 0.5000 |
-| WeaponPoint | Attaque (`AttFR`) | 6 | 0.2500 |
-| WeaponPoint | Précision (`PrecisionP`) | 9 | 0.2500 |
-| WeaponPoint | Pénétration de défense (`ArmPenP`) | 12 | 0.1250 |
-| WeaponPoint | Dégâts de coup critique (`CriDamP`) | 12 | 0.1250 |
-| WeaponPoint | Taux de coup critique (`CriticalP`) | 9 | 0.1250 |
-| WeaponPoint | Réduction des dégâts (`DamReduP`) | 4 | -0.0833 |
+| WeaponPoint | Réduction des dégâts (`DamReduP`) | 1 | -0.8333 |
 
 ## Notes
 
-- Les nœuds avec `LevelUpCostValue=[1]` et `NodeMaxLevel=3` sont traités comme coût identique par rang: **FORTEMENT PROBABLE**, pas confirmé par une liste à trois valeurs.
+- Les nœuds multi-rangs avec une seule valeur dans `LevelUpCostValue` sont exclus: le coût gameplay par rang est `NON DÉTERMINÉ`.
 - Les monnaies de coût sont séparées: `SkillPoint`, `WeaponPoint`, `SpecialPoint` et `IdentityPoint` ne sont pas comparées entre elles.
 - L'efficacité ne compare pas les dégâts réels en combat: elle compare seulement les gains en pourcentage dont l'unité est interprétée.

@@ -45,7 +45,10 @@ def flatten_effect_rows(model):
         for rank in node["ranks"]:
             cost = str(rank.get("cost") or "")
             currency = rank.get("pointCurrency") or ""
-            cost_label = f"{cost} {currency}".strip()
+            if rank.get("costConfidence") == "NON DÉTERMINÉ":
+                cost_label = "NON DÉTERMINÉ"
+            else:
+                cost_label = f"{cost} {currency}".strip()
             for effect in rank.get("effects", []):
                 rows.append(
                     {
@@ -63,6 +66,9 @@ def flatten_effect_rows(model):
                         "Rank": str(rank["rank"]),
                         "MaxRank": str(node["nodeMaxLevel"]),
                         "Cost": cost_label,
+                        "PointCurrency": rank.get("pointCurrency") or "",
+                        "RawLevelUpCostValue": rank.get("rawLevelUpCostValue") or "",
+                        "CostConfidence": rank.get("costConfidence") or "",
                         "RequiredLevel": rank.get("accessCondition") or "",
                         "ParentNodeID": ",".join(node["parents"]),
                         "RelationScope": "NODE",

@@ -72,12 +72,21 @@ function parseOffset(raw) {
 }
 
 function parseCost(rank) {
-  const value = Number(rank?.cost || 0);
-  return Number.isFinite(value) ? value : 0;
+  if (!rank || rank.cost === "" || rank.cost === null || rank.cost === undefined) return null;
+  const value = Number(rank.cost);
+  return Number.isFinite(value) ? value : null;
 }
 
 function nodeCurrency(node) {
   return node.ranks.find((rank) => rank.pointCurrency)?.pointCurrency || "SkillPoint";
+}
+
+function rankCostLabel(rank, node) {
+  const currency = rank?.pointCurrency || nodeCurrency(node);
+  const cost = parseCost(rank);
+  if (cost !== null) return `${cost} ${currency}`.trim();
+  const raw = rank?.rawLevelUpCostValue ? `raw ${rank.rawLevelUpCostValue} ${currency}` : "";
+  return raw ? `NON DÉTERMINÉ (${raw})` : "NON DÉTERMINÉ";
 }
 
 function selectedRank(nodeId) {
@@ -216,7 +225,9 @@ function selectedCostByCurrency(selected = state.selected) {
     for (let index = 0; index < rankCount; index += 1) {
       const rank = node.ranks[index];
       const currency = rank?.pointCurrency || nodeCurrency(node);
-      totals[currency] = (totals[currency] || 0) + parseCost(rank);
+      const cost = parseCost(rank);
+      if (cost === null) continue;
+      totals[currency] = (totals[currency] || 0) + cost;
     }
   }
   return totals;
@@ -237,6 +248,7 @@ function parentConditionText(node) {
 
 function canAfford(node, nextRank) {
   const rank = node.ranks[nextRank - 1];
+  if (parseCost(rank) === null) return true;
   const currency = rank?.pointCurrency || nodeCurrency(node);
   if (state.budgets[currency] === undefined || state.budgets[currency] === "") return true;
   const preview = { ...state.selected, [node.nodeId]: nextRank };
@@ -331,7 +343,7 @@ function nextCostLabel(node) {
   const current = selectedRank(node.nodeId);
   if (current >= node.nodeMaxLevel) return `${current}/${node.nodeMaxLevel} - MAX`;
   const nextRank = node.ranks[current];
-  const cost = `${nextRank?.cost || 0} ${nextRank?.pointCurrency || nodeCurrency(node)}`.trim();
+  const cost = rankCostLabel(nextRank, node);
   if (node.nodeMaxLevel === 1) return current ? "1/1 - MAX" : `Coût : ${cost}`;
   return `${current}/${node.nodeMaxLevel} - prochain : ${cost}`;
 }
@@ -435,6 +447,11 @@ function renderSummary() {
   els.buildCount.textContent = `${selectedEntries.length} talent${selectedEntries.length > 1 ? "s" : ""}`;
   const totals = selectedCostByCurrency();
   const currencies = [...new Set([...Object.keys(totals), activeCurrency()])];
+  const unknownCosts = selectedEntries.reduce((count, [nodeId, rankCount]) => {
+    const node = state.nodeById.get(nodeId);
+    if (!node) return count;
+    return count + node.ranks.slice(0, rankCount).filter((rank) => parseCost(rank) === null).length;
+  }, 0);
   els.budgetSummary.innerHTML = currencies.map((currency) => {
     const spent = totals[currency] || 0;
     const budget = state.budgets[currency];
@@ -442,7 +459,9 @@ function renderSummary() {
     const over = hasBudget && spent > Number(budget);
     const label = hasBudget ? `${spent} / ${budget}` : `${spent} dépensés`;
     return `<div class="metric-row ${over ? "over" : ""}"><span>${escapeHtml(currency)}</span><strong>${escapeHtml(label)}</strong></div>`;
-  }).join("");
+  }).join("") + (unknownCosts
+    ? `<div class="metric-row"><span>Coûts non déterminés</span><strong>${unknownCosts} rang${unknownCosts > 1 ? "s" : ""}</strong></div>`
+    : "");
 
   const percentGroups = new Map();
   const rawRows = [];
@@ -532,7 +551,7 @@ function renderNodeDetails() {
         ${node.ranks.map((item) => `
           <tr>
             <td>${rankLabel(item.rank)}</td>
-            <td>${escapeHtml(item.cost || 0)} ${escapeHtml(item.pointCurrency || "")}</td>
+            <td>${escapeHtml(rankCostLabel(item, node))}</td>
             <td>${escapeHtml(effectText(item))}</td>
           </tr>`).join("")}
       </tbody>
