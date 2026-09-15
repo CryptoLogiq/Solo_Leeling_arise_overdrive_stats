@@ -2,6 +2,13 @@
 
 const DATA_URL = "../analysis/data/sjw_talent_tree.json";
 const RANK_LABELS = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
+const NODE_FALLBACK_WIDTH = 184;
+const NODE_FALLBACK_HEIGHT = 112;
+const MIN_COLUMN_GAP = 34;
+const MIN_ROW_GAP = 26;
+const OFFSET_SCALE = 0.28;
+const MAX_OFFSET_X = 22;
+const MAX_OFFSET_Y = 10;
 const SYSTEM_LABELS = {
   class: "Classes",
   weapon: "Armes",
@@ -63,6 +70,10 @@ function escapeHtml(value) {
 
 function displayName(value) {
   return String(value ?? "").replaceAll("\\n", " ").replace(/\s+/g, " ").trim();
+}
+
+function clamp(value, min, max) {
+  return Math.max(min, Math.min(max, value));
 }
 
 function parseOffset(raw) {
@@ -370,33 +381,67 @@ function decreaseNode(nodeId) {
   setNodeRank(nodeId, selectedRank(nodeId) - 1);
 }
 
-function layoutNodes(nodes, originX) {
-  if (!nodes.length) return [];
-  const raw = nodes.map((node) => {
-    const [offsetX, offsetY] = parseOffset(node.visual.offset);
-    return {
-      node,
-      x: (Number(node.visual.column) - 1) * 190 + offsetX * 0.35 + 80,
-      y: (Number(node.visual.row) - 1) * 124 + offsetY * 0.35 + 82,
-    };
-  });
-  const minX = Math.min(...raw.map((item) => item.x));
-  const minY = Math.min(...raw.map((item) => item.y));
-  return raw.map((item) => ({
-    ...item,
-    x: item.x - minX + originX + 40,
-    y: item.y - minY + 74,
-  }));
+function nodeSize(node, dimensions) {
+  return dimensions?.get(node.nodeId) || { width: NODE_FALLBACK_WIDTH, height: NODE_FALLBACK_HEIGHT };
 }
 
-function layoutSections(sections) {
+function logicalRange(values) {
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  return Array.from({ length: max - min + 1 }, (_, index) => min + index);
+}
+
+function layoutNodes(nodes, originX, dimensions = null) {
+  if (!nodes.length) return [];
+  const rowHeights = new Map();
+  const columnWidths = new Map();
+  for (const node of nodes) {
+    const row = Number(node.visual.row) || 1;
+    const column = Number(node.visual.column) || 1;
+    const size = nodeSize(node, dimensions);
+    rowHeights.set(row, Math.max(rowHeights.get(row) || 0, size.height));
+    columnWidths.set(column, Math.max(columnWidths.get(column) || 0, size.width));
+  }
+
+  const rows = logicalRange([...rowHeights.keys()]);
+  const columns = logicalRange([...columnWidths.keys()]);
+  const yByRow = new Map();
+  const xByColumn = new Map();
+  let yCursor = 74;
+  for (const row of rows) {
+    yByRow.set(row, yCursor);
+    yCursor += (rowHeights.get(row) || 0) + MIN_ROW_GAP;
+  }
+  let xCursor = originX + 40;
+  for (const column of columns) {
+    xByColumn.set(column, xCursor);
+    xCursor += (columnWidths.get(column) || NODE_FALLBACK_WIDTH) + MIN_COLUMN_GAP;
+  }
+
+  return nodes.map((node) => {
+    const [offsetX, offsetY] = parseOffset(node.visual.offset);
+    const row = Number(node.visual.row) || 1;
+    const column = Number(node.visual.column) || 1;
+    const nudgeX = clamp(offsetX * OFFSET_SCALE, -MAX_OFFSET_X, MAX_OFFSET_X);
+    const nudgeY = clamp(offsetY * OFFSET_SCALE, -MAX_OFFSET_Y, MAX_OFFSET_Y);
+    return {
+      node,
+      width: nodeSize(node, dimensions).width,
+      height: nodeSize(node, dimensions).height,
+      x: (xByColumn.get(column) || originX) + nudgeX,
+      y: (yByRow.get(row) || 74) + nudgeY,
+    };
+  });
+}
+
+function layoutSections(sections, dimensions = null) {
   const layouts = [];
   const bands = [];
   let cursor = 24;
   for (const section of sections) {
-    const local = layoutNodes(section.nodes || [], cursor);
-    const maxX = Math.max(...local.map((item) => item.x + 204), cursor + 220);
-    const maxY = Math.max(...local.map((item) => item.y + 120), 520);
+    const local = layoutNodes(section.nodes || [], cursor, dimensions);
+    const maxX = Math.max(...local.map((item) => item.x + item.width), cursor + 220);
+    const maxY = Math.max(...local.map((item) => item.y + item.height), 520);
     bands.push({ section, x: cursor, width: maxX - cursor + 28, height: maxY + 30 });
     layouts.push(...local.map((item) => ({ ...item, section })));
     cursor = maxX + 72;
@@ -417,51 +462,16 @@ function nextCostLabel(node) {
   return `${current}/${node.nodeMaxLevel} - prochain : ${cost}`;
 }
 
-function renderTree() {
-  const sections = activeSections();
-  const nodes = sectionNodes();
-  const { layouts: layout, bands } = layoutSections(sections);
-  const pos = new Map(layout.map((item) => [item.node.nodeId, item]));
-  const width = Math.max(760, ...bands.map((item) => item.x + item.width));
-  const height = Math.max(520, ...bands.map((item) => item.height));
-  els.canvas.style.width = `${width}px`;
-  els.canvas.style.height = `${height}px`;
-  els.canvas.style.transform = `scale(${state.zoom})`;
-  els.edgeLayer.setAttribute("width", width);
-  els.edgeLayer.setAttribute("height", height);
-  els.edgeLayer.setAttribute("viewBox", `0 0 ${width} ${height}`);
-
-  const edgePaths = [];
-  for (const node of nodes) {
-    const parentPos = pos.get(node.nodeId);
-    if (!parentPos) continue;
-    for (const childId of node.children) {
-      const child = state.nodeById.get(childId);
-      const childPos = pos.get(childId);
-      if (!child || !childPos) continue;
-      const x1 = parentPos.x + 82;
-      const y1 = parentPos.y + 78;
-      const x2 = childPos.x + 82;
-      const y2 = childPos.y;
-      const mid = Math.max(34, Math.abs(y2 - y1) * 0.42);
-      const status = selectedRank(node.nodeId) > 0 && selectedRank(childId) > 0
-        ? "selected"
-        : selectedRank(node.nodeId) > 0
-          ? "available"
-          : child.parents.length && !unlockSatisfied(child)
-            ? "blocked"
-            : "";
-      edgePaths.push(`<path class="edge-path ${status}" d="M ${x1} ${y1} C ${x1} ${y1 + mid}, ${x2} ${y2 - mid}, ${x2} ${y2}"></path>`);
-    }
-  }
-  els.edgeLayer.innerHTML = edgePaths.join("");
-
-  const branchHtml = bands.map(({ section, x, width, height }) => `
+function buildBranchHtml(bands) {
+  return bands.map(({ section, x, width, height }) => `
     <section class="branch-band" style="left:${x}px; width:${width}px; height:${height}px">
       <div class="branch-title">${escapeHtml(section.branch)}${section.deduced ? " - libellé déduit" : ""}</div>
     </section>
   `).join("");
-  const nodeHtml = layout.map(({ node, x, y }) => {
+}
+
+function buildNodeHtml(layout, mode = "") {
+  return layout.map(({ node, x, y }) => {
     const rank = selectedRank(node.nodeId);
     const locked = !unlockSatisfied(node);
     const active = state.activeNodeId === node.nodeId;
@@ -469,8 +479,9 @@ function renderTree() {
     const selectedClass = rank > 0 ? "selected" : "";
     const activeClass = active ? "active" : "";
     const lockedClass = locked ? "locked" : "";
+    const measureClass = mode === "measure" ? "measure" : "";
     return `
-      <article class="node-card ${selectedClass} ${activeClass} ${lockedClass}" style="left:${x}px; top:${y}px" data-node-id="${escapeHtml(node.nodeId)}">
+      <article class="node-card ${selectedClass} ${activeClass} ${lockedClass} ${measureClass}" style="left:${x}px; top:${y}px" data-node-id="${escapeHtml(node.nodeId)}">
         <div>
           <div class="node-name">${escapeHtml(displayName(node.name))}</div>
           <div class="node-cost">${escapeHtml(nextCostLabel(node))}</div>
@@ -488,7 +499,63 @@ function renderTree() {
         </div>
       </article>`;
   }).join("");
-  els.nodeLayer.innerHTML = branchHtml + nodeHtml;
+}
+
+function measureNodeCards() {
+  const dimensions = new Map();
+  for (const card of els.nodeLayer.querySelectorAll(".node-card")) {
+    const rect = card.getBoundingClientRect();
+    dimensions.set(card.dataset.nodeId, { width: rect.width, height: rect.height });
+  }
+  return dimensions;
+}
+
+function renderEdges(nodes, layout, width, height) {
+  const pos = new Map(layout.map((item) => [item.node.nodeId, item]));
+  els.edgeLayer.setAttribute("width", width);
+  els.edgeLayer.setAttribute("height", height);
+  els.edgeLayer.setAttribute("viewBox", `0 0 ${width} ${height}`);
+
+  const edgePaths = [];
+  for (const node of nodes) {
+    const parentPos = pos.get(node.nodeId);
+    if (!parentPos) continue;
+    for (const childId of node.children) {
+      const child = state.nodeById.get(childId);
+      const childPos = pos.get(childId);
+      if (!child || !childPos) continue;
+      const x1 = parentPos.x + parentPos.width / 2;
+      const y1 = parentPos.y + parentPos.height;
+      const x2 = childPos.x + childPos.width / 2;
+      const y2 = childPos.y;
+      const mid = Math.max(34, Math.abs(y2 - y1) * 0.42);
+      const status = selectedRank(node.nodeId) > 0 && selectedRank(childId) > 0
+        ? "selected"
+        : selectedRank(node.nodeId) > 0
+          ? "available"
+          : child.parents.length && !unlockSatisfied(child)
+            ? "blocked"
+            : "";
+      edgePaths.push(`<path class="edge-path ${status}" d="M ${x1} ${y1} C ${x1} ${y1 + mid}, ${x2} ${y2 - mid}, ${x2} ${y2}"></path>`);
+    }
+  }
+  els.edgeLayer.innerHTML = edgePaths.join("");
+}
+
+function renderTree() {
+  const sections = activeSections();
+  const nodes = sectionNodes();
+  const measured = layoutSections(sections);
+  els.nodeLayer.innerHTML = buildNodeHtml(measured.layouts, "measure");
+  const dimensions = measureNodeCards();
+  const { layouts: layout, bands } = layoutSections(sections, dimensions);
+  const width = Math.max(760, ...bands.map((item) => item.x + item.width));
+  const height = Math.max(520, ...bands.map((item) => item.height));
+  els.canvas.style.width = `${width}px`;
+  els.canvas.style.height = `${height}px`;
+  els.canvas.style.transform = `scale(${state.zoom})`;
+  els.nodeLayer.innerHTML = buildBranchHtml(bands) + buildNodeHtml(layout);
+  renderEdges(nodes, layout, width, height);
 }
 
 function selectedEffects() {
