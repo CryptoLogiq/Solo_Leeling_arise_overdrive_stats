@@ -224,17 +224,17 @@ def raw_cost_value(cost_values):
 def cost_for_rank(cost_values, rank, max_rank):
     if not cost_values:
         return ""
-    if max_rank > 1 and len(cost_values) == 1:
-        return ""
     if len(cost_values) == 1:
-        return cost_values[0]
+        return cost_values[0] if rank == 1 else ""
     if rank - 1 < len(cost_values):
         return cost_values[rank - 1]
     return ""
 
 
-def cost_confidence(cost_values, max_rank):
+def cost_confidence(cost_values, max_rank, rank=None):
     if max_rank <= 1 or len(cost_values) == max_rank:
+        return "CONFIRMÉ PAR LES GAMEDATA"
+    if rank == 1 and len(cost_values) == 1:
         return "CONFIRMÉ PAR LES GAMEDATA"
     if len(cost_values) == 1:
         return "NON DÉTERMINÉ"
@@ -514,7 +514,7 @@ def build_canonical_model(rows):
                 "Parent/Child est une relation NodeID -> NodeID.",
                 "VisualRow/VisualColumn correspondent à NodeTierY/NodeTierX.",
                 "Les rangs internes proviennent de NodeMaxLevel, pas des suffixes de noms localisés.",
-                "Pour NodeMaxLevel > 1, une LevelUpCostValue singleton est conservée en raw mais n'est pas répétée comme coût par rang.",
+                "Pour NodeMaxLevel > 1, une LevelUpCostValue singleton est utilisée pour le rang I puis conservée en raw; elle n'est pas répétée sur les rangs suivants.",
             ],
         },
         "trees": trees,
@@ -723,6 +723,35 @@ def write_cost_semantics_audit(rows):
     for row in rows:
         first_rows_by_node.setdefault(str(row["NodeID"]), row)
 
+    def first_rank_cost(node):
+        values = maybe_list(node.get("LevelUpCostValue"))
+        value = cost_for_rank(values, 1, int(node.get("NodeMaxLevel") or 1))
+        try:
+            return float(value)
+        except (TypeError, ValueError):
+            return None
+
+    def cost_to_reach(node_id, selected=None, seen=None):
+        selected = selected or set()
+        seen = seen or set()
+        if node_id in selected:
+            return 0
+        if node_id in seen:
+            return None
+        node = by_id[node_id]
+        direct = first_rank_cost(node)
+        if direct is None:
+            return None
+        parents = [int(parent) for parent in parse_parent_ids(node.get("SlotLinkNodeID"))]
+        if not parents or any(parent in selected for parent in parents):
+            return direct
+        options = []
+        for parent in parents:
+            parent_cost = cost_to_reach(parent, selected, seen | {node_id})
+            if parent_cost is not None:
+                options.append(parent_cost + direct)
+        return min(options) if options else None
+
     lines = [
         "# SJW Talent Tree Cost Semantics Audit",
         "",
@@ -730,9 +759,9 @@ def write_cost_semantics_audit(rows):
         "",
         "## Conclusion",
         "",
-        "- Règle runtime de coût par rang: **NON DÉTERMINÉE** pour les nœuds multi-rangs dont `LevelUpCostValue` ne contient qu'une seule valeur.",
+        "- Règle runtime des rangs II+ : **NON DÉTERMINÉE** pour les nœuds multi-rangs dont `LevelUpCostValue` ne contient qu'une seule valeur.",
         "- Le codec lit bien la valeur brute complète `[1]` pour Physique; ce n'est pas une liste tronquée.",
-        "- Le coût interprété n'est plus exporté comme `1 SpecialPoint` par rang pour ces cas; la valeur raw reste conservée séparément.",
+        "- Le coût interprété utilise la valeur singleton pour le rang I uniquement; elle n'est plus répétée sur les rangs II/III.",
         "",
         "## Tables contrôlées",
         "",
@@ -780,12 +809,25 @@ def write_cost_semantics_audit(rows):
         max_rank = int(node.get("NodeMaxLevel") or 1)
         values = maybe_list(node.get("LevelUpCostValue"))
         if max_rank > 1 and len(values) == 1:
-            note = "coût par rang non prouvé"
+            note = "rang I seulement; rangs II+ non prouvés"
         elif max_rank > 1 and len(values) == max_rank:
             note = "une valeur explicite par rang"
         else:
             note = "rang unique"
         lines.append(f"| {node_id} | {max_rank} | {node.get('LevelUpCost','')} | `{raw_cost_value(values)}` | {note} |")
+
+    lines.extend(
+        [
+            "",
+            "## Contrôles coût direct / coût à investir",
+            "",
+            "| Cas | NodeID | Coût direct rang I | Sélection simulée | Coût à investir calculé |",
+            "|---|---:|---:|---|---:|",
+            f"| Marque de l'assassin | 111701 | {fmt_num(first_rank_cost(by_id[111701]))} | parent `111401` déjà pris | {fmt_num(cost_to_reach(111701, {111401}))} |",
+            f"| Marque de l'assassin | 111701 | {fmt_num(first_rank_cost(by_id[111701]))} | aucun nœud pris | {fmt_num(cost_to_reach(111701))} |",
+            f"| Frappe préparée | 2252502 | {fmt_num(first_rank_cost(by_id[2252502]))} | aucun nœud pris | {fmt_num(cost_to_reach(2252502))} |",
+        ]
+    )
 
     lines.extend(
         [
@@ -837,7 +879,6 @@ def make_rows():
         max_rank = int(node.get("NodeMaxLevel") or 1)
         costs = maybe_list(node.get("LevelUpCostValue"))
         cost_kind = node.get("LevelUpCost") or ""
-        cost_note = cost_confidence(costs, max_rank)
         raw_cost = raw_cost_value(costs)
         parent = ",".join(str(x) for x in maybe_list(node.get("SlotLinkNodeID")))
         unlock_id = node.get("NodeContentsUnlock") or 0
@@ -878,6 +919,7 @@ def make_rows():
 
         for rank in range(1, max_rank + 1):
             logical = logical_talent_for_node(node, base_name, rank)
+            cost_note = cost_confidence(costs, max_rank, rank)
             rank_cost = cost_label(cost_for_rank(costs, rank, max_rank), cost_kind)
             rank_suffix = f" {rank}/{max_rank}" if max_rank > 1 else ""
             for effect_type, raw in effects:

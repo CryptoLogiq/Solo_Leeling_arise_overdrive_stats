@@ -73,7 +73,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 6 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Taux de coup critique augmenté
 
@@ -82,7 +82,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 8 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Embuscade III - [Effet passif spécial]
 
@@ -100,7 +100,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 5 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 5 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 12 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Attaque augmentée
 
@@ -109,7 +109,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 SkillPoint | Attaque: 0,8 % | +0,8 % | 0,8 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE |
+| I | 3 SkillPoint | Attaque: 0,8 % | +0,8 % | 0,8 % | 17 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE |
 
 #### Embuscade IV
 
@@ -127,7 +127,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 17 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Frappe vitale
 
@@ -209,7 +209,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 5 SkillPoint | Dégâts dans le dos: 320 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 5 SkillPoint | Dégâts dans le dos: 320 | NON DÉTERMINÉ | NON DÉTERMINÉ | 10 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Entailles croissantes
 
@@ -295,7 +295,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 6 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Déséquilibre augmenté
 
@@ -315,7 +315,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 SkillPoint | Défense: 6,4 % | +6,4 % | 6,4 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE |
+| I | 3 SkillPoint | Défense: 6,4 % | +6,4 % | 6,4 % | 8 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE |
 
 #### Amélioration de contre-attaque
 
@@ -325,7 +325,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 5 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 5 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 8 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Contre-offensive III
 
@@ -335,7 +335,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 10 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Déchaînement
 
@@ -345,7 +345,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 11 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Champion de la contre-offensive
 
@@ -355,7 +355,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 14 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Coup unique
 
@@ -397,7 +397,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 2 SkillPoint | Compétence active | Non chiffré | Non chiffré | 6 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Déséquilibre augmenté - [Effet passif spécial]
 
@@ -407,7 +407,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 5 SkillPoint | Déséquilibre / Break: 160 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 5 SkillPoint | Déséquilibre / Break: 160 | NON DÉTERMINÉ | NON DÉTERMINÉ | 8 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Augmentation des PV
 
@@ -417,7 +417,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 SkillPoint | PV: 6,4 % | +6,4 % | 6,4 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE |
+| I | 3 SkillPoint | PV: 6,4 % | +6,4 % | 6,4 % | 13 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE |
 
 #### Fougue
 
@@ -427,7 +427,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 13 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Combo II
 
@@ -437,7 +437,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 16 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Smash II
 
@@ -447,7 +447,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 16 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Force amplifiée
 
@@ -457,7 +457,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 20 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Nœud de classe / Overdrive
 
@@ -553,7 +553,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 11 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Anneau gelé
 
@@ -573,7 +573,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 14 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Feu
 
@@ -645,7 +645,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 5 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 5 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 11 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Amélioration de Magicien élémentaire : Feu II
 
@@ -675,7 +675,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 16 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Nœud de classe / Overdrive
 
@@ -761,7 +761,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 10 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Trou noir
 
@@ -781,7 +781,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 14 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Main de célérité
 
@@ -791,7 +791,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 18 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Changement gravitationnel
 
@@ -873,7 +873,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 4 SkillPoint | Effet déclenché | Non chiffré | Non chiffré | 12 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Posture parfaite
 
@@ -921,7 +921,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 2 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| I | 3 WeaponPoint | Dégâts de compétence d'arme: 2 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 | II | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 2 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 | III | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 2 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 
@@ -933,7 +933,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Dégâts dans le dos: -750; Dégâts de compétence: 450 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Dégâts dans le dos: -750; Dégâts de compétence: 450 | NON DÉTERMINÉ | NON DÉTERMINÉ | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Protection de l'épée
 
@@ -943,7 +943,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Attaque augmentée
 
@@ -953,9 +953,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [2] WeaponPoint) | Attaque: 0,5 % | +0,5 % | 0,5 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Attaque: 0,5 % | +0,5 % | 1 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Attaque: 0,5 % | +0,5 % | 1,5 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 2 WeaponPoint | Attaque: 0,5 % | +0,5 % | 0,5 % | 9 pts requis | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Attaque: 0,5 % | +0,5 % | 1 % | 9 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Attaque: 0,5 % | +0,5 % | 1,5 % | 9 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Défense augmentée
 
@@ -965,9 +965,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [2] WeaponPoint) | Défense: 1 % | +1 % | 1 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Défense: 1 % | +1 % | 2 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Défense: 1 % | +1 % | 3 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 2 WeaponPoint | Défense: 1 % | +1 % | 1 % | 9 pts requis | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Défense: 1 % | +1 % | 2 % | 9 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Défense: 1 % | +1 % | 3 % | 9 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Cœur d'acier
 
@@ -977,7 +977,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 11 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Affrontement frontal
 
@@ -987,7 +987,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 14 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Résistance à la lame
 
@@ -999,7 +999,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 2 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| I | 3 WeaponPoint | Dégâts de compétence d'arme: 2 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 | II | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 2 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 | III | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 2 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 
@@ -1011,7 +1011,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Attaquer et bloquer
 
@@ -1021,7 +1021,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Précision augmentée
 
@@ -1031,9 +1031,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [2] WeaponPoint) | Précision: 0,5 % | +0,5 % | 0,5 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Précision: 0,5 % | +0,5 % | 1 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Précision: 0,5 % | +0,5 % | 1,5 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 2 WeaponPoint | Précision: 0,5 % | +0,5 % | 0,5 % | 6 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Précision: 0,5 % | +0,5 % | 1 % | 6 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Précision: 0,5 % | +0,5 % | 1,5 % | 6 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Pénétration de défense augmentée
 
@@ -1043,9 +1043,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [2] WeaponPoint) | Pénétration: 0,25 % | +0,25 % | 0,25 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Pénétration: 0,25 % | +0,25 % | 0,5 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Pénétration: 0,25 % | +0,25 % | 0,75 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 2 WeaponPoint | Pénétration: 0,25 % | +0,25 % | 0,25 % | 8 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Pénétration: 0,25 % | +0,25 % | 0,5 % | 8 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Pénétration: 0,25 % | +0,25 % | 0,75 % | 8 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Lancement de contre-attaque
 
@@ -1055,7 +1055,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 10 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Frappe maîtrisée
 
@@ -1065,7 +1065,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 13 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 ## DAGUE
 
@@ -1079,7 +1079,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [2] WeaponPoint) | Taux critique: 0,25 % | +0,25 % | 0,25 % | 0 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 2 WeaponPoint | Taux critique: 0,25 % | +0,25 % | 0,25 % | 0 pts requis | FORTEMENT PROBABLE |
 | II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Taux critique: 0,25 % | +0,25 % | 0,5 % | 0 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 | III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Taux critique: 0,25 % | +0,25 % | 0,75 % | 0 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
@@ -1091,7 +1091,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [2] WeaponPoint) | Dégâts critiques: 0,25 % | +0,25 % | 0,25 % | 0 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 2 WeaponPoint | Dégâts critiques: 0,25 % | +0,25 % | 0,25 % | 0 pts requis | FORTEMENT PROBABLE |
 | II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Dégâts critiques: 0,25 % | +0,25 % | 0,5 % | 0 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 | III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Dégâts critiques: 0,25 % | +0,25 % | 0,75 % | 0 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
@@ -1103,7 +1103,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 2 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Taux de coup critique augmenté
 
@@ -1113,9 +1113,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [2] WeaponPoint) | Taux critique: 0,25 % | +0,25 % | 0,25 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Taux critique: 0,25 % | +0,25 % | 0,5 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Taux critique: 0,25 % | +0,25 % | 0,75 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 2 WeaponPoint | Taux critique: 0,25 % | +0,25 % | 0,25 % | 5 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Taux critique: 0,25 % | +0,25 % | 0,5 % | 5 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Taux critique: 0,25 % | +0,25 % | 0,75 % | 5 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Dégâts de coup critique augmentés
 
@@ -1125,9 +1125,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [2] WeaponPoint) | Dégâts critiques: 0,25 % | +0,25 % | 0,25 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Dégâts critiques: 0,25 % | +0,25 % | 0,5 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Dégâts critiques: 0,25 % | +0,25 % | 0,75 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 2 WeaponPoint | Dégâts critiques: 0,25 % | +0,25 % | 0,25 % | 5 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Dégâts critiques: 0,25 % | +0,25 % | 0,5 % | 5 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Dégâts critiques: 0,25 % | +0,25 % | 0,75 % | 5 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Amplification de la douleur
 
@@ -1137,7 +1137,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Dégâts contre cible affectée: 3 % | +3 % | 3 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE |
+| I | 3 WeaponPoint | Dégâts contre cible affectée: 3 % | +3 % | 3 % | 7 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE |
 
 #### Approche violente
 
@@ -1147,7 +1147,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Dégâts de compétence: 1500 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Dégâts de compétence: 1500 | NON DÉTERMINÉ | NON DÉTERMINÉ | 7 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Frappe préparée
 
@@ -1157,7 +1157,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 10 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Éviction
 
@@ -1169,7 +1169,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| I | 3 WeaponPoint | Dégâts de compétence d'arme: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 | II | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 | III | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 
@@ -1181,7 +1181,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts dans le dos: 150 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| I | 3 WeaponPoint | Dégâts dans le dos: 150 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 | II | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts dans le dos: 150 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 | III | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts dans le dos: 150 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 
@@ -1193,7 +1193,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Dégâts dans le dos: 750; Dégâts de compétence: -300 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Dégâts dans le dos: 750; Dégâts de compétence: -300 | NON DÉTERMINÉ | NON DÉTERMINÉ | 3 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Dégâts de Foulée de l'ombre augmentés
 
@@ -1203,7 +1203,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Dégâts de compétence: 1500 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Dégâts de compétence: 1500 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Frappe de l'ombre
 
@@ -1213,7 +1213,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 9 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Faille de l'ombre
 
@@ -1223,7 +1223,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 9 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Coup dans le dos
 
@@ -1233,7 +1233,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 12 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 ## ARC
 
@@ -1247,7 +1247,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 3 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| I | 3 WeaponPoint | Dégâts de compétence d'arme: 3 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 | II | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 3 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 | III | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 3 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 
@@ -1259,9 +1259,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [2] WeaponPoint) | Précision: 0,5 % | +0,5 % | 0,5 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Précision: 0,5 % | +0,5 % | 1 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Précision: 0,5 % | +0,5 % | 1,5 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 2 WeaponPoint | Précision: 0,5 % | +0,5 % | 0,5 % | 3 pts requis | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Précision: 0,5 % | +0,5 % | 1 % | 3 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Précision: 0,5 % | +0,5 % | 1,5 % | 3 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Tir d'esquive
 
@@ -1271,7 +1271,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Tir en pleine tête
 
@@ -1281,7 +1281,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 5 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Pénétration de défense augmentée
 
@@ -1291,9 +1291,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [2] WeaponPoint) | Pénétration: 0,25 % | +0,25 % | 0,25 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Pénétration: 0,25 % | +0,25 % | 0,5 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Pénétration: 0,25 % | +0,25 % | 0,75 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 2 WeaponPoint | Pénétration: 0,25 % | +0,25 % | 0,25 % | 8 pts requis | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Pénétration: 0,25 % | +0,25 % | 0,5 % | 8 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Pénétration: 0,25 % | +0,25 % | 0,75 % | 8 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Visée sécurisée
 
@@ -1303,7 +1303,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Dégâts infligés: 5,5 %; Dégâts selon distance: -1550 | +5,5 % | 5,5 % | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA; FORTEMENT PROBABLE |
+| I | 3 WeaponPoint | Dégâts infligés: 5,5 %; Dégâts selon distance: -1550 | +5,5 % | 5,5 % | 6 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA; FORTEMENT PROBABLE |
 
 #### Distance parfaite
 
@@ -1313,7 +1313,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 9 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Visée concentrée
 
@@ -1325,7 +1325,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 3 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| I | 3 WeaponPoint | Dégâts de compétence d'arme: 3 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 | II | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 3 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 | III | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 3 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 
@@ -1337,9 +1337,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [2] WeaponPoint) | Taux critique: 0,25 % | +0,25 % | 0,25 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Taux critique: 0,25 % | +0,25 % | 0,5 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Taux critique: 0,25 % | +0,25 % | 0,75 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 2 WeaponPoint | Taux critique: 0,25 % | +0,25 % | 0,25 % | 3 pts requis | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Taux critique: 0,25 % | +0,25 % | 0,5 % | 3 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Taux critique: 0,25 % | +0,25 % | 0,75 % | 3 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Frappe calculée
 
@@ -1349,7 +1349,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 5 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Tir en reculant
 
@@ -1359,7 +1359,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Dégâts de compétence: 1500 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Dégâts de compétence: 1500 | NON DÉTERMINÉ | NON DÉTERMINÉ | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Dégâts de coup critique augmentés
 
@@ -1369,9 +1369,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [2] WeaponPoint) | Dégâts critiques: 0,25 % | +0,25 % | 0,25 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Dégâts critiques: 0,25 % | +0,25 % | 0,5 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Dégâts critiques: 0,25 % | +0,25 % | 0,75 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 2 WeaponPoint | Dégâts critiques: 0,25 % | +0,25 % | 0,25 % | 8 pts requis | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Dégâts critiques: 0,25 % | +0,25 % | 0,5 % | 8 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Dégâts critiques: 0,25 % | +0,25 % | 0,75 % | 8 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Frappe véloce
 
@@ -1381,7 +1381,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Conversion stat -> dégâts: 2 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Conversion stat -> dégâts: 2 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Veille funeste
 
@@ -1391,7 +1391,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 9 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 ## ARME À FEU
 
@@ -1415,7 +1415,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 4 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| I | 3 WeaponPoint | Dégâts de compétence d'arme: 4 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 | II | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 4 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 | III | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 4 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 
@@ -1427,9 +1427,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [2] WeaponPoint) | Pénétration: 0,25 % | +0,25 % | 0,25 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Pénétration: 0,25 % | +0,25 % | 0,5 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Pénétration: 0,25 % | +0,25 % | 0,75 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 2 WeaponPoint | Pénétration: 0,25 % | +0,25 % | 0,25 % | 3 pts requis | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Pénétration: 0,25 % | +0,25 % | 0,5 % | 3 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Pénétration: 0,25 % | +0,25 % | 0,75 % | 3 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Munitions concentrées
 
@@ -1439,7 +1439,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 5 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Pénétration de défense augmentée
 
@@ -1449,9 +1449,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [2] WeaponPoint) | Pénétration: 0,25 % | +0,25 % | 0,25 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Pénétration: 0,25 % | +0,25 % | 0,5 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Pénétration: 0,25 % | +0,25 % | 0,75 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 2 WeaponPoint | Pénétration: 0,25 % | +0,25 % | 0,25 % | 8 pts requis | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Pénétration: 0,25 % | +0,25 % | 0,5 % | 8 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Pénétration: 0,25 % | +0,25 % | 0,75 % | 8 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Flux balistique
 
@@ -1461,7 +1461,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 10 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Tir relais
 
@@ -1471,7 +1471,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 13 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Arme à feu - Kata
 
@@ -1483,7 +1483,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 4 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| I | 3 WeaponPoint | Dégâts de compétence d'arme: 4 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 | II | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 4 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 | III | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 4 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 
@@ -1505,7 +1505,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Tir à bout portant
 
@@ -1515,7 +1515,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Massacre II
 
@@ -1525,7 +1525,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 9 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Coup d'esquive
 
@@ -1535,7 +1535,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 12 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Tir critique
 
@@ -1545,7 +1545,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 15 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 ## FOCALISATEUR
 
@@ -1559,7 +1559,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 7 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| I | 3 WeaponPoint | Dégâts de compétence d'arme: 7 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 | II | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 7 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 | III | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 7 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 
@@ -1571,7 +1571,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 7 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| I | 3 WeaponPoint | Dégâts de compétence d'arme: 7 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 | II | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 7 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 | III | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 7 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 
@@ -1583,7 +1583,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Dégâts de compétence d'arme: 7; Réduction coût MP: -2000 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Dégâts de compétence d'arme: 7; Réduction coût MP: -2000 | NON DÉTERMINÉ | NON DÉTERMINÉ | 3 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Augmente les PM max
 
@@ -1593,9 +1593,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [2] WeaponPoint) | PM max: 66 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | PM max: 66 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | PM max: 66 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| I | 2 WeaponPoint | PM max: 66 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
+| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | PM max: 66 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | PM max: 66 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 
 #### Combo de mana
 
@@ -1605,7 +1605,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 8 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Carnage de mana
 
@@ -1615,7 +1615,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 8 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Afflux d'énergie de mana
 
@@ -1625,7 +1625,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 11 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Recherche de PM
 
@@ -1637,7 +1637,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 7 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| I | 3 WeaponPoint | Dégâts de compétence d'arme: 7 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 | II | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 7 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 | III | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 7 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 
@@ -1649,7 +1649,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Dégâts de faiblesse élémentaire: 150 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Dégâts de faiblesse élémentaire: 150 | NON DÉTERMINÉ | NON DÉTERMINÉ | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Amélioration d'accablement
 
@@ -1659,9 +1659,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [3] WeaponPoint) | Accumulation élémentaire: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [3] WeaponPoint) | Accumulation élémentaire: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [3] WeaponPoint) | Accumulation élémentaire: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| I | 3 WeaponPoint | Accumulation élémentaire: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| II | NON DÉTERMINÉ (raw [3] WeaponPoint) | Accumulation élémentaire: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [3] WeaponPoint) | Accumulation élémentaire: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 
 #### Amélioration de chaos
 
@@ -1671,9 +1671,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [3] WeaponPoint) | Accumulation élémentaire: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [3] WeaponPoint) | Accumulation élémentaire: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [3] WeaponPoint) | Accumulation élémentaire: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| I | 3 WeaponPoint | Accumulation élémentaire: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| II | NON DÉTERMINÉ (raw [3] WeaponPoint) | Accumulation élémentaire: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [3] WeaponPoint) | Accumulation élémentaire: 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 
 #### Recherche d'élément
 
@@ -1683,7 +1683,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Valeur élémentaire: 150 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Valeur élémentaire: 150 | NON DÉTERMINÉ | NON DÉTERMINÉ | 9 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Onde de mana
 
@@ -1693,7 +1693,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Conversion stat -> dégâts: 2 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Conversion stat -> dégâts: 2 | NON DÉTERMINÉ | NON DÉTERMINÉ | 9 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Énergie de mana dissimulée
 
@@ -1703,7 +1703,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 12 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 ## ARME D'HAST
 
@@ -1717,7 +1717,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 5 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| I | 3 WeaponPoint | Dégâts de compétence d'arme: 5 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 | II | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 5 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 | III | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 5 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 
@@ -1729,9 +1729,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [2] WeaponPoint) | Déséquilibre / Break: 200 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Déséquilibre / Break: 200 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Déséquilibre / Break: 200 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| I | 2 WeaponPoint | Déséquilibre / Break: 200 | NON DÉTERMINÉ | NON DÉTERMINÉ | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA |
+| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Déséquilibre / Break: 200 | NON DÉTERMINÉ | NON DÉTERMINÉ | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Déséquilibre / Break: 200 | NON DÉTERMINÉ | NON DÉTERMINÉ | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 
 #### Parade d'arme
 
@@ -1741,7 +1741,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 5 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Attaque pulvérisante
 
@@ -1751,7 +1751,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Dégâts contre état spécial: 3 % | +3 % | 3 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE |
+| I | 3 WeaponPoint | Dégâts contre état spécial: 3 % | +3 % | 3 % | 8 pts requis | FORTEMENT PROBABLE |
 
 #### Fer-de-lance dévié
 
@@ -1761,7 +1761,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 11 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Frappe initiale
 
@@ -1771,7 +1771,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 11 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Brèche exploitée
 
@@ -1781,7 +1781,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 14 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Frappe brutale
 
@@ -1793,7 +1793,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 5 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| I | 3 WeaponPoint | Dégâts de compétence d'arme: 5 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 | II | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 5 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 | III | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 5 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 
@@ -1805,7 +1805,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 3 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Physique endurant
 
@@ -1815,9 +1815,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [3] WeaponPoint) | Réduction des dégâts subis: 0,5 % | +0,5 % | 0,5 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [3] WeaponPoint) | Réduction des dégâts subis: 0,5 % | +0,5 % | 1 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [3] WeaponPoint) | Réduction des dégâts subis: 0,5 % | +0,5 % | 1,5 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 3 WeaponPoint | Réduction des dégâts subis: 0,5 % | +0,5 % | 0,5 % | 6 pts requis | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [3] WeaponPoint) | Réduction des dégâts subis: 0,5 % | +0,5 % | 1 % | 6 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [3] WeaponPoint) | Réduction des dégâts subis: 0,5 % | +0,5 % | 1,5 % | 6 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Amélioration des PV
 
@@ -1827,9 +1827,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [2] WeaponPoint) | PV: 1 % | +1 % | 1 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | PV: 1 % | +1 % | 2 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | PV: 1 % | +1 % | 3 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 2 WeaponPoint | PV: 1 % | +1 % | 1 % | 6 pts requis | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | PV: 1 % | +1 % | 2 % | 6 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | PV: 1 % | +1 % | 3 % | 6 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Dégâts déviés
 
@@ -1839,7 +1839,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 8 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Contre-offensive
 
@@ -1849,7 +1849,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 11 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Frappe de riposte
 
@@ -1859,7 +1859,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 14 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 ## ARME À DEUX MAINS
 
@@ -1873,7 +1873,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 8 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| I | 3 WeaponPoint | Dégâts de compétence d'arme: 8 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 | II | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 8 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 | III | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 8 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 
@@ -1885,9 +1885,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [2] WeaponPoint) | Dégâts critiques: 0,25 % | +0,25 % | 0,25 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Dégâts critiques: 0,25 % | +0,25 % | 0,5 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Dégâts critiques: 0,25 % | +0,25 % | 0,75 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 2 WeaponPoint | Dégâts critiques: 0,25 % | +0,25 % | 0,25 % | 3 pts requis | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Dégâts critiques: 0,25 % | +0,25 % | 0,5 % | 3 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Dégâts critiques: 0,25 % | +0,25 % | 0,75 % | 3 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Berserker
 
@@ -1897,7 +1897,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 5 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Porte de la mort
 
@@ -1907,7 +1907,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Dégâts de compétence d'arme: 8; ShieldModifier | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Dégâts de compétence d'arme: 8; ShieldModifier | NON DÉTERMINÉ | NON DÉTERMINÉ | 5 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Posture offensive
 
@@ -1917,7 +1917,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Dégâts infligés: 4 %; Réduction des dégâts subis: -2,5 % | +4 % / -2,5 % | -2,5 % / 4 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE |
+| I | 3 WeaponPoint | Dégâts infligés: 4 %; Réduction des dégâts subis: -2,5 % | +4 % / -2,5 % | -2,5 % / 4 % | 8 pts requis | FORTEMENT PROBABLE |
 
 #### Frappe sanglante
 
@@ -1927,7 +1927,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Dégâts de compétence d'arme: 8 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Dégâts de compétence d'arme: 8 | NON DÉTERMINÉ | NON DÉTERMINÉ | 8 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Échange équivalent
 
@@ -1937,7 +1937,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 11 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Contre-offensive et restauration
 
@@ -1949,7 +1949,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 8 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
+| I | 3 WeaponPoint | Dégâts de compétence d'arme: 8 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 | II | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 8 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 | III | NON DÉTERMINÉ (raw [3] WeaponPoint) | Dégâts de compétence d'arme: 8 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0 pts requis | CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ |
 
@@ -1961,9 +1961,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [2] WeaponPoint) | Précision: 0,5 % | +0,5 % | 0,5 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Précision: 0,5 % | +0,5 % | 1 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Précision: 0,5 % | +0,5 % | 1,5 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 2 WeaponPoint | Précision: 0,5 % | +0,5 % | 0,5 % | 3 pts requis | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Précision: 0,5 % | +0,5 % | 1 % | 3 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Précision: 0,5 % | +0,5 % | 1,5 % | 3 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Attaque augmentée
 
@@ -1973,9 +1973,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [2] WeaponPoint) | Attaque: 0,5 % | +0,5 % | 0,5 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Attaque: 0,5 % | +0,5 % | 1 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Attaque: 0,5 % | +0,5 % | 1,5 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 2 WeaponPoint | Attaque: 0,5 % | +0,5 % | 0,5 % | 5 pts requis | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [2] WeaponPoint) | Attaque: 0,5 % | +0,5 % | 1 % | 5 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [2] WeaponPoint) | Attaque: 0,5 % | +0,5 % | 1,5 % | 5 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Blessure régénérante
 
@@ -1985,7 +1985,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 5 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Récupération de force
 
@@ -1995,7 +1995,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 7 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Frappe de rage
 
@@ -2005,7 +2005,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 8 pts requis | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Seconde chance
 
@@ -2015,7 +2015,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 WeaponPoint | Effet déclenché | Non chiffré | Non chiffré | 10 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 # AMÉLIORATIONS DE JINWOO
 
@@ -2031,7 +2031,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [1] SpecialPoint) | Attaque: 1 % | +1 % | 1 % | 0 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 1 SpecialPoint | Attaque: 1 % | +1 % | 1 % | 0 pts requis | FORTEMENT PROBABLE |
 | II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Attaque: 1 % | +1 % | 2 % | 0 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 | III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Attaque: 1 % | +1 % | 3 % | 0 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
@@ -2043,9 +2043,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [1] SpecialPoint) | Défense: 1 % | +1 % | 1 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Défense: 1 % | +1 % | 2 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Défense: 1 % | +1 % | 3 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 1 SpecialPoint | Défense: 1 % | +1 % | 1 % | 1 pts requis | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Défense: 1 % | +1 % | 2 % | 1 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Défense: 1 % | +1 % | 3 % | 1 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### PV augmentés
 
@@ -2055,9 +2055,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [1] SpecialPoint) | PV: 1 % | +1 % | 1 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | PV: 1 % | +1 % | 2 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | PV: 1 % | +1 % | 3 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 1 SpecialPoint | PV: 1 % | +1 % | 1 % | 1 pts requis | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | PV: 1 % | +1 % | 2 % | 1 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | PV: 1 % | +1 % | 3 % | 1 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Attaque augmentée
 
@@ -2067,9 +2067,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [1] SpecialPoint) | Attaque: 1 % | +1 % | 1 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Attaque: 1 % | +1 % | 2 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Attaque: 1 % | +1 % | 3 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 1 SpecialPoint | Attaque: 1 % | +1 % | 1 % | 2 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Attaque: 1 % | +1 % | 2 % | 2 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Attaque: 1 % | +1 % | 3 % | 2 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Défense augmentée
 
@@ -2079,9 +2079,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [1] SpecialPoint) | Défense: 1 % | +1 % | 1 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Défense: 1 % | +1 % | 2 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Défense: 1 % | +1 % | 3 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 1 SpecialPoint | Défense: 1 % | +1 % | 1 % | 3 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Défense: 1 % | +1 % | 2 % | 3 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Défense: 1 % | +1 % | 3 % | 3 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### PV augmentés
 
@@ -2091,9 +2091,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [1] SpecialPoint) | PV: 1 % | +1 % | 1 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | PV: 1 % | +1 % | 2 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | PV: 1 % | +1 % | 3 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 1 SpecialPoint | PV: 1 % | +1 % | 1 % | 3 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | PV: 1 % | +1 % | 2 % | 3 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | PV: 1 % | +1 % | 3 % | 3 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Attaque augmentée
 
@@ -2103,9 +2103,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [1] SpecialPoint) | Attaque: 1 % | +1 % | 1 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Attaque: 1 % | +1 % | 2 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Attaque: 1 % | +1 % | 3 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 1 SpecialPoint | Attaque: 1 % | +1 % | 1 % | 4 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Attaque: 1 % | +1 % | 2 % | 4 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Attaque: 1 % | +1 % | 3 % | 4 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Défense augmentée
 
@@ -2115,9 +2115,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [1] SpecialPoint) | Défense: 1 % | +1 % | 1 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Défense: 1 % | +1 % | 2 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Défense: 1 % | +1 % | 3 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 1 SpecialPoint | Défense: 1 % | +1 % | 1 % | 5 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Défense: 1 % | +1 % | 2 % | 5 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Défense: 1 % | +1 % | 3 % | 5 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### PV augmentés
 
@@ -2127,9 +2127,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [1] SpecialPoint) | PV: 1 % | +1 % | 1 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | PV: 1 % | +1 % | 2 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | PV: 1 % | +1 % | 3 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 1 SpecialPoint | PV: 1 % | +1 % | 1 % | 5 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | PV: 1 % | +1 % | 2 % | 5 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | PV: 1 % | +1 % | 3 % | 5 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 ### Branche 2 — Amélioration corporelle II
 
@@ -2141,7 +2141,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [1] SpecialPoint) | Taux critique: 0,33 % | +0,33 % | 0,33 % | 0 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 1 SpecialPoint | Taux critique: 0,33 % | +0,33 % | 0,33 % | 0 pts requis | FORTEMENT PROBABLE |
 | II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Taux critique: 0,33 % | +0,33 % | 0,66 % | 0 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 | III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Taux critique: 0,33 % | +0,33 % | 0,99 % | 0 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
@@ -2153,9 +2153,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [1] SpecialPoint) | Pénétration: 0,33 % | +0,33 % | 0,33 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Pénétration: 0,33 % | +0,33 % | 0,66 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Pénétration: 0,33 % | +0,33 % | 0,99 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 1 SpecialPoint | Pénétration: 0,33 % | +0,33 % | 0,33 % | 1 pts requis | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Pénétration: 0,33 % | +0,33 % | 0,66 % | 1 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Pénétration: 0,33 % | +0,33 % | 0,99 % | 1 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Pénétration de défense augmentée
 
@@ -2165,9 +2165,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [1] SpecialPoint) | Pénétration: 0,33 % | +0,33 % | 0,33 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Pénétration: 0,33 % | +0,33 % | 0,66 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Pénétration: 0,33 % | +0,33 % | 0,99 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 1 SpecialPoint | Pénétration: 0,33 % | +0,33 % | 0,33 % | 1 pts requis | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Pénétration: 0,33 % | +0,33 % | 0,66 % | 1 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Pénétration: 0,33 % | +0,33 % | 0,99 % | 1 pts requis | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Taux de coup critique augmenté
 
@@ -2177,9 +2177,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [1] SpecialPoint) | Taux critique: 0,33 % | +0,33 % | 0,33 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Taux critique: 0,33 % | +0,33 % | 0,66 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Taux critique: 0,33 % | +0,33 % | 0,99 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 1 SpecialPoint | Taux critique: 0,33 % | +0,33 % | 0,33 % | 2 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Taux critique: 0,33 % | +0,33 % | 0,66 % | 2 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Taux critique: 0,33 % | +0,33 % | 0,99 % | 2 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Pénétration de défense augmentée
 
@@ -2189,9 +2189,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [1] SpecialPoint) | Pénétration: 0,33 % | +0,33 % | 0,33 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Pénétration: 0,33 % | +0,33 % | 0,66 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Pénétration: 0,33 % | +0,33 % | 0,99 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 1 SpecialPoint | Pénétration: 0,33 % | +0,33 % | 0,33 % | 3 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Pénétration: 0,33 % | +0,33 % | 0,66 % | 3 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Pénétration: 0,33 % | +0,33 % | 0,99 % | 3 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Pénétration de défense augmentée
 
@@ -2201,9 +2201,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [1] SpecialPoint) | Pénétration: 0,33 % | +0,33 % | 0,33 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Pénétration: 0,33 % | +0,33 % | 0,66 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Pénétration: 0,33 % | +0,33 % | 0,99 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 1 SpecialPoint | Pénétration: 0,33 % | +0,33 % | 0,33 % | 3 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Pénétration: 0,33 % | +0,33 % | 0,66 % | 3 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Pénétration: 0,33 % | +0,33 % | 0,99 % | 3 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Dégâts subis réduits
 
@@ -2213,9 +2213,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [1] SpecialPoint) | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,33 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,66 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,99 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 1 SpecialPoint | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,33 % | 4 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,66 % | 4 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,99 % | 4 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Dégâts subis réduits
 
@@ -2225,9 +2225,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [1] SpecialPoint) | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,33 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,66 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,99 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 1 SpecialPoint | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,33 % | 4 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,66 % | 4 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Réduction des dégâts subis: 0,33 % | +0,33 % | 0,99 % | 4 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Taux de coup critique augmenté
 
@@ -2237,9 +2237,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [1] SpecialPoint) | Taux critique: 0,33 % | +0,33 % | 0,33 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Taux critique: 0,33 % | +0,33 % | 0,66 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Taux critique: 0,33 % | +0,33 % | 0,99 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 1 SpecialPoint | Taux critique: 0,33 % | +0,33 % | 0,33 % | 5 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Taux critique: 0,33 % | +0,33 % | 0,66 % | 5 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Taux critique: 0,33 % | +0,33 % | 0,99 % | 5 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 #### Taux de coup critique augmenté
 
@@ -2249,9 +2249,9 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | NON DÉTERMINÉ (raw [1] SpecialPoint) | Taux critique: 0,33 % | +0,33 % | 0,33 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Taux critique: 0,33 % | +0,33 % | 0,66 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
-| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Taux critique: 0,33 % | +0,33 % | 0,99 % | NON DÉTERMINÉ (coût de chemin) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| I | 1 SpecialPoint | Taux critique: 0,33 % | +0,33 % | 0,33 % | 5 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE |
+| II | NON DÉTERMINÉ (raw [1] SpecialPoint) | Taux critique: 0,33 % | +0,33 % | 0,66 % | 5 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
+| III | NON DÉTERMINÉ (raw [1] SpecialPoint) | Taux critique: 0,33 % | +0,33 % | 0,99 % | 5 pts minimum (parent OU provisoire) | FORTEMENT PROBABLE; coût NON DÉTERMINÉ |
 
 ## ÉVEIL DU MONARQUE
 
@@ -2295,7 +2295,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 SpecialPoint | Gain de jauge: 2000 | NON DÉTERMINÉ | NON DÉTERMINÉ | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 SpecialPoint | Gain de jauge: 2000 | NON DÉTERMINÉ | NON DÉTERMINÉ | 6 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Lame vampirique
 
@@ -2305,7 +2305,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | 9 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Tranchant des ombres I
 
@@ -2315,7 +2315,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | 9 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Tempête d'ombre I
 
@@ -2325,7 +2325,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | 9 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Ruée de l'ombre
 
@@ -2335,7 +2335,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | 12 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Tranchant des ombres II
 
@@ -2345,7 +2345,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 SpecialPoint | Modification de compétence | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 SpecialPoint | Modification de compétence | Non chiffré | Non chiffré | 12 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 #### Tempête d'ombre II
 
@@ -2355,7 +2355,7 @@ Lecture: le rapport est trié par arbre, puis branche, puis talent logique dans 
 
 | Rang | Coût | Effet | Gain | Cumul | Accès | Confiance |
 |---:|---|---|---|---|---|---|
-| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | NON DÉTERMINÉ (coût de chemin) | CONFIRMÉ PAR LES GAMEDATA |
+| I | 3 SpecialPoint | Effet déclenché | Non chiffré | Non chiffré | 12 pts minimum (parent OU provisoire) | CONFIRMÉ PAR LES GAMEDATA |
 
 ### Branche 2 — Libération d'âme
 

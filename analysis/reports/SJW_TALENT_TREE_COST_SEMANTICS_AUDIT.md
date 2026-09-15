@@ -4,9 +4,9 @@ Audit ciblé sur `LevelUpCostValue` après contradiction in-game observée sur `
 
 ## Conclusion
 
-- Règle runtime de coût par rang: **NON DÉTERMINÉE** pour les nœuds multi-rangs dont `LevelUpCostValue` ne contient qu'une seule valeur.
+- Règle runtime des rangs II+ : **NON DÉTERMINÉE** pour les nœuds multi-rangs dont `LevelUpCostValue` ne contient qu'une seule valeur.
 - Le codec lit bien la valeur brute complète `[1]` pour Physique; ce n'est pas une liste tronquée.
-- Le coût interprété n'est plus exporté comme `1 SpecialPoint` par rang pour ces cas; la valeur raw reste conservée séparément.
+- Le coût interprété utilise la valeur singleton pour le rang I uniquement; elle n'est plus répétée sur les rangs II/III.
 
 ## Tables contrôlées
 
@@ -52,13 +52,21 @@ Audit ciblé sur `LevelUpCostValue` après contradiction in-game observée sur `
 
 | NodeID | Max rank | LevelUpCost | Raw LevelUpCostValue | Remarque |
 |---:|---:|---|---|---|
-| 31100102 | 3 | SpecialPoint | `[1]` | coût par rang non prouvé |
-| 31100302 | 3 | SpecialPoint | `[1]` | coût par rang non prouvé |
-| 31100502 | 3 | SpecialPoint | `[1]` | coût par rang non prouvé |
-| 31100601 | 3 | SpecialPoint | `[1]` | coût par rang non prouvé |
-| 31101102 | 3 | SpecialPoint | `[1]` | coût par rang non prouvé |
+| 31100102 | 3 | SpecialPoint | `[1]` | rang I seulement; rangs II+ non prouvés |
+| 31100302 | 3 | SpecialPoint | `[1]` | rang I seulement; rangs II+ non prouvés |
+| 31100502 | 3 | SpecialPoint | `[1]` | rang I seulement; rangs II+ non prouvés |
+| 31100601 | 3 | SpecialPoint | `[1]` | rang I seulement; rangs II+ non prouvés |
+| 31101102 | 3 | SpecialPoint | `[1]` | rang I seulement; rangs II+ non prouvés |
 | 119101 | 3 | SkillPoint | `[2,3,4]` | une valeur explicite par rang |
-| 2150401 | 3 | WeaponPoint | `[2]` | coût par rang non prouvé |
+| 2150401 | 3 | WeaponPoint | `[2]` | rang I seulement; rangs II+ non prouvés |
+
+## Contrôles coût direct / coût à investir
+
+| Cas | NodeID | Coût direct rang I | Sélection simulée | Coût à investir calculé |
+|---|---:|---:|---|---:|
+| Marque de l'assassin | 111701 | 4 | parent `111401` déjà pris | 9 |
+| Marque de l'assassin | 111701 | 4 | aucun nœud pris | 21 |
+| Frappe préparée | 2252502 | 3 | aucun nœud pris | 13 |
 
 ## Checklist in-game à relever
 

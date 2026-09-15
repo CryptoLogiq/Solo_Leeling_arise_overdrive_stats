@@ -18,7 +18,7 @@
       "Parent/Child est une relation NodeID -> NodeID.",
       "VisualRow/VisualColumn correspondent à NodeTierY/NodeTierX.",
       "Les rangs internes proviennent de NodeMaxLevel, pas des suffixes de noms localisés.",
-      "Pour NodeMaxLevel > 1, une LevelUpCostValue singleton est conservée en raw mais n'est pas répétée comme coût par rang."
+      "Pour NodeMaxLevel > 1, une LevelUpCostValue singleton est utilisée pour le rang I puis conservée en raw; elle n'est pas répétée sur les rangs suivants."
     ]
   },
   "trees": [
@@ -3901,10 +3901,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "1",
               "pointCurrency": "SpecialPoint",
               "rawLevelUpCostValue": "[1]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -3916,7 +3916,7 @@
                   "unit": "%",
                   "buffId": "200000086",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -3987,10 +3987,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "1",
               "pointCurrency": "SpecialPoint",
               "rawLevelUpCostValue": "[1]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -4002,7 +4002,7 @@
                   "unit": "%",
                   "buffId": "200000087",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -4073,10 +4073,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "1",
               "pointCurrency": "SpecialPoint",
               "rawLevelUpCostValue": "[1]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -4088,7 +4088,7 @@
                   "unit": "%",
                   "buffId": "200000088",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -4161,10 +4161,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "1",
               "pointCurrency": "SpecialPoint",
               "rawLevelUpCostValue": "[1]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -4176,7 +4176,7 @@
                   "unit": "%",
                   "buffId": "200000089",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -4247,10 +4247,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "1",
               "pointCurrency": "SpecialPoint",
               "rawLevelUpCostValue": "[1]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -4262,7 +4262,7 @@
                   "unit": "%",
                   "buffId": "200000090",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -4333,10 +4333,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "1",
               "pointCurrency": "SpecialPoint",
               "rawLevelUpCostValue": "[1]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -4348,7 +4348,7 @@
                   "unit": "%",
                   "buffId": "200000091",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -4421,10 +4421,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "1",
               "pointCurrency": "SpecialPoint",
               "rawLevelUpCostValue": "[1]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -4436,7 +4436,7 @@
                   "unit": "%",
                   "buffId": "200000092",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -4505,10 +4505,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "1",
               "pointCurrency": "SpecialPoint",
               "rawLevelUpCostValue": "[1]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -4520,7 +4520,7 @@
                   "unit": "%",
                   "buffId": "200000093",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -4589,10 +4589,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "1",
               "pointCurrency": "SpecialPoint",
               "rawLevelUpCostValue": "[1]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -4604,7 +4604,7 @@
                   "unit": "%",
                   "buffId": "200000094",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -4684,10 +4684,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "1",
               "pointCurrency": "SpecialPoint",
               "rawLevelUpCostValue": "[1]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -4699,7 +4699,7 @@
                   "unit": "%",
                   "buffId": "200000095",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -4770,10 +4770,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "1",
               "pointCurrency": "SpecialPoint",
               "rawLevelUpCostValue": "[1]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -4785,7 +4785,7 @@
                   "unit": "%",
                   "buffId": "200000096",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -4856,10 +4856,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "1",
               "pointCurrency": "SpecialPoint",
               "rawLevelUpCostValue": "[1]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -4871,7 +4871,7 @@
                   "unit": "%",
                   "buffId": "200000097",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -4944,10 +4944,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "1",
               "pointCurrency": "SpecialPoint",
               "rawLevelUpCostValue": "[1]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -4959,7 +4959,7 @@
                   "unit": "%",
                   "buffId": "200000098",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -5030,10 +5030,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "1",
               "pointCurrency": "SpecialPoint",
               "rawLevelUpCostValue": "[1]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -5045,7 +5045,7 @@
                   "unit": "%",
                   "buffId": "200000099",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -5116,10 +5116,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "1",
               "pointCurrency": "SpecialPoint",
               "rawLevelUpCostValue": "[1]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -5131,7 +5131,7 @@
                   "unit": "%",
                   "buffId": "200000100",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -5202,10 +5202,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "1",
               "pointCurrency": "SpecialPoint",
               "rawLevelUpCostValue": "[1]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -5217,7 +5217,7 @@
                   "unit": "%",
                   "buffId": "200000101",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -5288,10 +5288,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "1",
               "pointCurrency": "SpecialPoint",
               "rawLevelUpCostValue": "[1]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -5303,7 +5303,7 @@
                   "unit": "%",
                   "buffId": "200000102",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -5372,10 +5372,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "1",
               "pointCurrency": "SpecialPoint",
               "rawLevelUpCostValue": "[1]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -5387,7 +5387,7 @@
                   "unit": "%",
                   "buffId": "200000103",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -5456,10 +5456,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "1",
               "pointCurrency": "SpecialPoint",
               "rawLevelUpCostValue": "[1]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -5471,7 +5471,7 @@
                   "unit": "%",
                   "buffId": "200000104",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -9490,10 +9490,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "3",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[3]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -9505,7 +9505,7 @@
                   "unit": "valeur brute",
                   "buffId": "200000026",
                   "abilityId": "",
-                  "confidence": "CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ"
+                  "confidence": "CONFIRMÉ PAR LES GAMEDATA"
                 }
               ]
             },
@@ -9576,10 +9576,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "2",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[2]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -9591,7 +9591,7 @@
                   "unit": "%",
                   "buffId": "200000027",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -9750,10 +9750,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "2",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[2]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -9765,7 +9765,7 @@
                   "unit": "%",
                   "buffId": "200000030",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -9932,10 +9932,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "3",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[3]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -9947,7 +9947,7 @@
                   "unit": "valeur brute",
                   "buffId": "200000032",
                   "abilityId": "",
-                  "confidence": "CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ"
+                  "confidence": "CONFIRMÉ PAR LES GAMEDATA"
                 }
               ]
             },
@@ -10018,10 +10018,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "2",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[2]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -10033,7 +10033,7 @@
                   "unit": "%",
                   "buffId": "200000033",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -10192,10 +10192,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "2",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[2]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -10207,7 +10207,7 @@
                   "unit": "%",
                   "buffId": "200000036",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -10384,10 +10384,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "3",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[3]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -10399,7 +10399,7 @@
                   "unit": "valeur brute",
                   "buffId": "200000062",
                   "abilityId": "",
-                  "confidence": "CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ"
+                  "confidence": "CONFIRMÉ PAR LES GAMEDATA"
                 }
               ]
             },
@@ -10470,10 +10470,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "2",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[2]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -10485,7 +10485,7 @@
                   "unit": "valeur brute",
                   "buffId": "200000063",
                   "abilityId": "",
-                  "confidence": "CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ"
+                  "confidence": "CONFIRMÉ PAR LES GAMEDATA"
                 }
               ]
             },
@@ -10795,10 +10795,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "3",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[3]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -10810,7 +10810,7 @@
                   "unit": "valeur brute",
                   "buffId": "200000068",
                   "abilityId": "",
-                  "confidence": "CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ"
+                  "confidence": "CONFIRMÉ PAR LES GAMEDATA"
                 }
               ]
             },
@@ -10926,10 +10926,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "3",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[3]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -10941,7 +10941,7 @@
                   "unit": "%",
                   "buffId": "200000070",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -11012,10 +11012,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "2",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[2]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -11027,7 +11027,7 @@
                   "unit": "%",
                   "buffId": "200000071",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -11237,10 +11237,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "3",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[3]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -11252,7 +11252,7 @@
                   "unit": "valeur brute",
                   "buffId": "200000074",
                   "abilityId": "",
-                  "confidence": "CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ"
+                  "confidence": "CONFIRMÉ PAR LES GAMEDATA"
                 }
               ]
             },
@@ -11324,10 +11324,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "2",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[2]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -11339,7 +11339,7 @@
                   "unit": "%",
                   "buffId": "200000075",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -11659,10 +11659,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "3",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[3]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -11674,7 +11674,7 @@
                   "unit": "valeur brute",
                   "buffId": "200000080",
                   "abilityId": "",
-                  "confidence": "CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ"
+                  "confidence": "CONFIRMÉ PAR LES GAMEDATA"
                 }
               ]
             },
@@ -11746,10 +11746,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "2",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[2]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -11761,7 +11761,7 @@
                   "unit": "%",
                   "buffId": "200000081",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -11832,10 +11832,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "2",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[2]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -11847,7 +11847,7 @@
                   "unit": "%",
                   "buffId": "200000082",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -12101,10 +12101,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "3",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[3]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -12116,7 +12116,7 @@
                   "unit": "valeur brute",
                   "buffId": "200000038",
                   "abilityId": "",
-                  "confidence": "CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ"
+                  "confidence": "CONFIRMÉ PAR LES GAMEDATA"
                 }
               ]
             },
@@ -12493,10 +12493,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "3",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[3]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -12508,7 +12508,7 @@
                   "unit": "valeur brute",
                   "buffId": "200000045",
                   "abilityId": "",
-                  "confidence": "CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ"
+                  "confidence": "CONFIRMÉ PAR LES GAMEDATA"
                 }
               ]
             },
@@ -12579,10 +12579,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "2",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[2]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -12594,7 +12594,7 @@
                   "unit": "%",
                   "buffId": "200000046",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -12709,10 +12709,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "2",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[2]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -12724,7 +12724,7 @@
                   "unit": "%",
                   "buffId": "200000048",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -12889,10 +12889,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "2",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[2]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -12904,7 +12904,7 @@
                   "unit": "%",
                   "buffId": "200000013",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -12973,10 +12973,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "2",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[2]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -12988,7 +12988,7 @@
                   "unit": "%",
                   "buffId": "200000014",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -13105,10 +13105,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "2",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[2]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -13120,7 +13120,7 @@
                   "unit": "%",
                   "buffId": "200000016",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -13191,10 +13191,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "2",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[2]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -13206,7 +13206,7 @@
                   "unit": "%",
                   "buffId": "200000017",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -13416,10 +13416,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "3",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[3]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -13431,7 +13431,7 @@
                   "unit": "valeur brute",
                   "buffId": "200000020",
                   "abilityId": "",
-                  "confidence": "CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ"
+                  "confidence": "CONFIRMÉ PAR LES GAMEDATA"
                 }
               ]
             },
@@ -13500,10 +13500,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "3",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[3]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -13515,7 +13515,7 @@
                   "unit": "valeur brute",
                   "buffId": "200000021",
                   "abilityId": "",
-                  "confidence": "CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ"
+                  "confidence": "CONFIRMÉ PAR LES GAMEDATA"
                 }
               ]
             },
@@ -13826,10 +13826,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "3",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[3]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -13841,7 +13841,7 @@
                   "unit": "valeur brute",
                   "buffId": "200000050",
                   "abilityId": "",
-                  "confidence": "CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ"
+                  "confidence": "CONFIRMÉ PAR LES GAMEDATA"
                 }
               ]
             },
@@ -13957,10 +13957,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "3",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[3]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -13972,7 +13972,7 @@
                   "unit": "valeur brute",
                   "buffId": "200000052",
                   "abilityId": "",
-                  "confidence": "CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ"
+                  "confidence": "CONFIRMÉ PAR LES GAMEDATA"
                 }
               ]
             },
@@ -14043,10 +14043,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "3",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[3]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -14058,7 +14058,7 @@
                   "unit": "valeur brute",
                   "buffId": "200000053",
                   "abilityId": "",
-                  "confidence": "CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ"
+                  "confidence": "CONFIRMÉ PAR LES GAMEDATA"
                 }
               ]
             },
@@ -14268,10 +14268,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "3",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[3]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -14283,7 +14283,7 @@
                   "unit": "valeur brute",
                   "buffId": "200000056",
                   "abilityId": "",
-                  "confidence": "CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ"
+                  "confidence": "CONFIRMÉ PAR LES GAMEDATA"
                 }
               ]
             },
@@ -14352,10 +14352,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "3",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[3]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -14367,7 +14367,7 @@
                   "unit": "valeur brute",
                   "buffId": "200000057",
                   "abilityId": "",
-                  "confidence": "CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ"
+                  "confidence": "CONFIRMÉ PAR LES GAMEDATA"
                 }
               ]
             },
@@ -14495,10 +14495,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "2",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[2]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -14510,7 +14510,7 @@
                   "unit": "valeur brute",
                   "buffId": "200000059",
                   "abilityId": "",
-                  "confidence": "CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ"
+                  "confidence": "CONFIRMÉ PAR LES GAMEDATA"
                 }
               ]
             },
@@ -14720,10 +14720,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "3",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[3]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -14735,7 +14735,7 @@
                   "unit": "valeur brute",
                   "buffId": "200000001",
                   "abilityId": "",
-                  "confidence": "CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ"
+                  "confidence": "CONFIRMÉ PAR LES GAMEDATA"
                 }
               ]
             },
@@ -14906,10 +14906,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "2",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[2]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -14921,7 +14921,7 @@
                   "unit": "%",
                   "buffId": "200000004",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -14992,10 +14992,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "2",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[2]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -15007,7 +15007,7 @@
                   "unit": "%",
                   "buffId": "200000005",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -15174,10 +15174,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "3",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[3]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -15189,7 +15189,7 @@
                   "unit": "valeur brute",
                   "buffId": "200000007",
                   "abilityId": "",
-                  "confidence": "CONFIRMÉ PAR LES GAMEDATA; coût NON DÉTERMINÉ"
+                  "confidence": "CONFIRMÉ PAR LES GAMEDATA"
                 }
               ]
             },
@@ -15349,10 +15349,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "2",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[2]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -15364,7 +15364,7 @@
                   "unit": "%",
                   "buffId": "200000010",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },
@@ -15435,10 +15435,10 @@
           "ranks": [
             {
               "rank": 1,
-              "cost": "",
+              "cost": "2",
               "pointCurrency": "WeaponPoint",
               "rawLevelUpCostValue": "[2]",
-              "costConfidence": "NON DÉTERMINÉ",
+              "costConfidence": "CONFIRMÉ PAR LES GAMEDATA",
               "accessCondition": "",
               "effects": [
                 {
@@ -15450,7 +15450,7 @@
                   "unit": "%",
                   "buffId": "200000011",
                   "abilityId": "",
-                  "confidence": "FORTEMENT PROBABLE; coût NON DÉTERMINÉ"
+                  "confidence": "FORTEMENT PROBABLE"
                 }
               ]
             },

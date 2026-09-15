@@ -89,6 +89,71 @@ function rankCostLabel(rank, node) {
   return raw ? `NON DÉTERMINÉ (${raw})` : "NON DÉTERMINÉ";
 }
 
+function emptyCostResult() {
+  return { costs: {}, unknown: false };
+}
+
+function addCost(result, currency, value) {
+  if (value === null) {
+    result.unknown = true;
+    return result;
+  }
+  result.costs[currency] = (result.costs[currency] || 0) + value;
+  return result;
+}
+
+function mergeCostResults(...items) {
+  const result = emptyCostResult();
+  for (const item of items) {
+    if (!item) continue;
+    result.unknown = result.unknown || item.unknown;
+    for (const [currency, value] of Object.entries(item.costs || {})) {
+      result.costs[currency] = (result.costs[currency] || 0) + value;
+    }
+  }
+  return result;
+}
+
+function costResultTotal(result) {
+  return Object.values(result.costs || {}).reduce((sum, value) => sum + value, 0);
+}
+
+function formatCostResult(result) {
+  const chunks = Object.entries(result.costs || {}).map(([currency, value]) => `${value} ${currency}`);
+  if (result.unknown) chunks.push("NON DÉTERMINÉ");
+  return chunks.length ? chunks.join(" + ") : "0";
+}
+
+function cheapestCostResult(options) {
+  const known = options.filter((item) => !item.unknown);
+  const pool = known.length ? known : options;
+  return pool.sort((a, b) => costResultTotal(a) - costResultTotal(b))[0] || emptyCostResult();
+}
+
+function missingCostToRank(node, targetRank = 1, selected = state.selected, visiting = new Set()) {
+  if (!node || visiting.has(node.nodeId)) return { costs: {}, unknown: true };
+  const current = Number(selected[node.nodeId] || 0);
+  if (current >= targetRank) return emptyCostResult();
+  const nextVisiting = new Set(visiting);
+  nextVisiting.add(node.nodeId);
+
+  const rankCosts = emptyCostResult();
+  for (let index = current; index < targetRank; index += 1) {
+    const rank = node.ranks[index];
+    addCost(rankCosts, rank?.pointCurrency || nodeCurrency(node), parseCost(rank));
+  }
+
+  if (current > 0 || !node.parents.length || node.parents.some((parentId) => Number(selected[parentId] || 0) > 0)) {
+    return rankCosts;
+  }
+
+  const parentOptions = node.parents
+    .map((parentId) => state.nodeById.get(parentId))
+    .filter(Boolean)
+    .map((parent) => missingCostToRank(parent, 1, selected, nextVisiting));
+  return mergeCostResults(cheapestCostResult(parentOptions), rankCosts);
+}
+
 function selectedRank(nodeId) {
   return Number(state.selected[nodeId] || 0);
 }
@@ -344,6 +409,10 @@ function nextCostLabel(node) {
   if (current >= node.nodeMaxLevel) return `${current}/${node.nodeMaxLevel} - MAX`;
   const nextRank = node.ranks[current];
   const cost = rankCostLabel(nextRank, node);
+  if (current === 0 && !unlockSatisfied(node)) {
+    const missing = missingCostToRank(node, 1);
+    return `à investir : ${formatCostResult(missing)} (direct : ${cost})`;
+  }
   if (node.nodeMaxLevel === 1) return current ? "1/1 - MAX" : `Coût : ${cost}`;
   return `${current}/${node.nodeMaxLevel} - prochain : ${cost}`;
 }

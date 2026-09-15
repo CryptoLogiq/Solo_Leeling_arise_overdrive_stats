@@ -17,23 +17,25 @@ Familles analysées: 88.
 
 | Classification | Familles |
 |---|---:|
-| NON DÉTERMINÉ | 83 |
+| NON DÉTERMINÉ | 74 |
+| A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES | 8 |
 | D. NON COMPARABLE / IRRÉGULIER | 5 |
+| A. LISSAGE VISUEL / RENDEMENT CONSTANT | 1 |
 
 ## Statistiques globales sur familles répétées
 
 | Mesure | Nombre |
 |---|---:|
 | Familles répétées analysées | 16 |
-| coût et gain proportionnels | 0 |
+| coût et gain proportionnels | 1 |
 | rendement constant partiel | 0 |
-| coût fixe et gain fixe | 0 |
-| coût fixe, gain variable | 0 |
-| gain fixe, coût variable | 9 |
+| coût fixe et gain fixe | 8 |
+| coût fixe, gain variable | 1 |
+| gain fixe, coût variable | 0 |
 | coût croissant, gain moins rapide | 0 |
 | coût croissant, gain plus rapide | 0 |
 | effet différent selon la rangée visuelle | 0 |
-| non comparables directement | 7 |
+| non comparables directement | 6 |
 
 Conclusion globale: l'observation est **vraie seulement pour certains nœuds**. Plusieurs familles en pourcentage gardent un rendement direct constant, mais les principales séries `+1/+2/+3...` observées ici deviennent irrégulières quand on vérifie toutes leurs rangées visuelles. Les valeurs brutes sans unité démontrée restent non comparables.
 
@@ -50,13 +52,13 @@ Conclusion globale: l'observation est **vraie seulement pour certains nœuds**. 
 | 119401 | 3 | 4 | 2 | 3 SkillPoint | 6 | 400 | 4% | 1.3333 | 119301 | 100000010 | AttFR | D. NON COMPARABLE / IRRÉGULIER | talent distinct |
 | 119501 | 4 | 5 | 2 | 3 SkillPoint | 9 | 500 | 5% | 1.6667 | 119401 | 100000013 | AttFR | D. NON COMPARABLE / IRRÉGULIER | talent distinct |
 | 119601 | 5 | 6 | 2 | 3 SkillPoint | 12 | 600 | 6% | 2 | 119501 | 100000016 | AttFR | D. NON COMPARABLE / IRRÉGULIER | talent distinct |
-| 2150401 | 3 | 4 | 2 | NON DÉTERMINÉ | NON DÉTERMINÉ | 50 | 0.5% | NON DÉTERMINÉ | 2150302 | 200000004 | AttFR | NON DÉTERMINÉ | isolé/non comparable |
-| 2463302 | 2 | 3 | 3 | NON DÉTERMINÉ | NON DÉTERMINÉ | 50 | 0.5% | NON DÉTERMINÉ | 2463202 | 200000082 | AttFR | NON DÉTERMINÉ | isolé/non comparable |
-| 31100102 | 0 | 1 | 3 | NON DÉTERMINÉ | 0 | 100 | 1% | NON DÉTERMINÉ |  | 200000086 | AttFR | NON DÉTERMINÉ | isolé/non comparable |
-| 31100302 | 2 | 3 | 3 | NON DÉTERMINÉ | NON DÉTERMINÉ | 100 | 1% | NON DÉTERMINÉ | 31100201,31100203 | 200000089 | AttFR | NON DÉTERMINÉ | isolé/non comparable |
-| 31100502 | 4 | 5 | 3 | NON DÉTERMINÉ | NON DÉTERMINÉ | 100 | 1% | NON DÉTERMINÉ | 31100401,31100403 | 200000092 | AttFR | NON DÉTERMINÉ | isolé/non comparable |
+| 2150401 | 3 | 4 | 2 | 2 WeaponPoint | 9 | 50 | 0.5% | 0.25 | 2150302 | 200000004 | AttFR | NON DÉTERMINÉ | isolé/non comparable |
+| 2463302 | 2 | 3 | 3 | 2 WeaponPoint | 5 | 50 | 0.5% | 0.25 | 2463202 | 200000082 | AttFR | NON DÉTERMINÉ | isolé/non comparable |
+| 31100102 | 0 | 1 | 3 | 1 SpecialPoint | 0 | 100 | 1% | 1 |  | 200000086 | AttFR | A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES | talent distinct |
+| 31100302 | 2 | 3 | 3 | 1 SpecialPoint | 4 | 100 | 1% | 1 | 31100201,31100203 | 200000089 | AttFR | A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES | talent distinct |
+| 31100502 | 4 | 5 | 3 | 1 SpecialPoint | 8 | 100 | 1% | 1 | 31100401,31100403 | 200000092 | AttFR | A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES | talent distinct |
 
-Conclusion Attaque: **Observation vraie seulement pour certains nœuds**. Les nœuds `119101` à `119601` sont des talents distincts par rangée visuelle avec valeurs +1% à +6%, mais leur coût de rang 1 n'est pas toujours proportionnel à cette rangée. Les nœuds `31100102`, `31100302` et `31100502` répètent le même +1% marginal, mais leur coût par rang reste `NON DÉTERMINÉ` parce que `LevelUpCostValue=[1]` n'est pas une liste explicite par rang.
+Conclusion Attaque: **Observation vraie seulement pour certains nœuds**. Les nœuds `119101` à `119601` sont des talents distincts par rangée visuelle avec valeurs +1% à +6%, mais leur coût de rang 1 n'est pas toujours proportionnel à cette rangée. Les nœuds `31100102`, `31100302` et `31100502` répètent le même +1% marginal; leur rang I utilise `LevelUpCostValue=[1]`, mais les rangs II/III restent `NON DÉTERMINÉ`.
 
 # Critique
 
@@ -74,17 +76,17 @@ Conclusion Attaque: **Observation vraie seulement pour certains nœuds**. Les n�
 | Groupe 10 / Groupe 10 / Dégâts critiques / Dégâts de coup critique | 1110502 | 4 | 5 | 1 | 3 SkillPoint | 9 | 5% | 1.6667 | D. NON COMPARABLE / IRRÉGULIER |
 | Groupe 10 / Groupe 10 / Taux critique / Taux de coup critique | 1110601 | 5 | 6 | 1 | 3 SkillPoint | 12 | 6% | 2 | D. NON COMPARABLE / IRRÉGULIER |
 | Groupe 10 / Groupe 10 / Dégâts critiques / Dégâts de coup critique | 1110602 | 5 | 6 | 1 | 3 SkillPoint | 12 | 6% | 2 | D. NON COMPARABLE / IRRÉGULIER |
-| GSSkillTree / Dague / Plaie mortelle / Taux critique / Taux de coup critique augmenté | 2252101 | 0 | 1 | 1 | NON DÉTERMINÉ | 0 | 0.25% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Dague / Plaie mortelle / Dégâts critiques / Dégâts de coup critique augmentés | 2252103 | 0 | 1 | 1 | NON DÉTERMINÉ | 0 | 0.25% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Dague / Plaie mortelle / Taux critique / Taux de coup critique augmenté | 2252301 | 2 | 3 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0.25% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Dague / Plaie mortelle / Dégâts critiques / Dégâts de coup critique augmentés | 2252303 | 2 | 3 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0.25% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Arc / Visée concentrée / Taux critique / Taux de coup critique augmenté | 2254202 | 1 | 2 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0.25% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Arc / Visée concentrée / Dégâts critiques / Dégâts de coup critique augmentés | 2254402 | 3 | 4 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0.25% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Arme à deux mains / Ruée de berserker / Dégâts critiques / Dégâts de coup critique augmentés | 2462202 | 1 | 2 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0.25% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| LordSkillTree / Physique / Amélioration corporelle II / Taux critique / Taux de coup critique augmenté | 31101102 | 0 | 1 | 1 | NON DÉTERMINÉ | 0 | 0.33% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| LordSkillTree / Physique / Amélioration corporelle II / Taux critique / Taux de coup critique augmenté | 31101302 | 2 | 3 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0.33% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| LordSkillTree / Physique / Amélioration corporelle II / Taux critique / Taux de coup critique augmenté | 31101601 | 5 | 6 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0.33% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| LordSkillTree / Physique / Amélioration corporelle II / Taux critique / Taux de coup critique augmenté | 31101603 | 5 | 6 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0.33% | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Dague / Plaie mortelle / Taux critique / Taux de coup critique augmenté | 2252101 | 0 | 1 | 1 | 2 WeaponPoint | 0 | 0.25% | 0.125 | A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES |
+| GSSkillTree / Dague / Plaie mortelle / Dégâts critiques / Dégâts de coup critique augmentés | 2252103 | 0 | 1 | 1 | 2 WeaponPoint | 0 | 0.25% | 0.125 | A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES |
+| GSSkillTree / Dague / Plaie mortelle / Taux critique / Taux de coup critique augmenté | 2252301 | 2 | 3 | 1 | 2 WeaponPoint | 7 | 0.25% | 0.125 | A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES |
+| GSSkillTree / Dague / Plaie mortelle / Dégâts critiques / Dégâts de coup critique augmentés | 2252303 | 2 | 3 | 1 | 2 WeaponPoint | 7 | 0.25% | 0.125 | A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES |
+| GSSkillTree / Arc / Visée concentrée / Taux critique / Taux de coup critique augmenté | 2254202 | 1 | 2 | 1 | 2 WeaponPoint | 3 | 0.25% | 0.125 | NON DÉTERMINÉ |
+| GSSkillTree / Arc / Visée concentrée / Dégâts critiques / Dégâts de coup critique augmentés | 2254402 | 3 | 4 | 1 | 2 WeaponPoint | 8 | 0.25% | 0.125 | NON DÉTERMINÉ |
+| GSSkillTree / Arme à deux mains / Ruée de berserker / Dégâts critiques / Dégâts de coup critique augmentés | 2462202 | 1 | 2 | 1 | 2 WeaponPoint | 3 | 0.25% | 0.125 | NON DÉTERMINÉ |
+| LordSkillTree / Physique / Amélioration corporelle II / Taux critique / Taux de coup critique augmenté | 31101102 | 0 | 1 | 1 | 1 SpecialPoint | 0 | 0.33% | 0.33 | A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES |
+| LordSkillTree / Physique / Amélioration corporelle II / Taux critique / Taux de coup critique augmenté | 31101302 | 2 | 3 | 1 | 1 SpecialPoint | 4 | 0.33% | 0.33 | A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES |
+| LordSkillTree / Physique / Amélioration corporelle II / Taux critique / Taux de coup critique augmenté | 31101601 | 5 | 6 | 1 | 1 SpecialPoint | 7 | 0.33% | 0.33 | A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES |
+| LordSkillTree / Physique / Amélioration corporelle II / Taux critique / Taux de coup critique augmenté | 31101603 | 5 | 6 | 1 | 1 SpecialPoint | 7 | 0.33% | 0.33 | A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES |
 
 # Pénétration
 
@@ -98,22 +100,22 @@ Conclusion Attaque: **Observation vraie seulement pour certains nœuds**. Les n�
 | Groupe 10 / Groupe 10 / Pénétration de défense / Pénétration de défense | 1110403 | 3 | 4 | 1 | 3 SkillPoint | 6 | 400 | NON DÉTERMINÉ | NON DÉTERMINÉ |
 | Groupe 10 / Groupe 10 / Pénétration de défense / Pénétration de défense | 1110503 | 4 | 5 | 1 | 3 SkillPoint | 9 | 500 | NON DÉTERMINÉ | NON DÉTERMINÉ |
 | Groupe 10 / Groupe 10 / Pénétration de défense / Pénétration de défense | 1110603 | 5 | 6 | 1 | 3 SkillPoint | 12 | 600 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Épée / Résistance à la lame / Pénétration de défense % / Pénétration de défense augmentée | 2151402 | 3 | 4 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0.25% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Arc / Visée sécurisée / Pénétration de défense % / Pénétration de défense augmentée | 2255402 | 3 | 4 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0.25% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Arme à feu / Visée patiente / Pénétration de défense % / Pénétration de défense augmentée | 2357202 | 1 | 2 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0.25% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Arme à feu / Visée patiente / Pénétration de défense % / Pénétration de défense augmentée | 2357402 | 3 | 4 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0.25% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| LordSkillTree / Physique / Amélioration corporelle II / Pénétration de défense % / Pénétration de défense augmentée | 31101201 | 1 | 2 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0.33% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| LordSkillTree / Physique / Amélioration corporelle II / Pénétration de défense % / Pénétration de défense augmentée | 31101203 | 1 | 2 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0.33% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| LordSkillTree / Physique / Amélioration corporelle II / Pénétration de défense % / Pénétration de défense augmentée | 31101401 | 3 | 4 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0.33% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| LordSkillTree / Physique / Amélioration corporelle II / Pénétration de défense % / Pénétration de défense augmentée | 31101403 | 3 | 4 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0.33% | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Épée / Résistance à la lame / Pénétration de défense % / Pénétration de défense augmentée | 2151402 | 3 | 4 | 1 | 2 WeaponPoint | 14 | 0.25% | 0.125 | NON DÉTERMINÉ |
+| GSSkillTree / Arc / Visée sécurisée / Pénétration de défense % / Pénétration de défense augmentée | 2255402 | 3 | 4 | 1 | 2 WeaponPoint | 8 | 0.25% | 0.125 | NON DÉTERMINÉ |
+| GSSkillTree / Arme à feu / Visée patiente / Pénétration de défense % / Pénétration de défense augmentée | 2357202 | 1 | 2 | 1 | 2 WeaponPoint | 3 | 0.25% | 0.125 | A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES |
+| GSSkillTree / Arme à feu / Visée patiente / Pénétration de défense % / Pénétration de défense augmentée | 2357402 | 3 | 4 | 1 | 2 WeaponPoint | 8 | 0.25% | 0.125 | A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES |
+| LordSkillTree / Physique / Amélioration corporelle II / Pénétration de défense % / Pénétration de défense augmentée | 31101201 | 1 | 2 | 1 | 1 SpecialPoint | 1 | 0.33% | 0.33 | A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES |
+| LordSkillTree / Physique / Amélioration corporelle II / Pénétration de défense % / Pénétration de défense augmentée | 31101203 | 1 | 2 | 1 | 1 SpecialPoint | 1 | 0.33% | 0.33 | A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES |
+| LordSkillTree / Physique / Amélioration corporelle II / Pénétration de défense % / Pénétration de défense augmentée | 31101401 | 3 | 4 | 1 | 1 SpecialPoint | 5 | 0.33% | 0.33 | A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES |
+| LordSkillTree / Physique / Amélioration corporelle II / Pénétration de défense % / Pénétration de défense augmentée | 31101403 | 3 | 4 | 1 | 1 SpecialPoint | 5 | 0.33% | 0.33 | A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES |
 
 # Précision
 
 | Famille | NodeID | Profondeur | Rangée visuelle | Rang | Coût | Chemin | Gain | Gain/point | Pattern |
 |---|---:|---:|---:|---:|---|---:|---:|---:|---|
-| GSSkillTree / Épée / Résistance à la lame / Précision / Précision augmentée | 2151302 | 2 | 3 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0.5% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Arc / Visée sécurisée / Précision / Précision augmentée | 2255202 | 1 | 2 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0.5% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Arme à deux mains / Contre-offensive et restauration / Précision / Précision augmentée | 2463202 | 1 | 2 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0.5% | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Épée / Résistance à la lame / Précision / Précision augmentée | 2151302 | 2 | 3 | 1 | 2 WeaponPoint | 12 | 0.5% | 0.25 | NON DÉTERMINÉ |
+| GSSkillTree / Arc / Visée sécurisée / Précision / Précision augmentée | 2255202 | 1 | 2 | 1 | 2 WeaponPoint | 3 | 0.5% | 0.25 | NON DÉTERMINÉ |
+| GSSkillTree / Arme à deux mains / Contre-offensive et restauration / Précision / Précision augmentée | 2463202 | 1 | 2 | 1 | 2 WeaponPoint | 3 | 0.5% | 0.25 | NON DÉTERMINÉ |
 
 # Défense
 
@@ -126,10 +128,10 @@ Conclusion Attaque: **Observation vraie seulement pour certains nœuds**. Les n�
 | Groupe 9 / Groupe 9 / Défense / Défense augmentée | 119402 | 3 | 4 | 1 | 3 SkillPoint | 6 | 4% | 1.3333 | D. NON COMPARABLE / IRRÉGULIER |
 | Groupe 9 / Groupe 9 / Défense / Défense augmentée | 119502 | 4 | 5 | 1 | 3 SkillPoint | 9 | 5% | 1.6667 | D. NON COMPARABLE / IRRÉGULIER |
 | Groupe 9 / Groupe 9 / Défense / Défense augmentée | 119602 | 5 | 6 | 1 | 3 SkillPoint | 12 | 6% | 2 | D. NON COMPARABLE / IRRÉGULIER |
-| GSSkillTree / Épée / Cœur d'acier / Défense / Défense augmentée | 2150403 | 3 | 4 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 1% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| LordSkillTree / Physique / Amélioration corporelle I / Défense / Défense augmentée | 31100201 | 1 | 2 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 1% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| LordSkillTree / Physique / Amélioration corporelle I / Défense / Défense augmentée | 31100401 | 3 | 4 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 1% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| LordSkillTree / Physique / Amélioration corporelle I / Défense / Défense augmentée | 31100601 | 5 | 6 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 1% | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Épée / Cœur d'acier / Défense / Défense augmentée | 2150403 | 3 | 4 | 1 | 2 WeaponPoint | 9 | 1% | 0.5 | NON DÉTERMINÉ |
+| LordSkillTree / Physique / Amélioration corporelle I / Défense / Défense augmentée | 31100201 | 1 | 2 | 1 | 1 SpecialPoint | 1 | 1% | 1 | A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES |
+| LordSkillTree / Physique / Amélioration corporelle I / Défense / Défense augmentée | 31100401 | 3 | 4 | 1 | 1 SpecialPoint | 5 | 1% | 1 | A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES |
+| LordSkillTree / Physique / Amélioration corporelle I / Défense / Défense augmentée | 31100601 | 5 | 6 | 1 | 1 SpecialPoint | 9 | 1% | 1 | A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES |
 
 # PV
 
@@ -142,10 +144,10 @@ Conclusion Attaque: **Observation vraie seulement pour certains nœuds**. Les n�
 | Groupe 9 / Groupe 9 / PV / PV augmentés | 119403 | 3 | 4 | 1 | 3 SkillPoint | 6 | 4% | 1.3333 | D. NON COMPARABLE / IRRÉGULIER |
 | Groupe 9 / Groupe 9 / PV / PV augmentés | 119503 | 4 | 5 | 1 | 3 SkillPoint | 9 | 5% | 1.6667 | D. NON COMPARABLE / IRRÉGULIER |
 | Groupe 9 / Groupe 9 / PV / PV augmentés | 119603 | 5 | 6 | 1 | 3 SkillPoint | 12 | 6% | 2 | D. NON COMPARABLE / IRRÉGULIER |
-| GSSkillTree / Arme d'hast / Frappe brutale / PV / Amélioration des PV | 2461403 | 2 | 3 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 1% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| LordSkillTree / Physique / Amélioration corporelle I / PV / PV augmentés | 31100203 | 1 | 2 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 1% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| LordSkillTree / Physique / Amélioration corporelle I / PV / PV augmentés | 31100403 | 3 | 4 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 1% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| LordSkillTree / Physique / Amélioration corporelle I / PV / PV augmentés | 31100603 | 5 | 6 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 1% | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Arme d'hast / Frappe brutale / PV / Amélioration des PV | 2461403 | 2 | 3 | 1 | 2 WeaponPoint | 6 | 1% | 0.5 | NON DÉTERMINÉ |
+| LordSkillTree / Physique / Amélioration corporelle I / PV / PV augmentés | 31100203 | 1 | 2 | 1 | 1 SpecialPoint | 1 | 1% | 1 | A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES |
+| LordSkillTree / Physique / Amélioration corporelle I / PV / PV augmentés | 31100403 | 3 | 4 | 1 | 1 SpecialPoint | 5 | 1% | 1 | A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES |
+| LordSkillTree / Physique / Amélioration corporelle I / PV / PV augmentés | 31100603 | 5 | 6 | 1 | 1 SpecialPoint | 9 | 1% | 1 | A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES |
 
 # Autres stats
 
@@ -160,51 +162,51 @@ Conclusion Attaque: **Observation vraie seulement pour certains nœuds**. Les n�
 | SJWSkillTree / Magicien élémentaire / Glace / ElementCumulativeDam / Augmentation des dégâts de chaîne | 115201 | 1 | 2 | 1 | 4 SkillPoint | 2 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ |
 | SJWSkillTree / Magicien élémentaire / Glace / ElementCumulativeDam / Augmentation des dégâts de chaîne | 115201 | 1 | 2 | 1 | 4 SkillPoint | 2 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ |
 | SJWSkillTree / Souverain / Changement gravitationnel / DamageOnReaction / Dégâts augmentés contre les cibles à terre | 118201 | 1 | 2 | 1 | 4 SkillPoint | 2 | 480 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Épée / Cœur d'acier / IncreaseDamageByEquipGs / Hausse des dégâts de compétence à l'épée | 2150102 | 0 | 1 | 1 | NON DÉTERMINÉ | 0 | 2 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Épée / Cœur d'acier / EnhanceSkillDamage / Charge frontale | 2150202 | 1 | 2 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | 450 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Épée / Cœur d'acier / EnhanceBackDamage / Charge frontale | 2150202 | 1 | 2 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | -750 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Épée / Résistance à la lame / IncreaseDamageByEquipGs / Hausse des dégâts de compétence à l'épée | 2151102 | 0 | 1 | 1 | NON DÉTERMINÉ | 0 | 2 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Dague / Plaie mortelle / Hausse des dégâts conditionnelle / Amplification de la douleur | 2252401 | 3 | 4 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | 3% | 1 | NON DÉTERMINÉ |
-| GSSkillTree / Dague / Plaie mortelle / EnhanceSkillDamage / Approche violente | 2252403 | 3 | 4 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | 1500 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Dague / Éviction / IncreaseDamageByEquipGs / Dégâts de compétence à la dague augmentés | 2253101 | 0 | 1 | 1 | NON DÉTERMINÉ | 0 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Dague / Éviction / EnhanceBackDamage / Dégâts des attaques dans le dos augmentés | 2253103 | 0 | 1 | 1 | NON DÉTERMINÉ | 0 | 150 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Dague / Éviction / EnhanceSkillDamage / Attaque en embuscade | 2253202 | 1 | 2 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | -300 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Dague / Éviction / EnhanceBackDamage / Attaque en embuscade | 2253202 | 1 | 2 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | 750 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Dague / Éviction / EnhanceSkillDamage / Dégâts de Foulée de l'ombre augmentés | 2253302 | 2 | 3 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | 1500 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Arc / Visée concentrée / IncreaseDamageByEquipGs / Dégâts de compétence à l'arc augmentés | 2254103 | 0 | 1 | 1 | NON DÉTERMINÉ | 0 | 3 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Arc / Visée concentrée / EnhanceSkillDamage / Tir en reculant | 2254303 | 1 | 3 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | 1500 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Arc / Visée concentrée / BaseStatConversionOnSkillDamage / Frappe véloce | 2254503 | 4 | 5 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | 2 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Arc / Visée sécurisée / IncreaseDamageByEquipGs / Dégâts de compétence à l'arc augmentés | 2255101 | 0 | 1 | 1 | NON DÉTERMINÉ | 0 | 3 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Arc / Visée sécurisée / Hausse des dégâts / Visée sécurisée | 2255501 | 4 | 5 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | 5.5% | 1.8333 | NON DÉTERMINÉ |
-| GSSkillTree / Arc / Visée sécurisée / DamageByDistance / Visée sécurisée | 2255501 | 4 | 5 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | -1550 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Arme à feu / Arme à feu - Kata / IncreaseDamageByEquipGs / Dégâts de compétence à l'arme à feu augmentés | 2356101 | 0 | 1 | 1 | NON DÉTERMINÉ | 0 | 4 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Arme à feu / Visée patiente / IncreaseDamageByEquipGs / Dégâts de compétence à l'arme à feu augmentés | 2357102 | 0 | 1 | 1 | NON DÉTERMINÉ | 0 | 4 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Focalisateur / Recherche de PM / IncreaseDamageByEquipGs / Dégâts de compétence de Concentration augmentés | 2358102 | 0 | 1 | 1 | NON DÉTERMINÉ | 0 | 7 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Focalisateur / Recherche de PM / WeaknessElementDamage / Détection de faiblesse | 2358202 | 1 | 2 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | 150 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Focalisateur / Recherche de PM / ElementCumulativeDam / Amélioration d'accablement | 2358301 | 2 | 3 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Focalisateur / Recherche de PM / ElementCumulativeDam / Amélioration de chaos | 2358303 | 2 | 3 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Focalisateur / Recherche de PM / EnhanceElementValue / Recherche d'élément | 2358501 | 3 | 4 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | 150 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Focalisateur / Recherche de PM / BaseStatConversionOnSkillDamage / Onde de mana | 2358503 | 3 | 4 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | 2 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Focalisateur / Énergie de mana fluide / IncreaseDamageByEquipGs / Dégâts de compétence de Concentration augmentés | 2359101 | 0 | 1 | 1 | NON DÉTERMINÉ | 0 | 7 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Focalisateur / Énergie de mana fluide / IncreaseDamageByEquipGs / Dégâts de compétence de Concentration augmentés | 2359103 | 0 | 1 | 1 | NON DÉTERMINÉ | 0 | 7 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Focalisateur / Énergie de mana fluide / MPCostReduP / Amélioration de mana | 2359202 | 1 | 2 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | -2000 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Focalisateur / Énergie de mana fluide / IncreaseDamageByEquipGs / Amélioration de mana | 2359202 | 1 | 2 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | 7 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Focalisateur / Énergie de mana fluide / PM max / Augmente les PM max | 2359402 | 2 | 3 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0.66% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Arme d'hast / Fer-de-lance dévié / IncreaseDamageByEquipGs / Dégâts de compétence à l'arme d'hast augmentés | 2460102 | 0 | 1 | 1 | NON DÉTERMINÉ | 0 | 5 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Arme d'hast / Fer-de-lance dévié / BreakModifier / Smash | 2460202 | 1 | 2 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 200 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Arme d'hast / Fer-de-lance dévié / Hausse des dégâts conditionnelle / Attaque pulvérisante | 2460403 | 3 | 4 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | 3% | 1 | NON DÉTERMINÉ |
-| GSSkillTree / Arme d'hast / Fer-de-lance dévié / Hausse des dégâts conditionnelle / Attaque pulvérisante | 2460403 | 3 | 4 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | 3% | 1 | NON DÉTERMINÉ |
-| GSSkillTree / Arme d'hast / Frappe brutale / IncreaseDamageByEquipGs / Dégâts de compétence à l'arme d'hast augmentés | 2461102 | 0 | 1 | 1 | NON DÉTERMINÉ | 0 | 5 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Arme d'hast / Frappe brutale / Réduction des dégâts / Physique endurant | 2461401 | 2 | 3 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0.5% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Arme à deux mains / Ruée de berserker / IncreaseDamageByEquipGs / Dégâts de compétence d'arme à deux mains augmentés | 2462102 | 0 | 1 | 1 | NON DÉTERMINÉ | 0 | 8 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Arme à deux mains / Ruée de berserker / IncreaseDamageByEquipGs / Porte de la mort | 2462403 | 2 | 4 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | 8 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Arme à deux mains / Ruée de berserker / ShieldModifier / Porte de la mort | 2462403 | 2 | 4 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | -2000 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Arme à deux mains / Ruée de berserker / Réduction des dégâts / Posture offensive | 2462501 | 3 | 5 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | -2.5% | -0.8333 | NON DÉTERMINÉ |
-| GSSkillTree / Arme à deux mains / Ruée de berserker / Hausse des dégâts / Posture offensive | 2462501 | 3 | 5 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | 4% | 1.3333 | NON DÉTERMINÉ |
-| GSSkillTree / Arme à deux mains / Ruée de berserker / IncreaseDamageByEquipGs / Frappe sanglante | 2462503 | 3 | 5 | 1 | 3 WeaponPoint | NON DÉTERMINÉ | 8 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| GSSkillTree / Arme à deux mains / Contre-offensive et restauration / IncreaseDamageByEquipGs / Dégâts de compétence d'arme à deux mains augmentés | 2463102 | 0 | 1 | 1 | NON DÉTERMINÉ | 0 | 8 | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| LordSkillTree / Physique / Amélioration corporelle II / Réduction des dégâts / Dégâts subis réduits | 31101501 | 4 | 5 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0.33% | NON DÉTERMINÉ | NON DÉTERMINÉ |
-| LordSkillTree / Physique / Amélioration corporelle II / Réduction des dégâts / Dégâts subis réduits | 31101503 | 4 | 5 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ | 0.33% | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Épée / Cœur d'acier / IncreaseDamageByEquipGs / Hausse des dégâts de compétence à l'épée | 2150102 | 0 | 1 | 1 | 3 WeaponPoint | 0 | 2 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Épée / Cœur d'acier / EnhanceSkillDamage / Charge frontale | 2150202 | 1 | 2 | 1 | 3 WeaponPoint | 3 | 450 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Épée / Cœur d'acier / EnhanceBackDamage / Charge frontale | 2150202 | 1 | 2 | 1 | 3 WeaponPoint | 3 | -750 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Épée / Résistance à la lame / IncreaseDamageByEquipGs / Hausse des dégâts de compétence à l'épée | 2151102 | 0 | 1 | 1 | 3 WeaponPoint | 0 | 2 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Dague / Plaie mortelle / Hausse des dégâts conditionnelle / Amplification de la douleur | 2252401 | 3 | 4 | 1 | 3 WeaponPoint | 9 | 3% | 1 | NON DÉTERMINÉ |
+| GSSkillTree / Dague / Plaie mortelle / EnhanceSkillDamage / Approche violente | 2252403 | 3 | 4 | 1 | 3 WeaponPoint | 9 | 1500 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Dague / Éviction / IncreaseDamageByEquipGs / Dégâts de compétence à la dague augmentés | 2253101 | 0 | 1 | 1 | 3 WeaponPoint | 0 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Dague / Éviction / EnhanceBackDamage / Dégâts des attaques dans le dos augmentés | 2253103 | 0 | 1 | 1 | 3 WeaponPoint | 0 | 150 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Dague / Éviction / EnhanceSkillDamage / Attaque en embuscade | 2253202 | 1 | 2 | 1 | 3 WeaponPoint | 6 | -300 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Dague / Éviction / EnhanceBackDamage / Attaque en embuscade | 2253202 | 1 | 2 | 1 | 3 WeaponPoint | 6 | 750 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Dague / Éviction / EnhanceSkillDamage / Dégâts de Foulée de l'ombre augmentés | 2253302 | 2 | 3 | 1 | 3 WeaponPoint | 9 | 1500 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Arc / Visée concentrée / IncreaseDamageByEquipGs / Dégâts de compétence à l'arc augmentés | 2254103 | 0 | 1 | 1 | 3 WeaponPoint | 0 | 3 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Arc / Visée concentrée / EnhanceSkillDamage / Tir en reculant | 2254303 | 1 | 3 | 1 | 3 WeaponPoint | 3 | 1500 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Arc / Visée concentrée / BaseStatConversionOnSkillDamage / Frappe véloce | 2254503 | 4 | 5 | 1 | 3 WeaponPoint | 16 | 2 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Arc / Visée sécurisée / IncreaseDamageByEquipGs / Dégâts de compétence à l'arc augmentés | 2255101 | 0 | 1 | 1 | 3 WeaponPoint | 0 | 3 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Arc / Visée sécurisée / Hausse des dégâts / Visée sécurisée | 2255501 | 4 | 5 | 1 | 3 WeaponPoint | 16 | 5.5% | 1.8333 | NON DÉTERMINÉ |
+| GSSkillTree / Arc / Visée sécurisée / DamageByDistance / Visée sécurisée | 2255501 | 4 | 5 | 1 | 3 WeaponPoint | 16 | -1550 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Arme à feu / Arme à feu - Kata / IncreaseDamageByEquipGs / Dégâts de compétence à l'arme à feu augmentés | 2356101 | 0 | 1 | 1 | 3 WeaponPoint | 0 | 4 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Arme à feu / Visée patiente / IncreaseDamageByEquipGs / Dégâts de compétence à l'arme à feu augmentés | 2357102 | 0 | 1 | 1 | 3 WeaponPoint | 0 | 4 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Focalisateur / Recherche de PM / IncreaseDamageByEquipGs / Dégâts de compétence de Concentration augmentés | 2358102 | 0 | 1 | 1 | 3 WeaponPoint | 0 | 7 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Focalisateur / Recherche de PM / WeaknessElementDamage / Détection de faiblesse | 2358202 | 1 | 2 | 1 | 3 WeaponPoint | 3 | 150 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Focalisateur / Recherche de PM / ElementCumulativeDam / Amélioration d'accablement | 2358301 | 2 | 3 | 1 | 3 WeaponPoint | 6 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Focalisateur / Recherche de PM / ElementCumulativeDam / Amélioration de chaos | 2358303 | 2 | 3 | 1 | 3 WeaponPoint | 6 | 1 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Focalisateur / Recherche de PM / EnhanceElementValue / Recherche d'élément | 2358501 | 3 | 4 | 1 | 3 WeaponPoint | 9 | 150 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Focalisateur / Recherche de PM / BaseStatConversionOnSkillDamage / Onde de mana | 2358503 | 3 | 4 | 1 | 3 WeaponPoint | 9 | 2 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Focalisateur / Énergie de mana fluide / IncreaseDamageByEquipGs / Dégâts de compétence de Concentration augmentés | 2359101 | 0 | 1 | 1 | 3 WeaponPoint | 0 | 7 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Focalisateur / Énergie de mana fluide / IncreaseDamageByEquipGs / Dégâts de compétence de Concentration augmentés | 2359103 | 0 | 1 | 1 | 3 WeaponPoint | 0 | 7 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Focalisateur / Énergie de mana fluide / MPCostReduP / Amélioration de mana | 2359202 | 1 | 2 | 1 | 3 WeaponPoint | 6 | -2000 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Focalisateur / Énergie de mana fluide / IncreaseDamageByEquipGs / Amélioration de mana | 2359202 | 1 | 2 | 1 | 3 WeaponPoint | 6 | 7 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Focalisateur / Énergie de mana fluide / PM max / Augmente les PM max | 2359402 | 2 | 3 | 1 | 2 WeaponPoint | 9 | 0.66% | 0.33 | NON DÉTERMINÉ |
+| GSSkillTree / Arme d'hast / Fer-de-lance dévié / IncreaseDamageByEquipGs / Dégâts de compétence à l'arme d'hast augmentés | 2460102 | 0 | 1 | 1 | 3 WeaponPoint | 0 | 5 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Arme d'hast / Fer-de-lance dévié / BreakModifier / Smash | 2460202 | 1 | 2 | 1 | 2 WeaponPoint | 3 | 200 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Arme d'hast / Fer-de-lance dévié / Hausse des dégâts conditionnelle / Attaque pulvérisante | 2460403 | 3 | 4 | 1 | 3 WeaponPoint | 8 | 3% | 1 | NON DÉTERMINÉ |
+| GSSkillTree / Arme d'hast / Fer-de-lance dévié / Hausse des dégâts conditionnelle / Attaque pulvérisante | 2460403 | 3 | 4 | 1 | 3 WeaponPoint | 8 | 3% | 1 | NON DÉTERMINÉ |
+| GSSkillTree / Arme d'hast / Frappe brutale / IncreaseDamageByEquipGs / Dégâts de compétence à l'arme d'hast augmentés | 2461102 | 0 | 1 | 1 | 3 WeaponPoint | 0 | 5 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Arme d'hast / Frappe brutale / Réduction des dégâts / Physique endurant | 2461401 | 2 | 3 | 1 | 3 WeaponPoint | 6 | 0.5% | 0.1667 | NON DÉTERMINÉ |
+| GSSkillTree / Arme à deux mains / Ruée de berserker / IncreaseDamageByEquipGs / Dégâts de compétence d'arme à deux mains augmentés | 2462102 | 0 | 1 | 1 | 3 WeaponPoint | 0 | 8 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Arme à deux mains / Ruée de berserker / IncreaseDamageByEquipGs / Porte de la mort | 2462403 | 2 | 4 | 1 | 3 WeaponPoint | 5 | 8 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Arme à deux mains / Ruée de berserker / ShieldModifier / Porte de la mort | 2462403 | 2 | 4 | 1 | 3 WeaponPoint | 5 | -2000 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Arme à deux mains / Ruée de berserker / Réduction des dégâts / Posture offensive | 2462501 | 3 | 5 | 1 | 3 WeaponPoint | 8 | -2.5% | -0.8333 | NON DÉTERMINÉ |
+| GSSkillTree / Arme à deux mains / Ruée de berserker / Hausse des dégâts / Posture offensive | 2462501 | 3 | 5 | 1 | 3 WeaponPoint | 8 | 4% | 1.3333 | NON DÉTERMINÉ |
+| GSSkillTree / Arme à deux mains / Ruée de berserker / IncreaseDamageByEquipGs / Frappe sanglante | 2462503 | 3 | 5 | 1 | 3 WeaponPoint | 8 | 8 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| GSSkillTree / Arme à deux mains / Contre-offensive et restauration / IncreaseDamageByEquipGs / Dégâts de compétence d'arme à deux mains augmentés | 2463102 | 0 | 1 | 1 | 3 WeaponPoint | 0 | 8 | NON DÉTERMINÉ | NON DÉTERMINÉ |
+| LordSkillTree / Physique / Amélioration corporelle II / Réduction des dégâts / Dégâts subis réduits | 31101501 | 4 | 5 | 1 | 1 SpecialPoint | 6 | 0.33% | 0.33 | A. LISSAGE VISUEL / RENDEMENT CONSTANT |
+| LordSkillTree / Physique / Amélioration corporelle II / Réduction des dégâts / Dégâts subis réduits | 31101503 | 4 | 5 | 1 | 1 SpecialPoint | 6 | 0.33% | 0.33 | A. LISSAGE VISUEL / RENDEMENT CONSTANT |
 | LordSkillTree / Éveil du monarque / Vision ombrale / EXRecovery / L'Aube du règne I | 31102102 | 0 | 1 | 1 | 3 SpecialPoint | 0 | 1000 | NON DÉTERMINÉ | NON DÉTERMINÉ |
 | LordSkillTree / Éveil du monarque / Vision ombrale / EXGainRateAdd / L'Aube du règne II | 31102201 | 1 | 2 | 1 | 3 SpecialPoint | 3 | 2000 | NON DÉTERMINÉ | NON DÉTERMINÉ |
 | LordSkillTree / Éveil du monarque / Vision ombrale / EXGainRateAdd / L'Aube du règne III | 31102203 | 1 | 2 | 1 | 3 SpecialPoint | 3 | 2000 | NON DÉTERMINÉ | NON DÉTERMINÉ |
@@ -215,6 +217,15 @@ Conclusion Attaque: **Observation vraie seulement pour certains nœuds**. Les n�
 
 # Familles à rendement constant
 
+- GSSkillTree / Arme à feu / Visée patiente / Pénétration de défense % / Pénétration de défense augmentée: A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES (même bonus et même coût à chaque occurrence)
+- GSSkillTree / Dague / Plaie mortelle / Dégâts critiques / Dégâts de coup critique augmentés: A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES (même bonus et même coût à chaque occurrence)
+- GSSkillTree / Dague / Plaie mortelle / Taux critique / Taux de coup critique augmenté: A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES (même bonus et même coût à chaque occurrence)
+- LordSkillTree / Physique / Amélioration corporelle I / Attaque / Attaque augmentée: A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES (même bonus et même coût à chaque occurrence)
+- LordSkillTree / Physique / Amélioration corporelle I / Défense / Défense augmentée: A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES (même bonus et même coût à chaque occurrence)
+- LordSkillTree / Physique / Amélioration corporelle I / PV / PV augmentés: A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES (même bonus et même coût à chaque occurrence)
+- LordSkillTree / Physique / Amélioration corporelle II / Pénétration de défense % / Pénétration de défense augmentée: A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES (même bonus et même coût à chaque occurrence)
+- LordSkillTree / Physique / Amélioration corporelle II / Réduction des dégâts / Dégâts subis réduits: A. LISSAGE VISUEL / RENDEMENT CONSTANT (bonus et coût proportionnels à la rangée visuelle)
+- LordSkillTree / Physique / Amélioration corporelle II / Taux critique / Taux de coup critique augmenté: A. RENDEMENT CONSTANT, GAIN ET COÛT FIXES (même bonus et même coût à chaque occurrence)
 
 # Familles à rendement décroissant
 
@@ -252,11 +263,8 @@ Conclusion Attaque: **Observation vraie seulement pour certains nœuds**. Les n�
 - GSSkillTree / Arme à deux mains / Ruée de berserker / ShieldModifier / Porte de la mort: NON DÉTERMINÉ (une seule occurrence)
 - GSSkillTree / Arme à feu / Arme à feu - Kata / IncreaseDamageByEquipGs / Dégâts de compétence à l'arme à feu augmentés: NON DÉTERMINÉ (une seule occurrence)
 - GSSkillTree / Arme à feu / Visée patiente / IncreaseDamageByEquipGs / Dégâts de compétence à l'arme à feu augmentés: NON DÉTERMINÉ (une seule occurrence)
-- GSSkillTree / Arme à feu / Visée patiente / Pénétration de défense % / Pénétration de défense augmentée: NON DÉTERMINÉ (gain ou coût absent)
-- GSSkillTree / Dague / Plaie mortelle / Dégâts critiques / Dégâts de coup critique augmentés: NON DÉTERMINÉ (gain ou coût absent)
 - GSSkillTree / Dague / Plaie mortelle / EnhanceSkillDamage / Approche violente: NON DÉTERMINÉ (une seule occurrence)
 - GSSkillTree / Dague / Plaie mortelle / Hausse des dégâts conditionnelle / Amplification de la douleur: NON DÉTERMINÉ (une seule occurrence)
-- GSSkillTree / Dague / Plaie mortelle / Taux critique / Taux de coup critique augmenté: NON DÉTERMINÉ (gain ou coût absent)
 - GSSkillTree / Dague / Éviction / EnhanceBackDamage / Attaque en embuscade: NON DÉTERMINÉ (une seule occurrence)
 - GSSkillTree / Dague / Éviction / EnhanceBackDamage / Dégâts des attaques dans le dos augmentés: NON DÉTERMINÉ (une seule occurrence)
 - GSSkillTree / Dague / Éviction / EnhanceSkillDamage / Attaque en embuscade: NON DÉTERMINÉ (une seule occurrence)
@@ -286,12 +294,6 @@ Conclusion Attaque: **Observation vraie seulement pour certains nœuds**. Les n�
 - Groupe 9 / Groupe 9 / Attaque / Attaque augmentée: D. NON COMPARABLE / IRRÉGULIER (rendement non monotone ou série irrégulière)
 - Groupe 9 / Groupe 9 / Défense / Défense augmentée: D. NON COMPARABLE / IRRÉGULIER (rendement non monotone ou série irrégulière)
 - Groupe 9 / Groupe 9 / PV / PV augmentés: D. NON COMPARABLE / IRRÉGULIER (rendement non monotone ou série irrégulière)
-- LordSkillTree / Physique / Amélioration corporelle I / Attaque / Attaque augmentée: NON DÉTERMINÉ (gain ou coût absent)
-- LordSkillTree / Physique / Amélioration corporelle I / Défense / Défense augmentée: NON DÉTERMINÉ (gain ou coût absent)
-- LordSkillTree / Physique / Amélioration corporelle I / PV / PV augmentés: NON DÉTERMINÉ (gain ou coût absent)
-- LordSkillTree / Physique / Amélioration corporelle II / Pénétration de défense % / Pénétration de défense augmentée: NON DÉTERMINÉ (gain ou coût absent)
-- LordSkillTree / Physique / Amélioration corporelle II / Réduction des dégâts / Dégâts subis réduits: NON DÉTERMINÉ (gain ou coût absent)
-- LordSkillTree / Physique / Amélioration corporelle II / Taux critique / Taux de coup critique augmenté: NON DÉTERMINÉ (gain ou coût absent)
 - LordSkillTree / Éveil du monarque / Libération d'âme / EnhanceSkillDamage / Présage de destruction II: NON DÉTERMINÉ (une seule occurrence)
 - LordSkillTree / Éveil du monarque / Libération d'âme / SkillChange / Âme du clair de lune I: NON DÉTERMINÉ (une seule occurrence)
 - LordSkillTree / Éveil du monarque / Vision ombrale / EXGainRateAdd / L'Aube du règne II: NON DÉTERMINÉ (une seule occurrence)

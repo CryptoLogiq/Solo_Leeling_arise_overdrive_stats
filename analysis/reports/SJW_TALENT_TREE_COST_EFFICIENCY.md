@@ -40,6 +40,30 @@ Les valeurs brutes sans conversion validée restent exclues du classement.
 | Défense | Défense augmentée 5 2/3 | 119502 | 2/3 | 4 SkillPoint | 5% | 1.2500 | FORTEMENT PROBABLE |
 | PV | PV augmentés 5 2/3 | 119503 | 2/3 | 4 SkillPoint | 5% | 1.2500 | FORTEMENT PROBABLE |
 
+### SpecialPoint
+
+| Effet | Talent | NodeID | Rang | Coût | Gain marginal | Score %/point | Confiance |
+|---|---|---:|---:|---|---:|---:|---|
+| Attaque | Attaque augmentée 1/3 | 31100102 | 1/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE |
+| Défense | Défense augmentée 1/3 | 31100201 | 1/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE |
+| PV | PV augmentés 1/3 | 31100203 | 1/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE |
+| Attaque | Attaque augmentée 1/3 | 31100302 | 1/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE |
+| Défense | Défense augmentée 1/3 | 31100401 | 1/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE |
+| PV | PV augmentés 1/3 | 31100403 | 1/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE |
+| Attaque | Attaque augmentée 1/3 | 31100502 | 1/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE |
+| Défense | Défense augmentée 1/3 | 31100601 | 1/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE |
+| PV | PV augmentés 1/3 | 31100603 | 1/3 | 1 SpecialPoint | 1% | 1.0000 | FORTEMENT PROBABLE |
+| Taux de coup critique | Taux de coup critique augmenté 1/3 | 31101102 | 1/3 | 1 SpecialPoint | 0.33% | 0.3300 | FORTEMENT PROBABLE |
+| Pénétration de défense | Pénétration de défense augmentée 1/3 | 31101201 | 1/3 | 1 SpecialPoint | 0.33% | 0.3300 | FORTEMENT PROBABLE |
+| Pénétration de défense | Pénétration de défense augmentée 1/3 | 31101203 | 1/3 | 1 SpecialPoint | 0.33% | 0.3300 | FORTEMENT PROBABLE |
+| Taux de coup critique | Taux de coup critique augmenté 1/3 | 31101302 | 1/3 | 1 SpecialPoint | 0.33% | 0.3300 | FORTEMENT PROBABLE |
+| Pénétration de défense | Pénétration de défense augmentée 1/3 | 31101401 | 1/3 | 1 SpecialPoint | 0.33% | 0.3300 | FORTEMENT PROBABLE |
+| Pénétration de défense | Pénétration de défense augmentée 1/3 | 31101403 | 1/3 | 1 SpecialPoint | 0.33% | 0.3300 | FORTEMENT PROBABLE |
+| Réduction des dégâts | Dégâts subis réduits 1/3 | 31101501 | 1/3 | 1 SpecialPoint | 0.33% | 0.3300 | FORTEMENT PROBABLE |
+| Réduction des dégâts | Dégâts subis réduits 1/3 | 31101503 | 1/3 | 1 SpecialPoint | 0.33% | 0.3300 | FORTEMENT PROBABLE |
+| Taux de coup critique | Taux de coup critique augmenté 1/3 | 31101601 | 1/3 | 1 SpecialPoint | 0.33% | 0.3300 | FORTEMENT PROBABLE |
+| Taux de coup critique | Taux de coup critique augmenté 1/3 | 31101603 | 1/3 | 1 SpecialPoint | 0.33% | 0.3300 | FORTEMENT PROBABLE |
+
 ### WeaponPoint
 
 | Effet | Talent | NodeID | Rang | Coût | Gain marginal | Score %/point | Confiance |
@@ -49,6 +73,25 @@ Les valeurs brutes sans conversion validée restent exclues du classement.
 | Dégâts conditionnels | Amplification de la douleur | 2252401 | 1/1 | 3 WeaponPoint | 3% | 1.0000 | FORTEMENT PROBABLE |
 | Dégâts conditionnels | Attaque pulvérisante | 2460403 | 1/1 | 3 WeaponPoint | 3% | 1.0000 | FORTEMENT PROBABLE |
 | Dégâts conditionnels | Attaque pulvérisante | 2460403 | 1/1 | 3 WeaponPoint | 3% | 1.0000 | FORTEMENT PROBABLE |
+| Défense | Défense augmentée 1/3 | 2150403 | 1/3 | 2 WeaponPoint | 1% | 0.5000 | FORTEMENT PROBABLE |
+| PV | Amélioration des PV 1/3 | 2461403 | 1/3 | 2 WeaponPoint | 1% | 0.5000 | FORTEMENT PROBABLE |
+| Attaque | Attaque augmentée 1/3 | 2150401 | 1/3 | 2 WeaponPoint | 0.5% | 0.2500 | FORTEMENT PROBABLE |
+| Précision | Précision augmentée 1/3 | 2151302 | 1/3 | 2 WeaponPoint | 0.5% | 0.2500 | FORTEMENT PROBABLE |
+| Précision | Précision augmentée 1/3 | 2255202 | 1/3 | 2 WeaponPoint | 0.5% | 0.2500 | FORTEMENT PROBABLE |
+| Précision | Précision augmentée 1/3 | 2463202 | 1/3 | 2 WeaponPoint | 0.5% | 0.2500 | FORTEMENT PROBABLE |
+| Attaque | Attaque augmentée 1/3 | 2463302 | 1/3 | 2 WeaponPoint | 0.5% | 0.2500 | FORTEMENT PROBABLE |
+| Réduction des dégâts | Physique endurant 1/3 | 2461401 | 1/3 | 3 WeaponPoint | 0.5% | 0.1667 | FORTEMENT PROBABLE |
+| Pénétration de défense | Pénétration de défense augmentée 1/3 | 2151402 | 1/3 | 2 WeaponPoint | 0.25% | 0.1250 | FORTEMENT PROBABLE |
+| Taux de coup critique | Taux de coup critique augmenté 1/3 | 2252101 | 1/3 | 2 WeaponPoint | 0.25% | 0.1250 | FORTEMENT PROBABLE |
+| Dégâts de coup critique | Dégâts de coup critique augmentés 1/3 | 2252103 | 1/3 | 2 WeaponPoint | 0.25% | 0.1250 | FORTEMENT PROBABLE |
+| Taux de coup critique | Taux de coup critique augmenté 1/3 | 2252301 | 1/3 | 2 WeaponPoint | 0.25% | 0.1250 | FORTEMENT PROBABLE |
+| Dégâts de coup critique | Dégâts de coup critique augmentés 1/3 | 2252303 | 1/3 | 2 WeaponPoint | 0.25% | 0.1250 | FORTEMENT PROBABLE |
+| Taux de coup critique | Taux de coup critique augmenté 1/3 | 2254202 | 1/3 | 2 WeaponPoint | 0.25% | 0.1250 | FORTEMENT PROBABLE |
+| Dégâts de coup critique | Dégâts de coup critique augmentés 1/3 | 2254402 | 1/3 | 2 WeaponPoint | 0.25% | 0.1250 | FORTEMENT PROBABLE |
+| Pénétration de défense | Pénétration de défense augmentée 1/3 | 2255402 | 1/3 | 2 WeaponPoint | 0.25% | 0.1250 | FORTEMENT PROBABLE |
+| Pénétration de défense | Pénétration de défense augmentée 1/3 | 2357202 | 1/3 | 2 WeaponPoint | 0.25% | 0.1250 | FORTEMENT PROBABLE |
+| Pénétration de défense | Pénétration de défense augmentée 1/3 | 2357402 | 1/3 | 2 WeaponPoint | 0.25% | 0.1250 | FORTEMENT PROBABLE |
+| Dégâts de coup critique | Dégâts de coup critique augmentés 1/3 | 2462202 | 1/3 | 2 WeaponPoint | 0.25% | 0.1250 | FORTEMENT PROBABLE |
 | Réduction des dégâts | Posture offensive | 2462501 | 1/1 | 3 WeaponPoint | -2.5% | -0.8333 | FORTEMENT PROBABLE |
 
 ## Résumé par effet et monnaie
@@ -60,10 +103,23 @@ Les valeurs brutes sans conversion validée restent exclues du classement.
 | SkillPoint | Dégâts de coup critique (`CriDamP`) | 18 | 1.0139 |
 | SkillPoint | Taux de coup critique (`CriticalP`) | 18 | 1.0139 |
 | SkillPoint | Attaque (`AttFR`) | 19 | 0.9746 |
+| SpecialPoint | Défense (`ArmFR`) | 3 | 1.0000 |
+| SpecialPoint | Attaque (`AttFR`) | 3 | 1.0000 |
+| SpecialPoint | PV (`IncreaseMHP`) | 3 | 1.0000 |
+| SpecialPoint | Pénétration de défense (`ArmPenP`) | 4 | 0.3300 |
+| SpecialPoint | Taux de coup critique (`CriticalP`) | 4 | 0.3300 |
+| SpecialPoint | Réduction des dégâts (`DamReduP`) | 2 | 0.3300 |
 | WeaponPoint | Dégâts infligés (`DamP`) | 2 | 1.5833 |
 | WeaponPoint | Dégâts conditionnels (`IncreaseDamageByTargetBuff`) | 1 | 1.0000 |
 | WeaponPoint | Dégâts conditionnels (`IncreaseDamageByTargetSpecialState`) | 2 | 1.0000 |
-| WeaponPoint | Réduction des dégâts (`DamReduP`) | 1 | -0.8333 |
+| WeaponPoint | Défense (`ArmFR`) | 1 | 0.5000 |
+| WeaponPoint | PV (`IncreaseMHP`) | 1 | 0.5000 |
+| WeaponPoint | Attaque (`AttFR`) | 2 | 0.2500 |
+| WeaponPoint | Précision (`PrecisionP`) | 3 | 0.2500 |
+| WeaponPoint | Pénétration de défense (`ArmPenP`) | 4 | 0.1250 |
+| WeaponPoint | Dégâts de coup critique (`CriDamP`) | 4 | 0.1250 |
+| WeaponPoint | Taux de coup critique (`CriticalP`) | 3 | 0.1250 |
+| WeaponPoint | Réduction des dégâts (`DamReduP`) | 2 | -0.3333 |
 
 ## Notes
 

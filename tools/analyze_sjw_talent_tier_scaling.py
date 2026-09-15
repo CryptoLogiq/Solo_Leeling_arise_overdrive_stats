@@ -189,17 +189,17 @@ def node_effects(buff):
 def cost_for_rank(costs, rank, max_rank):
     if not costs:
         return None
-    if max_rank > 1 and len(costs) == 1:
-        return None
     if len(costs) == 1:
-        return costs[0]
+        return costs[0] if rank == 1 else None
     if rank - 1 < len(costs):
         return costs[rank - 1]
     return None
 
 
-def cost_confidence(costs, max_rank):
+def cost_confidence(costs, max_rank, rank=None):
     if max_rank <= 1 or len(costs) == max_rank:
+        return "CONFIRMÉ PAR LES GAMEDATA"
+    if rank == 1 and len(costs) == 1:
         return "CONFIRMÉ PAR LES GAMEDATA"
     if len(costs) == 1:
         return "NON DÉTERMINÉ"
@@ -369,7 +369,6 @@ def make_rows():
         required = ""
         if unlock:
             required = f"; prérequis {unlock.get('UnlockType')}:{unlock.get('Value')}"
-        cost_note = cost_confidence(costs, max_rank)
 
         name = buff.get("BuffName_fra") or loc(buff.get("BuffName"), text)
         base_name = normalized_name(name)
@@ -387,6 +386,7 @@ def make_rows():
             )
             displayed, gain_number, effect_conf = display_value(effect_type, raw)
             for rank in range(1, max_rank + 1):
+                cost_note = cost_confidence(costs, max_rank, rank)
                 direct_cost = cost_for_rank(costs, rank, max_rank)
                 cost_label = "NON DÉTERMINÉ" if direct_cost is None and cost_kind else f"{direct_cost} {cost_kind}".strip()
                 gain_per_point = "NON DÉTERMINÉ"
@@ -591,7 +591,7 @@ def write_report(rows, family_notes):
             "",
             "Conclusion Attaque: **Observation vraie seulement pour certains nœuds**. "
             "Les nœuds `119101` à `119601` sont des talents distincts par rangée visuelle avec valeurs +1% à +6%, mais leur coût de rang 1 n'est pas toujours proportionnel à cette rangée. "
-            "Les nœuds `31100102`, `31100302` et `31100502` répètent le même +1% marginal, mais leur coût par rang reste `NON DÉTERMINÉ` parce que `LevelUpCostValue=[1]` n'est pas une liste explicite par rang.",
+            "Les nœuds `31100102`, `31100302` et `31100502` répètent le même +1% marginal; leur rang I utilise `LevelUpCostValue=[1]`, mais les rangs II/III restent `NON DÉTERMINÉ`.",
         ]
     )
 

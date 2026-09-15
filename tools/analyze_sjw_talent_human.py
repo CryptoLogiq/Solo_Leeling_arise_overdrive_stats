@@ -472,42 +472,52 @@ def human_access(value):
 
 
 def required_path_cost(node_id, nodes):
-    seen = set()
-    uncertain = False
+    def first_rank_cost(node):
+        if not node or not node.get("ranks"):
+            return None
+        if node["ranks"][0].get("costConfidence") == "NON DÉTERMINÉ":
+            return None
+        try:
+            return float(node["ranks"][0].get("cost") or 0)
+        except (TypeError, ValueError):
+            return None
 
-    def walk(nid):
-        nonlocal uncertain
+    def walk(nid, seen):
         if nid in seen:
-            return 0
-        seen.add(nid)
+            return None, True
         node = nodes.get(str(nid))
-        if not node:
-            return 0
-        if len(node.get("parents", [])) > 1:
-            uncertain = True
-        total = 0
+        if not node or not node.get("parents", []):
+            return 0, False
+        options = []
         for parent in node.get("parents", []):
             parent_node = nodes.get(parent)
-            if not parent_node:
+            parent_cost = first_rank_cost(parent_node)
+            if parent_cost is None:
+                options.append((None, True))
                 continue
-            if parent_node["ranks"][0].get("costConfidence") == "NON DÉTERMINÉ":
-                uncertain = True
+            path_cost, path_uncertain = walk(parent, seen | {nid})
+            if path_cost is None:
+                options.append((None, True))
                 continue
-            try:
-                total += float(parent_node["ranks"][0].get("cost") or 0)
-            except (TypeError, ValueError):
-                pass
-            total += walk(parent)
-        return total
+            options.append((parent_cost + path_cost, path_uncertain))
+        known = [option for option in options if option[0] is not None]
+        if not known:
+            return None, True
+        best = min(known, key=lambda option: option[0])
+        return best[0], best[1] or len(node.get("parents", [])) > 1 or len(known) != len(options)
 
-    value = walk(node_id)
-    return None if uncertain else fmt_number(value)
+    value, uncertain = walk(node_id, set())
+    if value is None:
+        return None, True
+    return fmt_number(value), uncertain
 
 
 def required_path_access(node_id, nodes):
-    value = required_path_cost(node_id, nodes)
+    value, uncertain = required_path_cost(node_id, nodes)
     if value is None:
         return "NON DÉTERMINÉ (coût de chemin)"
+    if uncertain:
+        return f"{value} pts minimum (parent OU provisoire)"
     return f"{value} pts requis"
 
 
