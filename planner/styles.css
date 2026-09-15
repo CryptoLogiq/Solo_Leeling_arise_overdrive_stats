@@ -265,7 +265,7 @@ input {
 .node-card {
   position: absolute;
   width: 164px;
-  min-height: 78px;
+  min-height: 90px;
   display: grid;
   grid-template-rows: 1fr auto;
   gap: 0.5rem;

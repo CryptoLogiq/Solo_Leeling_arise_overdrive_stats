@@ -15,6 +15,8 @@ const state = {
   sections: [],
   nodeById: new Map(),
   activeSectionIndex: 0,
+  activeSystem: "",
+  activeSection: "",
   activeNodeId: null,
   selected: {},
   budgets: { ...DEFAULT_BUDGETS },
@@ -59,6 +61,10 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;");
 }
 
+function displayName(value) {
+  return String(value ?? "").replaceAll("\\n", " ").replace(/\s+/g, " ").trim();
+}
+
 function parseOffset(raw) {
   if (!raw) return [0, 0, 0];
   const match = String(raw).match(/\[?\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\]?/);
@@ -83,17 +89,16 @@ function sectionNodes() {
 }
 
 function currentSection() {
-  return state.sections[state.activeSectionIndex];
+  return activeSections()[0] || state.sections[state.activeSectionIndex];
 }
 
 function activeSections() {
-  const section = currentSection();
-  if (!section) return [];
-  return state.sections.filter((item) => item.system === section.system && item.section === section.section);
+  if (!state.activeSystem || !state.activeSection) return [];
+  return state.sections.filter((item) => item.system === state.activeSystem && item.section === state.activeSection);
 }
 
 function nodeName(nodeId) {
-  return state.nodeById.get(nodeId)?.name || nodeId;
+  return displayName(state.nodeById.get(nodeId)?.name || nodeId);
 }
 
 function setNotice(message, tone = "info") {
@@ -156,22 +161,33 @@ function applyBuild(payload) {
 
 function populateFilters() {
   const systems = [...new Set(state.sections.map((section) => section.system))];
+  if (!systems.includes(state.activeSystem)) {
+    state.activeSystem = systems[0] || "";
+  }
   els.system.innerHTML = systems
     .map((system) => `<option value="${escapeHtml(system)}">${escapeHtml(SYSTEM_LABELS[system] || system)}</option>`)
     .join("");
-  els.system.value = currentSection()?.system || systems[0];
+  els.system.value = state.activeSystem;
   populateSectionSelect();
 }
 
 function populateSectionSelect() {
-  const system = els.system.value;
+  const system = state.activeSystem || els.system.value;
   const sections = [...new Set(state.sections.filter((section) => section.system === system).map((section) => section.section))];
+  if (!sections.includes(state.activeSection)) {
+    state.activeSection = sections[0] || "";
+  }
   els.section.innerHTML = sections.map((name) => `<option value="${escapeHtml(name)}">${escapeHtml(name)}</option>`).join("");
-  const active = currentSection();
-  els.section.value = active?.system === system ? active.section : sections[0];
-  const nextIndex = state.sections.findIndex((section) => section.system === system && section.section === els.section.value);
+  els.section.value = state.activeSection;
+  const nextIndex = state.sections.findIndex((section) => section.system === system && section.section === state.activeSection);
   state.activeSectionIndex = nextIndex >= 0 ? nextIndex : 0;
   updateBudgetInput();
+}
+
+function setActiveTree(system, section) {
+  state.activeSystem = system;
+  state.activeSection = section || "";
+  populateFilters();
 }
 
 function activeCurrency() {
@@ -278,6 +294,7 @@ function decreaseNode(nodeId) {
 }
 
 function layoutNodes(nodes, originX) {
+  if (!nodes.length) return [];
   const raw = nodes.map((node) => {
     const [offsetX, offsetY] = parseOffset(node.visual.offset);
     return {
@@ -286,12 +303,12 @@ function layoutNodes(nodes, originX) {
       y: (Number(node.visual.row) - 1) * 124 + offsetY * 0.35 + 82,
     };
   });
-  const minX = Math.min(...raw.map((item) => item.x), 0);
-  const minY = Math.min(...raw.map((item) => item.y), 0);
+  const minX = Math.min(...raw.map((item) => item.x));
+  const minY = Math.min(...raw.map((item) => item.y));
   return raw.map((item) => ({
     ...item,
     x: item.x - minX + originX + 40,
-    y: item.y - minY + 38,
+    y: item.y - minY + 74,
   }));
 }
 
@@ -374,7 +391,7 @@ function renderTree() {
     return `
       <article class="node-card ${selectedClass} ${activeClass} ${lockedClass}" style="left:${x}px; top:${y}px" data-node-id="${escapeHtml(node.nodeId)}">
         <div>
-          <div class="node-name">${escapeHtml(node.name)}</div>
+          <div class="node-name">${escapeHtml(displayName(node.name))}</div>
           <div class="node-cost">${escapeHtml(nextCostLabel(node))}</div>
           <div class="node-meta">
             <span>${rank}/${node.nodeMaxLevel} rang</span>
@@ -449,7 +466,7 @@ function renderSummary() {
           <div class="effect-group">
             <h3>${escapeHtml(item.label)}</h3>
             <ul>
-              ${item.rows.map((row) => `<li>${escapeHtml(row.node.name)} ${rankLabel(row.rank.rank)}: +${row.gain.toLocaleString("fr-FR", { maximumFractionDigits: 2 })}% (${escapeHtml(row.confidence)})</li>`).join("")}
+              ${item.rows.map((row) => `<li>${escapeHtml(displayName(row.node.name))} ${rankLabel(row.rank.rank)}: +${row.gain.toLocaleString("fr-FR", { maximumFractionDigits: 2 })}% (${escapeHtml(row.confidence)})</li>`).join("")}
             </ul>
             <div class="formula-note">Somme arithmétique: +${item.value.toLocaleString("fr-FR", { maximumFractionDigits: 2 })}%. Stat finale réelle: NON DÉTERMINÉE.</div>
           </div>`)
@@ -459,7 +476,7 @@ function renderSummary() {
   els.rawEffects.innerHTML = rawRows.length
     ? rawRows.slice(0, 18).map(({ node, rank, effect }) => `
       <div class="effect-row">
-        <strong>${escapeHtml(node.name)} ${rankLabel(rank.rank)}</strong>
+        <strong>${escapeHtml(displayName(node.name))} ${rankLabel(rank.rank)}</strong>
         <span>${escapeHtml(effect.effectType)}: ${escapeHtml(effect.displayedValue || effect.rawValue || "NON DÉTERMINÉ")}</span>
       </div>`).join("")
     : `<div class="empty-state">Aucune valeur brute non interprétée dans la sélection.</div>`;
@@ -468,8 +485,8 @@ function renderSummary() {
     ? selectedEntries
         .map(([nodeId, rank]) => ({ node: state.nodeById.get(nodeId), rank }))
         .filter((item) => item.node)
-        .sort((a, b) => a.node.name.localeCompare(b.node.name, "fr"))
-        .map(({ node, rank }) => `<button class="selection-row" type="button" data-node-id="${escapeHtml(node.nodeId)}"><strong>${escapeHtml(node.name)}</strong><span>${rank}/${node.nodeMaxLevel}</span></button>`)
+        .sort((a, b) => displayName(a.node.name).localeCompare(displayName(b.node.name), "fr"))
+        .map(({ node, rank }) => `<button class="selection-row" type="button" data-node-id="${escapeHtml(node.nodeId)}"><strong>${escapeHtml(displayName(node.name))}</strong><span>${rank}/${node.nodeMaxLevel}</span></button>`)
         .join("")
     : `<div class="empty-state">Aucun talent sélectionné.</div>`;
 }
@@ -499,7 +516,7 @@ function renderNodeDetails() {
   const children = node.children.length ? node.children.map(nodeName).join(", ") : "Aucun";
   els.nodeDetails.innerHTML = `
     <div class="detail-title">
-      <h3>${escapeHtml(node.name)}</h3>
+      <h3>${escapeHtml(displayName(node.name))}</h3>
       <span class="pill muted">${escapeHtml(node.nodeId)}</span>
     </div>
     <div class="rank-actions">
@@ -532,12 +549,13 @@ function render() {
 
 function setupEvents() {
   els.system.addEventListener("change", () => {
-    populateSectionSelect();
+    const firstSection = state.sections.find((section) => section.system === els.system.value);
+    setActiveTree(els.system.value, firstSection?.section || "");
     state.activeNodeId = sectionNodes()[0]?.nodeId || null;
     render();
   });
   els.section.addEventListener("change", () => {
-    populateSectionSelect();
+    setActiveTree(state.activeSystem, els.section.value);
     state.activeNodeId = sectionNodes()[0]?.nodeId || null;
     render();
   });
@@ -572,9 +590,8 @@ function setupEvents() {
     const row = event.target.closest("[data-node-id]");
     if (!row) return;
     state.activeNodeId = row.dataset.nodeId;
-    const sectionIndex = state.sections.findIndex((section) => section.nodes.some((node) => node.nodeId === state.activeNodeId));
-    if (sectionIndex >= 0) state.activeSectionIndex = sectionIndex;
-    populateFilters();
+    const section = state.sections.find((item) => item.nodes.some((node) => node.nodeId === state.activeNodeId));
+    if (section) setActiveTree(section.system, section.section);
     render();
   });
   els.reset.addEventListener("click", () => {
@@ -637,6 +654,11 @@ async function init() {
     state.sections = state.model.trees || [];
     for (const section of state.sections) {
       for (const node of section.nodes || []) state.nodeById.set(node.nodeId, node);
+    }
+    const initial = state.sections[0];
+    if (initial) {
+      state.activeSystem = initial.system;
+      state.activeSection = initial.section;
     }
     setupEvents();
     populateFilters();
