@@ -303,6 +303,8 @@
         "unlockValue": 10301,
         "chapterTitle": "Gardien",
         "chapterRequiredLevel": 0,
+        "requiredLevel": 0,
+        "requiredLevelSource": "AUCUN NIVEAU EXPLICITE",
         "chapterSortOrder": 3,
         "missionTitles": [
           "Le gardien de la forteresse démoniaque"
@@ -324,6 +326,8 @@
         "unlockValue": 10301,
         "chapterTitle": "Gardien",
         "chapterRequiredLevel": 0,
+        "requiredLevel": 0,
+        "requiredLevelSource": "AUCUN NIVEAU EXPLICITE",
         "chapterSortOrder": 3,
         "missionTitles": [
           "Le gardien de la forteresse démoniaque"
@@ -345,6 +349,8 @@
         "unlockValue": 10301,
         "chapterTitle": "Gardien",
         "chapterRequiredLevel": 0,
+        "requiredLevel": 0,
+        "requiredLevelSource": "AUCUN NIVEAU EXPLICITE",
         "chapterSortOrder": 3,
         "missionTitles": [
           "Le gardien de la forteresse démoniaque"
@@ -366,6 +372,8 @@
         "unlockValue": 10501,
         "chapterTitle": "Défenseur du trône",
         "chapterRequiredLevel": 20,
+        "requiredLevel": 20,
+        "requiredLevelSource": "MainQuestChapter.UnlockValue",
         "chapterSortOrder": 5,
         "missionTitles": [
           "La licence de maître de guilde",

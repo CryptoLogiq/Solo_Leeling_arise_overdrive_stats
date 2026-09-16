@@ -45,10 +45,10 @@ Cette table additionne les coûts connus de tous les rangs de talents présents 
 
 | Classe | NodeID | OverDrive | Coût | Prérequis | Confiance |
 |---|---:|---|---:|---|---|
-| Assassin | `111100` | Camouflage (`92000001`) | 1 | Gardien (`MainQuestChapter:10301`) | CONFIRMÉ PAR LES GAMEDATA |
-| Duelliste | `113100` | Smash (`92000003`) | 1 | Gardien (`MainQuestChapter:10301`) | CONFIRMÉ PAR LES GAMEDATA |
-| Magicien élémentaire | `115100` | Réaction en chaîne (`92000011`) | 1 | Gardien (`MainQuestChapter:10301`) | CONFIRMÉ PAR LES GAMEDATA |
-| Souverain | `117100` | Invocation d'ombre (`92000009`) | 1 | Défenseur du trône (`MainQuestChapter:10501`) | CONFIRMÉ PAR LES GAMEDATA |
+| Assassin | `111100` | Camouflage (`92000001`) | 1 | Gardien (`MainQuestChapter:10301`, aucun niveau explicite) | CONFIRMÉ PAR LES GAMEDATA |
+| Duelliste | `113100` | Smash (`92000003`) | 1 | Gardien (`MainQuestChapter:10301`, aucun niveau explicite) | CONFIRMÉ PAR LES GAMEDATA |
+| Magicien élémentaire | `115100` | Réaction en chaîne (`92000011`) | 1 | Gardien (`MainQuestChapter:10301`, aucun niveau explicite) | CONFIRMÉ PAR LES GAMEDATA |
+| Souverain | `117100` | Invocation d'ombre (`92000009`) | 1 | Défenseur du trône (`MainQuestChapter:10501`, niveau 20) | CONFIRMÉ PAR LES GAMEDATA |
 
 Exclusivité d'activation: CONFIRMÉ PAR OBSERVATION UTILISATEUR. Un seul OverDrive peut être activé, car la quête de changement/activation n'est pas répétable selon observation utilisateur. Les GameData confirment les quatre nœuds isolés, leurs coûts et leurs prérequis de chapitre.
 

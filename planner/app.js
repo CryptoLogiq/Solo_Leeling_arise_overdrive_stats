@@ -111,7 +111,7 @@ function identityBudgetForLevel(level = state.buildLevel) {
   const nodes = asArray(state.pointProgression?.identityOverdrive?.nodes);
   if (!nodes.length) return 0;
   const available = nodes.some((node) => {
-    const required = Number(node.chapterRequiredLevel || 0);
+    const required = Number(node.requiredLevel || node.chapterRequiredLevel || 0);
     return required <= 0 || Number(level) >= required;
   });
   return available ? 1 : 0;
@@ -252,7 +252,7 @@ function nodeIdentityInfo(node) {
 
 function nodeAccessRequiredLevel(node) {
   const identity = nodeIdentityInfo(node);
-  if (identity) return Number(identity.chapterRequiredLevel || 0);
+  if (identity) return Number(identity.requiredLevel || identity.chapterRequiredLevel || 0);
   const access = asArray(node?.ranks).map((rank) => rank.accessCondition).find(Boolean) || "";
   if (!access.startsWith("MainQuestChapter:")) return 0;
   const chapter = access.split(":", 2)[1];
@@ -295,6 +295,15 @@ function levelLockText(node) {
   const unlock = sectionUnlock(section?.section);
   const source = unlock?.chapterTitle ? ` (${unlock.chapterTitle})` : "";
   return `Niveau ${required} requis${source}`;
+}
+
+function nodeRequiredLevelSource(node) {
+  const identity = nodeIdentityInfo(node);
+  if (identity) return identity.requiredLevelSource || "MainQuestChapter";
+  const section = nodeSection(node);
+  const unlock = sectionUnlock(section?.section);
+  if (unlock?.requiredLevel) return "SubTabUnlockCondition";
+  return "";
 }
 
 function activeSections() {
@@ -1014,7 +1023,10 @@ function renderNodeDetails() {
   const parents = parentConditionText(node);
   const children = node.children.length ? node.children.map(nodeName).join(", ") : "Aucun";
   const requiredLevel = nodeRequiredLevel(node);
-  const levelStatus = requiredLevel ? `${requiredLevel}${state.buildLevel < requiredLevel ? " (verrouillé)" : ""}` : "Aucun";
+  const levelSource = nodeRequiredLevelSource(node);
+  const levelStatus = requiredLevel
+    ? `${requiredLevel}${state.buildLevel < requiredLevel ? " (verrouillé)" : ""}${levelSource ? ` · ${levelSource}` : ""}`
+    : (isOverdriveNode(node) ? "Aucun niveau minimum explicite dans la quête liée" : "Aucun");
   const overdriveStatus = isOverdriveNode(node)
     ? (selectedOverdriveNodeId(node.nodeId)
       ? `Verrouillé par ${displayName(state.nodeById.get(selectedOverdriveNodeId(node.nodeId))?.name || selectedOverdriveNodeId(node.nodeId))}`

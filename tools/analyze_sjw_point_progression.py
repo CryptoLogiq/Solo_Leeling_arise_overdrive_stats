@@ -190,6 +190,8 @@ def identity_overdrive_details() -> dict:
                 chapter = chapters.get(as_int(access.split(":", 1)[1]))
 
             chapter_id = as_int(chapter.get("ID")) if chapter else None
+            chapter_required_level = as_int(chapter.get("UnlockValue")) if chapter else 0
+            required_level_source = "MainQuestChapter.UnlockValue" if chapter_required_level else "AUCUN NIVEAU EXPLICITE"
             mission_rows = sorted(missions_by_chapter.get(chapter_id, []), key=lambda row: row.get("SortOrder", 0))
             buff_id = str(node.get("nodeValue") or "")
             buff = buffs.get(buff_id, {})
@@ -210,7 +212,9 @@ def identity_overdrive_details() -> dict:
                     "unlockType": unlock.get("UnlockType") if unlock else "",
                     "unlockValue": unlock.get("Value") if unlock else None,
                     "chapterTitle": loc(chapter.get("Title"), text) if chapter else "",
-                    "chapterRequiredLevel": as_int(chapter.get("UnlockValue")) if chapter else 0,
+                    "chapterRequiredLevel": chapter_required_level,
+                    "requiredLevel": chapter_required_level,
+                    "requiredLevelSource": required_level_source,
                     "chapterSortOrder": chapter.get("SortOrder") if chapter else None,
                     "missionTitles": [loc(row.get("Title"), text) for row in mission_rows],
                     "descriptionSummary": clean_markup(description),
@@ -413,7 +417,8 @@ def write_report(payload: dict) -> None:
         ]
     )
     for node in identity["nodes"]:
-        prereq = f"{node['chapterTitle']} (`{node['unlockType']}:{node['unlockValue']}`)"
+        level = f"niveau {node['requiredLevel']}" if node["requiredLevel"] else "aucun niveau explicite"
+        prereq = f"{node['chapterTitle']} (`{node['unlockType']}:{node['unlockValue']}`, {level})"
         lines.append(
             f"| {node['classSection']} | `{node['nodeId']}` | {node['overdriveName']} (`{node['nodeValue']}`) | {node['cost']} | {prereq} | {node['confidence']} |"
         )
