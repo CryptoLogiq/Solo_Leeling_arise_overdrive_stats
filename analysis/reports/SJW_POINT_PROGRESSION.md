@@ -1,6 +1,6 @@
 # Sung Jinwoo - Point Progression
 
-Sources primaires: `ChSJWLv` pour les gains par niveau, `SysConst` pour la limite de niveau, `sjw_talent_tree.json` pour les coûts de talents.
+Sources primaires: `ChSJWLv` pour les gains par niveau, `SysConst` pour la limite de niveau, `CharPCSkillTreeNode` / `ContentsUnlock` / `MainQuestChapter` pour les nœuds OverDrive, `sjw_talent_tree.json` pour les coûts de talents.
 
 ## Résumé
 
@@ -39,9 +39,22 @@ Cette table additionne les coûts connus de tous les rangs de talents présents 
 | `SpecialPoint` | 76 | 38 | 38 | CALCULÉ SUR COÛTS CONNUS; COÛTS PARTIELLEMENT NON DÉTERMINÉS |
 | `WeaponPoint` | 277 | 99 | 76 | CALCULÉ SUR COÛTS CONNUS; COÛTS PARTIELLEMENT NON DÉTERMINÉS |
 
+## IdentityPoint / OverDrive
+
+`IdentityPoint` ne se comporte pas comme les autres points de talent dans les données observées: `ChSJWLv.IdentityPoint` reste à 0 sur tous les niveaux, tandis que quatre nœuds `NodeType=Identity` consomment chacun 1 `IdentityPoint`.
+
+| Classe | NodeID | OverDrive | Coût | Prérequis | Confiance |
+|---|---:|---|---:|---|---|
+| Assassin | `111100` | Camouflage (`92000001`) | 1 | Gardien (`MainQuestChapter:10301`) | CONFIRMÉ PAR LES GAMEDATA |
+| Duelliste | `113100` | Smash (`92000003`) | 1 | Gardien (`MainQuestChapter:10301`) | CONFIRMÉ PAR LES GAMEDATA |
+| Magicien élémentaire | `115100` | Réaction en chaîne (`92000011`) | 1 | Gardien (`MainQuestChapter:10301`) | CONFIRMÉ PAR LES GAMEDATA |
+| Souverain | `117100` | Invocation d'ombre (`92000009`) | 1 | Défenseur du trône (`MainQuestChapter:10501`) | CONFIRMÉ PAR LES GAMEDATA |
+
+Exclusivité d'activation: FORTEMENT PROBABLE. Les quatre nœuds sont isolés, coûtent chacun 1 IdentityPoint et représentent les OverDrive de classe. Aucun champ GameData décodé ici ne démontre encore explicitement la règle runtime 'un seul actif'.
+
 ## Points non résolus
 
-- `IdentityPoint`: 4 nœuds de talent consomment chacun 1 point, mais `ChSJWLv.IdentityPoint` reste à 0 du niveau 1 au niveau 75. La source d'acquisition n'est donc pas le level-up dans cette table et reste WIP.
+- `IdentityPoint`: la source level-up est confirmée à 0. Les prérequis des nœuds OverDrive viennent de `ContentsUnlock` et pointent vers des chapitres de quête principale, mais la règle runtime exacte du budget/slot d'activation reste à vérifier en jeu.
 - `TotalExp`: le champ existe dans `ChSJWLv`, mais le décodage actuel produit des flottants extrêmement petits. Ne pas utiliser cette courbe XP pour planifier tant qu'elle n'est pas vérifiée.
 - `ProvideSkillSet`: présent dans `ChSJWLv`, mais vaut 0 sur les lignes décodées actuelles.
 

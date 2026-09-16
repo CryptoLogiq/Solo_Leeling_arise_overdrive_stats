@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import csv
+import importlib.util
 import json
+import re
 from collections import defaultdict
 from pathlib import Path
 
@@ -13,6 +15,8 @@ OUT_JSON = ANALYSIS / "data" / "sjw_point_progression.json"
 OUT_CSV = ANALYSIS / "csv" / "sjw_point_progression.csv"
 OUT_MD = ANALYSIS / "reports" / "SJW_POINT_PROGRESSION.md"
 TALENT_TREE = ANALYSIS / "data" / "sjw_talent_tree.json"
+MAIN = Path("/media/SSD_Evogames/SteamLibrary/steamapps/common/Solo Leveling/GameData")
+CODEC_PATH = Path("/home/cryptologiq/SoloLevelingAR-SaveGameEditor/tools/gamedata_codec.py")
 
 POINT_FIELDS = ["SkillPoint", "WeaponPoint", "SpecialPoint", "IdentityPoint"]
 
@@ -20,6 +24,21 @@ POINT_FIELDS = ["SkillPoint", "WeaponPoint", "SpecialPoint", "IdentityPoint"]
 def load_table(name: str) -> list[dict]:
     payload = json.loads((TABLES / f"{name}.json").read_text(encoding="utf-8"))
     return payload.get("records", payload)
+
+
+def load_codec():
+    spec = importlib.util.spec_from_file_location("gamedata_codec", CODEC_PATH)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"Cannot load {CODEC_PATH}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def parse_table(name: str) -> list[dict]:
+    codec = load_codec()
+    cols, count, _ = codec.parse_file(MAIN / f"{name}.byte")
+    return [{column: values[i] for column, values in cols.items()} for i in range(count)]
 
 
 def as_int(value, default=0) -> int:
@@ -41,6 +60,25 @@ def numeric_cost(value):
 def load_sysconst() -> dict:
     rows = load_table("SysConst")
     return rows[0] if rows else {}
+
+
+def load_text() -> dict:
+    rows = parse_table("TextData")
+    return {
+        row["StringID"]: row.get("Value_fra") or row.get("Value_eng") or row.get("Value") or row["StringID"]
+        for row in rows
+    }
+
+
+def clean_markup(value: str) -> str:
+    value = re.sub(r"<[^>]+>", "", value or "")
+    return value.replace("\\n", " ").replace("\n", " ").strip()
+
+
+def loc(value, text: dict) -> str:
+    if not isinstance(value, str) or not value:
+        return value or ""
+    return text.get(value, value)
 
 
 def build_level_rows(chsjwlv: list[dict]) -> tuple[list[dict], dict[str, list[int]], dict[str, int]]:
@@ -124,6 +162,77 @@ def demand_from_talent_tree() -> dict:
     return {currency: demand[currency] for currency in sorted(demand)}
 
 
+def identity_overdrive_details() -> dict:
+    model = json.loads(TALENT_TREE.read_text(encoding="utf-8"))
+    text = load_text()
+    unlocks = {row["ID"]: row for row in parse_table("ContentsUnlock")}
+    chapters = {row["ID"]: row for row in parse_table("MainQuestChapter")}
+    buffs = {str(row["ID"]): row for row in load_table("ChComBuff")}
+    raw_nodes = {str(row["ID"]): row for row in load_table("CharPCSkillTreeNode")}
+    missions_by_chapter = defaultdict(list)
+    for row in parse_table("MainQuestMission"):
+        missions_by_chapter[row["ChapterID"]].append(row)
+
+    nodes = []
+    for tree in model.get("trees", []):
+        for node in tree.get("nodes", []):
+            if node.get("nodeType") != "Identity":
+                continue
+            rank = node["ranks"][0]
+            raw_node = raw_nodes.get(str(node["nodeId"]), {})
+            unlock_id = as_int(raw_node.get("NodeContentsUnlock"))
+            access = rank.get("accessCondition") or ""
+            unlock = unlocks.get(unlock_id)
+            chapter = None
+            if unlock and unlock.get("UnlockType") == "MainQuestChapter":
+                chapter = chapters.get(as_int(unlock.get("Value")))
+            elif access.startswith("MainQuestChapter:"):
+                chapter = chapters.get(as_int(access.split(":", 1)[1]))
+
+            chapter_id = as_int(chapter.get("ID")) if chapter else None
+            mission_rows = sorted(missions_by_chapter.get(chapter_id, []), key=lambda row: row.get("SortOrder", 0))
+            buff_id = str(node.get("nodeValue") or "")
+            buff = buffs.get(buff_id, {})
+            node_name_key = f"NodeName.{buff_id}"
+            desc_key = f"SkillDescBuff.{buff_id}"
+            description = buff.get("SkillDescBuff_fra") or buff.get("SkillDescBuff_eng") or loc(desc_key, text)
+            nodes.append(
+                {
+                    "nodeId": node["nodeId"],
+                    "classSection": tree.get("section"),
+                    "nodeValue": buff_id,
+                    "overdriveName": loc(node_name_key, text),
+                    "cost": as_int(rank.get("cost")),
+                    "currency": rank.get("pointCurrency"),
+                    "accessCondition": access,
+                    "contentsUnlockId": unlock_id or None,
+                    "contentsType": unlock.get("ContentsType") if unlock else "",
+                    "unlockType": unlock.get("UnlockType") if unlock else "",
+                    "unlockValue": unlock.get("Value") if unlock else None,
+                    "chapterTitle": loc(chapter.get("Title"), text) if chapter else "",
+                    "chapterSortOrder": chapter.get("SortOrder") if chapter else None,
+                    "missionTitles": [loc(row.get("Title"), text) for row in mission_rows],
+                    "descriptionSummary": clean_markup(description),
+                    "confidence": "CONFIRMÉ PAR LES GAMEDATA",
+                }
+            )
+
+    unlock_ids = sorted({node["contentsUnlockId"] for node in nodes if node["contentsUnlockId"] is not None})
+    return {
+        "interpretation": "IdentityPoint est utilisé par les nœuds de classe / Overdrive, pas gagné par le level-up dans ChSJWLv.",
+        "identityPointLevelUpTotal": 0,
+        "knownOverdriveNodeCount": len(nodes),
+        "knownOverdriveKnownCostTotal": sum(node["cost"] for node in nodes),
+        "contentsUnlockIds": unlock_ids,
+        "exclusiveSelection": {
+            "status": "FORTEMENT PROBABLE",
+            "note": "Les quatre nœuds sont isolés, coûtent chacun 1 IdentityPoint et représentent les OverDrive de classe. Aucun champ GameData décodé ici ne démontre encore explicitement la règle runtime 'un seul actif'.",
+        },
+        "nodes": nodes,
+        "confidence": "CONFIRMÉ PAR LES GAMEDATA POUR LES NŒUDS, COÛTS ET PRÉREQUIS; EXCLUSIVITÉ RUNTIME À CONFIRMER",
+    }
+
+
 def snapshots_for(rows: list[dict], levels: list[int]) -> dict[str, dict[str, int]]:
     by_level = {row["level"]: row for row in rows}
     snapshots = {}
@@ -192,6 +301,7 @@ def write_report(payload: dict) -> None:
     summary = payload["summary"]
     sources = payload["pointSources"]
     demand = payload["talentDemandByCurrency"]
+    identity = payload["identityOverdrive"]
     level30 = summary["snapshots"].get("30", {})
     max_level = summary["maxLevel"]
     max_snapshot = summary["snapshots"].get(str(max_level), {})
@@ -199,7 +309,7 @@ def write_report(payload: dict) -> None:
     lines = [
         "# Sung Jinwoo - Point Progression",
         "",
-        "Sources primaires: `ChSJWLv` pour les gains par niveau, `SysConst` pour la limite de niveau, `sjw_talent_tree.json` pour les coûts de talents.",
+        "Sources primaires: `ChSJWLv` pour les gains par niveau, `SysConst` pour la limite de niveau, `CharPCSkillTreeNode` / `ContentsUnlock` / `MainQuestChapter` pour les nœuds OverDrive, `sjw_talent_tree.json` pour les coûts de talents.",
         "",
         "## Résumé",
         "",
@@ -263,9 +373,28 @@ def write_report(payload: dict) -> None:
     lines.extend(
         [
             "",
+            "## IdentityPoint / OverDrive",
+            "",
+            "`IdentityPoint` ne se comporte pas comme les autres points de talent dans les données observées: `ChSJWLv.IdentityPoint` reste à 0 sur tous les niveaux, tandis que quatre nœuds `NodeType=Identity` consomment chacun 1 `IdentityPoint`.",
+            "",
+            "| Classe | NodeID | OverDrive | Coût | Prérequis | Confiance |",
+            "|---|---:|---|---:|---|---|",
+        ]
+    )
+    for node in identity["nodes"]:
+        prereq = f"{node['chapterTitle']} (`{node['unlockType']}:{node['unlockValue']}`)"
+        lines.append(
+            f"| {node['classSection']} | `{node['nodeId']}` | {node['overdriveName']} (`{node['nodeValue']}`) | {node['cost']} | {prereq} | {node['confidence']} |"
+        )
+
+    lines.extend(
+        [
+            "",
+            f"Exclusivité d'activation: {identity['exclusiveSelection']['status']}. {identity['exclusiveSelection']['note']}",
+            "",
             "## Points non résolus",
             "",
-            "- `IdentityPoint`: 4 nœuds de talent consomment chacun 1 point, mais `ChSJWLv.IdentityPoint` reste à 0 du niveau 1 au niveau 75. La source d'acquisition n'est donc pas le level-up dans cette table et reste WIP.",
+            "- `IdentityPoint`: la source level-up est confirmée à 0. Les prérequis des nœuds OverDrive viennent de `ContentsUnlock` et pointent vers des chapitres de quête principale, mais la règle runtime exacte du budget/slot d'activation reste à vérifier en jeu.",
             "- `TotalExp`: le champ existe dans `ChSJWLv`, mais le décodage actuel produit des flottants extrêmement petits. Ne pas utiliser cette courbe XP pour planifier tant qu'elle n'est pas vérifiée.",
             "- `ProvideSkillSet`: présent dans `ChSJWLv`, mais vaut 0 sur les lignes décodées actuelles.",
             "",
@@ -287,7 +416,17 @@ def main() -> None:
         "metadata": {
             "game": "Solo Leveling: ARISE OVERDRIVE",
             "generatedBy": "tools/analyze_sjw_point_progression.py",
-            "sourceTables": ["ChSJWLv", "SysConst", "analysis/data/sjw_talent_tree.json"],
+            "sourceTables": [
+                "ChSJWLv",
+                "SysConst",
+                "CharPCSkillTreeNode",
+                "ContentsUnlock",
+                "MainQuestChapter",
+                "MainQuestMission",
+                "TextData",
+                "ChComBuff",
+                "analysis/data/sjw_talent_tree.json",
+            ],
             "confidence": "CALCULÉ À PARTIR DES GAMEDATA",
             "notes": [
                 "Les champs SkillPoint/WeaponPoint/SpecialPoint/IdentityPoint de ChSJWLv sont conservés comme gains bruts par niveau.",
@@ -306,6 +445,7 @@ def main() -> None:
         },
         "pointSources": point_source_summary(rows, gain_levels, totals),
         "talentDemandByCurrency": demand_from_talent_tree(),
+        "identityOverdrive": identity_overdrive_details(),
         "levels": rows,
     }
 

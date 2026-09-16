@@ -5,6 +5,12 @@
     "sourceTables": [
       "ChSJWLv",
       "SysConst",
+      "CharPCSkillTreeNode",
+      "ContentsUnlock",
+      "MainQuestChapter",
+      "MainQuestMission",
+      "TextData",
+      "ChComBuff",
       "analysis/data/sjw_talent_tree.json"
     ],
     "confidence": "CALCULÉ À PARTIR DES GAMEDATA",
@@ -268,6 +274,109 @@
       "confidence": "CALCULÉ À PARTIR DES GAMEDATA",
       "note": "Somme brute des coûts connus sur tous les rangs présents; ce n'est pas un coût de route."
     }
+  },
+  "identityOverdrive": {
+    "interpretation": "IdentityPoint est utilisé par les nœuds de classe / Overdrive, pas gagné par le level-up dans ChSJWLv.",
+    "identityPointLevelUpTotal": 0,
+    "knownOverdriveNodeCount": 4,
+    "knownOverdriveKnownCostTotal": 4,
+    "contentsUnlockIds": [
+      200001,
+      230003
+    ],
+    "exclusiveSelection": {
+      "status": "FORTEMENT PROBABLE",
+      "note": "Les quatre nœuds sont isolés, coûtent chacun 1 IdentityPoint et représentent les OverDrive de classe. Aucun champ GameData décodé ici ne démontre encore explicitement la règle runtime 'un seul actif'."
+    },
+    "nodes": [
+      {
+        "nodeId": "111100",
+        "classSection": "Assassin",
+        "nodeValue": "92000001",
+        "overdriveName": "Camouflage",
+        "cost": 1,
+        "currency": "IdentityPoint",
+        "accessCondition": "MainQuestChapter:10301",
+        "contentsUnlockId": 230003,
+        "contentsType": "PublicCondition",
+        "unlockType": "MainQuestChapter",
+        "unlockValue": 10301,
+        "chapterTitle": "Gardien",
+        "chapterSortOrder": 3,
+        "missionTitles": [
+          "Le gardien de la forteresse démoniaque"
+        ],
+        "descriptionSummary": "Cette compétence transperce l'ennemi tel un éclair silencieux.  Il y a une chance que l'utilisateur gagne 1 emplacement de jauge d'Overdrive à chaque attaque. Attaquer une cible par-derrière confère à l'utilisateur une forte chance de gagner 1 emplacement d'Overdrive.  L'utilisateur consomme 1 emplacement de jauge d'Overdrive et utilise sa compétence d'Overdrive.  Après l'utilisation de la compétence d'Overdrive, les effets [Super armure] et [Dégâts subis réduits] de l'utilisateur restent actifs pendant un certain temps et augmentent considérablement ses [dégâts d'attaque dans le dos].  [La mort approche, silencieuse et irrévocable, telle une ombre.]",
+        "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+      },
+      {
+        "nodeId": "113100",
+        "classSection": "Duelliste",
+        "nodeValue": "92000003",
+        "overdriveName": "Smash",
+        "cost": 1,
+        "currency": "IdentityPoint",
+        "accessCondition": "MainQuestChapter:10301",
+        "contentsUnlockId": 230003,
+        "contentsType": "PublicCondition",
+        "unlockType": "MainQuestChapter",
+        "unlockValue": 10301,
+        "chapterTitle": "Gardien",
+        "chapterSortOrder": 3,
+        "missionTitles": [
+          "Le gardien de la forteresse démoniaque"
+        ],
+        "descriptionSummary": "L'utilisateur prépare une puissante déviation pendant un certain temps. Lorsqu'une attaque ennemie est déviée, il déclenche une frappe dévastatrice.  Restaure légèrement la jauge d'Overdrive lorsqu'il est touché. Lorsqu'il dévie, restaure la jauge d'Overdrive.  L'utilisation de sa compétence d'Overdrive consomme toute la jauge d'Overdrive.  Les dégâts d'[Ombre vive : Contre-attaque] augmentent considérablement. Les ennemis restent déséquilibrés plus longtemps. Leur chance d'acquisition de [Bouclier] augmente. Ils obtiennent périodiquement un [Bouclier].  ---[Les lamentations des vaincus à genoux deviennent son armure.]",
+        "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+      },
+      {
+        "nodeId": "115100",
+        "classSection": "Magicien élémentaire",
+        "nodeValue": "92000011",
+        "overdriveName": "Réaction en chaîne",
+        "cost": 1,
+        "currency": "IdentityPoint",
+        "accessCondition": "MainQuestChapter:10301",
+        "contentsUnlockId": 230003,
+        "contentsType": "PublicCondition",
+        "unlockType": "MainQuestChapter",
+        "unlockValue": 10301,
+        "chapterTitle": "Gardien",
+        "chapterSortOrder": 3,
+        "missionTitles": [
+          "Le gardien de la forteresse démoniaque"
+        ],
+        "descriptionSummary": "Un glacier jaillit devant l'utilisateur pour geler ses ennemis et active [Glace gelée], puis le sol se met instantanément à bouillir lorsqu'un démon de feu en surgit, activant [Embrasement].  Lorsque [Glace gelée] ou [Embrasement] s'active ou touche une cible, la jauge d'[Overdrive] est restaurée, une fois par élément. (S'active une seule fois tous les intervalles définis.) L'utilisateur consomme toute sa jauge d'Overdrive et utilise sa compétence Overdrive.  ---[Le démon de feu fut englouti par la tempête de neige.]",
+        "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+      },
+      {
+        "nodeId": "117100",
+        "classSection": "Souverain",
+        "nodeValue": "92000009",
+        "overdriveName": "Invocation d'ombre",
+        "cost": 1,
+        "currency": "IdentityPoint",
+        "accessCondition": "MainQuestChapter:10501",
+        "contentsUnlockId": 200001,
+        "contentsType": "Ashborn",
+        "unlockType": "MainQuestChapter",
+        "unlockValue": 10501,
+        "chapterTitle": "Défenseur du trône",
+        "chapterSortOrder": 5,
+        "missionTitles": [
+          "La licence de maître de guilde",
+          "Nouveau message",
+          "Quête de changement de classe",
+          "Préparation terminée",
+          "Une vraie quête",
+          "Capacités pour le job",
+          "Capacités pour le job"
+        ],
+        "descriptionSummary": "Depuis les ténèbres, des soldats de l'ombre apparaissent pour prêter main-forte au combat.  Lorsque l'utilisateur exécute une [Attaque de combo de ruée ou une Attaque de combo de ruée arrière], des soldats de l'ombre surgissent à proximité pour combattre à ses côtés. Les soldats de l'ombre disparaissent après un certain temps.  Lors d'une [Attaque combinée] avec une ombre invoquée grâce à Overdrive, la jauge d'Overdrive de l'utilisateur est légèrement restaurée. Lors d'une attaque, la jauge d'Overdrive de l'utilisateur se restaure légèrement. La jauge d'Overdrive de l'utilisateur se restaure légèrement de façon périodique.  Lorsque l'utilisateur consomme le niveau 1 de sa jauge d'Overdrive, un [soldat maniant une dague] apparaît et transperce les ennemis. Au niveau 2 de sa jauge d'Overdrive, un [soldat magicien] apparaît et tire des projectiles de glace. Au niveau 3 de sa jauge d'Overdrive, l'[Ombre de Baruka] apparaît au-dessus de l'ennemi pour le geler.  ---[Debout sur son ombre, il réveille les ténèbres sous ses pas.]",
+        "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+      }
+    ],
+    "confidence": "CONFIRMÉ PAR LES GAMEDATA POUR LES NŒUDS, COÛTS ET PRÉREQUIS; EXCLUSIVITÉ RUNTIME À CONFIRMER"
   },
   "levels": [
     {
