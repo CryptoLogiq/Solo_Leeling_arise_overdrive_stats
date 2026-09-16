@@ -1,54 +1,48 @@
-# Solo Leveling: ARISE OVERDRIVE GameData Notes
+# Solo Leveling: ARISE OVERDRIVE Talent Planner
 
-Ressource communautaire en cours de construction pour documenter les mécaniques
-de **Solo Leveling: ARISE OVERDRIVE PC/Steam** à partir des GameData décodés.
+Planner communautaire pour préparer un build **Solo Leveling: ARISE OVERDRIVE**
+depuis un navigateur.
 
-## Objectif
+## Utiliser le planner
 
-Le dépôt sépare deux niveaux de lecture :
+- [Ouvrir le planner en ligne](https://cryptologiq.github.io/Solo_Leeling_arise_overdrive_stats/planner/)
+- [Ouvrir le planner depuis le dépôt](planner/)
 
-- **HUMAN** : rapports Markdown lisibles directement sur GitHub pour comprendre
-  les arbres, coûts, rangs, gains et incertitudes.
-- **TECHNICAL / DATA** : CSV, tables décodées et scripts permettant de vérifier
-  les conclusions.
+Le planner permet de choisir un niveau de build, de parcourir les arbres de
+talents, de dépenser les points disponibles et de voir les effets connus des
+talents avant de planifier sa route.
 
-La fiabilité passe avant la présentation : une valeur non démontrée doit rester
-marquée `NON DÉTERMINÉ`.
+## Ce que l'outil affiche
 
-## Points d'entrée
+- les arbres de classes, d'armes et de Sung Jinwoo ;
+- les coûts en points par talent ;
+- les prérequis de chemin dans l'arbre ;
+- les limites liées au niveau du build ;
+- les restrictions OverDrive ;
+- les descriptions, buffs, effets et valeurs brutes connues ;
+- les liens de partage, l'import et l'export de build.
 
-- [Arbre de talents HUMAN](analysis/reports/SJW_TALENT_TREE_HUMAN.md)
-- [Talent planner web](planner/)
-- [Talent planner GitHub Pages](https://cryptologiq.github.io/Solo_Leeling_arise_overdrive_stats/planner/)
-- [Détails techniques de l'arbre](analysis/reports/SJW_TALENT_TREE_TECHNICAL.md)
-- [Export canonique JSON des arbres](analysis/data/sjw_talent_tree.json)
-- [Audit data des arbres](analysis/reports/SJW_TALENT_TREE_DATA_AUDIT.md)
-- [Graphe Assassin validé](analysis/reports/SJW_ASSASSIN_TALENT_GRAPH.md)
-- [Transitions de rang des compétences](analysis/reports/SJW_SKILL_TRANSITION_CARDS.md)
-- [CSV générés](analysis/csv/)
-- [Scripts d'analyse](tools/)
+## Données WIP
 
-## Publication GitHub Pages
+Certaines valeurs viennent directement des GameData mais ne sont pas encore
+converties en valeur finale de jeu. Dans ce cas, le planner affiche quand même la
+valeur brute et marque l'information comme **WIP**.
 
-Le planner est statique et peut être publié sans workflow GitHub Actions.
+Exemple : si un talent donne une valeur brute `+430`, elle peut être affichée
+même si la conversion exacte en pourcentage ou en gain final n'est pas encore
+validée.
 
-Configuration recommandée dans GitHub :
+## État du projet
 
-- **Settings** → **Pages**
-- **Source** : `Deploy from a branch`
-- **Branch** : `main`
-- **Folder** : `/(root)`
+Le projet est en construction. Les données affichées sont progressivement
+vérifiées à partir des GameData de **Solo Leveling: ARISE OVERDRIVE PC/Steam**.
 
-La page racine redirige ensuite vers `/planner/`.
-
-## Sources et confiance
-
-La priorité des preuves est définie dans [AGENTS.md](AGENTS.md) :
-
-1. GameData décodés
-2. screenshots / observations utilisateur
-3. sources web explicitement OVERDRIVE
-4. communauté
-
-Ne pas importer de mécanique du jeu mobile sans preuve explicite qu'elle existe
+Les mécaniques du jeu mobile ne sont pas reprises sans preuve qu'elles existent
 dans OVERDRIVE.
+
+## Pour aller plus loin
+
+- [Arbre de talents lisible](analysis/reports/SJW_TALENT_TREE_HUMAN.md)
+- [Progression des points par niveau](analysis/reports/SJW_POINT_PROGRESSION.md)
+- [Détails techniques](analysis/reports/SJW_TALENT_TREE_TECHNICAL.md)
+- [Notes projet et publication](docs/PROJECT_NOTES.md)
