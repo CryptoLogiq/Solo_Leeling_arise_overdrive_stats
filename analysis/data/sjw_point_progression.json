@@ -1,0 +1,1774 @@
+{
+  "metadata": {
+    "game": "Solo Leveling: ARISE OVERDRIVE",
+    "generatedBy": "tools/analyze_sjw_point_progression.py",
+    "sourceTables": [
+      "ChSJWLv",
+      "SysConst",
+      "analysis/data/sjw_talent_tree.json"
+    ],
+    "confidence": "CALCULÉ À PARTIR DES GAMEDATA",
+    "notes": [
+      "Les champs SkillPoint/WeaponPoint/SpecialPoint/IdentityPoint de ChSJWLv sont conservés comme gains bruts par niveau.",
+      "Les cumuls sont calculés à partir des gains bruts, sans conversion ni hypothèse de route.",
+      "TotalExp est conservé en raw mais non interprété."
+    ]
+  },
+  "summary": {
+    "startLevel": 1,
+    "maxLevel": 75,
+    "maxLevelFromSysConst": 75,
+    "accountMaxLevelFromSysConst": 40,
+    "levelCount": 75,
+    "snapshots": {
+      "1": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "30": {
+        "SkillPoint": 18,
+        "WeaponPoint": 20,
+        "SpecialPoint": 20,
+        "IdentityPoint": 0
+      },
+      "75": {
+        "SkillPoint": 48,
+        "WeaponPoint": 50,
+        "SpecialPoint": 50,
+        "IdentityPoint": 0
+      }
+    },
+    "maxTotals": {
+      "SkillPoint": 48,
+      "WeaponPoint": 50,
+      "SpecialPoint": 50,
+      "IdentityPoint": 0
+    }
+  },
+  "pointSources": {
+    "SkillPoint": {
+      "sourceTable": "ChSJWLv",
+      "sourceField": "SkillPoint",
+      "gainValues": [
+        2
+      ],
+      "gainLevels": [
+        4,
+        7,
+        10,
+        13,
+        16,
+        19,
+        22,
+        25,
+        28,
+        31,
+        34,
+        37,
+        40,
+        43,
+        46,
+        49,
+        52,
+        55,
+        58,
+        61,
+        64,
+        67,
+        70,
+        73
+      ],
+      "totalAtMaxLevel": 48,
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA",
+      "wip": false,
+      "note": "Gain par niveau trouvé dans ChSJWLv."
+    },
+    "WeaponPoint": {
+      "sourceTable": "ChSJWLv",
+      "sourceField": "WeaponPoint",
+      "gainValues": [
+        2
+      ],
+      "gainLevels": [
+        2,
+        5,
+        8,
+        11,
+        14,
+        17,
+        20,
+        23,
+        26,
+        29,
+        32,
+        35,
+        38,
+        41,
+        44,
+        47,
+        50,
+        53,
+        56,
+        59,
+        62,
+        65,
+        68,
+        71,
+        74
+      ],
+      "totalAtMaxLevel": 50,
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA",
+      "wip": false,
+      "note": "Gain par niveau trouvé dans ChSJWLv."
+    },
+    "SpecialPoint": {
+      "sourceTable": "ChSJWLv",
+      "sourceField": "SpecialPoint",
+      "gainValues": [
+        2
+      ],
+      "gainLevels": [
+        3,
+        6,
+        9,
+        12,
+        15,
+        18,
+        21,
+        24,
+        27,
+        30,
+        33,
+        36,
+        39,
+        42,
+        45,
+        48,
+        51,
+        54,
+        57,
+        60,
+        63,
+        66,
+        69,
+        72,
+        75
+      ],
+      "totalAtMaxLevel": 50,
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA",
+      "wip": false,
+      "note": "Gain par niveau trouvé dans ChSJWLv."
+    },
+    "IdentityPoint": {
+      "sourceTable": "ChSJWLv",
+      "sourceField": "IdentityPoint",
+      "gainValues": [],
+      "gainLevels": [],
+      "totalAtMaxLevel": 0,
+      "confidence": "CONFIRMÉ POUR LE LEVEL-UP; SOURCE D'ACQUISITION NON DÉTERMINÉE",
+      "wip": true,
+      "note": "ChSJWLv ne donne aucun gain par niveau pour cette monnaie."
+    }
+  },
+  "talentDemandByCurrency": {
+    "IdentityPoint": {
+      "knownCostTotal": 4,
+      "knownRankCount": 4,
+      "unknownRankCount": 0,
+      "nodeIdsWithUnknownCost": [],
+      "source": "analysis/data/sjw_talent_tree.json",
+      "confidence": "CALCULÉ À PARTIR DES GAMEDATA",
+      "note": "Somme brute des coûts connus sur tous les rangs présents; ce n'est pas un coût de route."
+    },
+    "SkillPoint": {
+      "knownCostTotal": 662,
+      "knownRankCount": 189,
+      "unknownRankCount": 0,
+      "nodeIdsWithUnknownCost": [],
+      "source": "analysis/data/sjw_talent_tree.json",
+      "confidence": "CALCULÉ À PARTIR DES GAMEDATA",
+      "note": "Somme brute des coûts connus sur tous les rangs présents; ce n'est pas un coût de route."
+    },
+    "SpecialPoint": {
+      "knownCostTotal": 76,
+      "knownRankCount": 38,
+      "unknownRankCount": 38,
+      "nodeIdsWithUnknownCost": [
+        "31100102",
+        "31100201",
+        "31100203",
+        "31100302",
+        "31100401",
+        "31100403",
+        "31100502",
+        "31100601",
+        "31100603",
+        "31101102",
+        "31101201",
+        "31101203",
+        "31101302",
+        "31101401",
+        "31101403",
+        "31101501",
+        "31101503",
+        "31101601",
+        "31101603"
+      ],
+      "source": "analysis/data/sjw_talent_tree.json",
+      "confidence": "CALCULÉ À PARTIR DES GAMEDATA",
+      "note": "Somme brute des coûts connus sur tous les rangs présents; ce n'est pas un coût de route."
+    },
+    "WeaponPoint": {
+      "knownCostTotal": 277,
+      "knownRankCount": 99,
+      "unknownRankCount": 76,
+      "nodeIdsWithUnknownCost": [
+        "2254103",
+        "2254202",
+        "2254402",
+        "2255101",
+        "2255202",
+        "2255402",
+        "2460102",
+        "2460202",
+        "2461102",
+        "2461401",
+        "2461403",
+        "2462102",
+        "2462202",
+        "2463102",
+        "2463202",
+        "2463302",
+        "2356101",
+        "2357102",
+        "2357202",
+        "2357402",
+        "2252101",
+        "2252103",
+        "2252301",
+        "2252303",
+        "2253101",
+        "2253103",
+        "2358102",
+        "2358301",
+        "2358303",
+        "2359101",
+        "2359103",
+        "2359402",
+        "2150102",
+        "2150401",
+        "2150403",
+        "2151102",
+        "2151302",
+        "2151402"
+      ],
+      "source": "analysis/data/sjw_talent_tree.json",
+      "confidence": "CALCULÉ À PARTIR DES GAMEDATA",
+      "note": "Somme brute des coûts connus sur tous les rangs présents; ce n'est pas un coût de route."
+    }
+  },
+  "levels": [
+    {
+      "id": 1,
+      "level": 1,
+      "totalExpRaw": 0.0,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 2,
+      "level": 2,
+      "totalExpRaw": 1.976e-321,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 3,
+      "level": 3,
+      "totalExpRaw": 4.076e-321,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 4,
+      "level": 4,
+      "totalExpRaw": 6.413e-321,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 2,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 2,
+        "WeaponPoint": 2,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 5,
+      "level": 5,
+      "totalExpRaw": 8.99e-321,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 2,
+        "WeaponPoint": 4,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 6,
+      "level": 6,
+      "totalExpRaw": 1.1833e-320,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 2,
+        "WeaponPoint": 4,
+        "SpecialPoint": 4,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 7,
+      "level": 7,
+      "totalExpRaw": 1.4886e-320,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 2,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 4,
+        "WeaponPoint": 4,
+        "SpecialPoint": 4,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 8,
+      "level": 8,
+      "totalExpRaw": 1.8157e-320,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 4,
+        "WeaponPoint": 6,
+        "SpecialPoint": 4,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 9,
+      "level": 9,
+      "totalExpRaw": 2.1517e-320,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 4,
+        "WeaponPoint": 6,
+        "SpecialPoint": 6,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 10,
+      "level": 10,
+      "totalExpRaw": 2.4896e-320,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 2,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 6,
+        "WeaponPoint": 6,
+        "SpecialPoint": 6,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 11,
+      "level": 11,
+      "totalExpRaw": 2.8295e-320,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 6,
+        "WeaponPoint": 8,
+        "SpecialPoint": 6,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 12,
+      "level": 12,
+      "totalExpRaw": 3.171e-320,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 6,
+        "WeaponPoint": 8,
+        "SpecialPoint": 8,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 13,
+      "level": 13,
+      "totalExpRaw": 3.5143e-320,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 2,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 8,
+        "WeaponPoint": 8,
+        "SpecialPoint": 8,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 14,
+      "level": 14,
+      "totalExpRaw": 3.859e-320,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 8,
+        "WeaponPoint": 10,
+        "SpecialPoint": 8,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 15,
+      "level": 15,
+      "totalExpRaw": 4.206e-320,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 8,
+        "WeaponPoint": 10,
+        "SpecialPoint": 10,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 16,
+      "level": 16,
+      "totalExpRaw": 4.5543e-320,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 2,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 10,
+        "WeaponPoint": 10,
+        "SpecialPoint": 10,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 17,
+      "level": 17,
+      "totalExpRaw": 4.9036e-320,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 10,
+        "WeaponPoint": 12,
+        "SpecialPoint": 10,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 18,
+      "level": 18,
+      "totalExpRaw": 5.255e-320,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 10,
+        "WeaponPoint": 12,
+        "SpecialPoint": 12,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 19,
+      "level": 19,
+      "totalExpRaw": 5.611e-320,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 2,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 12,
+        "WeaponPoint": 12,
+        "SpecialPoint": 12,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 20,
+      "level": 20,
+      "totalExpRaw": 5.973e-320,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 12,
+        "WeaponPoint": 14,
+        "SpecialPoint": 12,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 21,
+      "level": 21,
+      "totalExpRaw": 6.339e-320,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 12,
+        "WeaponPoint": 14,
+        "SpecialPoint": 14,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 22,
+      "level": 22,
+      "totalExpRaw": 6.71e-320,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 2,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 14,
+        "WeaponPoint": 14,
+        "SpecialPoint": 14,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 23,
+      "level": 23,
+      "totalExpRaw": 7.0854e-320,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 14,
+        "WeaponPoint": 16,
+        "SpecialPoint": 14,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 24,
+      "level": 24,
+      "totalExpRaw": 7.4653e-320,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 14,
+        "WeaponPoint": 16,
+        "SpecialPoint": 16,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 25,
+      "level": 25,
+      "totalExpRaw": 7.85e-320,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 2,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 16,
+        "WeaponPoint": 16,
+        "SpecialPoint": 16,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 26,
+      "level": 26,
+      "totalExpRaw": 8.2553e-320,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 16,
+        "WeaponPoint": 18,
+        "SpecialPoint": 16,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 27,
+      "level": 27,
+      "totalExpRaw": 8.681e-320,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 16,
+        "WeaponPoint": 18,
+        "SpecialPoint": 18,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 28,
+      "level": 28,
+      "totalExpRaw": 9.128e-320,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 2,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 18,
+        "WeaponPoint": 18,
+        "SpecialPoint": 18,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 29,
+      "level": 29,
+      "totalExpRaw": 9.596e-320,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 18,
+        "WeaponPoint": 20,
+        "SpecialPoint": 18,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 30,
+      "level": 30,
+      "totalExpRaw": 1.00864e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 18,
+        "WeaponPoint": 20,
+        "SpecialPoint": 20,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 31,
+      "level": 31,
+      "totalExpRaw": 1.0579e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 2,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 20,
+        "WeaponPoint": 20,
+        "SpecialPoint": 20,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 32,
+      "level": 32,
+      "totalExpRaw": 1.1074e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 20,
+        "WeaponPoint": 22,
+        "SpecialPoint": 20,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 33,
+      "level": 33,
+      "totalExpRaw": 1.1571e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 20,
+        "WeaponPoint": 22,
+        "SpecialPoint": 22,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 34,
+      "level": 34,
+      "totalExpRaw": 1.20676e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 2,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 22,
+        "WeaponPoint": 22,
+        "SpecialPoint": 22,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 35,
+      "level": 35,
+      "totalExpRaw": 1.2564e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 22,
+        "WeaponPoint": 24,
+        "SpecialPoint": 22,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 36,
+      "level": 36,
+      "totalExpRaw": 1.3088e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 22,
+        "WeaponPoint": 24,
+        "SpecialPoint": 24,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 37,
+      "level": 37,
+      "totalExpRaw": 1.3651e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 2,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 24,
+        "WeaponPoint": 24,
+        "SpecialPoint": 24,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 38,
+      "level": 38,
+      "totalExpRaw": 1.42553e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 24,
+        "WeaponPoint": 26,
+        "SpecialPoint": 24,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 39,
+      "level": 39,
+      "totalExpRaw": 1.4903e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 24,
+        "WeaponPoint": 26,
+        "SpecialPoint": 26,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 40,
+      "level": 40,
+      "totalExpRaw": 1.55957e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 2,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 26,
+        "WeaponPoint": 26,
+        "SpecialPoint": 26,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 41,
+      "level": 41,
+      "totalExpRaw": 1.6322e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 26,
+        "WeaponPoint": 28,
+        "SpecialPoint": 26,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 42,
+      "level": 42,
+      "totalExpRaw": 1.70823e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 26,
+        "WeaponPoint": 28,
+        "SpecialPoint": 28,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 43,
+      "level": 43,
+      "totalExpRaw": 1.7879e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 2,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 28,
+        "WeaponPoint": 28,
+        "SpecialPoint": 28,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 44,
+      "level": 44,
+      "totalExpRaw": 1.87117e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 28,
+        "WeaponPoint": 30,
+        "SpecialPoint": 28,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 45,
+      "level": 45,
+      "totalExpRaw": 1.9599e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 28,
+        "WeaponPoint": 30,
+        "SpecialPoint": 30,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 46,
+      "level": 46,
+      "totalExpRaw": 2.0544e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 2,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 30,
+        "WeaponPoint": 30,
+        "SpecialPoint": 30,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 47,
+      "level": 47,
+      "totalExpRaw": 2.1549e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 30,
+        "WeaponPoint": 32,
+        "SpecialPoint": 30,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 48,
+      "level": 48,
+      "totalExpRaw": 2.26173e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 30,
+        "WeaponPoint": 32,
+        "SpecialPoint": 32,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 49,
+      "level": 49,
+      "totalExpRaw": 2.3752e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 2,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 32,
+        "WeaponPoint": 32,
+        "SpecialPoint": 32,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 50,
+      "level": 50,
+      "totalExpRaw": 2.5014e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 32,
+        "WeaponPoint": 34,
+        "SpecialPoint": 32,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 51,
+      "level": 51,
+      "totalExpRaw": 2.64157e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 32,
+        "WeaponPoint": 34,
+        "SpecialPoint": 34,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 52,
+      "level": 52,
+      "totalExpRaw": 2.7971e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 2,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 34,
+        "WeaponPoint": 34,
+        "SpecialPoint": 34,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 53,
+      "level": 53,
+      "totalExpRaw": 2.96953e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 34,
+        "WeaponPoint": 36,
+        "SpecialPoint": 34,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 54,
+      "level": 54,
+      "totalExpRaw": 3.16054e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 34,
+        "WeaponPoint": 36,
+        "SpecialPoint": 36,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 55,
+      "level": 55,
+      "totalExpRaw": 3.37205e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 2,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 36,
+        "WeaponPoint": 36,
+        "SpecialPoint": 36,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 56,
+      "level": 56,
+      "totalExpRaw": 3.6061e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 36,
+        "WeaponPoint": 38,
+        "SpecialPoint": 36,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 57,
+      "level": 57,
+      "totalExpRaw": 3.86483e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 36,
+        "WeaponPoint": 38,
+        "SpecialPoint": 38,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 58,
+      "level": 58,
+      "totalExpRaw": 4.15084e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 2,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 38,
+        "WeaponPoint": 38,
+        "SpecialPoint": 38,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 59,
+      "level": 59,
+      "totalExpRaw": 4.4668e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 38,
+        "WeaponPoint": 40,
+        "SpecialPoint": 38,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 60,
+      "level": 60,
+      "totalExpRaw": 4.81576e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 38,
+        "WeaponPoint": 40,
+        "SpecialPoint": 40,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 61,
+      "level": 61,
+      "totalExpRaw": 5.20093e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 2,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 40,
+        "WeaponPoint": 40,
+        "SpecialPoint": 40,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 62,
+      "level": 62,
+      "totalExpRaw": 5.62597e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 40,
+        "WeaponPoint": 42,
+        "SpecialPoint": 40,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 63,
+      "level": 63,
+      "totalExpRaw": 6.09484e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 40,
+        "WeaponPoint": 42,
+        "SpecialPoint": 42,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 64,
+      "level": 64,
+      "totalExpRaw": 6.61203e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 2,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 42,
+        "WeaponPoint": 42,
+        "SpecialPoint": 42,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 65,
+      "level": 65,
+      "totalExpRaw": 7.1823e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 42,
+        "WeaponPoint": 44,
+        "SpecialPoint": 42,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 66,
+      "level": 66,
+      "totalExpRaw": 7.77086e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 42,
+        "WeaponPoint": 44,
+        "SpecialPoint": 44,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 67,
+      "level": 67,
+      "totalExpRaw": 8.3755e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 2,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 44,
+        "WeaponPoint": 44,
+        "SpecialPoint": 44,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 68,
+      "level": 68,
+      "totalExpRaw": 8.99343e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 44,
+        "WeaponPoint": 46,
+        "SpecialPoint": 44,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 69,
+      "level": 69,
+      "totalExpRaw": 9.6219e-319,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 44,
+        "WeaponPoint": 46,
+        "SpecialPoint": 46,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 70,
+      "level": 70,
+      "totalExpRaw": 1.02579e-318,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 2,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 46,
+        "WeaponPoint": 46,
+        "SpecialPoint": 46,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 71,
+      "level": 71,
+      "totalExpRaw": 1.089835e-318,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 46,
+        "WeaponPoint": 48,
+        "SpecialPoint": 46,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 72,
+      "level": 72,
+      "totalExpRaw": 1.15432e-318,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 46,
+        "WeaponPoint": 48,
+        "SpecialPoint": 48,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 73,
+      "level": 73,
+      "totalExpRaw": 1.21925e-318,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 2,
+        "WeaponPoint": 0,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 48,
+        "WeaponPoint": 48,
+        "SpecialPoint": 48,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 74,
+      "level": 74,
+      "totalExpRaw": 1.284635e-318,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 2,
+        "SpecialPoint": 0,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 48,
+        "WeaponPoint": 50,
+        "SpecialPoint": 48,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    },
+    {
+      "id": 75,
+      "level": 75,
+      "totalExpRaw": 1.35047e-318,
+      "maxAP": 15,
+      "provideSkillSet": 0,
+      "gains": {
+        "SkillPoint": 0,
+        "WeaponPoint": 0,
+        "SpecialPoint": 2,
+        "IdentityPoint": 0
+      },
+      "cumulative": {
+        "SkillPoint": 48,
+        "WeaponPoint": 50,
+        "SpecialPoint": 50,
+        "IdentityPoint": 0
+      },
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    }
+  ]
+}
