@@ -325,6 +325,10 @@ input {
 }
 
 .node-card.locked {
+  opacity: 1;
+}
+
+.node-card.locked > div {
   opacity: 0.58;
 }
 
