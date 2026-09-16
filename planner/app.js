@@ -2,6 +2,7 @@
 
 const DATA_URL = "../analysis/data/sjw_talent_tree.json";
 const EFFECT_DB_URL = "../analysis/data/sjw_effect_database.json";
+const POINT_PROGRESS_URL = "../analysis/data/sjw_point_progression.json";
 const RANK_LABELS = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
 const NODE_FALLBACK_WIDTH = 184;
 const NODE_FALLBACK_HEIGHT = 112;
@@ -21,6 +22,7 @@ const DEFAULT_BUDGETS = {};
 const state = {
   model: null,
   effectDb: null,
+  pointProgression: null,
   sections: [],
   nodeById: new Map(),
   activeSectionIndex: 0,
@@ -28,6 +30,7 @@ const state = {
   activeSection: "",
   activeNodeId: null,
   selected: {},
+  buildLevel: 75,
   budgets: { ...DEFAULT_BUDGETS },
   zoom: 1,
 };
@@ -87,6 +90,43 @@ function asArray(value) {
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
+}
+
+function minBuildLevel() {
+  return state.pointProgression?.summary?.startLevel || 1;
+}
+
+function maxBuildLevel() {
+  return state.pointProgression?.summary?.maxLevel || 75;
+}
+
+function progressionRowForLevel(level = state.buildLevel) {
+  const rows = asArray(state.pointProgression?.levels);
+  if (!rows.length) return null;
+  const capped = clamp(Number(level) || minBuildLevel(), minBuildLevel(), maxBuildLevel());
+  return rows.find((row) => Number(row.level) === capped) || rows.filter((row) => Number(row.level) <= capped).at(-1) || rows[0];
+}
+
+function identityBudgetForLevel(level = state.buildLevel) {
+  const nodes = asArray(state.pointProgression?.identityOverdrive?.nodes);
+  if (!nodes.length) return 0;
+  const available = nodes.some((node) => {
+    const required = Number(node.chapterRequiredLevel || 0);
+    return required <= 0 || Number(level) >= required;
+  });
+  return available ? 1 : 0;
+}
+
+function budgetsForLevel(level = state.buildLevel) {
+  const row = progressionRowForLevel(level);
+  const budgets = { ...(row?.cumulative || {}) };
+  budgets.IdentityPoint = Math.max(Number(budgets.IdentityPoint || 0), identityBudgetForLevel(level));
+  return budgets;
+}
+
+function refreshBudgetsFromLevel() {
+  state.buildLevel = clamp(Number(state.buildLevel) || maxBuildLevel(), minBuildLevel(), maxBuildLevel());
+  state.budgets = budgetsForLevel(state.buildLevel);
 }
 
 function parseOffset(raw) {
@@ -198,6 +238,65 @@ function currentSection() {
   return activeSections()[0] || state.sections[state.activeSectionIndex];
 }
 
+function sectionUnlock(sectionName) {
+  return state.pointProgression?.skillTreeUnlocks?.[sectionName] || null;
+}
+
+function sectionRequiredLevel(sectionName) {
+  return Number(sectionUnlock(sectionName)?.requiredLevel || 0);
+}
+
+function nodeIdentityInfo(node) {
+  return asArray(state.pointProgression?.identityOverdrive?.nodes).find((item) => String(item.nodeId) === String(node?.nodeId)) || null;
+}
+
+function nodeAccessRequiredLevel(node) {
+  const identity = nodeIdentityInfo(node);
+  if (identity) return Number(identity.chapterRequiredLevel || 0);
+  const access = asArray(node?.ranks).map((rank) => rank.accessCondition).find(Boolean) || "";
+  if (!access.startsWith("MainQuestChapter:")) return 0;
+  const chapter = access.split(":", 2)[1];
+  const match = asArray(state.pointProgression?.identityOverdrive?.nodes).find((item) => String(item.unlockValue) === chapter);
+  return Number(match?.chapterRequiredLevel || 0);
+}
+
+function nodeSection(node) {
+  return state.sections.find((section) => asArray(section.nodes).some((item) => item.nodeId === node?.nodeId)) || null;
+}
+
+function nodeRequiredLevel(node) {
+  const section = nodeSection(node);
+  return Math.max(sectionRequiredLevel(section?.section), nodeAccessRequiredLevel(node));
+}
+
+function levelSatisfied(node) {
+  return state.buildLevel >= nodeRequiredLevel(node);
+}
+
+function isOverdriveNode(node) {
+  return node?.nodeType === "Identity" || nodeCurrency(node) === "IdentityPoint" || Boolean(nodeIdentityInfo(node));
+}
+
+function selectedOverdriveNodeId(exceptNodeId = "") {
+  return Object.entries(state.selected).find(([nodeId, rank]) => {
+    if (nodeId === exceptNodeId || Number(rank) <= 0) return false;
+    return isOverdriveNode(state.nodeById.get(nodeId));
+  })?.[0] || "";
+}
+
+function overdriveBlocked(node) {
+  return isOverdriveNode(node) && Boolean(selectedOverdriveNodeId(node.nodeId)) && selectedRank(node.nodeId) === 0;
+}
+
+function levelLockText(node) {
+  const required = nodeRequiredLevel(node);
+  if (!required || state.buildLevel >= required) return "";
+  const section = nodeSection(node);
+  const unlock = sectionUnlock(section?.section);
+  const source = unlock?.chapterTitle ? ` (${unlock.chapterTitle})` : "";
+  return `Niveau ${required} requis${source}`;
+}
+
 function activeSections() {
   if (!state.activeSystem || !state.activeSection) return [];
   return state.sections.filter((item) => item.system === state.activeSystem && item.section === state.activeSection);
@@ -303,6 +402,9 @@ function nodeTooltip(node) {
     `${displayName(node.name)} (${node.nodeId})`,
     `${node.nodeType || "Talent"} · ${node.nodeMaxLevel} rang${node.nodeMaxLevel > 1 ? "s" : ""}`,
   ];
+  const required = nodeRequiredLevel(node);
+  if (required) lines.push(`Niveau requis: ${required}${state.buildLevel < required ? " (verrouillé)" : ""}`);
+  if (overdriveBlocked(node)) lines.push("OverDrive verrouillé: un autre OverDrive est déjà actif.");
   for (const rank of node.ranks || []) {
     lines.push(`Rang ${rankLabel(rank.rank)} · ${rankCostLabel(rank, node)}`);
     for (const effect of rank.effects || []) {
@@ -326,9 +428,9 @@ function setNotice(message, tone = "info") {
 
 function buildPayload() {
   return {
-    version: 1,
+    version: 2,
+    buildLevel: state.buildLevel,
     selected: Object.fromEntries(Object.entries(state.selected).filter(([, rank]) => Number(rank) > 0)),
-    budgets: state.budgets,
   };
 }
 
@@ -360,6 +462,8 @@ function loadBuildFromHash() {
 }
 
 function applyBuild(payload) {
+  state.buildLevel = clamp(Number(payload.buildLevel || payload.level || state.buildLevel), minBuildLevel(), maxBuildLevel());
+  refreshBudgetsFromLevel();
   const next = {};
   for (const [nodeId, rank] of Object.entries(payload.selected || payload.nodes || {})) {
     const node = state.nodeById.get(nodeId);
@@ -367,7 +471,6 @@ function applyBuild(payload) {
     if (node && value > 0) next[nodeId] = value;
   }
   state.selected = next;
-  state.budgets = { ...DEFAULT_BUDGETS, ...(payload.budgets || {}) };
   pruneInvalidSelections();
 }
 
@@ -389,7 +492,12 @@ function populateSectionSelect() {
   if (!sections.includes(state.activeSection)) {
     state.activeSection = sections[0] || "";
   }
-  els.section.innerHTML = sections.map((name) => `<option value="${escapeHtml(name)}">${escapeHtml(name)}</option>`).join("");
+  els.section.innerHTML = sections.map((name) => {
+    const required = sectionRequiredLevel(name);
+    const locked = required && state.buildLevel < required;
+    const suffix = locked ? ` (niv. ${required})` : "";
+    return `<option value="${escapeHtml(name)}">${escapeHtml(name + suffix)}</option>`;
+  }).join("");
   els.section.value = state.activeSection;
   const nextIndex = state.sections.findIndex((section) => section.system === system && section.section === state.activeSection);
   state.activeSectionIndex = nextIndex >= 0 ? nextIndex : 0;
@@ -414,10 +522,11 @@ function activeCurrency() {
 }
 
 function updateBudgetInput() {
-  const currency = activeCurrency();
-  els.budget.value = state.budgets[currency] ?? "";
-  els.budget.placeholder = "illimité";
-  els.budget.parentElement.firstChild.textContent = `Budget de simulation ${currency}`;
+  els.budget.min = String(minBuildLevel());
+  els.budget.max = String(maxBuildLevel());
+  els.budget.value = state.buildLevel;
+  els.budget.placeholder = String(maxBuildLevel());
+  els.budget.parentElement.firstChild.textContent = "Niveau du build";
 }
 
 function selectedCostByCurrency(selected = state.selected) {
@@ -453,22 +562,34 @@ function canAfford(node, nextRank) {
   const rank = node.ranks[nextRank - 1];
   if (parseCost(rank) === null) return true;
   const currency = rank?.pointCurrency || nodeCurrency(node);
-  if (state.budgets[currency] === undefined || state.budgets[currency] === "") return true;
   const preview = { ...state.selected, [node.nodeId]: nextRank };
   const total = selectedCostByCurrency(preview)[currency] || 0;
-  const budget = Number(state.budgets[currency]);
+  const budget = Number(state.budgets[currency] || 0);
   return total <= budget;
 }
 
 function canIncrease(node) {
   const current = selectedRank(node.nodeId);
-  return current < node.nodeMaxLevel && unlockSatisfied(node) && canAfford(node, current + 1);
+  return current < node.nodeMaxLevel
+    && levelSatisfied(node)
+    && !overdriveBlocked(node)
+    && unlockSatisfied(node)
+    && canAfford(node, current + 1);
 }
 
 function setNodeRank(nodeId, rank) {
   const node = state.nodeById.get(nodeId);
   if (!node) return;
   const nextRank = Math.max(0, Math.min(rank, node.nodeMaxLevel));
+  if (nextRank > selectedRank(nodeId) && !levelSatisfied(node)) {
+    setNotice(levelLockText(node), "error");
+    return;
+  }
+  if (nextRank > selectedRank(nodeId) && overdriveBlocked(node)) {
+    const active = state.nodeById.get(selectedOverdriveNodeId(nodeId));
+    setNotice(`Un seul OverDrive peut être activé: ${displayName(active?.name || active?.nodeId)} est déjà sélectionné.`, "error");
+    return;
+  }
   if (nextRank > selectedRank(nodeId) && !unlockSatisfied(node)) {
     setNotice(`Lien entrant manquant: ${node.parents.map(nodeName).join(", ")}`, "error");
     return;
@@ -488,9 +609,13 @@ function pruneInvalidSelections() {
   let changed = true;
   while (changed) {
     changed = false;
+    const activeOverdrive = selectedOverdriveNodeId();
     for (const nodeId of Object.keys(state.selected)) {
       const node = state.nodeById.get(nodeId);
-      if (!node || !unlockSatisfied(node)) {
+      if (!node
+        || !levelSatisfied(node)
+        || !unlockSatisfied(node)
+        || (activeOverdrive && nodeId !== activeOverdrive && isOverdriveNode(node))) {
         delete state.selected[nodeId];
         changed = true;
       }
@@ -578,6 +703,12 @@ function layoutSections(sections, dimensions = null) {
 
 function nextCostLabel(node) {
   const current = selectedRank(node.nodeId);
+  const levelLock = levelLockText(node);
+  if (current === 0 && levelLock) return levelLock;
+  if (current === 0 && overdriveBlocked(node)) {
+    const active = state.nodeById.get(selectedOverdriveNodeId(node.nodeId));
+    return `OverDrive déjà actif: ${displayName(active?.name || active?.nodeId)}`;
+  }
   if (current >= node.nodeMaxLevel) return `${current}/${node.nodeMaxLevel} - MAX`;
   const nextRank = node.ranks[current];
   const cost = rankCostLabel(nextRank, node);
@@ -600,16 +731,18 @@ function buildBranchHtml(bands) {
 function buildNodeHtml(layout, mode = "") {
   return layout.map(({ node, x, y }) => {
     const rank = selectedRank(node.nodeId);
-    const locked = !unlockSatisfied(node);
+    const locked = !unlockSatisfied(node) || !levelSatisfied(node) || overdriveBlocked(node);
     const active = state.activeNodeId === node.nodeId;
     const currency = nodeCurrency(node);
     const selectedClass = rank > 0 ? "selected" : "";
     const activeClass = active ? "active" : "";
     const lockedClass = locked ? "locked" : "";
+    const levelClass = !levelSatisfied(node) ? "level-locked" : "";
+    const overdriveClass = overdriveBlocked(node) ? "overdrive-locked" : "";
     const measureClass = mode === "measure" ? "measure" : "";
     const tooltip = nodeTooltip(node);
     return `
-      <article class="node-card ${selectedClass} ${activeClass} ${lockedClass} ${measureClass}" style="left:${x}px; top:${y}px" data-node-id="${escapeHtml(node.nodeId)}" data-tooltip="${escapeHtml(tooltip)}">
+      <article class="node-card ${selectedClass} ${activeClass} ${lockedClass} ${levelClass} ${overdriveClass} ${measureClass}" style="left:${x}px; top:${y}px" data-node-id="${escapeHtml(node.nodeId)}" data-tooltip="${escapeHtml(tooltip)}">
         <div>
           <div class="node-name">${escapeHtml(displayName(node.name))}</div>
           <div class="node-cost">${escapeHtml(nextCostLabel(node))}</div>
@@ -662,7 +795,7 @@ function renderEdges(nodes, layout, width, height) {
         ? "selected"
         : selectedRank(node.nodeId) > 0
           ? "available"
-          : child.parents.length && !unlockSatisfied(child)
+          : (child.parents.length && !unlockSatisfied(child)) || !levelSatisfied(child) || overdriveBlocked(child)
             ? "blocked"
             : "";
       edgePaths.push(`<path class="edge-path ${status}" d="M ${x1} ${y1} C ${x1} ${y1 + mid}, ${x2} ${y2 - mid}, ${x2} ${y2}"></path>`);
@@ -711,18 +844,19 @@ function renderSummary() {
   const selectedEntries = Object.entries(state.selected).filter(([, rank]) => Number(rank) > 0);
   els.buildCount.textContent = `${selectedEntries.length} talent${selectedEntries.length > 1 ? "s" : ""}`;
   const totals = selectedCostByCurrency();
-  const currencies = [...new Set([...Object.keys(totals), activeCurrency()])];
+  const currencies = [...new Set([...Object.keys(state.budgets), ...Object.keys(totals), activeCurrency()])]
+    .filter((currency) => state.budgets[currency] > 0 || totals[currency] > 0 || currency === activeCurrency());
   const unknownCosts = selectedEntries.reduce((count, [nodeId, rankCount]) => {
     const node = state.nodeById.get(nodeId);
     if (!node) return count;
     return count + node.ranks.slice(0, rankCount).filter((rank) => parseCost(rank) === null).length;
   }, 0);
-  els.budgetSummary.innerHTML = currencies.map((currency) => {
+  els.budgetSummary.innerHTML = `<div class="metric-row"><span>Niveau du build</span><strong>${state.buildLevel} / ${maxBuildLevel()}</strong></div>` + currencies.map((currency) => {
     const spent = totals[currency] || 0;
     const budget = state.budgets[currency];
-    const hasBudget = budget !== undefined && budget !== "";
-    const over = hasBudget && spent > Number(budget);
-    const label = hasBudget ? `${spent} / ${budget}` : `${spent} dépensés`;
+    const over = spent > Number(budget || 0);
+    const remaining = Math.max(0, Number(budget || 0) - spent);
+    const label = `${spent} / ${budget || 0} (${remaining} dispo)`;
     return `<div class="metric-row ${over ? "over" : ""}"><span>${escapeHtml(currency)}</span><strong>${escapeHtml(label)}</strong></div>`;
   }).join("") + (unknownCosts
     ? `<div class="metric-row"><span>Coûts WIP</span><strong>${unknownCosts} rang${unknownCosts > 1 ? "s" : ""}</strong></div>`
@@ -879,6 +1013,13 @@ function renderNodeDetails() {
   els.activeRank.textContent = `${rank}/${node.nodeMaxLevel}`;
   const parents = parentConditionText(node);
   const children = node.children.length ? node.children.map(nodeName).join(", ") : "Aucun";
+  const requiredLevel = nodeRequiredLevel(node);
+  const levelStatus = requiredLevel ? `${requiredLevel}${state.buildLevel < requiredLevel ? " (verrouillé)" : ""}` : "Aucun";
+  const overdriveStatus = isOverdriveNode(node)
+    ? (selectedOverdriveNodeId(node.nodeId)
+      ? `Verrouillé par ${displayName(state.nodeById.get(selectedOverdriveNodeId(node.nodeId))?.name || selectedOverdriveNodeId(node.nodeId))}`
+      : "Choix unique")
+    : "";
   els.nodeDetails.innerHTML = `
     <div class="detail-title">
       <h3>${escapeHtml(displayName(node.name))}</h3>
@@ -889,6 +1030,8 @@ function renderNodeDetails() {
       <button class="rank-button" type="button" data-action="increase" data-node-id="${escapeHtml(node.nodeId)}" ${canIncrease(node) ? "" : "disabled"}>+</button>
     </div>
     <div class="metric-row"><span>Condition d'accès</span><strong>${escapeHtml(parents)}</strong></div>
+    <div class="metric-row ${state.buildLevel < requiredLevel ? "over" : ""}"><span>Niveau requis</span><strong>${escapeHtml(levelStatus)}</strong></div>
+    ${overdriveStatus ? `<div class="metric-row ${overdriveBlocked(node) ? "over" : ""}"><span>OverDrive</span><strong>${escapeHtml(overdriveStatus)}</strong></div>` : ""}
     <div class="metric-row"><span>Débloque</span><strong>${escapeHtml(children)}</strong></div>
     <div class="metric-row"><span>Position</span><strong>R${escapeHtml(node.visual.row)} / C${escapeHtml(node.visual.column)}</strong></div>
     <table class="mini-table">
@@ -929,9 +1072,10 @@ function setupEvents() {
     render();
   });
   els.budget.addEventListener("change", () => {
-    const currency = activeCurrency();
-    if (els.budget.value === "") delete state.budgets[currency];
-    else state.budgets[currency] = Math.max(0, Number(els.budget.value) || 0);
+    state.buildLevel = clamp(Number(els.budget.value) || minBuildLevel(), minBuildLevel(), maxBuildLevel());
+    refreshBudgetsFromLevel();
+    pruneInvalidSelections();
+    populateSectionSelect();
     render();
   });
   els.nodeLayer.addEventListener("click", (event) => {
@@ -1017,15 +1161,19 @@ function setupEvents() {
 
 async function init() {
   try {
-    const [treeResponse, effectResponse] = await Promise.all([fetch(DATA_URL), fetch(EFFECT_DB_URL)]);
+    const [treeResponse, effectResponse, pointResponse] = await Promise.all([fetch(DATA_URL), fetch(EFFECT_DB_URL), fetch(POINT_PROGRESS_URL)]);
     if (!treeResponse.ok) throw new Error(`HTTP ${treeResponse.status}`);
     if (!effectResponse.ok) throw new Error(`HTTP ${effectResponse.status}`);
+    if (!pointResponse.ok) throw new Error(`HTTP ${pointResponse.status}`);
     state.model = await treeResponse.json();
     state.effectDb = await effectResponse.json();
+    state.pointProgression = await pointResponse.json();
     state.sections = state.model.trees || [];
     for (const section of state.sections) {
       for (const node of section.nodes || []) state.nodeById.set(node.nodeId, node);
     }
+    state.buildLevel = maxBuildLevel();
+    refreshBudgetsFromLevel();
     const initial = state.sections[0];
     if (initial) {
       state.activeSystem = initial.system;

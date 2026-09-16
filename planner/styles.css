@@ -168,7 +168,8 @@ input {
   padding: 0 0.65rem;
 }
 
-.budget-control {
+.budget-control,
+.level-control {
   min-width: 7rem;
 }
 
@@ -361,6 +362,19 @@ input {
 
 .node-card.locked > div {
   opacity: 0.58;
+}
+
+.node-card.level-locked {
+  border-color: rgba(217, 107, 95, 0.5);
+}
+
+.node-card.level-locked .node-cost,
+.node-card.overdrive-locked .node-cost {
+  color: #ffd2cd;
+}
+
+.node-card.overdrive-locked {
+  border-color: rgba(83, 184, 200, 0.44);
 }
 
 .node-card.invalid {

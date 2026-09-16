@@ -210,6 +210,7 @@ def identity_overdrive_details() -> dict:
                     "unlockType": unlock.get("UnlockType") if unlock else "",
                     "unlockValue": unlock.get("Value") if unlock else None,
                     "chapterTitle": loc(chapter.get("Title"), text) if chapter else "",
+                    "chapterRequiredLevel": as_int(chapter.get("UnlockValue")) if chapter else 0,
                     "chapterSortOrder": chapter.get("SortOrder") if chapter else None,
                     "missionTitles": [loc(row.get("Title"), text) for row in mission_rows],
                     "descriptionSummary": clean_markup(description),
@@ -231,6 +232,35 @@ def identity_overdrive_details() -> dict:
         "nodes": nodes,
         "confidence": "CONFIRMÉ PAR LES GAMEDATA POUR LES NŒUDS, COÛTS ET PRÉREQUIS; EXCLUSIVITÉ CONFIRMÉE PAR OBSERVATION UTILISATEUR",
     }
+
+
+def skill_tree_unlock_details() -> dict:
+    text = load_text()
+    unlocks = {row["ID"]: row for row in parse_table("ContentsUnlock")}
+    chapters = {row["ID"]: row for row in parse_table("MainQuestChapter")}
+    main_tabs = {row["ID"]: row for row in load_table("CharPCSkillTreelMainTab")}
+    details = {}
+    for row in load_table("CharPCSkillTreelSubTab"):
+        unlock_id = as_int(row.get("SubTabUnlockCondition"))
+        section = loc(row.get("SubTabTitle"), text)
+        main = main_tabs.get(row.get("LinkSkillTreeMain"), {})
+        unlock = unlocks.get(unlock_id) if unlock_id else None
+        chapter = None
+        if unlock and unlock.get("UnlockType") == "MainQuestChapter":
+            chapter = chapters.get(as_int(unlock.get("Value")))
+        details[section] = {
+            "section": section,
+            "mainType": main.get("SkillTreeMainType") or "",
+            "subTabId": row.get("ID"),
+            "subTabUnlockCondition": unlock_id,
+            "unlockType": unlock.get("UnlockType") if unlock else "",
+            "unlockValue": unlock.get("Value") if unlock else None,
+            "contentsType": unlock.get("ContentsType") if unlock else "",
+            "chapterTitle": loc(chapter.get("Title"), text) if chapter else "",
+            "requiredLevel": as_int(chapter.get("UnlockValue")) if chapter else 0,
+            "confidence": "CONFIRMÉ PAR LES GAMEDATA" if unlock else "CONFIRMÉ PAR LES GAMEDATA; AUCUN PRÉREQUIS",
+        }
+    return details
 
 
 def snapshots_for(rows: list[dict], levels: list[int]) -> dict[str, dict[str, int]]:
@@ -302,6 +332,7 @@ def write_report(payload: dict) -> None:
     sources = payload["pointSources"]
     demand = payload["talentDemandByCurrency"]
     identity = payload["identityOverdrive"]
+    unlocks = payload["skillTreeUnlocks"]
     level30 = summary["snapshots"].get("30", {})
     max_level = summary["maxLevel"]
     max_snapshot = summary["snapshots"].get(str(max_level), {})
@@ -392,6 +423,24 @@ def write_report(payload: dict) -> None:
             "",
             f"Exclusivité d'activation: {identity['exclusiveSelection']['status']}. {identity['exclusiveSelection']['note']}",
             "",
+            "## Prérequis de sections",
+            "",
+            "| Section | Condition | Niveau requis | Confiance |",
+            "|---|---|---:|---|",
+        ]
+    )
+    for section in sorted(unlocks):
+        item = unlocks[section]
+        if not item["subTabUnlockCondition"]:
+            continue
+        condition = f"{item['contentsType']} `{item['subTabUnlockCondition']}` -> {item['unlockType']}:{item['unlockValue']}"
+        lines.append(
+            f"| {section} | {condition} | {item['requiredLevel']} | {item['confidence']} |"
+        )
+
+    lines.extend(
+        [
+            "",
             "## Points non résolus",
             "",
             "- `IdentityPoint`: la source level-up est confirmée à 0. Les prérequis des nœuds OverDrive viennent de `ContentsUnlock` et pointent vers des chapitres de quête principale; l'exclusivité d'activation est confirmée par observation utilisateur car la quête n'est pas répétable.",
@@ -446,6 +495,7 @@ def main() -> None:
         "pointSources": point_source_summary(rows, gain_levels, totals),
         "talentDemandByCurrency": demand_from_talent_tree(),
         "identityOverdrive": identity_overdrive_details(),
+        "skillTreeUnlocks": skill_tree_unlock_details(),
         "levels": rows,
     }
 

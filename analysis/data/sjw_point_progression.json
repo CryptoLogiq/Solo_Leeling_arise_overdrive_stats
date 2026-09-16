@@ -302,6 +302,7 @@
         "unlockType": "MainQuestChapter",
         "unlockValue": 10301,
         "chapterTitle": "Gardien",
+        "chapterRequiredLevel": 0,
         "chapterSortOrder": 3,
         "missionTitles": [
           "Le gardien de la forteresse démoniaque"
@@ -322,6 +323,7 @@
         "unlockType": "MainQuestChapter",
         "unlockValue": 10301,
         "chapterTitle": "Gardien",
+        "chapterRequiredLevel": 0,
         "chapterSortOrder": 3,
         "missionTitles": [
           "Le gardien de la forteresse démoniaque"
@@ -342,6 +344,7 @@
         "unlockType": "MainQuestChapter",
         "unlockValue": 10301,
         "chapterTitle": "Gardien",
+        "chapterRequiredLevel": 0,
         "chapterSortOrder": 3,
         "missionTitles": [
           "Le gardien de la forteresse démoniaque"
@@ -362,6 +365,7 @@
         "unlockType": "MainQuestChapter",
         "unlockValue": 10501,
         "chapterTitle": "Défenseur du trône",
+        "chapterRequiredLevel": 20,
         "chapterSortOrder": 5,
         "missionTitles": [
           "La licence de maître de guilde",
@@ -377,6 +381,164 @@
       }
     ],
     "confidence": "CONFIRMÉ PAR LES GAMEDATA POUR LES NŒUDS, COÛTS ET PRÉREQUIS; EXCLUSIVITÉ CONFIRMÉE PAR OBSERVATION UTILISATEUR"
+  },
+  "skillTreeUnlocks": {
+    "Assassin": {
+      "section": "Assassin",
+      "mainType": "SJWSkillTree",
+      "subTabId": 1,
+      "subTabUnlockCondition": 0,
+      "unlockType": "",
+      "unlockValue": null,
+      "contentsType": "",
+      "chapterTitle": "",
+      "requiredLevel": 0,
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA; AUCUN PRÉREQUIS"
+    },
+    "Duelliste": {
+      "section": "Duelliste",
+      "mainType": "SJWSkillTree",
+      "subTabId": 2,
+      "subTabUnlockCondition": 0,
+      "unlockType": "",
+      "unlockValue": null,
+      "contentsType": "",
+      "chapterTitle": "",
+      "requiredLevel": 0,
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA; AUCUN PRÉREQUIS"
+    },
+    "Magicien élémentaire": {
+      "section": "Magicien élémentaire",
+      "mainType": "SJWSkillTree",
+      "subTabId": 3,
+      "subTabUnlockCondition": 0,
+      "unlockType": "",
+      "unlockValue": null,
+      "contentsType": "",
+      "chapterTitle": "",
+      "requiredLevel": 0,
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA; AUCUN PRÉREQUIS"
+    },
+    "Souverain": {
+      "section": "Souverain",
+      "mainType": "SJWSkillTree",
+      "subTabId": 4,
+      "subTabUnlockCondition": 0,
+      "unlockType": "",
+      "unlockValue": null,
+      "contentsType": "",
+      "chapterTitle": "",
+      "requiredLevel": 0,
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA; AUCUN PRÉREQUIS"
+    },
+    "Épée": {
+      "section": "Épée",
+      "mainType": "GSSkillTree",
+      "subTabId": 100,
+      "subTabUnlockCondition": 0,
+      "unlockType": "",
+      "unlockValue": null,
+      "contentsType": "",
+      "chapterTitle": "",
+      "requiredLevel": 0,
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA; AUCUN PRÉREQUIS"
+    },
+    "Dague": {
+      "section": "Dague",
+      "mainType": "GSSkillTree",
+      "subTabId": 101,
+      "subTabUnlockCondition": 0,
+      "unlockType": "",
+      "unlockValue": null,
+      "contentsType": "",
+      "chapterTitle": "",
+      "requiredLevel": 0,
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA; AUCUN PRÉREQUIS"
+    },
+    "Arc": {
+      "section": "Arc",
+      "mainType": "GSSkillTree",
+      "subTabId": 102,
+      "subTabUnlockCondition": 0,
+      "unlockType": "",
+      "unlockValue": null,
+      "contentsType": "",
+      "chapterTitle": "",
+      "requiredLevel": 0,
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA; AUCUN PRÉREQUIS"
+    },
+    "Arme à feu": {
+      "section": "Arme à feu",
+      "mainType": "GSSkillTree",
+      "subTabId": 103,
+      "subTabUnlockCondition": 0,
+      "unlockType": "",
+      "unlockValue": null,
+      "contentsType": "",
+      "chapterTitle": "",
+      "requiredLevel": 0,
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA; AUCUN PRÉREQUIS"
+    },
+    "Focalisateur": {
+      "section": "Focalisateur",
+      "mainType": "GSSkillTree",
+      "subTabId": 104,
+      "subTabUnlockCondition": 0,
+      "unlockType": "",
+      "unlockValue": null,
+      "contentsType": "",
+      "chapterTitle": "",
+      "requiredLevel": 0,
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA; AUCUN PRÉREQUIS"
+    },
+    "Arme d'hast": {
+      "section": "Arme d'hast",
+      "mainType": "GSSkillTree",
+      "subTabId": 105,
+      "subTabUnlockCondition": 0,
+      "unlockType": "",
+      "unlockValue": null,
+      "contentsType": "",
+      "chapterTitle": "",
+      "requiredLevel": 0,
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA; AUCUN PRÉREQUIS"
+    },
+    "Arme à deux mains": {
+      "section": "Arme à deux mains",
+      "mainType": "GSSkillTree",
+      "subTabId": 106,
+      "subTabUnlockCondition": 0,
+      "unlockType": "",
+      "unlockValue": null,
+      "contentsType": "",
+      "chapterTitle": "",
+      "requiredLevel": 0,
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA; AUCUN PRÉREQUIS"
+    },
+    "Physique": {
+      "section": "Physique",
+      "mainType": "LordSkillTree",
+      "subTabId": 200,
+      "subTabUnlockCondition": 0,
+      "unlockType": "",
+      "unlockValue": null,
+      "contentsType": "",
+      "chapterTitle": "",
+      "requiredLevel": 0,
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA; AUCUN PRÉREQUIS"
+    },
+    "Éveil du monarque": {
+      "section": "Éveil du monarque",
+      "mainType": "LordSkillTree",
+      "subTabId": 201,
+      "subTabUnlockCondition": 200001,
+      "unlockType": "MainQuestChapter",
+      "unlockValue": 10501,
+      "contentsType": "Ashborn",
+      "chapterTitle": "Défenseur du trône",
+      "requiredLevel": 20,
+      "confidence": "CONFIRMÉ PAR LES GAMEDATA"
+    }
   },
   "levels": [
     {

@@ -52,6 +52,12 @@ Cette table additionne les coûts connus de tous les rangs de talents présents 
 
 Exclusivité d'activation: CONFIRMÉ PAR OBSERVATION UTILISATEUR. Un seul OverDrive peut être activé, car la quête de changement/activation n'est pas répétable selon observation utilisateur. Les GameData confirment les quatre nœuds isolés, leurs coûts et leurs prérequis de chapitre.
 
+## Prérequis de sections
+
+| Section | Condition | Niveau requis | Confiance |
+|---|---|---:|---|
+| Éveil du monarque | Ashborn `200001` -> MainQuestChapter:10501 | 20 | CONFIRMÉ PAR LES GAMEDATA |
+
 ## Points non résolus
 
 - `IdentityPoint`: la source level-up est confirmée à 0. Les prérequis des nœuds OverDrive viennent de `ContentsUnlock` et pointent vers des chapitres de quête principale; l'exclusivité d'activation est confirmée par observation utilisateur car la quête n'est pas répétable.
