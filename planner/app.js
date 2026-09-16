@@ -266,6 +266,13 @@ function resolvedEffectSummary(effect) {
   return `${effect.effectType}: ${value}`;
 }
 
+function readableEffectSummary(effect) {
+  return resolvedEffectSummary(effect)
+    .replaceAll(" — ", "\n  ")
+    .replaceAll(" · ", "\n  ")
+    .replaceAll("; ", "\n");
+}
+
 function effectHasWip(effect) {
   const refs = effectReferences(effect);
   const group = refs.skillGroupId ? skillGroup(refs.skillGroupId) : null;
@@ -289,7 +296,9 @@ function nodeTooltip(node) {
   ];
   for (const rank of node.ranks || []) {
     lines.push(`Rang ${rankLabel(rank.rank)} · ${rankCostLabel(rank, node)}`);
-    for (const effect of rank.effects || []) lines.push(`- ${resolvedEffectSummary(effect)}`);
+    for (const effect of rank.effects || []) {
+      lines.push(`- ${readableEffectSummary(effect)}`, "");
+    }
   }
   lines.push("WIP: les valeurs brutes sont affichées même quand la conversion finale reste à valider.");
   return lines.join("\n");
@@ -760,7 +769,7 @@ function renderSummary() {
 function effectText(rank) {
   const effects = rank.effects || [];
   if (!effects.length) return "NON DÉTERMINÉ";
-  return effects.map((effect) => resolvedEffectSummary(effect)).join("; ");
+  return effects.map((effect) => readableEffectSummary(effect)).join("\n\n");
 }
 
 function renderIdList(ids) {

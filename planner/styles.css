@@ -534,6 +534,7 @@ button.selection-row:hover {
 
 .mini-table td {
   overflow-wrap: anywhere;
+  white-space: pre-line;
 }
 
 .empty-state {
