@@ -502,7 +502,6 @@ function nodeTooltip(node) {
       lines.push(`- ${readableEffectSummary(effect)}`, "");
     }
   }
-  lines.push("WIP: les valeurs brutes sont affichées même quand la conversion finale reste à valider.");
   return lines.join("\n");
 }
 
