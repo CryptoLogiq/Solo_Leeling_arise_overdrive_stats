@@ -37,13 +37,21 @@
               Niveau
               <input id="budgetInput" type="number" min="0" step="1">
             </label>
+            <label class="limit-toggle">
+              <input id="levelLimitToggle" type="checkbox" checked>
+              <span>Limiter au niveau</span>
+            </label>
             <div class="zoom-controls" aria-label="Zoom">
               <button id="zoomOut" type="button" title="Réduire le zoom">-</button>
               <button id="zoomIn" type="button" title="Augmenter le zoom">+</button>
               <button id="zoomReset" type="button" title="Réinitialiser le zoom">1:1</button>
             </div>
+            <div id="topLevelSummary" class="spent-summary" aria-live="polite">
+              <span>Niveau limite</span>
+              <strong>75</strong>
+            </div>
             <div id="topSpentSummary" class="spent-summary" aria-live="polite">
-              <span>Points dépensés</span>
+              <span>Points restants</span>
               <strong>0</strong>
             </div>
           </div>

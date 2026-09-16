@@ -11,11 +11,18 @@ const MIN_ROW_GAP = 26;
 const OFFSET_SCALE = 0.28;
 const MAX_OFFSET_X = 22;
 const MAX_OFFSET_Y = 10;
+const POINT_CURRENCIES = ["SkillPoint", "WeaponPoint", "SpecialPoint", "IdentityPoint"];
 const SYSTEM_LABELS = {
   class: "Classes",
   weapon: "Armes",
   jinwoo: "Sung Jinwoo",
   unattached: "Structures non rattachées",
+};
+const CURRENCY_LABELS = {
+  SkillPoint: "Classe",
+  WeaponPoint: "Arme",
+  SpecialPoint: "Sung Jinwoo",
+  IdentityPoint: "OverDrive",
 };
 const DEFAULT_BUDGETS = {};
 
@@ -31,6 +38,7 @@ const state = {
   activeNodeId: null,
   selected: {},
   buildLevel: 75,
+  limitToBuildLevel: true,
   budgets: { ...DEFAULT_BUDGETS },
   zoom: 1,
 };
@@ -39,6 +47,7 @@ const els = {
   system: document.getElementById("systemSelect"),
   section: document.getElementById("sectionSelect"),
   budget: document.getElementById("budgetInput"),
+  limitLevel: document.getElementById("levelLimitToggle"),
   notice: document.getElementById("notice"),
   viewport: document.getElementById("treeViewport"),
   canvas: document.getElementById("treeCanvas"),
@@ -47,6 +56,7 @@ const els = {
   buildCount: document.getElementById("buildCount"),
   activeRank: document.getElementById("activeRank"),
   budgetSummary: document.getElementById("budgetSummary"),
+  topLevelSummary: document.getElementById("topLevelSummary"),
   topSpentSummary: document.getElementById("topSpentSummary"),
   nodeDetails: document.getElementById("nodeDetails"),
   knownGains: document.getElementById("knownGains"),
@@ -124,9 +134,54 @@ function budgetsForLevel(level = state.buildLevel) {
   return budgets;
 }
 
+function currencyLabel(currency) {
+  return CURRENCY_LABELS[currency] || currency;
+}
+
+function selectedRequiredNodeLevel(selected = state.selected) {
+  return Object.keys(selected).reduce((required, nodeId) => {
+    const node = state.nodeById.get(nodeId);
+    return Math.max(required, nodeRequiredLevel(node));
+  }, minBuildLevel());
+}
+
+function budgetCoversTotals(budgets, totals) {
+  return Object.entries(totals || {}).every(([currency, spent]) => Number(budgets[currency] || 0) >= Number(spent || 0));
+}
+
+function requiredLevelForSelection(selected = state.selected) {
+  const totals = selectedCostByCurrency(selected);
+  const firstLevel = clamp(selectedRequiredNodeLevel(selected), minBuildLevel(), maxBuildLevel());
+  for (let level = firstLevel; level <= maxBuildLevel(); level += 1) {
+    if (budgetCoversTotals(budgetsForLevel(level), totals)) return level;
+  }
+  return null;
+}
+
+function budgetLevelForSelection(selected = state.selected) {
+  if (state.limitToBuildLevel) return state.buildLevel;
+  return requiredLevelForSelection(selected) || maxBuildLevel();
+}
+
+function budgetAnalysis(selected = state.selected) {
+  const totals = selectedCostByCurrency(selected);
+  const requiredLevel = requiredLevelForSelection(selected);
+  const budgetLevel = state.limitToBuildLevel ? state.buildLevel : (requiredLevel || maxBuildLevel());
+  const budgets = budgetsForLevel(budgetLevel);
+  const currencies = [...new Set([...POINT_CURRENCIES, ...Object.keys(totals), ...Object.keys(budgets)])];
+  return {
+    totals,
+    budgets,
+    budgetLevel,
+    requiredLevel,
+    unreachable: !state.limitToBuildLevel && requiredLevel === null,
+    currencies,
+  };
+}
+
 function refreshBudgetsFromLevel() {
   state.buildLevel = clamp(Number(state.buildLevel) || maxBuildLevel(), minBuildLevel(), maxBuildLevel());
-  state.budgets = budgetsForLevel(state.buildLevel);
+  state.budgets = budgetsForLevel(budgetLevelForSelection());
 }
 
 function parseOffset(raw) {
@@ -191,9 +246,21 @@ function formatCostResult(result) {
 function formatSpentSummary(totals, unknownCosts = 0) {
   const entries = Object.entries(totals || {}).filter(([, value]) => value > 0);
   if (!entries.length && !unknownCosts) return "0";
-  const chunks = entries.map(([currency, value]) => `${value} ${currency}`);
+  const chunks = entries.map(([currency, value]) => `${value} ${currencyLabel(currency)}`);
   if (unknownCosts) chunks.push(`${unknownCosts} WIP`);
   return chunks.join(" + ");
+}
+
+function formatRemainingSummary(budgets, totals) {
+  const chunks = POINT_CURRENCIES.map((currency) => {
+    const budget = Number(budgets[currency] || 0);
+    const spent = Number(totals[currency] || 0);
+    if (!budget && !spent && currency === "IdentityPoint") return "";
+    const remaining = budget - spent;
+    const value = remaining >= 0 ? remaining : `${Math.abs(remaining)} manquant`;
+    return `${currencyLabel(currency)} ${value}`;
+  }).filter(Boolean);
+  return chunks.length ? chunks.join(" · ") : "0";
 }
 
 function cheapestCostResult(options) {
@@ -270,7 +337,7 @@ function nodeRequiredLevel(node) {
 }
 
 function levelSatisfied(node) {
-  return state.buildLevel >= nodeRequiredLevel(node);
+  return !state.limitToBuildLevel || state.buildLevel >= nodeRequiredLevel(node);
 }
 
 function isOverdriveNode(node) {
@@ -289,6 +356,7 @@ function overdriveBlocked(node) {
 }
 
 function levelLockText(node) {
+  if (!state.limitToBuildLevel) return "";
   const required = nodeRequiredLevel(node);
   if (!required || state.buildLevel >= required) return "";
   const section = nodeSection(node);
@@ -421,7 +489,10 @@ function nodeTooltip(node) {
     `${node.nodeType || "Talent"} · ${node.nodeMaxLevel} rang${node.nodeMaxLevel > 1 ? "s" : ""}`,
   ];
   const required = nodeRequiredLevel(node);
-  if (required) lines.push(`Niveau requis: ${required}${state.buildLevel < required ? " (verrouillé)" : ""}`);
+  if (required) {
+    const locked = state.limitToBuildLevel && state.buildLevel < required;
+    lines.push(`Niveau requis: ${required}${locked ? " (verrouillé)" : ""}`);
+  }
   const quest = nodeQuestText(node);
   if (quest) lines.push(`Quête liée: ${quest}`);
   if (overdriveBlocked(node)) lines.push("OverDrive verrouillé: un autre OverDrive est déjà actif.");
@@ -450,6 +521,7 @@ function buildPayload() {
   return {
     version: 2,
     buildLevel: state.buildLevel,
+    limitToBuildLevel: state.limitToBuildLevel,
     selected: Object.fromEntries(Object.entries(state.selected).filter(([, rank]) => Number(rank) > 0)),
   };
 }
@@ -483,6 +555,7 @@ function loadBuildFromHash() {
 
 function applyBuild(payload) {
   state.buildLevel = clamp(Number(payload.buildLevel || payload.level || state.buildLevel), minBuildLevel(), maxBuildLevel());
+  state.limitToBuildLevel = payload.limitToBuildLevel !== undefined ? Boolean(payload.limitToBuildLevel) : state.limitToBuildLevel;
   refreshBudgetsFromLevel();
   const next = {};
   for (const [nodeId, rank] of Object.entries(payload.selected || payload.nodes || {})) {
@@ -514,7 +587,7 @@ function populateSectionSelect() {
   }
   els.section.innerHTML = sections.map((name) => {
     const required = sectionRequiredLevel(name);
-    const locked = required && state.buildLevel < required;
+    const locked = state.limitToBuildLevel && required && state.buildLevel < required;
     const suffix = locked ? ` (niv. ${required})` : "";
     return `<option value="${escapeHtml(name)}">${escapeHtml(name + suffix)}</option>`;
   }).join("");
@@ -547,6 +620,9 @@ function updateBudgetInput() {
   els.budget.value = state.buildLevel;
   els.budget.placeholder = String(maxBuildLevel());
   els.budget.parentElement.firstChild.textContent = "Niveau du build";
+  els.budget.disabled = !state.limitToBuildLevel;
+  els.limitLevel.checked = state.limitToBuildLevel;
+  els.limitLevel.toggleAttribute("checked", state.limitToBuildLevel);
 }
 
 function selectedCostByCurrency(selected = state.selected) {
@@ -579,6 +655,7 @@ function parentConditionText(node) {
 }
 
 function canAfford(node, nextRank) {
+  if (!state.limitToBuildLevel) return true;
   const rank = node.ranks[nextRank - 1];
   if (parseCost(rank) === null) return true;
   const currency = rank?.pointCurrency || nodeCurrency(node);
@@ -633,7 +710,7 @@ function pruneInvalidSelections() {
     for (const nodeId of Object.keys(state.selected)) {
       const node = state.nodeById.get(nodeId);
       if (!node
-        || !levelSatisfied(node)
+        || (state.limitToBuildLevel && !levelSatisfied(node))
         || !unlockSatisfied(node)
         || (activeOverdrive && nodeId !== activeOverdrive && isOverdriveNode(node))) {
         delete state.selected[nodeId];
@@ -863,25 +940,37 @@ function parsePercent(value) {
 function renderSummary() {
   const selectedEntries = Object.entries(state.selected).filter(([, rank]) => Number(rank) > 0);
   els.buildCount.textContent = `${selectedEntries.length} talent${selectedEntries.length > 1 ? "s" : ""}`;
-  const totals = selectedCostByCurrency();
-  const currencies = [...new Set([...Object.keys(state.budgets), ...Object.keys(totals), activeCurrency()])]
-    .filter((currency) => state.budgets[currency] > 0 || totals[currency] > 0 || currency === activeCurrency());
+  const analysis = budgetAnalysis();
+  const totals = analysis.totals;
+  const currencies = analysis.currencies
+    .filter((currency) => Number(analysis.budgets[currency] || 0) > 0 || Number(totals[currency] || 0) > 0 || POINT_CURRENCIES.includes(currency));
   const unknownCosts = selectedEntries.reduce((count, [nodeId, rankCount]) => {
     const node = state.nodeById.get(nodeId);
     if (!node) return count;
     return count + node.ranks.slice(0, rankCount).filter((rank) => parseCost(rank) === null).length;
   }, 0);
-  els.budgetSummary.innerHTML = `<div class="metric-row"><span>Niveau du build</span><strong>${state.buildLevel} / ${maxBuildLevel()}</strong></div>` + currencies.map((currency) => {
+  const levelLabel = state.limitToBuildLevel ? "Niveau limite" : "Niveau requis";
+  const levelValue = analysis.unreachable
+    ? `> ${maxBuildLevel()}`
+    : `${analysis.budgetLevel} / ${maxBuildLevel()}`;
+  const modeText = state.limitToBuildLevel ? "Limité au niveau choisi" : "Calculé depuis les points dépensés";
+  els.budgetSummary.innerHTML = `
+    <div class="metric-row"><span>Mode</span><strong>${escapeHtml(modeText)}</strong></div>
+    <div class="metric-row ${analysis.unreachable ? "over" : ""}"><span>${escapeHtml(levelLabel)}</span><strong>${escapeHtml(levelValue)}</strong></div>
+  ` + currencies.map((currency) => {
     const spent = totals[currency] || 0;
-    const budget = state.budgets[currency];
+    const budget = analysis.budgets[currency];
     const over = spent > Number(budget || 0);
-    const remaining = Math.max(0, Number(budget || 0) - spent);
-    const label = `${spent} / ${budget || 0} (${remaining} dispo)`;
-    return `<div class="metric-row ${over ? "over" : ""}"><span>${escapeHtml(currency)}</span><strong>${escapeHtml(label)}</strong></div>`;
+    const delta = Number(budget || 0) - spent;
+    const remaining = delta >= 0 ? `${delta} restant${delta > 1 ? "s" : ""}` : `${Math.abs(delta)} manquant${Math.abs(delta) > 1 ? "s" : ""}`;
+    const label = `${spent} / ${budget || 0} (${remaining})`;
+    return `<div class="metric-row ${over ? "over" : ""}"><span>${escapeHtml(currencyLabel(currency))}</span><strong>${escapeHtml(label)}</strong></div>`;
   }).join("") + (unknownCosts
     ? `<div class="metric-row"><span>Coûts WIP</span><strong>${unknownCosts} rang${unknownCosts > 1 ? "s" : ""}</strong></div>`
     : "");
-  els.topSpentSummary.querySelector("strong").textContent = formatSpentSummary(totals, unknownCosts);
+  els.topLevelSummary.querySelector("span").textContent = levelLabel;
+  els.topLevelSummary.querySelector("strong").textContent = analysis.unreachable ? `> ${maxBuildLevel()}` : String(analysis.budgetLevel);
+  els.topSpentSummary.querySelector("strong").textContent = formatRemainingSummary(analysis.budgets, totals);
 
   const percentGroups = new Map();
   const rawRows = [];
@@ -1036,8 +1125,9 @@ function renderNodeDetails() {
   const requiredLevel = nodeRequiredLevel(node);
   const levelSource = nodeRequiredLevelSource(node);
   const questText = nodeQuestText(node);
+  const levelBlocked = state.limitToBuildLevel && state.buildLevel < requiredLevel;
   const levelStatus = requiredLevel
-    ? `${requiredLevel}${state.buildLevel < requiredLevel ? " (verrouillé)" : ""}${levelSource ? ` · ${levelSource}` : ""}`
+    ? `${requiredLevel}${levelBlocked ? " (verrouillé)" : ""}${levelSource ? ` · ${levelSource}` : ""}`
     : (isOverdriveNode(node) ? "Aucun niveau minimum explicite dans la quête liée" : "Aucun");
   const overdriveStatus = isOverdriveNode(node)
     ? (selectedOverdriveNodeId(node.nodeId)
@@ -1054,7 +1144,7 @@ function renderNodeDetails() {
       <button class="rank-button" type="button" data-action="increase" data-node-id="${escapeHtml(node.nodeId)}" ${canIncrease(node) ? "" : "disabled"}>+</button>
     </div>
     <div class="metric-row"><span>Condition d'accès</span><strong>${escapeHtml(parents)}</strong></div>
-    <div class="metric-row ${state.buildLevel < requiredLevel ? "over" : ""}"><span>Niveau requis</span><strong>${escapeHtml(levelStatus)}</strong></div>
+    <div class="metric-row ${levelBlocked ? "over" : ""}"><span>Niveau requis</span><strong>${escapeHtml(levelStatus)}</strong></div>
     ${questText ? `<div class="metric-row"><span>Quête liée</span><strong>${escapeHtml(questText)}</strong></div>` : ""}
     ${overdriveStatus ? `<div class="metric-row ${overdriveBlocked(node) ? "over" : ""}"><span>OverDrive</span><strong>${escapeHtml(overdriveStatus)}</strong></div>` : ""}
     <div class="metric-row"><span>Débloque</span><strong>${escapeHtml(children)}</strong></div>
@@ -1078,6 +1168,7 @@ function renderNodeDetails() {
 }
 
 function render() {
+  refreshBudgetsFromLevel();
   updateBudgetInput();
   renderTree();
   renderNodeDetails();
@@ -1098,6 +1189,13 @@ function setupEvents() {
   });
   els.budget.addEventListener("change", () => {
     state.buildLevel = clamp(Number(els.budget.value) || minBuildLevel(), minBuildLevel(), maxBuildLevel());
+    refreshBudgetsFromLevel();
+    pruneInvalidSelections();
+    populateSectionSelect();
+    render();
+  });
+  els.limitLevel.addEventListener("change", () => {
+    state.limitToBuildLevel = els.limitLevel.checked;
     refreshBudgetsFromLevel();
     pruneInvalidSelections();
     populateSectionSelect();
