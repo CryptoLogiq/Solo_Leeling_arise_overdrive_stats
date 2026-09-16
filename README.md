@@ -19,6 +19,7 @@ marquée `NON DÉTERMINÉ`.
 
 - [Arbre de talents HUMAN](analysis/reports/SJW_TALENT_TREE_HUMAN.md)
 - [Talent planner web](planner/)
+- [Talent planner GitHub Pages](https://cryptologiq.github.io/Solo_Leeling_arise_overdrive_stats/planner/)
 - [Détails techniques de l'arbre](analysis/reports/SJW_TALENT_TREE_TECHNICAL.md)
 - [Export canonique JSON des arbres](analysis/data/sjw_talent_tree.json)
 - [Audit data des arbres](analysis/reports/SJW_TALENT_TREE_DATA_AUDIT.md)
