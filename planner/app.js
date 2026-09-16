@@ -44,6 +44,7 @@ const els = {
   buildCount: document.getElementById("buildCount"),
   activeRank: document.getElementById("activeRank"),
   budgetSummary: document.getElementById("budgetSummary"),
+  topSpentSummary: document.getElementById("topSpentSummary"),
   nodeDetails: document.getElementById("nodeDetails"),
   knownGains: document.getElementById("knownGains"),
   rawEffects: document.getElementById("rawEffects"),
@@ -145,6 +146,14 @@ function formatCostResult(result) {
   const chunks = Object.entries(result.costs || {}).map(([currency, value]) => `${value} ${currency}`);
   if (result.unknown) chunks.push("WIP");
   return chunks.length ? chunks.join(" + ") : "0";
+}
+
+function formatSpentSummary(totals, unknownCosts = 0) {
+  const entries = Object.entries(totals || {}).filter(([, value]) => value > 0);
+  if (!entries.length && !unknownCosts) return "0";
+  const chunks = entries.map(([currency, value]) => `${value} ${currency}`);
+  if (unknownCosts) chunks.push(`${unknownCosts} WIP`);
+  return chunks.join(" + ");
 }
 
 function cheapestCostResult(options) {
@@ -718,6 +727,7 @@ function renderSummary() {
   }).join("") + (unknownCosts
     ? `<div class="metric-row"><span>Coûts WIP</span><strong>${unknownCosts} rang${unknownCosts > 1 ? "s" : ""}</strong></div>`
     : "");
+  els.topSpentSummary.querySelector("strong").textContent = formatSpentSummary(totals, unknownCosts);
 
   const percentGroups = new Map();
   const rawRows = [];
