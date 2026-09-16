@@ -305,6 +305,11 @@ input {
   transform: translateY(0);
 }
 
+.node-card:hover,
+.node-card:focus-within {
+  z-index: 40;
+}
+
 .node-card.measure {
   visibility: hidden;
 }
