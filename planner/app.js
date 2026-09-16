@@ -591,7 +591,7 @@ function buildNodeHtml(layout, mode = "") {
     const measureClass = mode === "measure" ? "measure" : "";
     const tooltip = nodeTooltip(node);
     return `
-      <article class="node-card ${selectedClass} ${activeClass} ${lockedClass} ${measureClass}" style="left:${x}px; top:${y}px" data-node-id="${escapeHtml(node.nodeId)}" data-tooltip="${escapeHtml(tooltip)}" title="${escapeHtml(tooltip)}">
+      <article class="node-card ${selectedClass} ${activeClass} ${lockedClass} ${measureClass}" style="left:${x}px; top:${y}px" data-node-id="${escapeHtml(node.nodeId)}" data-tooltip="${escapeHtml(tooltip)}">
         <div>
           <div class="node-name">${escapeHtml(displayName(node.name))}</div>
           <div class="node-cost">${escapeHtml(nextCostLabel(node))}</div>
