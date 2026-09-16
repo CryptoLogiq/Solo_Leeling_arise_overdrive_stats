@@ -43,12 +43,12 @@ Cette table additionne les coûts connus de tous les rangs de talents présents 
 
 `IdentityPoint` ne se comporte pas comme les autres points de talent dans les données observées: `ChSJWLv.IdentityPoint` reste à 0 sur tous les niveaux, tandis que quatre nœuds `NodeType=Identity` consomment chacun 1 `IdentityPoint`.
 
-| Classe | NodeID | OverDrive | Coût | Prérequis | Confiance |
-|---|---:|---|---:|---|---|
-| Assassin | `111100` | Camouflage (`92000001`) | 1 | Gardien (`MainQuestChapter:10301`, aucun niveau explicite) | CONFIRMÉ PAR LES GAMEDATA |
-| Duelliste | `113100` | Smash (`92000003`) | 1 | Gardien (`MainQuestChapter:10301`, aucun niveau explicite) | CONFIRMÉ PAR LES GAMEDATA |
-| Magicien élémentaire | `115100` | Réaction en chaîne (`92000011`) | 1 | Gardien (`MainQuestChapter:10301`, aucun niveau explicite) | CONFIRMÉ PAR LES GAMEDATA |
-| Souverain | `117100` | Invocation d'ombre (`92000009`) | 1 | Défenseur du trône (`MainQuestChapter:10501`, niveau 20) | CONFIRMÉ PAR LES GAMEDATA |
+| Classe | NodeID | OverDrive | Coût | Prérequis | Quête liée | Confiance |
+|---|---:|---|---:|---|---|---|
+| Assassin | `111100` | Camouflage (`92000001`) | 1 | Gardien (`MainQuestChapter:10301`, aucun niveau explicite) | Le gardien de la forteresse démoniaque | CONFIRMÉ PAR LES GAMEDATA |
+| Duelliste | `113100` | Smash (`92000003`) | 1 | Gardien (`MainQuestChapter:10301`, aucun niveau explicite) | Le gardien de la forteresse démoniaque | CONFIRMÉ PAR LES GAMEDATA |
+| Magicien élémentaire | `115100` | Réaction en chaîne (`92000011`) | 1 | Gardien (`MainQuestChapter:10301`, aucun niveau explicite) | Le gardien de la forteresse démoniaque | CONFIRMÉ PAR LES GAMEDATA |
+| Souverain | `117100` | Invocation d'ombre (`92000009`) | 1 | Défenseur du trône (`MainQuestChapter:10501`, niveau 20) | La licence de maître de guilde / Nouveau message / Quête de changement de classe / Préparation terminée / Une vraie quête / Capacités pour le job / Capacités pour le job | CONFIRMÉ PAR LES GAMEDATA |
 
 Exclusivité d'activation: CONFIRMÉ PAR OBSERVATION UTILISATEUR. Un seul OverDrive peut être activé, car la quête de changement/activation n'est pas répétable selon observation utilisateur. Les GameData confirment les quatre nœuds isolés, leurs coûts et leurs prérequis de chapitre.
 

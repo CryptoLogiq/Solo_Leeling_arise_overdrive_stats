@@ -306,6 +306,15 @@ function nodeRequiredLevelSource(node) {
   return "";
 }
 
+function nodeQuestText(node) {
+  const identity = nodeIdentityInfo(node);
+  if (!identity) return "";
+  const missions = asArray(identity.missionTitles).filter(Boolean);
+  const missionText = missions.length ? ` -> ${missions.join(" / ")}` : "";
+  const chapter = identity.chapterTitle || `${identity.unlockType}:${identity.unlockValue}`;
+  return `${chapter}${missionText}`;
+}
+
 function activeSections() {
   if (!state.activeSystem || !state.activeSection) return [];
   return state.sections.filter((item) => item.system === state.activeSystem && item.section === state.activeSection);
@@ -413,6 +422,8 @@ function nodeTooltip(node) {
   ];
   const required = nodeRequiredLevel(node);
   if (required) lines.push(`Niveau requis: ${required}${state.buildLevel < required ? " (verrouillé)" : ""}`);
+  const quest = nodeQuestText(node);
+  if (quest) lines.push(`Quête liée: ${quest}`);
   if (overdriveBlocked(node)) lines.push("OverDrive verrouillé: un autre OverDrive est déjà actif.");
   for (const rank of node.ranks || []) {
     lines.push(`Rang ${rankLabel(rank.rank)} · ${rankCostLabel(rank, node)}`);
@@ -1024,6 +1035,7 @@ function renderNodeDetails() {
   const children = node.children.length ? node.children.map(nodeName).join(", ") : "Aucun";
   const requiredLevel = nodeRequiredLevel(node);
   const levelSource = nodeRequiredLevelSource(node);
+  const questText = nodeQuestText(node);
   const levelStatus = requiredLevel
     ? `${requiredLevel}${state.buildLevel < requiredLevel ? " (verrouillé)" : ""}${levelSource ? ` · ${levelSource}` : ""}`
     : (isOverdriveNode(node) ? "Aucun niveau minimum explicite dans la quête liée" : "Aucun");
@@ -1043,6 +1055,7 @@ function renderNodeDetails() {
     </div>
     <div class="metric-row"><span>Condition d'accès</span><strong>${escapeHtml(parents)}</strong></div>
     <div class="metric-row ${state.buildLevel < requiredLevel ? "over" : ""}"><span>Niveau requis</span><strong>${escapeHtml(levelStatus)}</strong></div>
+    ${questText ? `<div class="metric-row"><span>Quête liée</span><strong>${escapeHtml(questText)}</strong></div>` : ""}
     ${overdriveStatus ? `<div class="metric-row ${overdriveBlocked(node) ? "over" : ""}"><span>OverDrive</span><strong>${escapeHtml(overdriveStatus)}</strong></div>` : ""}
     <div class="metric-row"><span>Débloque</span><strong>${escapeHtml(children)}</strong></div>
     <div class="metric-row"><span>Position</span><strong>R${escapeHtml(node.visual.row)} / C${escapeHtml(node.visual.column)}</strong></div>

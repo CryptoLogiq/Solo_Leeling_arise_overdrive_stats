@@ -412,15 +412,16 @@ def write_report(payload: dict) -> None:
             "",
             "`IdentityPoint` ne se comporte pas comme les autres points de talent dans les données observées: `ChSJWLv.IdentityPoint` reste à 0 sur tous les niveaux, tandis que quatre nœuds `NodeType=Identity` consomment chacun 1 `IdentityPoint`.",
             "",
-            "| Classe | NodeID | OverDrive | Coût | Prérequis | Confiance |",
-            "|---|---:|---|---:|---|---|",
+            "| Classe | NodeID | OverDrive | Coût | Prérequis | Quête liée | Confiance |",
+            "|---|---:|---|---:|---|---|---|",
         ]
     )
     for node in identity["nodes"]:
         level = f"niveau {node['requiredLevel']}" if node["requiredLevel"] else "aucun niveau explicite"
         prereq = f"{node['chapterTitle']} (`{node['unlockType']}:{node['unlockValue']}`, {level})"
+        missions = " / ".join(node["missionTitles"]) or "NON DÉTERMINÉ"
         lines.append(
-            f"| {node['classSection']} | `{node['nodeId']}` | {node['overdriveName']} (`{node['nodeValue']}`) | {node['cost']} | {prereq} | {node['confidence']} |"
+            f"| {node['classSection']} | `{node['nodeId']}` | {node['overdriveName']} (`{node['nodeValue']}`) | {node['cost']} | {prereq} | {missions} | {node['confidence']} |"
         )
 
     lines.extend(
