@@ -109,7 +109,7 @@ function rankCostLabel(rank, node) {
   const cost = parseCost(rank);
   if (cost !== null) return `${cost} ${currency}`.trim();
   const raw = rank?.rawLevelUpCostValue ? `raw ${rank.rawLevelUpCostValue} ${currency}` : "";
-  return raw ? `NON DÉTERMINÉ (${raw})` : "NON DÉTERMINÉ";
+  return raw ? `WIP (${raw})` : "WIP";
 }
 
 function emptyCostResult() {
@@ -143,7 +143,7 @@ function costResultTotal(result) {
 
 function formatCostResult(result) {
   const chunks = Object.entries(result.costs || {}).map(([currency, value]) => `${value} ${currency}`);
-  if (result.unknown) chunks.push("NON DÉTERMINÉ");
+  if (result.unknown) chunks.push("WIP");
   return chunks.length ? chunks.join(" + ") : "0";
 }
 
@@ -207,7 +207,7 @@ function buffById(buffId) {
 }
 
 function wipBadge(item) {
-  return item?.wip ? `<span class="wip-badge" title="${escapeHtml(item.wipReason || "Interprétation à compléter")}">WIP</span>` : "";
+  return item?.wip ? `<span class="wip-badge">WIP</span>` : "";
 }
 
 function statLine(stat) {
@@ -262,7 +262,7 @@ function resolvedEffectSummary(effect) {
   if (buffLines.length) return buffLines.join("; ");
   const value = effect.marginalGain !== "NON DÉTERMINÉ"
     ? effect.marginalGain
-    : effect.displayedValue || effect.rawValue || "NON DÉTERMINÉ";
+    : effect.displayedValue || effect.rawValue || "WIP";
   return `${effect.effectType}: ${value}`;
 }
 
@@ -716,7 +716,7 @@ function renderSummary() {
     const label = hasBudget ? `${spent} / ${budget}` : `${spent} dépensés`;
     return `<div class="metric-row ${over ? "over" : ""}"><span>${escapeHtml(currency)}</span><strong>${escapeHtml(label)}</strong></div>`;
   }).join("") + (unknownCosts
-    ? `<div class="metric-row"><span>Coûts non déterminés</span><strong>${unknownCosts} rang${unknownCosts > 1 ? "s" : ""}</strong></div>`
+    ? `<div class="metric-row"><span>Coûts WIP</span><strong>${unknownCosts} rang${unknownCosts > 1 ? "s" : ""}</strong></div>`
     : "");
 
   const percentGroups = new Map();
@@ -743,7 +743,7 @@ function renderSummary() {
             <ul>
               ${item.rows.map((row) => `<li>${escapeHtml(displayName(row.node.name))} ${rankLabel(row.rank.rank)}: +${row.gain.toLocaleString("fr-FR", { maximumFractionDigits: 2 })}% (${escapeHtml(row.confidence)})</li>`).join("")}
             </ul>
-            <div class="formula-note">Somme arithmétique: +${item.value.toLocaleString("fr-FR", { maximumFractionDigits: 2 })}%. Stat finale réelle: NON DÉTERMINÉE.</div>
+            <div class="formula-note">Somme arithmétique: +${item.value.toLocaleString("fr-FR", { maximumFractionDigits: 2 })}%. Stat finale réelle: WIP.</div>
           </div>`)
         .join("")
     : `<div class="empty-state">Aucun gain chiffré démontré dans la sélection.</div>`;
@@ -752,7 +752,7 @@ function renderSummary() {
     ? rawRows.slice(0, 18).map(({ node, rank, effect }) => `
       <div class="effect-row">
         <strong>${escapeHtml(displayName(node.name))} ${rankLabel(rank.rank)}</strong>
-        <span>${escapeHtml(resolvedEffectSummary(effect))} <em>(${escapeHtml(effect.effectType)} · raw ${escapeHtml(effect.rawValue || "NON DÉTERMINÉ")})</em></span>
+        <span>${escapeHtml(resolvedEffectSummary(effect))} <em>(${escapeHtml(effect.effectType)} · raw ${escapeHtml(effect.rawValue || "WIP")})</em></span>
       </div>`).join("")
     : `<div class="empty-state">Aucune valeur brute non interprétée dans la sélection.</div>`;
 
@@ -768,7 +768,7 @@ function renderSummary() {
 
 function effectText(rank) {
   const effects = rank.effects || [];
-  if (!effects.length) return "NON DÉTERMINÉ";
+  if (!effects.length) return "WIP";
   return effects.map((effect) => readableEffectSummary(effect)).join("\n\n");
 }
 
@@ -795,7 +795,7 @@ function renderBuffDetail(buffId, depth = 0, seen = new Set()) {
       </div>
       ${buff.description ? `<p>${escapeHtml(buff.description)}</p>` : ""}
       <div class="raw-grid">
-        <span>Type</span><strong>${escapeHtml(buff.largeType || "NON DÉTERMINÉ")}</strong>
+        <span>Type</span><strong>${escapeHtml(buff.largeType || "WIP")}</strong>
         <span>Durée raw</span><strong>${escapeHtml(buff.durationRaw)}</strong>
         <span>Stacks</span><strong>${escapeHtml(buff.stackMaxCount)}</strong>
         <span>Groupe</span><strong>${escapeHtml(buff.groupId)}</strong>
@@ -805,7 +805,7 @@ function renderBuffDetail(buffId, depth = 0, seen = new Set()) {
       ${buff.trigger ? `
         <div class="trigger-box">
           <strong>Déclenchement ${wipBadge(buff.trigger)}</strong>
-          <span>Condition: ${escapeHtml(buff.trigger.condition || "NON DÉTERMINÉ")}</span>
+          <span>Condition: ${escapeHtml(buff.trigger.condition || "WIP")}</span>
           <span>Ratio raw: ${escapeHtml(buff.trigger.ratioRaw)} · Cooldown raw: ${escapeHtml(buff.trigger.coolTimeRaw)}</span>
           <span>Buffs déclenchés: ${renderIdList(childIds)}</span>
         </div>
@@ -829,8 +829,8 @@ function renderSkillDetail(groupId) {
       <div class="raw-grid">
         <span>SkillID</span><strong>${escapeHtml(skill.id)}</strong>
         <span>BaseSkillInfoKey</span><strong>${escapeHtml(skill.baseSkillInfoKey)}</strong>
-        <span>Type</span><strong>${escapeHtml(skill.type || "NON DÉTERMINÉ")}</strong>
-        <span>Prefab</span><strong>${escapeHtml(skill.prefab || "NON DÉTERMINÉ")}</strong>
+        <span>Type</span><strong>${escapeHtml(skill.type || "WIP")}</strong>
+        <span>Prefab</span><strong>${escapeHtml(skill.prefab || "WIP")}</strong>
       </div>
       ${asArray(skill.stats).length ? `<ul class="stat-list">${skill.stats.map(statLine).join("")}</ul>` : ""}
       ${asArray(skill.relatedBuffIds).length ? `
@@ -849,7 +849,7 @@ function renderEffectDetail(rank, effect) {
     <div class="effect-card">
       <div class="effect-detail-title">
         <strong>Rang ${rankLabel(rank.rank)} · ${escapeHtml(effect.effectType)}</strong>
-        <span>${effectHasWip(effect) ? '<span class="wip-badge">WIP</span>' : ""}<code>raw ${escapeHtml(effect.rawValue || "NON DÉTERMINÉ")}</code></span>
+        <span>${effectHasWip(effect) ? '<span class="wip-badge">WIP</span>' : ""}<code>raw ${escapeHtml(effect.rawValue || "WIP")}</code></span>
       </div>
       ${refs.skillGroupId ? renderSkillDetail(refs.skillGroupId) : ""}
       ${refs.buffIds.map((id) => renderBuffDetail(id)).join("")}
