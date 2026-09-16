@@ -30,6 +30,8 @@ const state = {
   selected: {},
   budgets: { ...DEFAULT_BUDGETS },
   zoom: 1,
+  pan: null,
+  suppressNextTreeClick: false,
 };
 
 const els = {
@@ -925,6 +927,12 @@ function setupEvents() {
     render();
   });
   els.nodeLayer.addEventListener("click", (event) => {
+    if (state.suppressNextTreeClick) {
+      state.suppressNextTreeClick = false;
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
     const button = event.target.closest("button[data-action]");
     const card = event.target.closest("[data-node-id]");
     if (!card) return;
@@ -1003,6 +1011,36 @@ function setupEvents() {
     state.zoom = 1;
     renderTree();
   });
+  els.viewport.addEventListener("pointerdown", (event) => {
+    if (event.button !== 0 || event.target.closest("button, input, select")) return;
+    state.pan = {
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
+      scrollLeft: els.viewport.scrollLeft,
+      scrollTop: els.viewport.scrollTop,
+      moved: false,
+    };
+    els.viewport.classList.add("is-panning");
+    els.viewport.setPointerCapture(event.pointerId);
+  });
+  els.viewport.addEventListener("pointermove", (event) => {
+    if (!state.pan || state.pan.pointerId !== event.pointerId) return;
+    const dx = event.clientX - state.pan.startX;
+    const dy = event.clientY - state.pan.startY;
+    if (Math.abs(dx) > 3 || Math.abs(dy) > 3) state.pan.moved = true;
+    els.viewport.scrollLeft = state.pan.scrollLeft - dx;
+    els.viewport.scrollTop = state.pan.scrollTop - dy;
+  });
+  function endPan(event) {
+    if (!state.pan || state.pan.pointerId !== event.pointerId) return;
+    state.suppressNextTreeClick = state.pan.moved;
+    state.pan = null;
+    els.viewport.classList.remove("is-panning");
+    if (els.viewport.hasPointerCapture(event.pointerId)) els.viewport.releasePointerCapture(event.pointerId);
+  }
+  els.viewport.addEventListener("pointerup", endPan);
+  els.viewport.addEventListener("pointercancel", endPan);
 }
 
 async function init() {
