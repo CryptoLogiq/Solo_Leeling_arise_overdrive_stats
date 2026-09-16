@@ -24,6 +24,7 @@ const CURRENCY_LABELS = {
   SpecialPoint: "Sung Jinwoo",
   IdentityPoint: "OverDrive",
 };
+const RAW_HELP_TEXT = "Valeur brute lue dans les fichiers du jeu. Ce n'est pas du DPS ni forcément la valeur affichée en jeu. Elle indique seulement que le talent touche cette stat; la conversion exacte reste à valider.";
 const DEFAULT_BUDGETS = {};
 
 const state = {
@@ -404,12 +405,17 @@ function wipBadge(item) {
   return item?.wip ? `<span class="wip-badge">WIP</span>` : "";
 }
 
+function rawHelpBadge() {
+  return `<span class="raw-help" title="${escapeHtml(RAW_HELP_TEXT)}">raw ?</span>`;
+}
+
 function statLine(stat) {
   return `
     <li>
       <span>${escapeHtml(stat.label || stat.field || stat.type || "Stat")}</span>
       <strong>${escapeHtml(stat.display || stat.rawValue || "0")}</strong>
       ${wipBadge(stat)}
+      ${String(stat.display || stat.rawValue || "").toLowerCase().includes("raw") ? rawHelpBadge() : ""}
       <small>${escapeHtml(stat.field || stat.type || "")}</small>
     </li>`;
 }
@@ -1101,7 +1107,7 @@ function renderEffectDetail(rank, effect) {
     <div class="effect-card">
       <div class="effect-detail-title">
         <strong>Rang ${rankLabel(rank.rank)} · ${escapeHtml(effect.effectType)}</strong>
-        <span>${effectHasWip(effect) ? '<span class="wip-badge">WIP</span>' : ""}<code>raw ${escapeHtml(effect.rawValue || "WIP")}</code></span>
+        <span>${effectHasWip(effect) ? '<span class="wip-badge">WIP</span>' : ""}${rawHelpBadge()}<code>raw ${escapeHtml(effect.rawValue || "WIP")}</code></span>
       </div>
       ${refs.skillGroupId ? renderSkillDetail(refs.skillGroupId) : ""}
       ${refs.buffIds.map((id) => renderBuffDetail(id)).join("")}
