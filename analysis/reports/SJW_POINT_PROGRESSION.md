@@ -50,11 +50,11 @@ Cette table additionne les coûts connus de tous les rangs de talents présents 
 | Magicien élémentaire | `115100` | Réaction en chaîne (`92000011`) | 1 | Gardien (`MainQuestChapter:10301`) | CONFIRMÉ PAR LES GAMEDATA |
 | Souverain | `117100` | Invocation d'ombre (`92000009`) | 1 | Défenseur du trône (`MainQuestChapter:10501`) | CONFIRMÉ PAR LES GAMEDATA |
 
-Exclusivité d'activation: FORTEMENT PROBABLE. Les quatre nœuds sont isolés, coûtent chacun 1 IdentityPoint et représentent les OverDrive de classe. Aucun champ GameData décodé ici ne démontre encore explicitement la règle runtime 'un seul actif'.
+Exclusivité d'activation: CONFIRMÉ PAR OBSERVATION UTILISATEUR. Un seul OverDrive peut être activé, car la quête de changement/activation n'est pas répétable selon observation utilisateur. Les GameData confirment les quatre nœuds isolés, leurs coûts et leurs prérequis de chapitre.
 
 ## Points non résolus
 
-- `IdentityPoint`: la source level-up est confirmée à 0. Les prérequis des nœuds OverDrive viennent de `ContentsUnlock` et pointent vers des chapitres de quête principale, mais la règle runtime exacte du budget/slot d'activation reste à vérifier en jeu.
+- `IdentityPoint`: la source level-up est confirmée à 0. Les prérequis des nœuds OverDrive viennent de `ContentsUnlock` et pointent vers des chapitres de quête principale; l'exclusivité d'activation est confirmée par observation utilisateur car la quête n'est pas répétable.
 - `TotalExp`: le champ existe dans `ChSJWLv`, mais le décodage actuel produit des flottants extrêmement petits. Ne pas utiliser cette courbe XP pour planifier tant qu'elle n'est pas vérifiée.
 - `ProvideSkillSet`: présent dans `ChSJWLv`, mais vaut 0 sur les lignes décodées actuelles.
 

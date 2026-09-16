@@ -285,8 +285,8 @@
       230003
     ],
     "exclusiveSelection": {
-      "status": "FORTEMENT PROBABLE",
-      "note": "Les quatre nœuds sont isolés, coûtent chacun 1 IdentityPoint et représentent les OverDrive de classe. Aucun champ GameData décodé ici ne démontre encore explicitement la règle runtime 'un seul actif'."
+      "status": "CONFIRMÉ PAR OBSERVATION UTILISATEUR",
+      "note": "Un seul OverDrive peut être activé, car la quête de changement/activation n'est pas répétable selon observation utilisateur. Les GameData confirment les quatre nœuds isolés, leurs coûts et leurs prérequis de chapitre."
     },
     "nodes": [
       {
@@ -376,7 +376,7 @@
         "confidence": "CONFIRMÉ PAR LES GAMEDATA"
       }
     ],
-    "confidence": "CONFIRMÉ PAR LES GAMEDATA POUR LES NŒUDS, COÛTS ET PRÉREQUIS; EXCLUSIVITÉ RUNTIME À CONFIRMER"
+    "confidence": "CONFIRMÉ PAR LES GAMEDATA POUR LES NŒUDS, COÛTS ET PRÉREQUIS; EXCLUSIVITÉ CONFIRMÉE PAR OBSERVATION UTILISATEUR"
   },
   "levels": [
     {

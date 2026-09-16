@@ -225,11 +225,11 @@ def identity_overdrive_details() -> dict:
         "knownOverdriveKnownCostTotal": sum(node["cost"] for node in nodes),
         "contentsUnlockIds": unlock_ids,
         "exclusiveSelection": {
-            "status": "FORTEMENT PROBABLE",
-            "note": "Les quatre nœuds sont isolés, coûtent chacun 1 IdentityPoint et représentent les OverDrive de classe. Aucun champ GameData décodé ici ne démontre encore explicitement la règle runtime 'un seul actif'.",
+            "status": "CONFIRMÉ PAR OBSERVATION UTILISATEUR",
+            "note": "Un seul OverDrive peut être activé, car la quête de changement/activation n'est pas répétable selon observation utilisateur. Les GameData confirment les quatre nœuds isolés, leurs coûts et leurs prérequis de chapitre.",
         },
         "nodes": nodes,
-        "confidence": "CONFIRMÉ PAR LES GAMEDATA POUR LES NŒUDS, COÛTS ET PRÉREQUIS; EXCLUSIVITÉ RUNTIME À CONFIRMER",
+        "confidence": "CONFIRMÉ PAR LES GAMEDATA POUR LES NŒUDS, COÛTS ET PRÉREQUIS; EXCLUSIVITÉ CONFIRMÉE PAR OBSERVATION UTILISATEUR",
     }
 
 
@@ -394,7 +394,7 @@ def write_report(payload: dict) -> None:
             "",
             "## Points non résolus",
             "",
-            "- `IdentityPoint`: la source level-up est confirmée à 0. Les prérequis des nœuds OverDrive viennent de `ContentsUnlock` et pointent vers des chapitres de quête principale, mais la règle runtime exacte du budget/slot d'activation reste à vérifier en jeu.",
+            "- `IdentityPoint`: la source level-up est confirmée à 0. Les prérequis des nœuds OverDrive viennent de `ContentsUnlock` et pointent vers des chapitres de quête principale; l'exclusivité d'activation est confirmée par observation utilisateur car la quête n'est pas répétable.",
             "- `TotalExp`: le champ existe dans `ChSJWLv`, mais le décodage actuel produit des flottants extrêmement petits. Ne pas utiliser cette courbe XP pour planifier tant qu'elle n'est pas vérifiée.",
             "- `ProvideSkillSet`: présent dans `ChSJWLv`, mais vaut 0 sur les lignes décodées actuelles.",
             "",
