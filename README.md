@@ -28,6 +28,19 @@ marquée `NON DÉTERMINÉ`.
 - [CSV générés](analysis/csv/)
 - [Scripts d'analyse](tools/)
 
+## Publication GitHub Pages
+
+Le planner est statique et peut être publié sans workflow GitHub Actions.
+
+Configuration recommandée dans GitHub :
+
+- **Settings** → **Pages**
+- **Source** : `Deploy from a branch`
+- **Branch** : `main`
+- **Folder** : `/(root)`
+
+La page racine redirige ensuite vers `/planner/`.
+
 ## Sources et confiance
 
 La priorité des preuves est définie dans [AGENTS.md](AGENTS.md) :
