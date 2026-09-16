@@ -129,6 +129,18 @@ possible :
 - chance de déclenchement ;
 - autres effets disponibles.
 
+Pour les exports destinés au planner, produire une base d'effets compacte et
+machine-readable depuis les tables décodées plutôt qu'un simple libellé. Les
+entrées doivent conserver les ID sources et exposer les valeurs raw utiles même
+si leur formule n'est pas validée. Ajouter un champ `wip` / `wipReason` aux
+statistiques ou effets dont l'unité, la conversion ou l'ordre d'application
+runtime reste `NON DÉTERMINÉ`.
+
+Les compétences actives référencées par un talent doivent résoudre au minimum
+`ChPCSkill.SkillGroupID -> ChPCSkill.ID/BaseSkillInfoKey -> ChPCSkillInfo` et
+exposer description, cooldown, consommation, gains de jauge/EX, coefficients,
+break/crash, buffs liés et tout `BoundBuffID` / `PassiveBuffID` disponible.
+
 ## Talents multi-rangs
 
 Conserver séparément :

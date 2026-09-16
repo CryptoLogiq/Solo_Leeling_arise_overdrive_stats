@@ -1,6 +1,7 @@
 "use strict";
 
 const DATA_URL = "../analysis/data/sjw_talent_tree.json";
+const EFFECT_DB_URL = "../analysis/data/sjw_effect_database.json";
 const RANK_LABELS = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
 const NODE_FALLBACK_WIDTH = 184;
 const NODE_FALLBACK_HEIGHT = 112;
@@ -19,6 +20,7 @@ const DEFAULT_BUDGETS = {};
 
 const state = {
   model: null,
+  effectDb: null,
   sections: [],
   nodeById: new Map(),
   activeSectionIndex: 0,
@@ -70,6 +72,16 @@ function escapeHtml(value) {
 
 function displayName(value) {
   return String(value ?? "").replaceAll("\\n", " ").replace(/\s+/g, " ").trim();
+}
+
+function rawIdList(value) {
+  if (!value) return [];
+  if (Array.isArray(value)) return value.map(String).filter(Boolean);
+  return String(value).match(/\d+/g) || [];
+}
+
+function asArray(value) {
+  return Array.isArray(value) ? value : [];
 }
 
 function clamp(value, min, max) {
@@ -184,6 +196,103 @@ function activeSections() {
 
 function nodeName(nodeId) {
   return displayName(state.nodeById.get(nodeId)?.name || nodeId);
+}
+
+function skillGroup(groupId) {
+  return state.effectDb?.skillsByGroupId?.[String(groupId)] || null;
+}
+
+function buffById(buffId) {
+  return state.effectDb?.buffsById?.[String(buffId)] || null;
+}
+
+function wipBadge(item) {
+  return item?.wip ? `<span class="wip-badge" title="${escapeHtml(item.wipReason || "Interprétation à compléter")}">WIP</span>` : "";
+}
+
+function statLine(stat) {
+  return `
+    <li>
+      <span>${escapeHtml(stat.label || stat.field || stat.type || "Stat")}</span>
+      <strong>${escapeHtml(stat.display || stat.rawValue || "0")}</strong>
+      ${wipBadge(stat)}
+      <small>${escapeHtml(stat.field || stat.type || "")}</small>
+    </li>`;
+}
+
+function compactSkillLine(skill) {
+  if (!skill) return "";
+  const stats = asArray(skill.stats)
+    .filter((stat) => ["Cooldown", "DamAttCoeff", "EXGain", "MPCon", "PGGain", "CrashDam"].includes(stat.field))
+    .map((stat) => `${stat.label}: ${stat.display}`)
+    .join(" · ");
+  return `${skill.name || skill.id}${stats ? ` — ${stats}` : ""}`;
+}
+
+function compactBuffLine(buff) {
+  if (!buff) return "";
+  const stats = [
+    ...asArray(buff.addedStats).map((stat) => stat.display || `${stat.type} ${stat.rawValue}`),
+    ...asArray(buff.specialStates).map((special) => special.display || special.type),
+  ].filter(Boolean);
+  const trigger = buff.trigger?.buffIds?.length ? ` -> ${buff.trigger.buffIds.join(", ")}` : "";
+  return `${buff.name || buff.id}${stats.length ? ` — ${stats.join(" · ")}` : ""}${trigger}`;
+}
+
+function effectReferences(effect) {
+  const buffIds = new Set();
+  if (effect.buffId) buffIds.add(String(effect.buffId));
+  for (const id of rawIdList(effect.rawValue)) {
+    if (effect.effectType === "TriggeredBuff" || buffById(id)) buffIds.add(id);
+  }
+  return {
+    skillGroupId: effect.abilityId || (effect.effectType === "ActiveSkillReference" ? effect.rawValue : ""),
+    buffIds: [...buffIds],
+  };
+}
+
+function resolvedEffectSummary(effect) {
+  const refs = effectReferences(effect);
+  if (refs.skillGroupId) {
+    const group = skillGroup(refs.skillGroupId);
+    const skill = group?.skills?.[0];
+    if (skill) return `Compétence active: ${compactSkillLine(skill)}`;
+  }
+  const buffLines = refs.buffIds.map((id) => compactBuffLine(buffById(id))).filter(Boolean);
+  if (buffLines.length) return buffLines.join("; ");
+  const value = effect.marginalGain !== "NON DÉTERMINÉ"
+    ? effect.marginalGain
+    : effect.displayedValue || effect.rawValue || "NON DÉTERMINÉ";
+  return `${effect.effectType}: ${value}`;
+}
+
+function effectHasWip(effect) {
+  const refs = effectReferences(effect);
+  const group = refs.skillGroupId ? skillGroup(refs.skillGroupId) : null;
+  if (group?.wip || asArray(group?.skills).some((skill) => skill.wip || asArray(skill.stats).some((stat) => stat.wip))) return true;
+  if (refs.buffIds.some((id) => {
+    const buff = buffById(id);
+    return buff?.wip
+      || asArray(buff?.addedStats).some((stat) => stat.wip)
+      || asArray(buff?.specialStates).some((special) => special.wip)
+      || buff?.trigger?.wip;
+  })) return true;
+  return effect.confidence === "NON DÉTERMINÉ"
+    || effect.marginalGain === "NON DÉTERMINÉ"
+    || effect.cumulativeGain === "NON DÉTERMINÉ";
+}
+
+function nodeTooltip(node) {
+  const lines = [
+    `${displayName(node.name)} (${node.nodeId})`,
+    `${node.nodeType || "Talent"} · ${node.nodeMaxLevel} rang${node.nodeMaxLevel > 1 ? "s" : ""}`,
+  ];
+  for (const rank of node.ranks || []) {
+    lines.push(`Rang ${rankLabel(rank.rank)} · ${rankCostLabel(rank, node)}`);
+    for (const effect of rank.effects || []) lines.push(`- ${resolvedEffectSummary(effect)}`);
+  }
+  lines.push("WIP: les valeurs brutes sont affichées même quand la conversion finale reste à valider.");
+  return lines.join("\n");
 }
 
 function setNotice(message, tone = "info") {
@@ -480,8 +589,9 @@ function buildNodeHtml(layout, mode = "") {
     const activeClass = active ? "active" : "";
     const lockedClass = locked ? "locked" : "";
     const measureClass = mode === "measure" ? "measure" : "";
+    const tooltip = nodeTooltip(node);
     return `
-      <article class="node-card ${selectedClass} ${activeClass} ${lockedClass} ${measureClass}" style="left:${x}px; top:${y}px" data-node-id="${escapeHtml(node.nodeId)}">
+      <article class="node-card ${selectedClass} ${activeClass} ${lockedClass} ${measureClass}" style="left:${x}px; top:${y}px" data-node-id="${escapeHtml(node.nodeId)}" data-tooltip="${escapeHtml(tooltip)}" title="${escapeHtml(tooltip)}">
         <div>
           <div class="node-name">${escapeHtml(displayName(node.name))}</div>
           <div class="node-cost">${escapeHtml(nextCostLabel(node))}</div>
@@ -492,6 +602,7 @@ function buildNodeHtml(layout, mode = "") {
         </div>
         <div class="node-meta">
           <span>${escapeHtml(node.nodeId)}</span>
+          ${node.ranks.some((rankItem) => asArray(rankItem.effects).some((effect) => effectHasWip(effect))) ? '<span class="wip-mini">WIP</span>' : ""}
           <span class="node-buttons">
             <button class="node-action" type="button" data-action="decrease" data-node-id="${escapeHtml(node.nodeId)}" ${rank === 0 ? "disabled" : ""} title="Retirer un rang">-</button>
             <button class="node-action" type="button" data-action="increase" data-node-id="${escapeHtml(node.nodeId)}" ${canIncrease(node) ? "" : "disabled"} title="Ajouter un rang">+</button>
@@ -632,7 +743,7 @@ function renderSummary() {
     ? rawRows.slice(0, 18).map(({ node, rank, effect }) => `
       <div class="effect-row">
         <strong>${escapeHtml(displayName(node.name))} ${rankLabel(rank.rank)}</strong>
-        <span>${escapeHtml(effect.effectType)}: ${escapeHtml(effect.displayedValue || effect.rawValue || "NON DÉTERMINÉ")}</span>
+        <span>${escapeHtml(resolvedEffectSummary(effect))} <em>(${escapeHtml(effect.effectType)} · raw ${escapeHtml(effect.rawValue || "NON DÉTERMINÉ")})</em></span>
       </div>`).join("")
     : `<div class="empty-state">Aucune valeur brute non interprétée dans la sélection.</div>`;
 
@@ -649,12 +760,92 @@ function renderSummary() {
 function effectText(rank) {
   const effects = rank.effects || [];
   if (!effects.length) return "NON DÉTERMINÉ";
-  return effects.map((effect) => {
-    const value = effect.marginalGain !== "NON DÉTERMINÉ"
-      ? effect.marginalGain
-      : effect.displayedValue || effect.rawValue || "NON DÉTERMINÉ";
-    return `${effect.effectType}: ${value}`;
-  }).join("; ");
+  return effects.map((effect) => resolvedEffectSummary(effect)).join("; ");
+}
+
+function renderIdList(ids) {
+  return ids.length ? ids.map((id) => `<code>${escapeHtml(id)}</code>`).join(" ") : `<span class="muted-text">aucun</span>`;
+}
+
+function renderBuffDetail(buffId, depth = 0, seen = new Set()) {
+  const buff = buffById(buffId);
+  if (!buff) {
+    return `<div class="effect-detail nested-${depth}"><strong>BuffID <code>${escapeHtml(buffId)}</code></strong><span class="muted-text">Non résolu dans la BDD.</span></div>`;
+  }
+  if (seen.has(buffId)) {
+    return `<div class="effect-detail nested-${depth}"><strong>BuffID <code>${escapeHtml(buffId)}</code></strong><span class="muted-text">Référence déjà affichée.</span></div>`;
+  }
+  const nextSeen = new Set(seen);
+  nextSeen.add(buffId);
+  const childIds = asArray(buff.trigger?.buffIds);
+  return `
+    <div class="effect-detail nested-${depth}">
+      <div class="effect-detail-title">
+        <strong>${escapeHtml(buff.name || `Buff ${buff.id}`)}</strong>
+        <span>${wipBadge(buff)} <code>${escapeHtml(buff.id)}</code></span>
+      </div>
+      ${buff.description ? `<p>${escapeHtml(buff.description)}</p>` : ""}
+      <div class="raw-grid">
+        <span>Type</span><strong>${escapeHtml(buff.largeType || "NON DÉTERMINÉ")}</strong>
+        <span>Durée raw</span><strong>${escapeHtml(buff.durationRaw)}</strong>
+        <span>Stacks</span><strong>${escapeHtml(buff.stackMaxCount)}</strong>
+        <span>Groupe</span><strong>${escapeHtml(buff.groupId)}</strong>
+      </div>
+      ${asArray(buff.addedStats).length ? `<ul class="stat-list">${buff.addedStats.map(statLine).join("")}</ul>` : ""}
+      ${asArray(buff.specialStates).length ? `<ul class="stat-list">${buff.specialStates.map(statLine).join("")}</ul>` : ""}
+      ${buff.trigger ? `
+        <div class="trigger-box">
+          <strong>Déclenchement ${wipBadge(buff.trigger)}</strong>
+          <span>Condition: ${escapeHtml(buff.trigger.condition || "NON DÉTERMINÉ")}</span>
+          <span>Ratio raw: ${escapeHtml(buff.trigger.ratioRaw)} · Cooldown raw: ${escapeHtml(buff.trigger.coolTimeRaw)}</span>
+          <span>Buffs déclenchés: ${renderIdList(childIds)}</span>
+        </div>
+        ${childIds.map((id) => renderBuffDetail(id, depth + 1, nextSeen)).join("")}
+      ` : ""}
+    </div>`;
+}
+
+function renderSkillDetail(groupId) {
+  const group = skillGroup(groupId);
+  if (!group) return `<div class="effect-detail"><strong>SkillGroupID <code>${escapeHtml(groupId)}</code></strong><span class="muted-text">Non résolu dans la BDD.</span></div>`;
+  const skill = group.skills?.[0];
+  if (!skill) return "";
+  return `
+    <div class="effect-detail">
+      <div class="effect-detail-title">
+        <strong>${escapeHtml(skill.name || group.name || groupId)}</strong>
+        <span>${wipBadge(skill)} <code>${escapeHtml(groupId)}</code></span>
+      </div>
+      ${skill.description ? `<p>${escapeHtml(skill.description)}</p>` : ""}
+      <div class="raw-grid">
+        <span>SkillID</span><strong>${escapeHtml(skill.id)}</strong>
+        <span>BaseSkillInfoKey</span><strong>${escapeHtml(skill.baseSkillInfoKey)}</strong>
+        <span>Type</span><strong>${escapeHtml(skill.type || "NON DÉTERMINÉ")}</strong>
+        <span>Prefab</span><strong>${escapeHtml(skill.prefab || "NON DÉTERMINÉ")}</strong>
+      </div>
+      ${asArray(skill.stats).length ? `<ul class="stat-list">${skill.stats.map(statLine).join("")}</ul>` : ""}
+      ${asArray(skill.relatedBuffIds).length ? `
+        <div class="trigger-box">
+          <strong>Buffs liés</strong>
+          <span>${renderIdList(skill.relatedBuffIds)}</span>
+        </div>
+        ${skill.relatedBuffIds.map((id) => renderBuffDetail(id, 1)).join("")}
+      ` : ""}
+    </div>`;
+}
+
+function renderEffectDetail(rank, effect) {
+  const refs = effectReferences(effect);
+  return `
+    <div class="effect-card">
+      <div class="effect-detail-title">
+        <strong>Rang ${rankLabel(rank.rank)} · ${escapeHtml(effect.effectType)}</strong>
+        <span>${effectHasWip(effect) ? '<span class="wip-badge">WIP</span>' : ""}<code>raw ${escapeHtml(effect.rawValue || "NON DÉTERMINÉ")}</code></span>
+      </div>
+      ${refs.skillGroupId ? renderSkillDetail(refs.skillGroupId) : ""}
+      ${refs.buffIds.map((id) => renderBuffDetail(id)).join("")}
+      ${!refs.skillGroupId && !refs.buffIds.length ? `<div class="effect-detail"><span>${escapeHtml(resolvedEffectSummary(effect))}</span></div>` : ""}
+    </div>`;
 }
 
 function renderNodeDetails() {
@@ -692,6 +883,10 @@ function renderNodeDetails() {
           </tr>`).join("")}
       </tbody>
     </table>
+    <div class="effect-detail-list">
+      <h4>Détails bruts et WIP</h4>
+      ${node.ranks.flatMap((item) => (item.effects || []).map((effect) => renderEffectDetail(item, effect))).join("")}
+    </div>
   `;
 }
 
@@ -803,9 +998,11 @@ function setupEvents() {
 
 async function init() {
   try {
-    const response = await fetch(DATA_URL);
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    state.model = await response.json();
+    const [treeResponse, effectResponse] = await Promise.all([fetch(DATA_URL), fetch(EFFECT_DB_URL)]);
+    if (!treeResponse.ok) throw new Error(`HTTP ${treeResponse.status}`);
+    if (!effectResponse.ok) throw new Error(`HTTP ${effectResponse.status}`);
+    state.model = await treeResponse.json();
+    state.effectDb = await effectResponse.json();
     state.sections = state.model.trees || [];
     for (const section of state.sections) {
       for (const node of section.nodes || []) state.nodeById.set(node.nodeId, node);
@@ -821,7 +1018,7 @@ async function init() {
     loadBuildFromHash();
     render();
   } catch (error) {
-    els.notice.textContent = "Impossible de charger analysis/data/sjw_talent_tree.json depuis cette page.";
+    els.notice.textContent = "Impossible de charger les données du planner depuis cette page.";
     els.nodeDetails.innerHTML = `<div class="empty-state">${escapeHtml(error.message)}</div>`;
   }
 }

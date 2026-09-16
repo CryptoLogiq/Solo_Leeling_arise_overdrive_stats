@@ -104,6 +104,11 @@ Présenter l'information dans cet ordre :
 Le lecteur ne doit pas traverser des `NodeID` et `BuffID` pour comprendre ce que
 fait un talent.
 
+Dans les vues de planner ou de détail interactif, ne pas attendre que toutes les
+formules soient démontrées pour afficher les apports d'un talent. Montrer les
+descriptions et valeurs raw vérifiées avec un badge `WIP` quand la conversion
+exacte reste inconnue.
+
 ### Mermaid
 
 Conserver les graphes Mermaid lorsqu'ils améliorent la compréhension.

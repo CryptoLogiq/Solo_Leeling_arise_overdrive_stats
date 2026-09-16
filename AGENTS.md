@@ -24,6 +24,14 @@ textuelle de l'interface du jeu. Elle doit apporter une vraie valeur :
 topologie, progression, gains, coûts, relations entre talents et informations
 utiles à la compréhension du système.
 
+Pour les planners et vues interactives, une information brute vérifiée vaut
+mieux qu'une absence d'information. Un talent doit afficher ce qu'il apporte
+même si la conversion exacte runtime reste inconnue: ID, champ source, valeur
+raw, description GameData, cooldown, coûts de ressource, coefficients, gains
+EX / jauge, buffs liés, conditions, durée, stacks et effets déclenchés doivent
+être exposés quand ils existent. Toute valeur affichée sans formule validée doit
+porter un indicateur `WIP` / `NON DÉTERMINÉ` au niveau du champ concerné.
+
 La couche TECHNICAL doit permettre de retrouver les données sources,
 identifiants, valeurs raw, relations et niveaux de confiance ayant conduit aux
 informations HUMAN.
@@ -68,6 +76,8 @@ Toujours conserver séparément :
 - valeur interprétée ;
 - valeur affichée / observée ;
 - niveau de confiance.
+- statut `WIP` si la valeur est utile au planner mais que sa conversion,
+  formule, unité ou application runtime n'est pas encore déterminée.
 
 Règles :
 
@@ -76,6 +86,9 @@ Règles :
 - Ne jamais forcer une formule pour faire correspondre un screenshot.
 - Ne jamais calculer un rendement si l'unité, le coût ou le gain marginal ne
   sont pas démontrés.
+- Ne jamais masquer une valeur raw utile au planner uniquement parce que son
+  rendement ou son pourcentage réel n'est pas encore démontré; l'afficher avec
+  ses ID sources et un statut `WIP`.
 - Des valeurs raw de familles différentes ne sont pas directement comparables.
 - Une formule validée pour une statistique ne doit pas être généralisée aux
   autres sans preuve.
@@ -106,6 +119,11 @@ Une représentation normalisée doit conserver au minimum :
 HUMAN, TECHNICAL, Mermaid et futurs calculateurs doivent dériver d'une source
 commune quand elle existe. Une perte d'information lors d'une amélioration est
 une **régression**.
+
+Le planner web doit disposer d'une base machine-readable dédiée aux effets
+résolus (`BuffID`, `SkillID`, références actives, buffs déclenchés et champs raw)
+afin d'afficher les détails et tooltips sans relire les tables GameData
+complètes. Cette base doit rester dérivée des GameData normalisés/décodés.
 
 Pour les arbres de talents, l'export canonique machine-readable doit être généré
 depuis les GameData normalisés avant les vues de rendu :
